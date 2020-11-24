@@ -1,0 +1,10 @@
+.button button {
+  height: 50px;
+  width: 200px;
+  color: red;
+}
+.button button:disabled {
+  color: green;
+}
+
+/*# sourceMappingURL=button.css.map */
