@@ -1,22 +1,15 @@
-export class Button {
-  constructor(content) {
+export class Button extends Component {
+  constructor(content, func) {
     this.content = content
+    this.func = func
     this.disable = false
   }
 
   get html() {
-    if (!this.disable) {
-      return `
-      <div class="button">
-        <button>${this.content}</button>
-      </div>
-      `
-    } else {
-      return `
-      <div class="button">
-        <button disabled>${this.content}</button>
-      </div>
-      `
-    }
+    return `
+    <div class="host">
+      <button onclick="${this.func}()" ${this.disable ? 'disabled' : ''}>${this.content}</button>
+    </div>
+    `
   }
 }

@@ -1,8 +1,22 @@
-.button
+.host
   button
-    height: 50px
-    width: 200px
-    color: red
+    height: 46px
+    width: 345px
+    border: none
+    color: white
+    border-radius: 5px
+    background-color: #FA8072
+    box-shadow: 0 3px 6px 0 #707070
+    font-size: 24px
+
+    &:focus
+      outline: none
 
     &:disabled
-      color: green
+      background-color: #707070
+
+      &:hover
+        background-color: #707070
+
+    &:hover
+      background-color: #fa9a8f

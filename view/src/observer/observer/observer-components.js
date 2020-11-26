@@ -10,7 +10,7 @@ export let components = {
     css: '../../components/header/css/header.css'
   },
   'button': {
-    component: new Button('Button'),
+    component: new Button('Button', "(() => {alert('Hallo')})"),
     fields: {
       content: 'text',
       disable: 'checkbox'

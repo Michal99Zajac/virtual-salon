@@ -36,8 +36,8 @@ class ObserverIndex {
   initComponentListEvent(li) {
     let componentContainer = document.getElementById('ob-container')
     li.addEventListener('click', () => {
-      this.selectListItem(li)
       this.observer.setCurrentComponent(li.innerText)
+      this.selectListItem(li)
       this.removeCurrentInputs()
       this.createInputs()
       let component = this.observer.getCurrentComponent()
