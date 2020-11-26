@@ -1,4 +1,4 @@
-export class Button extends Component {
+export class Button {
   constructor(content, func) {
     this.content = content
     this.func = func
