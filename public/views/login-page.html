@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/login-page/login-page.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="login-container">
+    <div class="logo">
+      <h1>Virtual Salon</h1>
+      <img src="../assets/svg/salon/beauty-salon-pink.svg" alt="logo">
+    </div>
+    <form class="role-input">
+      <div class="radio-container">
+        <input class="login-radio" type="radio" name="role" id="client-radio">
+        <label class="radio-label" for="client-radio">client</label>
+        <label class="radio-widget" for="client-radio">
+          <div class="radio-img" id="chair-img"></div>
+        </label>
+      </div>
+      <div class="radio-container">
+        <input class="login-radio" id="bussines-radio" type="radio" name="role">
+        <label class="radio-label" for="bussines-radio">bussines</label>
+        <label class="radio-widget" for="bussines-radio">
+          <div class="radio-img" id="dryer-img"></div>
+        </label>
+      </div>
+    </form>
+    <form class="data-container">
+      <div class="log-container">
+        <input class="data-input" type="text" placeholder="email">
+        <div id="envelop-img" class="input-img"></div>
+      </div>
+      <div class="log-container">
+        <input class="data-input" type="password" placeholder="password">
+        <div id="padlock-img" class="input-img"></div>
+      </div>
+      <button class="sign-button">sign in</button>
+      <button class="subsign-button"><b>not a member? sign up</b></button>
+    </form>
+  </div>
+</body>
+</html>
