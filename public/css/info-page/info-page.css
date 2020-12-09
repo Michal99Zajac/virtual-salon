@@ -191,7 +191,11 @@ body {
       box-shadow: 0 0 10px -1px #707070;
       margin-bottom: 25px;
       padding: 25px;
-      box-sizing: border-box; }
+      box-sizing: border-box;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center; }
       .middle-content .informations-container .info-panel:last-child {
         margin-bottom: 0; }
       .middle-content .informations-container .info-panel .profile-photo-container {
@@ -257,5 +261,33 @@ body {
             width: 50%;
             font-family: "Rubik";
             color: #fa8072; }
+      .middle-content .informations-container .info-panel .password-container {
+        width: 48%;
+        height: 75px;
+        margin: 0;
+        background: white;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        box-sizing: border-box;
+        box-shadow: 0 0 10px -1px #707070; }
+        .middle-content .informations-container .info-panel .password-container .password-area {
+          font-family: "Rubik";
+          color: #707070; }
+      .middle-content .informations-container .info-panel .password-button {
+        height: 75px;
+        width: 48%;
+        border-radius: 5px;
+        border: none;
+        background: #707070;
+        color: #ffffff;
+        font-size: 1.2em;
+        font-family: "Rubik"; }
+        .middle-content .informations-container .info-panel .password-button:focus {
+          outline: none; }
+        .middle-content .informations-container .info-panel .password-button:hover {
+          background: #a1a0a0; }
 
 /*# sourceMappingURL=info-page.css.map */

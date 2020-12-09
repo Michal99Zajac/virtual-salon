@@ -222,6 +222,10 @@ body
       margin-bottom: 25px
       padding: 25px
       box-sizing: border-box
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      align-items: center
 
       &:last-child
         margin-bottom: 0
@@ -302,3 +306,36 @@ body
             width: 50%
             font-family: $rubik
             color: $pink
+
+      .password-container
+        width: 48%
+        height: 75px
+        margin: 0
+        background: white
+        border-radius: 5px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 0 20px
+        box-sizing: border-box
+        box-shadow: 0 0 10px -1px $grey
+
+        .password-area
+          font-family: $rubik
+          color: $grey
+
+      .password-button
+        height: 75px
+        width: 48%
+        border-radius: 5px
+        border: none
+        background: $grey
+        color: $white
+        font-size: 1.2em
+        font-family: $rubik
+
+        &:focus
+          outline: none
+
+        &:hover
+          background: $grey-bright
