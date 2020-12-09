@@ -5,12 +5,13 @@
 body {
   height: 100vh;
   width: 100vw;
+  min-width: min-content;
   padding: 0;
   margin: 0;
   display: flex;
   background: transparent radial-gradient(closest-side at 50% 50%, #E0E0E0 0%, #B5B5B5 100%);
   align-items: flex-start;
-  align-content: flex-start;
+  align-content: space-between;
   justify-content: center;
   flex-wrap: wrap; }
 
@@ -18,13 +19,15 @@ body {
   padding: 0;
   margin: 0;
   width: 100%;
+  min-width: fit-content;
   height: 5%;
   min-height: 50px;
   display: flex;
   flex-direction: row;
   background-color: #fa8072;
   align-items: center;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  box-shadow: 0 0px 5px -1px #707070; }
   .nav-bar-container .logo {
     height: 100%;
     width: 20%;
@@ -39,7 +42,7 @@ body {
     text-decoration: none; }
   .nav-bar-container .search-input-container {
     width: 35%;
-    min-width: 290px;
+    min-width: 305px;
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -147,5 +150,112 @@ body {
           margin-right: 18%; }
         .nav-bar-container .nav-tabs-container .login-container .log-button #profile-img {
           content: url(../../assets/img/person-profile.jpeg); }
+
+.middle-content {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; }
+  .middle-content .informations-container {
+    background: #ffffff;
+    width: 50%;
+    min-width: 750px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 25px 0 25px 0;
+    margin: 25px 0 25px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px -1px grey; }
+    .middle-content .informations-container .account-label {
+      width: 90%;
+      height: 60px;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      font-size: 1.8em;
+      font-family: "Rubik";
+      color: #707070;
+      border: none;
+      border-bottom: 3px solid #707070;
+      margin-top: 0; }
+    .middle-content .informations-container .info-panel {
+      width: 90%;
+      height: auto;
+      background: #fa8072;
+      border-radius: 5px;
+      box-shadow: 0 0 10px -1px #707070;
+      margin-bottom: 25px;
+      padding: 25px;
+      box-sizing: border-box; }
+      .middle-content .informations-container .info-panel:last-child {
+        margin-bottom: 0; }
+      .middle-content .informations-container .info-panel .profile-photo-container {
+        width: 100%;
+        height: 75px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        flex-direction: row; }
+        .middle-content .informations-container .info-panel .profile-photo-container #photo {
+          content: url(../../assets/img/person-profile.jpeg); }
+        .middle-content .informations-container .info-panel .profile-photo-container .profile-picture {
+          height: 100%;
+          width: auto;
+          border-radius: 5px;
+          box-shadow: 0 0 10px -1px #707070; }
+        .middle-content .informations-container .info-panel .profile-photo-container .profile-button {
+          width: 100%;
+          margin-left: 5%;
+          height: 100%;
+          border: none;
+          border-radius: 5px;
+          box-shadow: 0 0 10px -1px #707070;
+          font-family: "Rubik";
+          font-size: 1.2em; }
+          .middle-content .informations-container .info-panel .profile-photo-container .profile-button:focus {
+            outline: none; }
+        .middle-content .informations-container .info-panel .profile-photo-container .change-button {
+          background: #ffffff;
+          color: #707070; }
+          .middle-content .informations-container .info-panel .profile-photo-container .change-button:hover {
+            background: #dddddd; }
+        .middle-content .informations-container .info-panel .profile-photo-container .edit-button {
+          background: #707070;
+          color: #ffffff; }
+          .middle-content .informations-container .info-panel .profile-photo-container .edit-button:hover {
+            background: #a1a0a0; }
+      .middle-content .informations-container .info-panel .info-ul {
+        padding: 0;
+        list-style-type: none;
+        width: 100%;
+        height: auto;
+        margin-top: 25px;
+        margin-bottom: 0;
+        border-radius: 5px;
+        background: white;
+        padding: 20px;
+        box-sizing: border-box;
+        box-shadow: 0 0 10px -1px #707070; }
+        .middle-content .informations-container .info-panel .info-ul .info-li {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 10px;
+          border-bottom: 1px solid #707070; }
+          .middle-content .informations-container .info-panel .info-ul .info-li:last-child {
+            margin-bottom: 0; }
+          .middle-content .informations-container .info-panel .info-ul .info-li .name-data {
+            width: 50%;
+            font-family: "Rubik";
+            color: #707070; }
+          .middle-content .informations-container .info-panel .info-ul .info-li .data {
+            width: 50%;
+            font-family: "Rubik";
+            color: #fa8072; }
 
 /*# sourceMappingURL=info-page.css.map */
