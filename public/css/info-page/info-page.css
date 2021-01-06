@@ -389,5 +389,32 @@ body {
           outline: none; }
         .middle-content .informations-container .info-panel .address-button:hover {
           background: #a1a0a0; }
+    .middle-content .informations-container .worker-informations-container {
+      background: #707070;
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
+      padding: 25px 0 25px 0;
+      margin: 25px 0 25px 0; }
+      .middle-content .informations-container .worker-informations-container .info-panel {
+        width: 90%;
+        height: auto;
+        background: #ffffff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px -1px #a1a0a0;
+        margin-bottom: 25px;
+        padding: 25px;
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        position: relative; }
+        .middle-content .informations-container .worker-informations-container .info-panel:last-child {
+          margin-bottom: 0; }
 
 /*# sourceMappingURL=info-page.css.map */
