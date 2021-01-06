@@ -226,6 +226,7 @@ body
       flex-wrap: wrap
       justify-content: space-between
       align-items: center
+      position: relative
 
       &:last-child
         margin-bottom: 0
@@ -333,9 +334,65 @@ body
         color: $white
         font-size: 1.2em
         font-family: $rubik
+        box-shadow: 0 0 10px -1px $grey
 
         &:focus
           outline: none
 
         &:hover
           background: $grey-bright
+
+      .paycard
+        background: #ffffff
+        box-shadow: 0 0 10px -1px $grey
+        margin: 0
+        border-radius: 5px
+        display: flex
+        width: 50%
+        min-width: 310px
+        height: 180px
+
+      .card-buttons-container
+        height: 180px
+        width: 50%
+        display: flex
+        align-items: center
+        justify-content: flex-end
+        box-sizing: border-box
+        flex-wrap: wrap
+
+        .remove-card-button
+          width: 90%
+          height: 75px
+          box-shadow: 0 0 10px -1px $grey
+          background: $grey
+          border: none
+          border-radius: 5px
+          font-size: 1.2em
+          font-family: 'Rubik'
+          color: $white
+
+        .disable-card-button
+          width: 90%
+          height: 75px
+          box-shadow: 0 0 10px -1px $grey
+          background: $white
+          border: none
+          border-radius: 5px
+          font-size: 1.2em
+          font-family: 'Rubik'
+          color: $grey
+
+      .soon-overlay
+        position: absolute
+        left: 0
+        width: 100%
+        height: 100%
+        background: $grey
+        opacity: 0.8
+        border-radius: 5px
+        display: flex
+        justify-content: center
+        align-items: center
+        color: $white
+        font-size: 3em
