@@ -183,6 +183,23 @@ body {
       border: none;
       border-bottom: 3px solid #707070;
       margin-top: 0; }
+    .middle-content .informations-container .delete-button {
+      width: 90%;
+      height: 75px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      background: #707070;
+      color: #ffffff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px -1px #a1a0a0;
+      font-size: 1.2em;
+      font-family: "Rubik"; }
+      .middle-content .informations-container .delete-button:hover {
+        background: #a1a0a0; }
+      .middle-content .informations-container .delete-button:focus {
+        outline: none; }
     .middle-content .informations-container .info-panel {
       width: 90%;
       height: auto;
@@ -399,7 +416,8 @@ body {
       align-items: center;
       flex-wrap: nowrap;
       padding: 25px 0 25px 0;
-      margin: 0; }
+      margin: 0;
+      margin-bottom: 25px; }
       .middle-content .informations-container .worker-informations-container .info-panel {
         width: 90%;
         height: auto;
