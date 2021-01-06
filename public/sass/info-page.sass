@@ -213,6 +213,26 @@ body
       border-bottom: 3px solid $grey
       margin-top: 0
 
+    .delete-button
+      width: 90%
+      height: 75px
+      display: flex
+      justify-content: center
+      align-items: center
+      border: none
+      background: $grey
+      color: $white
+      border-radius: 5px
+      box-shadow: 0 0 10px -1px $grey-bright
+      font-size: 1.2em
+      font-family: $rubik
+
+      &:hover
+        background: $grey-bright
+
+      &:focus
+        outline: none
+
     .info-panel
       width: 90%
       height: auto
@@ -465,6 +485,7 @@ body
       flex-wrap: nowrap
       padding: 25px 0 25px 0
       margin: 0
+      margin-bottom: 25px
 
       .info-panel
         width: 90%
