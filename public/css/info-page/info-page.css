@@ -489,5 +489,39 @@ body {
                 color: #fa8072; }
               .middle-content .informations-container .worker-informations-container .info-panel .schedule-container .day-container .day-schedule-button:focus {
                 outline: none; }
+        .middle-content .informations-container .worker-informations-container .info-panel .decription-header {
+          font-size: 1.2em;
+          width: 100%;
+          margin: 0;
+          font-family: "Rubik";
+          color: #fa8072;
+          border-bottom: 2px solid #fa8072;
+          margin-bottom: 20px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center; }
+        .middle-content .informations-container .worker-informations-container .info-panel .description {
+          margin: 0;
+          font-size: 0.7em;
+          margin-bottom: 20px;
+          font-family: "Rubik";
+          width: 100%; }
+        .middle-content .informations-container .worker-informations-container .info-panel .description-button {
+          width: 100%;
+          height: 75px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: none;
+          background: #fa8072;
+          color: #ffffff;
+          border-radius: 5px;
+          box-shadow: 0 0 10px -1px #707070;
+          font-size: 1.2em;
+          font-family: "Rubik"; }
+          .middle-content .informations-container .worker-informations-container .info-panel .description-button:hover {
+            background: #ffb3aa; }
+          .middle-content .informations-container .worker-informations-container .info-panel .description-button:focus {
+            outline: none; }
 
 /*# sourceMappingURL=info-page.css.map */
