@@ -464,7 +464,7 @@ body
       align-items: center
       flex-wrap: nowrap
       padding: 25px 0 25px 0
-      margin: 25px 0 25px 0
+      margin: 0
 
       .info-panel
         width: 90%
@@ -483,3 +483,85 @@ body
 
         &:last-child
           margin-bottom: 0
+
+        .schedule-header
+          width: 100%
+          font-size: 1.4em
+          margin: 0
+          display: flex
+          justify-content: center
+          align-items: center
+          border-bottom: $pink solid 2px
+          font-family: $rubik
+          color: $pink
+          margin-bottom: 25px
+
+        .schedule-container
+          width: 100%
+          height: auto
+          display: flex
+          justify-content: flex-start
+          align-items: flex-start
+          box-sizing: border-box
+
+          .day-container
+            display: flex
+            flex-direction: column
+            width: 100%
+            height: 100%
+            justify-content: flex-start
+            align-items: center
+            box-sizing: border-box
+
+            .day-label
+              margin: 0
+              width: 100%
+              height: 100%
+              display: flex
+              justify-content: center
+              align-items: center
+              font-size: 0.7em
+              color: $pink
+              font-family: $rubik
+              margin-bottom: 5px
+
+            .day-schedule
+              list-style-type: none
+              box-sizing: border-box
+              width: 85%
+              height: auto
+              margin: 0
+              display: flex
+              justify-content: center
+              align-items: center
+              padding: 0
+              flex-wrap: wrap
+
+              li
+                width: 100%
+                height: 35px
+                background: $grey
+                margin-bottom: 10px
+                border-radius: 5px
+                display: flex
+                justify-content: center
+                align-items: center
+                font-size: 0.75em
+                font-family: $rubik
+                color: $white
+
+            .day-schedule-button
+              display: flex
+              justify-content: center
+              align-items: center
+              font-size: 0.5em
+              border: none
+              background: $white
+              font-family: $rubik
+              color: $grey
+
+              &:hover
+                color: $pink
+
+              &:focus
+                outline: none

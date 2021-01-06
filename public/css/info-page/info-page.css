@@ -399,7 +399,7 @@ body {
       align-items: center;
       flex-wrap: nowrap;
       padding: 25px 0 25px 0;
-      margin: 25px 0 25px 0; }
+      margin: 0; }
       .middle-content .informations-container .worker-informations-container .info-panel {
         width: 90%;
         height: auto;
@@ -416,5 +416,78 @@ body {
         position: relative; }
         .middle-content .informations-container .worker-informations-container .info-panel:last-child {
           margin-bottom: 0; }
+        .middle-content .informations-container .worker-informations-container .info-panel .schedule-header {
+          width: 100%;
+          font-size: 1.4em;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-bottom: #fa8072 solid 2px;
+          font-family: "Rubik";
+          color: #fa8072;
+          margin-bottom: 25px; }
+        .middle-content .informations-container .worker-informations-container .info-panel .schedule-container {
+          width: 100%;
+          height: auto;
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          box-sizing: border-box; }
+          .middle-content .informations-container .worker-informations-container .info-panel .schedule-container .day-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            justify-content: flex-start;
+            align-items: center;
+            box-sizing: border-box; }
+            .middle-content .informations-container .worker-informations-container .info-panel .schedule-container .day-container .day-label {
+              margin: 0;
+              width: 100%;
+              height: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 0.7em;
+              color: #fa8072;
+              font-family: "Rubik";
+              margin-bottom: 5px; }
+            .middle-content .informations-container .worker-informations-container .info-panel .schedule-container .day-container .day-schedule {
+              list-style-type: none;
+              box-sizing: border-box;
+              width: 85%;
+              height: auto;
+              margin: 0;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 0;
+              flex-wrap: wrap; }
+              .middle-content .informations-container .worker-informations-container .info-panel .schedule-container .day-container .day-schedule li {
+                width: 100%;
+                height: 35px;
+                background: #707070;
+                margin-bottom: 10px;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 0.75em;
+                font-family: "Rubik";
+                color: #ffffff; }
+            .middle-content .informations-container .worker-informations-container .info-panel .schedule-container .day-container .day-schedule-button {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 0.5em;
+              border: none;
+              background: #ffffff;
+              font-family: "Rubik";
+              color: #707070; }
+              .middle-content .informations-container .worker-informations-container .info-panel .schedule-container .day-container .day-schedule-button:hover {
+                color: #fa8072; }
+              .middle-content .informations-container .worker-informations-container .info-panel .schedule-container .day-container .day-schedule-button:focus {
+                outline: none; }
 
 /*# sourceMappingURL=info-page.css.map */
