@@ -701,3 +701,64 @@ body
 
           &:focus
             outline: none
+
+        .price-header
+          width: 100%
+          font-size: 1.4em
+          margin: 0
+          display: flex
+          justify-content: center
+          align-items: center
+          border-bottom: $pink solid 2px
+          font-family: $rubik
+          color: $pink
+          margin-bottom: 25px
+
+        .price-button
+          width: 100%
+          height: 75px
+          display: flex
+          justify-content: center
+          align-items: center
+          border: none
+          background: $pink
+          color: $white
+          border-radius: 5px
+          box-shadow: 0 0 10px -1px $grey
+          font-size: 1.2em
+          font-family: "Rubik"
+
+          &:hover
+            background: $pink-bright
+
+          &:focus
+            outline: none
+
+        .price-list
+          margin: 0
+          margin-bottom: 25px
+          padding: 0
+          list-style-type: none
+          width: 100%
+
+          li
+            display: flex
+            justify-content: space-between
+            align-items: center
+            width: 100%
+            border-bottom: 2px solid $grey-bright
+            margin-bottom: 15px
+            font-family: $rubik
+            font-size: 0.9em
+
+            &:last-child
+              margin-bottom: 0
+
+            .name-price, .value-price
+              margin: 0
+
+            .name-price
+              color: $pink
+
+            .value-price
+              color: $grey
