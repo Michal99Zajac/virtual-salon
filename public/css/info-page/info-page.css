@@ -523,5 +523,86 @@ body {
             background: #ffb3aa; }
           .middle-content .informations-container .worker-informations-container .info-panel .description-button:focus {
             outline: none; }
+        .middle-content .informations-container .worker-informations-container .info-panel .additional-info-header {
+          font-size: 1.2em;
+          width: 100%;
+          margin: 0;
+          font-family: "Rubik";
+          color: #fa8072;
+          border-bottom: 2px solid #fa8072;
+          margin-bottom: 20px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center; }
+        .middle-content .informations-container .worker-informations-container .info-panel .add-info-container {
+          width: 100%;
+          height: auto;
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          margin-bottom: 20px; }
+          .middle-content .informations-container .worker-informations-container .info-panel .add-info-container .add-info-img {
+            width: 30px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; }
+          .middle-content .informations-container .worker-informations-container .info-panel .add-info-container #profession-img {
+            content: url(../../assets/svg/brush/brush-grey.svg); }
+          .middle-content .informations-container .worker-informations-container .info-panel .add-info-container #payment-img {
+            content: url(../../assets/svg/card/credit-card-grey.svg); }
+          .middle-content .informations-container .worker-informations-container .info-panel .add-info-container #certificat-img {
+            content: url(../../assets/svg/education/mortarboard-grey.svg); }
+          .middle-content .informations-container .worker-informations-container .info-panel .add-info-container #web-img {
+            content: url(../../assets/svg/web/world-wide-web-grey.svg); }
+          .middle-content .informations-container .worker-informations-container .info-panel .add-info-container #exp-img {
+            content: url(../../assets/svg/quality/quality-grey.svg); }
+          .middle-content .informations-container .worker-informations-container .info-panel .add-info-container #favorite-img {
+            content: url(../../assets/svg/pin/safety-pin-grey.svg); }
+          .middle-content .informations-container .worker-informations-container .info-panel .add-info-container .add-info-area {
+            width: 100%;
+            height: auto;
+            padding-left: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap; }
+            .middle-content .informations-container .worker-informations-container .info-panel .add-info-container .add-info-area .add-info-subheader {
+              width: 100%;
+              height: 30px;
+              margin: 0;
+              font-size: 1em;
+              font-family: "Rubik";
+              color: #fa8072;
+              border-bottom: 2px solid #707070; }
+            .middle-content .informations-container .worker-informations-container .info-panel .add-info-container .add-info-area .informations {
+              width: 100%;
+              margin: 0;
+              margin-top: 10px;
+              padding: 0;
+              list-style-type: none; }
+              .middle-content .informations-container .worker-informations-container .info-panel .add-info-container .add-info-area .informations li {
+                font-size: 0.9em;
+                border-bottom: 1px solid #a1a0a0;
+                margin-bottom: 10px;
+                font-family: "Rubik";
+                color: #a1a0a0; }
+        .middle-content .informations-container .worker-informations-container .info-panel .add-info-button {
+          width: 100%;
+          height: 75px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: none;
+          background: #fa8072;
+          color: #ffffff;
+          border-radius: 5px;
+          box-shadow: 0 0 10px -1px #707070;
+          font-size: 1.2em;
+          font-family: "Rubik"; }
+          .middle-content .informations-container .worker-informations-container .info-panel .add-info-button:hover {
+            background: #ffb3aa; }
+          .middle-content .informations-container .worker-informations-container .info-panel .add-info-button:focus {
+            outline: none; }
 
 /*# sourceMappingURL=info-page.css.map */
