@@ -1005,10 +1005,10 @@ body {
       text-align: center; }
       .edit-schedule-container .schedule-input-area .schedule-time-input::placeholder {
         color: #a1a0a0; }
-        .edit-schedule-container .schedule-input-area .schedule-time-input::placeholder::hover {
-          color: #ffb3aa; }
       .edit-schedule-container .schedule-input-area .schedule-time-input:hover {
         color: #ffb3aa; }
+        .edit-schedule-container .schedule-input-area .schedule-time-input:hover:placeholder {
+          color: #ffb3aa; }
       .edit-schedule-container .schedule-input-area .schedule-time-input:focus {
         outline: none;
         color: #fa8072; }
@@ -1047,5 +1047,162 @@ body {
       outline: none;
       color: #000000;
       border-color: #fa8072; }
+
+.edit-add-info-container {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  overflow: scroll;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-right: 25px; }
+  .edit-add-info-container .add-info-area {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px; }
+    .edit-add-info-container .add-info-area:nth-child(2) {
+      margin-bottom: 0; }
+    .edit-add-info-container .add-info-area .add-info-header {
+      width: 100%;
+      margin: 0;
+      margin-bottom: 20px;
+      font-size: 1.2em;
+      font-family: "Rubik";
+      border-bottom: 2px solid #707070;
+      color: #fa8072; }
+    .edit-add-info-container .add-info-area .add-info-list {
+      width: 100%;
+      height: auto;
+      margin: 0;
+      margin-bottom: 20px;
+      padding: 0;
+      list-style-type: none; }
+      .edit-add-info-container .add-info-area .add-info-list .add-info-element {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 40px;
+        flex-direction: row-reverse;
+        margin-bottom: 10px; }
+        .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info {
+          font-family: "Rubik";
+          border-bottom: 1px solid #a1a0a0;
+          width: 100%;
+          color: #a1a0a0;
+          margin: 0;
+          height: 100%;
+          display: flex;
+          align-items: center; }
+        .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-delete-button {
+          width: 40px;
+          height: 40px;
+          margin-left: 10px;
+          box-sizing: initial;
+          border: none;
+          font-size: 1.4em;
+          font-family: "Rubik";
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: #ffffff;
+          color: #a1a0a0;
+          padding: 0; }
+          .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-delete-button:hover {
+            color: #d73a49; }
+            .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-delete-button:hover + .add-info {
+              border-color: #d73a49;
+              color: #d73a49; }
+        .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-checkbox-container {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center; }
+          .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-checkbox-container .checkbox-label {
+            width: 90%;
+            height: 40px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-family: "Rubik";
+            color: #707070; }
+          .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-checkbox-container .checkbox-mock {
+            width: 30px;
+            height: 30px;
+            background: #ffffff;
+            border-radius: 5px;
+            border: 2px solid #707070;
+            margin-right: 20px; }
+            .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-checkbox-container .checkbox-mock:hover {
+              border-color: #ffb3aa; }
+          .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-checkbox-container input[type="checkbox"] {
+            display: none; }
+            .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-checkbox-container input[type="checkbox"]:checked ~ .checkbox-mock {
+              background: #fa8072;
+              border-color: #fa8072; }
+              .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-checkbox-container input[type="checkbox"]:checked ~ .checkbox-mock:hover {
+                background: #ffb3aa;
+                border-color: #ffb3aa; }
+            .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-checkbox-container input[type="checkbox"]:disabled ~ .checkbox-mock {
+              border-color: #707070; }
+              .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-checkbox-container input[type="checkbox"]:disabled ~ .checkbox-mock:hover {
+                border-color: #707070; }
+            .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-checkbox-container input[type="checkbox"]:disabled:checked ~ .checkbox-mock {
+              background: #707070;
+              border-color: #707070; }
+              .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-checkbox-container input[type="checkbox"]:disabled:checked ~ .checkbox-mock:hover {
+                background: #707070;
+                border-color: #707070; }
+    .edit-add-info-container .add-info-area .add-info-input-area {
+      width: 100%;
+      height: 40px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
+      .edit-add-info-container .add-info-area .add-info-input-area .add-info-input {
+        width: 100%;
+        height: 100%;
+        font-size: 1.1em;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 0px 5px -1px #707070;
+        box-sizing: border-box;
+        margin-left: 5px;
+        color: #707070;
+        padding-left: 20px; }
+        .edit-add-info-container .add-info-area .add-info-input-area .add-info-input:hover {
+          color: #ffb3aa; }
+          .edit-add-info-container .add-info-area .add-info-input-area .add-info-input:hover::placeholder {
+            color: #ffb3aa; }
+        .edit-add-info-container .add-info-area .add-info-input-area .add-info-input:focus {
+          outline: none;
+          color: #fa8072; }
+          .edit-add-info-container .add-info-area .add-info-input-area .add-info-input:focus:hover {
+            color: #fa8072; }
+        .edit-add-info-container .add-info-area .add-info-input-area .add-info-input::placeholder {
+          color: #a1a0a0; }
+      .edit-add-info-container .add-info-area .add-info-input-area .add-info-input-button {
+        height: 40px;
+        width: 40px;
+        margin-left: 10px;
+        border: none;
+        border-radius: 5px;
+        background: #a1a0a0;
+        font-size: 1.4em;
+        color: #ffffff;
+        box-shadow: 0 0px 5px -1px #707070; }
+        .edit-add-info-container .add-info-area .add-info-input-area .add-info-input-button:hover {
+          background: #fa8072; }
+        .edit-add-info-container .add-info-area .add-info-input-area .add-info-input-button:focus {
+          outline: none; }
 
 /*# sourceMappingURL=info-page.css.map */
