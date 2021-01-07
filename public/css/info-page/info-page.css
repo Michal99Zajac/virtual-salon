@@ -704,18 +704,32 @@ body {
   width: 50%;
   min-width: 750px;
   height: auto;
-  top: 50%;
+  top: 30%;
   padding: 25px;
   box-sizing: border-box;
   background: #ffffff;
   border-radius: 5px;
   box-shadow: 0 0px 5px -1px #707070; }
+  .edit-panel .edit-button {
+    width: 100%;
+    height: 75px;
+    border: none;
+    border-radius: 5px;
+    background: #fa8072;
+    color: #ffffff;
+    box-shadow: 0 0 10px -1px #707070;
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-family: "Rubik"; }
+    .edit-panel .edit-button:hover {
+      background: #ffb3aa; }
   .edit-panel .edit-top-beam {
     width: 100%;
     height: 50px;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end; }
+    align-items: flex-end;
+    margin-bottom: 20px; }
     .edit-panel .edit-top-beam .edit-header {
       width: 100%;
       margin: 0;
@@ -741,5 +755,32 @@ body {
         color: #fa8072; }
       .edit-panel .edit-top-beam .edit-exit:focus {
         outline: none; }
+
+.edit-photo-container {
+  width: 100%;
+  height: 200px;
+  border: 2px solid #fa8072;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .edit-photo-container .edit-photo-uploaded {
+    margin: 0;
+    font-size: 1.2em;
+    font-family: "Rubik";
+    color: #fa8072; }
+  .edit-photo-container .edit-photo-button {
+    display: none;
+    width: 50%;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    background: #707070;
+    color: #ffffff;
+    font-family: "Rubik"; }
+    .edit-photo-container .edit-photo-button:hover {
+      background: #fa8072; }
+    .edit-photo-container .edit-photo-button:focus {
+      outline: none; }
 
 /*# sourceMappingURL=info-page.css.map */
