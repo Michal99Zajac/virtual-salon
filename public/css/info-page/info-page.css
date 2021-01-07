@@ -4,7 +4,7 @@
 
 body {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   min-width: min-content;
   padding: 0;
   margin: 0;
@@ -150,6 +150,30 @@ body {
           margin-right: 18%; }
         .nav-bar-container .nav-tabs-container .login-container .log-button #profile-img {
           content: url(../../assets/img/person-profile.jpeg); }
+
+.end-beam {
+  width: 100%;
+  height: 50px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .end-beam .social-img {
+    height: 70%;
+    width: auto;
+    margin: 0 20px; }
+  .end-beam #ig-img {
+    content: url(../../assets/svg/instagram/instagram-grey.svg); }
+    .end-beam #ig-img:hover {
+      content: url(../../assets/svg/instagram/instagram-pink.svg); }
+  .end-beam #fb-img {
+    content: url(../../assets/svg/facebook/facebook-grey.svg); }
+    .end-beam #fb-img:hover {
+      content: url(../../assets/svg/facebook/facebook-pink.svg); }
+  .end-beam #tt-img {
+    content: url(../../assets/svg/twitter/twitter-grey.svg); }
+    .end-beam #tt-img:hover {
+      content: url(../../assets/svg/twitter/twitter-pink.svg); }
 
 .middle-content {
   height: auto;
