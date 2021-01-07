@@ -1021,3 +1021,59 @@ body
         &:nth-child(2)
           margin: 0 10px
           width: 150%
+
+.edit-password-container
+  width: 100%
+  height: auto
+  display: flex
+  justify-content: center
+  align-items: flex-start
+  flex-wrap: wrap
+
+  .edit-password-area
+    width: 100%
+    height: 40px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    box-sizing: border-box
+    margin-bottom: 20px
+
+    .edit-password
+      margin: 0
+      width: 100%
+      height: 100%
+      display: flex
+      justify-content: flex-start
+      align-items: center
+      border-bottom: 2px solid $grey
+      font-size: 1.2em
+      font-family: $rubik
+      color: $pink
+
+    .edit-password-input
+      width: 100%
+      height: 90%
+      border: none
+      box-shadow: 0 0 10px -1px $grey
+      border-radius: 5px
+      margin-left: 10px
+      padding: 0 0 0 10px
+      box-sizing: border-box
+      color: $grey
+
+      &::placeholder
+        color: $grey-bright
+
+      &:focus
+        outline: none
+        color: $pink
+
+        &:hover
+          color: $pink
+
+      &:hover
+        color: $pink-bright
+
+        &::placeholder
+          color: $pink-bright
