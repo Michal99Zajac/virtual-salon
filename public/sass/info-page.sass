@@ -214,6 +214,7 @@ body
   display: flex
   justify-content: center
   align-items: flex-start
+  position: relative
 
   .informations-container
     background: $white
@@ -814,4 +815,50 @@ body
             .value-price
               color: $grey
 
+.edit-panel
+  position: fixed
+  width: 50%
+  min-width: 750px
+  height: auto
+  top: 50%
+  padding: 25px
+  box-sizing: border-box
+  background: $white
+  border-radius: 5px
+  box-shadow: 0 0px 5px -1px $grey
 
+  .edit-top-beam
+    width: 100%
+    height: 50px
+    display: flex
+    justify-content: space-between
+    align-items: flex-end
+
+    .edit-header
+      width: 100%
+      margin: 0
+      padding: 0
+      border-bottom: 2px solid $pink
+      font-size: 1.4em
+      font-family: $rubik
+      color: $pink
+
+    .edit-exit
+      width: 50px
+      height: 50px
+      margin-left: 10px
+      box-sizing: initial
+      border: none
+      font-size: 1.8em
+      font-family: $rubik
+      display: flex
+      justify-content: center
+      align-items: center
+      background: $white
+      color: $grey
+
+      &:hover
+        color: $pink
+
+      &:focus
+        outline: none
