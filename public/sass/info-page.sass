@@ -820,7 +820,7 @@ body
   width: 50%
   min-width: 750px
   height: auto
-  top: 30%
+  top: 70px
   padding: 25px
   box-sizing: border-box
   background: $white
@@ -888,12 +888,6 @@ body
   justify-content: center
   align-items: center
 
-  .edit-photo-uploaded
-    margin: 0
-    font-size: 1.2em
-    font-family: $rubik
-    color: $pink
-
   .edit-photo-button
     display: none //to change
     width: 50%
@@ -909,3 +903,121 @@ body
 
     &:focus
       outline: none
+
+  .edit-photo-uploaded
+    width: 50%
+    height: 50px
+    border: none
+    border-radius: 5px
+    background: $white
+    color: $pink
+    font-family: $rubik
+
+    &::after
+      content: 'photo uploaded'
+
+    &:hover
+      background: $pink
+      color: $white
+
+      &::after
+        content: 'reupload photo'
+
+    &:focus
+      outline: none
+
+.edit-profile-container
+  width: 100%
+  height: auto
+  display: flex
+  justify-content: center
+  align-items: flex-start
+  flex-wrap: wrap
+
+  .edit-profile-area
+    width: 100%
+    height: 40px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 10px
+
+    .edit-standard-info
+      width: 100%
+      margin: 0
+      height: 100%
+      display: flex
+      justify-content: flex-start
+      align-items: center
+      font-size: 1.2em
+      font-family: $rubik
+      border-bottom: 2px solid $grey
+      color: $pink
+
+    .edit-standard-input
+      width: 100%
+      height: 90%
+      border: none
+      box-shadow: 0 0 10px -1px $grey
+      border-radius: 5px
+      margin-left: 10px
+      padding: 0 0 0 10px
+      box-sizing: border-box
+      color: $grey
+
+      &::placeholder
+        color: $grey-bright
+
+      &:focus
+        outline: none
+        color: $pink
+
+        &:hover
+          color: $pink
+
+      &:hover
+        color: $pink-bright
+
+        &::placeholder
+          color: $pink-bright
+
+    .edit-date-area
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 100%
+      height: 100%
+      margin-left: 10px
+
+      .edit-date-input
+        width: 100%
+        height: 90%
+        border: none
+        padding: 0
+        box-shadow: 0 0 10px -1px $grey
+        border-radius: 5px
+        text-align: center
+        color: $grey
+
+        &::placeholder
+          color: $grey-bright
+
+        &:focus
+          outline: none
+          color: $pink
+
+          &:hover
+            color: $pink
+
+        &:hover
+          color: $pink-bright
+
+          &::placeholder
+            color: $pink-bright
+
+        &:nth-child(1)
+          width: 70%
+
+        &:nth-child(2)
+          margin: 0 10px
+          width: 150%

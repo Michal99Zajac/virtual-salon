@@ -704,7 +704,7 @@ body {
   width: 50%;
   min-width: 750px;
   height: auto;
-  top: 30%;
+  top: 70px;
   padding: 25px;
   box-sizing: border-box;
   background: #ffffff;
@@ -764,11 +764,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center; }
-  .edit-photo-container .edit-photo-uploaded {
-    margin: 0;
-    font-size: 1.2em;
-    font-family: "Rubik";
-    color: #fa8072; }
   .edit-photo-container .edit-photo-button {
     display: none;
     width: 50%;
@@ -782,5 +777,101 @@ body {
       background: #fa8072; }
     .edit-photo-container .edit-photo-button:focus {
       outline: none; }
+  .edit-photo-container .edit-photo-uploaded {
+    width: 50%;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #fa8072;
+    font-family: "Rubik"; }
+    .edit-photo-container .edit-photo-uploaded::after {
+      content: "photo uploaded"; }
+    .edit-photo-container .edit-photo-uploaded:hover {
+      background: #fa8072;
+      color: #ffffff; }
+      .edit-photo-container .edit-photo-uploaded:hover::after {
+        content: "reupload photo"; }
+    .edit-photo-container .edit-photo-uploaded:focus {
+      outline: none; }
+
+.edit-profile-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap; }
+  .edit-profile-container .edit-profile-area {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; }
+    .edit-profile-container .edit-profile-area .edit-standard-info {
+      width: 100%;
+      margin: 0;
+      height: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: 1.2em;
+      font-family: "Rubik";
+      border-bottom: 2px solid #707070;
+      color: #fa8072; }
+    .edit-profile-container .edit-profile-area .edit-standard-input {
+      width: 100%;
+      height: 90%;
+      border: none;
+      box-shadow: 0 0 10px -1px #707070;
+      border-radius: 5px;
+      margin-left: 10px;
+      padding: 0 0 0 10px;
+      box-sizing: border-box;
+      color: #707070; }
+      .edit-profile-container .edit-profile-area .edit-standard-input::placeholder {
+        color: #a1a0a0; }
+      .edit-profile-container .edit-profile-area .edit-standard-input:focus {
+        outline: none;
+        color: #fa8072; }
+        .edit-profile-container .edit-profile-area .edit-standard-input:focus:hover {
+          color: #fa8072; }
+      .edit-profile-container .edit-profile-area .edit-standard-input:hover {
+        color: #ffb3aa; }
+        .edit-profile-container .edit-profile-area .edit-standard-input:hover::placeholder {
+          color: #ffb3aa; }
+    .edit-profile-container .edit-profile-area .edit-date-area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      margin-left: 10px; }
+      .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input {
+        width: 100%;
+        height: 90%;
+        border: none;
+        padding: 0;
+        box-shadow: 0 0 10px -1px #707070;
+        border-radius: 5px;
+        text-align: center;
+        color: #707070; }
+        .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input::placeholder {
+          color: #a1a0a0; }
+        .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input:focus {
+          outline: none;
+          color: #fa8072; }
+          .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input:focus:hover {
+            color: #fa8072; }
+        .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input:hover {
+          color: #ffb3aa; }
+          .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input:hover::placeholder {
+            color: #ffb3aa; }
+        .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input:nth-child(1) {
+          width: 70%; }
+        .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input:nth-child(2) {
+          margin: 0 10px;
+          width: 150%; }
 
 /*# sourceMappingURL=info-page.css.map */
