@@ -795,21 +795,21 @@ body {
     .edit-photo-container .edit-photo-uploaded:focus {
       outline: none; }
 
-.edit-profile-container {
+.edit-profile-container, .edit-address-container {
   width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap; }
-  .edit-profile-container .edit-profile-area {
+  .edit-profile-container .edit-profile-area, .edit-profile-container .edit-address-area, .edit-address-container .edit-profile-area, .edit-address-container .edit-address-area {
     width: 100%;
     height: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px; }
-    .edit-profile-container .edit-profile-area .edit-standard-info {
+    .edit-profile-container .edit-profile-area .edit-standard-info, .edit-profile-container .edit-profile-area .edit-address, .edit-profile-container .edit-address-area .edit-standard-info, .edit-profile-container .edit-address-area .edit-address, .edit-address-container .edit-profile-area .edit-standard-info, .edit-address-container .edit-profile-area .edit-address, .edit-address-container .edit-address-area .edit-standard-info, .edit-address-container .edit-address-area .edit-address {
       width: 100%;
       margin: 0;
       height: 100%;
@@ -820,7 +820,7 @@ body {
       font-family: "Rubik";
       border-bottom: 2px solid #707070;
       color: #fa8072; }
-    .edit-profile-container .edit-profile-area .edit-standard-input {
+    .edit-profile-container .edit-profile-area .edit-standard-input, .edit-profile-container .edit-profile-area .edit-address-input, .edit-profile-container .edit-address-area .edit-standard-input, .edit-profile-container .edit-address-area .edit-address-input, .edit-address-container .edit-profile-area .edit-standard-input, .edit-address-container .edit-profile-area .edit-address-input, .edit-address-container .edit-address-area .edit-standard-input, .edit-address-container .edit-address-area .edit-address-input {
       width: 100%;
       height: 90%;
       border: none;
@@ -830,25 +830,25 @@ body {
       padding: 0 0 0 10px;
       box-sizing: border-box;
       color: #707070; }
-      .edit-profile-container .edit-profile-area .edit-standard-input::placeholder {
+      .edit-profile-container .edit-profile-area .edit-standard-input::placeholder, .edit-profile-container .edit-profile-area .edit-address-input::placeholder, .edit-profile-container .edit-address-area .edit-standard-input::placeholder, .edit-profile-container .edit-address-area .edit-address-input::placeholder, .edit-address-container .edit-profile-area .edit-standard-input::placeholder, .edit-address-container .edit-profile-area .edit-address-input::placeholder, .edit-address-container .edit-address-area .edit-standard-input::placeholder, .edit-address-container .edit-address-area .edit-address-input::placeholder {
         color: #a1a0a0; }
-      .edit-profile-container .edit-profile-area .edit-standard-input:focus {
+      .edit-profile-container .edit-profile-area .edit-standard-input:focus, .edit-profile-container .edit-profile-area .edit-address-input:focus, .edit-profile-container .edit-address-area .edit-standard-input:focus, .edit-profile-container .edit-address-area .edit-address-input:focus, .edit-address-container .edit-profile-area .edit-standard-input:focus, .edit-address-container .edit-profile-area .edit-address-input:focus, .edit-address-container .edit-address-area .edit-standard-input:focus, .edit-address-container .edit-address-area .edit-address-input:focus {
         outline: none;
         color: #fa8072; }
-        .edit-profile-container .edit-profile-area .edit-standard-input:focus:hover {
+        .edit-profile-container .edit-profile-area .edit-standard-input:focus:hover, .edit-profile-container .edit-profile-area .edit-address-input:focus:hover, .edit-profile-container .edit-address-area .edit-standard-input:focus:hover, .edit-profile-container .edit-address-area .edit-address-input:focus:hover, .edit-address-container .edit-profile-area .edit-standard-input:focus:hover, .edit-address-container .edit-profile-area .edit-address-input:focus:hover, .edit-address-container .edit-address-area .edit-standard-input:focus:hover, .edit-address-container .edit-address-area .edit-address-input:focus:hover {
           color: #fa8072; }
-      .edit-profile-container .edit-profile-area .edit-standard-input:hover {
+      .edit-profile-container .edit-profile-area .edit-standard-input:hover, .edit-profile-container .edit-profile-area .edit-address-input:hover, .edit-profile-container .edit-address-area .edit-standard-input:hover, .edit-profile-container .edit-address-area .edit-address-input:hover, .edit-address-container .edit-profile-area .edit-standard-input:hover, .edit-address-container .edit-profile-area .edit-address-input:hover, .edit-address-container .edit-address-area .edit-standard-input:hover, .edit-address-container .edit-address-area .edit-address-input:hover {
         color: #ffb3aa; }
-        .edit-profile-container .edit-profile-area .edit-standard-input:hover::placeholder {
+        .edit-profile-container .edit-profile-area .edit-standard-input:hover::placeholder, .edit-profile-container .edit-profile-area .edit-address-input:hover::placeholder, .edit-profile-container .edit-address-area .edit-standard-input:hover::placeholder, .edit-profile-container .edit-address-area .edit-address-input:hover::placeholder, .edit-address-container .edit-profile-area .edit-standard-input:hover::placeholder, .edit-address-container .edit-profile-area .edit-address-input:hover::placeholder, .edit-address-container .edit-address-area .edit-standard-input:hover::placeholder, .edit-address-container .edit-address-area .edit-address-input:hover::placeholder {
           color: #ffb3aa; }
-    .edit-profile-container .edit-profile-area .edit-date-area {
+    .edit-profile-container .edit-profile-area .edit-date-area, .edit-profile-container .edit-address-area .edit-date-area, .edit-address-container .edit-profile-area .edit-date-area, .edit-address-container .edit-address-area .edit-date-area {
       display: flex;
       justify-content: center;
       align-items: center;
       width: 100%;
       height: 100%;
       margin-left: 10px; }
-      .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input {
+      .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input, .edit-profile-container .edit-address-area .edit-date-area .edit-date-input, .edit-address-container .edit-profile-area .edit-date-area .edit-date-input, .edit-address-container .edit-address-area .edit-date-area .edit-date-input {
         width: 100%;
         height: 90%;
         border: none;
@@ -857,20 +857,20 @@ body {
         border-radius: 5px;
         text-align: center;
         color: #707070; }
-        .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input::placeholder {
+        .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input::placeholder, .edit-profile-container .edit-address-area .edit-date-area .edit-date-input::placeholder, .edit-address-container .edit-profile-area .edit-date-area .edit-date-input::placeholder, .edit-address-container .edit-address-area .edit-date-area .edit-date-input::placeholder {
           color: #a1a0a0; }
-        .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input:focus {
+        .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input:focus, .edit-profile-container .edit-address-area .edit-date-area .edit-date-input:focus, .edit-address-container .edit-profile-area .edit-date-area .edit-date-input:focus, .edit-address-container .edit-address-area .edit-date-area .edit-date-input:focus {
           outline: none;
           color: #fa8072; }
-          .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input:focus:hover {
+          .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input:focus:hover, .edit-profile-container .edit-address-area .edit-date-area .edit-date-input:focus:hover, .edit-address-container .edit-profile-area .edit-date-area .edit-date-input:focus:hover, .edit-address-container .edit-address-area .edit-date-area .edit-date-input:focus:hover {
             color: #fa8072; }
-        .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input:hover {
+        .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input:hover, .edit-profile-container .edit-address-area .edit-date-area .edit-date-input:hover, .edit-address-container .edit-profile-area .edit-date-area .edit-date-input:hover, .edit-address-container .edit-address-area .edit-date-area .edit-date-input:hover {
           color: #ffb3aa; }
-          .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input:hover::placeholder {
+          .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input:hover::placeholder, .edit-profile-container .edit-address-area .edit-date-area .edit-date-input:hover::placeholder, .edit-address-container .edit-profile-area .edit-date-area .edit-date-input:hover::placeholder, .edit-address-container .edit-address-area .edit-date-area .edit-date-input:hover::placeholder {
             color: #ffb3aa; }
-        .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input:nth-child(1) {
+        .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input:nth-child(1), .edit-profile-container .edit-address-area .edit-date-area .edit-date-input:nth-child(1), .edit-address-container .edit-profile-area .edit-date-area .edit-date-input:nth-child(1), .edit-address-container .edit-address-area .edit-date-area .edit-date-input:nth-child(1) {
           width: 70%; }
-        .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input:nth-child(2) {
+        .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input:nth-child(2), .edit-profile-container .edit-address-area .edit-date-area .edit-date-input:nth-child(2), .edit-address-container .edit-profile-area .edit-date-area .edit-date-input:nth-child(2), .edit-address-container .edit-address-area .edit-date-area .edit-date-input:nth-child(2) {
           margin: 0 10px;
           width: 150%; }
 
