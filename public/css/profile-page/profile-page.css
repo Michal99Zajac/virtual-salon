@@ -164,7 +164,7 @@
       .schedule-container .schedule-ul .schedule-li-booked:hover {
         background: #a1a0a0; }
 
-.contact-beam {
+.contact-beam, .price-beam {
   width: 100%;
   margin: 0;
   font-family: "Rubik";
@@ -173,20 +173,20 @@
   border-bottom: 2px solid #fa8072;
   margin-bottom: 10px; }
 
-.contact-ul {
+.contact-ul, .price-ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
   width: 100%;
   height: auto; }
-  .contact-ul .contact-li {
+  .contact-ul .contact-li, .contact-ul .price-li, .price-ul .contact-li, .price-ul .price-li {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
     height: 40px;
     border-bottom: 1px solid #707070; }
-    .contact-ul .contact-li .contact-type, .contact-ul .contact-li .contact-value {
+    .contact-ul .contact-li .contact-type, .contact-ul .contact-li .contact-value, .contact-ul .contact-li .price-name, .contact-ul .contact-li .price-value, .contact-ul .price-li .contact-type, .contact-ul .price-li .contact-value, .contact-ul .price-li .price-name, .contact-ul .price-li .price-value, .price-ul .contact-li .contact-type, .price-ul .contact-li .contact-value, .price-ul .contact-li .price-name, .price-ul .contact-li .price-value, .price-ul .price-li .contact-type, .price-ul .price-li .contact-value, .price-ul .price-li .price-name, .price-ul .price-li .price-value {
       margin: 0;
       height: 100%;
       width: 100%;
@@ -196,8 +196,10 @@
       align-items: center;
       font-size: 1.1em;
       color: #707070; }
-    .contact-ul .contact-li .contact-value {
+    .contact-ul .contact-li .contact-value, .contact-ul .contact-li .price-value, .contact-ul .price-li .contact-value, .contact-ul .price-li .price-value, .price-ul .contact-li .contact-value, .price-ul .contact-li .price-value, .price-ul .price-li .contact-value, .price-ul .price-li .price-value {
       width: 150%;
       color: #fa8072; }
+    .contact-ul .contact-li .price-value, .contact-ul .price-li .price-value, .price-ul .contact-li .price-value, .price-ul .price-li .price-value {
+      justify-content: flex-end; }
 
 /*# sourceMappingURL=profile-page.css.map */
