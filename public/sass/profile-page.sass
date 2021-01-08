@@ -98,6 +98,9 @@
     align-items: center
     justify-content: center
 
+    &:focus
+      outline: none
+
     .arrow
       height: 100%
       content: url(../../assets/svg/arrow/next-grey.svg)
@@ -184,3 +187,42 @@
 
       &:hover
         background: $grey-bright
+
+.contact-beam
+  width: 100%
+  margin: 0
+  font-family: $rubik
+  font-size: 1.4em
+  color: $pink
+  border-bottom: 2px solid $pink
+  margin-bottom: 10px
+
+.contact-ul
+  margin: 0
+  padding: 0
+  list-style-type: none
+  width: 100%
+  height: auto
+
+  .contact-li
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 10px
+    height: 40px
+    border-bottom: 1px solid $grey
+
+    .contact-type, .contact-value
+      margin: 0
+      height: 100%
+      width: 100%
+      font-family: $rubik
+      display: flex
+      justify-content: flex-start
+      align-items: center
+      font-size: 1.1em
+      color: $grey
+
+    .contact-value
+      width: 150%
+      color: $pink
