@@ -6,16 +6,17 @@
   height: auto
   width: 100%
   display: flex
-  justify-content: center
-  align-items: flex-start
+  justify-content: flex-start
+  align-items: center
   position: relative
+  flex-direction: column
 
   .info-panel
     height: 100%
     width: 40%
     min-width: 720px
     padding: 20px
-    margin: 20px
+    margin: 10px 0
     box-sizing: border-box
     background: $white
     border-radius: 5px
@@ -72,3 +73,114 @@
 
   #profile-img
     content: url(../../assets/img/person-profile.jpeg)
+
+.schedule-beam
+  width: 100%
+  height: 60px
+  margin-bottom: 10px
+  display: flex
+  align-items: center
+  justify-content: space-between
+  border-bottom: 2px solid $pink
+
+  .schedule-header
+    margin: 0
+    font-size: 1.5em
+    font-family: $rubik
+    color: $pink
+
+  .schedule-arrow
+    border: none
+    background: $white
+    height: 60%
+    padding: 0
+    display: flex
+    align-items: center
+    justify-content: center
+
+    .arrow
+      height: 100%
+      content: url(../../assets/svg/arrow/next-grey.svg)
+      display: flex
+      justify-content: center
+      align-items: center
+
+      &:hover
+        content: url(../../assets/svg/arrow/next-pink.svg)
+
+    #schedule-arrow-left
+      transform: rotate(180deg)
+
+    #schedule-arrow-right
+      transform: rotate(0deg)
+
+.schedule-container
+  width: 100%
+  height: auto
+  display: flex
+  align-items: flex-start
+  justify-content: space-between
+
+  .schedule-ul
+    padding: 0
+    margin: 0
+    list-style-type: none
+    width: 100%
+    height: auto
+    display: flex
+    justify-content: center
+    align-content: flex-start
+    flex-wrap: wrap
+
+    .schedule-ul-header
+      width: 100%
+      height: 45px
+      display: flex
+      align-items: flex-start
+      justify-content: center
+      flex-wrap: wrap
+      margin-bottom: 10px
+      align-content: flex-start
+
+      .day
+        margin: 0
+        font-size: 0.9em
+        font-family: $rubik
+        color: $pink
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+
+      .data
+        width: 100%
+        font-size: 0.6em
+        margin: 0
+        display: flex
+        justify-content: center
+        align-items: center
+        color: $grey
+        font-family: $rubik
+
+    .schedule-li
+      width: 85%
+      height: 40px
+      background: $grey
+      border-radius: 5px
+      box-shadow: 0 0 5px -1px $black
+      display: flex
+      justify-content: center
+      align-items: center
+      color: $white
+      margin-bottom: 10px
+      font-family: $rubik
+      font-size: 0.9em
+
+      &:hover
+        background: $pink
+
+    .schedule-li-booked
+      background: $grey-bright
+
+      &:hover
+        background: $grey-bright
