@@ -188,7 +188,7 @@
       &:hover
         background: $grey-bright
 
-.contact-beam
+.contact-beam, .price-beam
   width: 100%
   margin: 0
   font-family: $rubik
@@ -197,14 +197,14 @@
   border-bottom: 2px solid $pink
   margin-bottom: 10px
 
-.contact-ul
+.contact-ul, .price-ul
   margin: 0
   padding: 0
   list-style-type: none
   width: 100%
   height: auto
 
-  .contact-li
+  .contact-li, .price-li
     display: flex
     align-items: center
     justify-content: space-between
@@ -212,7 +212,7 @@
     height: 40px
     border-bottom: 1px solid $grey
 
-    .contact-type, .contact-value
+    .contact-type, .contact-value, .price-name, .price-value
       margin: 0
       height: 100%
       width: 100%
@@ -223,6 +223,9 @@
       font-size: 1.1em
       color: $grey
 
-    .contact-value
+    .contact-value, .price-value
       width: 150%
       color: $pink
+
+    .price-value
+      justify-content: flex-end
