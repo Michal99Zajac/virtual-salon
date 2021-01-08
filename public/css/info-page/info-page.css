@@ -1311,4 +1311,58 @@ body {
       .edit-price-container .price-input-area .price-input-button:focus {
         outline: none; }
 
+.delete-panel {
+  width: 40%;
+  min-width: 200px;
+  top: 40%;
+  background: #707070;
+  box-shadow: 0 0px 5px -1px #000000; }
+  .delete-panel .edit-top-beam .delete-exit {
+    background: #707070;
+    color: #ffffff; }
+  .delete-panel .edit-top-beam .delete-header {
+    border-color: #ffffff;
+    color: #ffffff; }
+  .delete-panel .delete-button {
+    background: #a1a0a0; }
+    .delete-panel .delete-button:hover {
+      background: #d73a49; }
+
+.delete-account-container {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .delete-account-container .delete-confrim-header {
+    margin: 0;
+    margin-right: 10px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1.2em;
+    font-family: "Rubik";
+    color: #ffffff; }
+  .delete-account-container .delete-password-input {
+    width: 100%;
+    height: 60%;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0px 5px -1px #000000;
+    padding-left: 20px;
+    color: #707070; }
+    .delete-account-container .delete-password-input:hover {
+      color: #ffb3aa; }
+      .delete-account-container .delete-password-input:hover::placeholder {
+        color: #ffb3aa; }
+    .delete-account-container .delete-password-input:focus {
+      outline: none;
+      color: #fa8072; }
+      .delete-account-container .delete-password-input:focus:hover {
+        color: #fa8072; }
+    .delete-account-container .delete-password-input::placeholder {
+      color: #a1a0a0; }
+
 /*# sourceMappingURL=info-page.css.map */

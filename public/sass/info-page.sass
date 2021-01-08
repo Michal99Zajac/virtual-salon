@@ -1529,7 +1529,6 @@ body
     .price-input-button
       height: 40px
       width: 40px
-      // margin-left: 10px
       border: none
       border-radius: 5px
       background: $grey-bright
@@ -1542,3 +1541,69 @@ body
 
       &:focus
         outline: none
+
+.delete-panel
+  width: 40%
+  min-width: 200px
+  top: 40%
+  background: $grey
+  box-shadow: 0 0px 5px -1px $black
+
+  .edit-top-beam
+    .delete-exit
+      background: $grey
+      color: $white
+
+    .delete-header
+      border-color: $white
+      color: $white
+
+  .delete-button
+    background: $grey-bright
+
+    &:hover
+      background: $delete-color
+
+.delete-account-container
+  width: 100%
+  height: 70px
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+  .delete-confrim-header
+    margin: 0
+    margin-right: 10px
+    width: 50%
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    font-size: 1.2em
+    font-family: $rubik
+    color: $white
+
+  .delete-password-input
+    width: 100%
+    height: 60%
+    border-radius: 5px
+    border: none
+    box-shadow: 0 0px 5px -1px $black
+    padding-left: 20px
+    color: $grey
+
+    &:hover
+        color: $pink-bright
+
+        &::placeholder
+            color: $pink-bright
+
+    &:focus
+      outline: none
+      color: $pink
+
+      &:hover
+        color: $pink
+
+    &::placeholder
+      color: $grey-bright
