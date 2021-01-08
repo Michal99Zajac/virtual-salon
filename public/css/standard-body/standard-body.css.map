@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAQ,kHAA0G;ACGlH,CAAC;EACC,SAAS,EAAE,IAAI;;AAEjB,IAAI;EACF,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,IAAI;EACX,SAAS,EAAE,WAAW;EACtB,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,IAAI;EACb,UAAU,EAAE,8EAA8E;EAC1F,WAAW,EAAE,UAAU;EACvB,aAAa,EAAE,aAAa;EAC5B,eAAe,EAAE,MAAM;EACvB,SAAS,EAAE,IAAI",
+"sources": ["../../sass/variables/fonts.sass","../../sass/assets/standard-body.sass"],
+"names": [],
+"file": "standard-body.css"
+}
