@@ -1205,4 +1205,110 @@ body {
         .edit-add-info-container .add-info-area .add-info-input-area .add-info-input-button:focus {
           outline: none; }
 
+.edit-price-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; }
+  .edit-price-container .price-area {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    overflow: scroll;
+    overflow-x: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding-right: 25px; }
+    .edit-price-container .price-area .price-list {
+      width: 100%;
+      height: auto;
+      margin: 0;
+      margin-bottom: 20px;
+      padding: 0;
+      list-style-type: none; }
+      .edit-price-container .price-area .price-list .price-element {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 40px;
+        flex-direction: row-reverse;
+        margin-bottom: 10px; }
+        .edit-price-container .price-area .price-list .price-element .price-info {
+          font-family: "Rubik";
+          border-bottom: 1px solid #a1a0a0;
+          width: 100%;
+          color: #a1a0a0;
+          margin: 0;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          margin-right: 10px; }
+        .edit-price-container .price-area .price-list .price-element .price-delete-button {
+          width: 40px;
+          height: 40px;
+          box-sizing: initial;
+          border: none;
+          font-size: 1.4em;
+          font-family: "Rubik";
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: #ffffff;
+          color: #a1a0a0;
+          padding: 0; }
+          .edit-price-container .price-area .price-list .price-element .price-delete-button:hover {
+            color: #d73a49; }
+            .edit-price-container .price-area .price-list .price-element .price-delete-button:hover ~ .price-info {
+              border-color: #d73a49;
+              color: #d73a49; }
+  .edit-price-container .price-input-area {
+    width: 100%;
+    height: 40px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .edit-price-container .price-input-area .price-input {
+      width: 100%;
+      height: 100%;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 0px 5px -1px #707070;
+      box-sizing: border-box;
+      margin-left: 5px;
+      color: #707070;
+      padding-left: 20px;
+      margin-right: 10px; }
+      .edit-price-container .price-input-area .price-input:hover {
+        color: #ffb3aa; }
+        .edit-price-container .price-input-area .price-input:hover::placeholder {
+          color: #ffb3aa; }
+      .edit-price-container .price-input-area .price-input:focus {
+        outline: none;
+        color: #fa8072; }
+        .edit-price-container .price-input-area .price-input:focus:hover {
+          color: #fa8072; }
+      .edit-price-container .price-input-area .price-input::placeholder {
+        color: #a1a0a0; }
+    .edit-price-container .price-input-area .price-input-button {
+      height: 40px;
+      width: 40px;
+      border: none;
+      border-radius: 5px;
+      background: #a1a0a0;
+      font-size: 1.4em;
+      color: #ffffff;
+      box-shadow: 0 0px 5px -1px #707070; }
+      .edit-price-container .price-input-area .price-input-button:hover {
+        background: #fa8072; }
+      .edit-price-container .price-input-area .price-input-button:focus {
+        outline: none; }
+
 /*# sourceMappingURL=info-page.css.map */
