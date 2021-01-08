@@ -22,31 +22,58 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end; }
-  .top-area .sign-buttons {
+  .top-area .profile-area {
     width: 20%;
     min-width: 310px;
     height: 50%;
     display: flex;
     justify-content: space-around;
     align-items: center; }
-    .top-area .sign-buttons .sign-button {
+    .top-area .profile-area .profile {
+      width: 80%;
+      height: 100%;
+      align-items: center;
+      justify-content: flex-end;
+      display: flex;
+      box-shadow: 0 0px 5px -1px #000000;
+      border-radius: 5px; }
+      .top-area .profile-area .profile .profile-photo {
+        height: 100%;
+        width: auto;
+        border-radius: 5px 0 0 5px; }
+        .top-area .profile-area .profile .profile-photo:hover {
+          opacity: 0.9; }
+      .top-area .profile-area .profile #profile-img {
+        content: url(../../assets/img/person-profile.jpeg); }
+      .top-area .profile-area .profile .profile-logout {
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 0 5px 5px 0;
+        font-family: "Rubik";
+        font-size: 1.1em;
+        background: #ffffff;
+        color: #707070; }
+        .top-area .profile-area .profile .profile-logout:hover {
+          color: #fa8072; }
+    .top-area .profile-area .sign-button {
       height: 100%;
       width: 40%;
       font-size: 0.8em;
       border-radius: 5px;
       border: none;
       min-width: 150px; }
-      .top-area .sign-buttons .sign-button:focus {
+      .top-area .profile-area .sign-button:focus {
         outline: none; }
-    .top-area .sign-buttons #sign-in-button {
+    .top-area .profile-area #sign-in-button {
       background: #fa8072;
       color: #ffffff; }
-      .top-area .sign-buttons #sign-in-button:hover {
+      .top-area .profile-area #sign-in-button:hover {
         background-color: #ffb3aa; }
-    .top-area .sign-buttons #sign-up-button {
+    .top-area .profile-area #sign-up-button {
       background: #ffffff;
       color: #fa8072; }
-      .top-area .sign-buttons #sign-up-button:hover {
+      .top-area .profile-area #sign-up-button:hover {
         background-color: #dddddd; }
   .top-area .logo {
     width: 25%;

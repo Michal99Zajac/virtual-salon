@@ -25,13 +25,46 @@ body
   align-items: center
   justify-content: flex-end
 
-  .sign-buttons
+  .profile-area
     width: 20%
     min-width: 310px
     height: 50%
     display: flex
     justify-content: space-around
     align-items: center
+
+    .profile
+      width: 80%
+      height: 100%
+      align-items: center
+      justify-content: flex-end
+      display: flex
+      box-shadow: 0 0px 5px -1px $black
+      border-radius: 5px
+
+      .profile-photo
+        height: 100%
+        width: auto
+        border-radius: 5px 0 0 5px
+
+        &:hover
+          opacity: 0.9
+
+      #profile-img
+        content: url(../../assets/img/person-profile.jpeg)
+
+      .profile-logout
+        width: 100%
+        height: 100%
+        border: none
+        border-radius: 0 5px 5px 0
+        font-family: $rubik
+        font-size: 1.1em
+        background: $white
+        color: $grey
+
+        &:hover
+          color: $pink
 
     .sign-button
       height: 100%
