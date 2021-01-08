@@ -164,7 +164,7 @@
       .schedule-container .schedule-ul .schedule-li-booked:hover {
         background: #a1a0a0; }
 
-.contact-beam, .price-beam {
+.contact-beam, .price-beam, .add-info-beam {
   width: 100%;
   margin: 0;
   font-family: "Rubik";
@@ -201,5 +201,62 @@
       color: #fa8072; }
     .contact-ul .contact-li .price-value, .contact-ul .price-li .price-value, .price-ul .contact-li .price-value, .price-ul .price-li .price-value {
       justify-content: flex-end; }
+
+.add-info-ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  .add-info-ul .add-info-li {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start; }
+    .add-info-ul .add-info-li:last-child {
+      margin-bottom: 0; }
+    .add-info-ul .add-info-li #profession-img {
+      content: url(../../assets/svg/brush/brush-grey.svg); }
+    .add-info-ul .add-info-li #payment-img {
+      content: url(../../assets/svg/card/credit-card-grey.svg); }
+    .add-info-ul .add-info-li #certificate-img {
+      content: url(../../assets/svg/education/mortarboard-grey.svg); }
+    .add-info-ul .add-info-li #web-img {
+      content: url(../../assets/svg/web/world-wide-web-grey.svg); }
+    .add-info-ul .add-info-li #exp-img {
+      content: url(../../assets/svg/quality/quality-grey.svg); }
+    .add-info-ul .add-info-li #favorite-img {
+      content: url(../../assets/svg/pin/safety-pin-grey.svg); }
+    .add-info-ul .add-info-li .add-info-img {
+      width: 30px;
+      height: 100%;
+      padding-right: 10px; }
+    .add-info-ul .add-info-li .add-info-container {
+      width: 100%;
+      height: auto;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: wrap; }
+      .add-info-ul .add-info-li .add-info-container .add-info-header {
+        width: 100%;
+        height: 30px;
+        margin: 0;
+        font-family: "Rubik";
+        border-bottom: 1px solid #707070;
+        color: #707070;
+        font-size: 1em; }
+      .add-info-ul .add-info-li .add-info-container .add-info-sub-ul {
+        width: 100%;
+        padding: 0;
+        list-style-type: none;
+        height: auto; }
+        .add-info-ul .add-info-li .add-info-container .add-info-sub-ul .add-info-sub-li {
+          margin: 5px 0;
+          font-family: "Rubik";
+          font-size: 0.9em;
+          color: #a1a0a0;
+          width: 100%;
+          border-bottom: 1px solid #a1a0a0; }
 
 /*# sourceMappingURL=profile-page.css.map */

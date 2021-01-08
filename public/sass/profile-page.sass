@@ -188,7 +188,7 @@
       &:hover
         background: $grey-bright
 
-.contact-beam, .price-beam
+.contact-beam, .price-beam, .add-info-beam
   width: 100%
   margin: 0
   font-family: $rubik
@@ -229,3 +229,73 @@
 
     .price-value
       justify-content: flex-end
+
+.add-info-ul
+  list-style-type: none
+  margin: 0
+  padding: 0
+
+  .add-info-li
+    width: 100%
+    height: auto
+    margin-bottom: 10px
+    display: flex
+    align-items: flex-start
+    justify-content: flex-start
+
+    &:last-child
+      margin-bottom: 0
+
+    #profession-img
+      content: url(../../assets/svg/brush/brush-grey.svg)
+
+    #payment-img
+      content: url(../../assets/svg/card/credit-card-grey.svg)
+
+    #certificate-img
+      content: url(../../assets/svg/education/mortarboard-grey.svg)
+
+    #web-img
+      content: url(../../assets/svg/web/world-wide-web-grey.svg)
+
+    #exp-img
+      content: url(../../assets/svg/quality/quality-grey.svg)
+
+    #favorite-img
+      content: url(../../assets/svg/pin/safety-pin-grey.svg)
+
+    .add-info-img
+      width: 30px
+      height: 100%
+      padding-right: 10px
+
+    .add-info-container
+      width: 100%
+      height: auto
+      display: flex
+      align-items: flex-start
+      justify-content: center
+      flex-wrap: wrap
+
+      .add-info-header
+        width: 100%
+        height: 30px
+        margin: 0
+        font-family: $rubik
+        border-bottom: 1px solid $grey
+        color: $grey
+        font-size: 1em
+
+      .add-info-sub-ul
+        width: 100%
+        padding: 0
+        list-style-type: none
+        height: auto
+
+        .add-info-sub-li
+          margin: 5px 0
+          font-family: $rubik
+          font-size: 0.9em
+          color: $grey-bright
+          width: 100%
+          border-bottom: 1px solid $grey-bright
