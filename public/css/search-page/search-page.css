@@ -67,11 +67,16 @@ body {
 .sign-button {
   height: 100%;
   width: 40%;
-  font-size: 0.8em;
+  font-size: 0.9em;
   border-radius: 5px;
   border: none;
   min-width: 150px;
-  margin: auto; }
+  margin: auto;
+  font-family: "Rubik";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none; }
   .sign-button:focus {
     outline: none; }
 
