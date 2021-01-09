@@ -1250,7 +1250,7 @@ input[type="checkbox"]
   flex-direction: row-reverse
   margin-bottom: 10px
 
-.price-info
+.price-info, .price-info-value
   font-family: $rubik
   border-bottom: 1px solid $grey-bright
   width: 100%
@@ -1260,6 +1260,9 @@ input[type="checkbox"]
   display: flex
   align-items: center
   margin-right: 10px
+
+.price-info-value
+  width: 30%
 
 .price-delete-button
   width: 40px
@@ -1279,6 +1282,10 @@ input[type="checkbox"]
     color: $delete-color
 
     & ~ .price-info
+      border-color: $delete-color
+      color: $delete-color
+
+    & ~ .price-info-value
       border-color: $delete-color
       color: $delete-color
 

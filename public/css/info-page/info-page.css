@@ -1164,7 +1164,7 @@ input[type="checkbox"] {
   flex-direction: row-reverse;
   margin-bottom: 10px; }
 
-.price-info {
+.price-info, .price-info-value {
   font-family: "Rubik";
   border-bottom: 1px solid #a1a0a0;
   width: 100%;
@@ -1174,6 +1174,9 @@ input[type="checkbox"] {
   display: flex;
   align-items: center;
   margin-right: 10px; }
+
+.price-info-value {
+  width: 30%; }
 
 .price-delete-button {
   width: 40px;
@@ -1191,6 +1194,9 @@ input[type="checkbox"] {
   .price-delete-button:hover {
     color: #d73a49; }
     .price-delete-button:hover ~ .price-info {
+      border-color: #d73a49;
+      color: #d73a49; }
+    .price-delete-button:hover ~ .price-info-value {
       border-color: #d73a49;
       color: #d73a49; }
 
