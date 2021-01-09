@@ -100,4 +100,52 @@
     .sheet-info-ul .sheet-info-li #sheet-payment-img {
       content: url(../../assets/svg/card/credit-card-grey-bright.svg); }
 
+.sheet-section {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap; }
+  .sheet-section .sheet-section-header {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    font-family: "Rubik";
+    color: #fa8072;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #707070; }
+
+.sheet-type {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .sheet-type .sheet-radio {
+    width: 100%;
+    height: 100%;
+    display: flex; }
+    .sheet-type .sheet-radio .radio-input {
+      display: none; }
+      .sheet-type .sheet-radio .radio-input:checked + .radio-sheet-label {
+        background: #fa8072; }
+    .sheet-type .sheet-radio .radio-sheet-label {
+      width: 100%;
+      height: 100%;
+      margin: 5px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      background: #707070;
+      box-shadow: 0 0 5px -1px #000000;
+      color: #ffffff;
+      font-size: 1.1em;
+      font-family: "Rubik"; }
+
 /*# sourceMappingURL=sheet-page.css.map */
