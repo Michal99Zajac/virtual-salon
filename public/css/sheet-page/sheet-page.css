@@ -235,4 +235,19 @@
     .sheet-text-input:hover::placeholder {
       color: #ffb3aa; }
 
+.sheet-post-button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  background: #707070;
+  color: #ffffff;
+  font-size: 1.2em;
+  box-shadow: 0 0 10px -1px #707070;
+  font-family: "Rubik"; }
+  .sheet-post-button:focus {
+    outline: none; }
+  .sheet-post-button:hover {
+    background: #fa8072; }
+
 /*# sourceMappingURL=sheet-page.css.map */
