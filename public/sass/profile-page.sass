@@ -13,16 +13,16 @@
   position: relative
   flex-direction: column
 
-  .info-panel
-    height: 100%
-    width: 40%
-    min-width: 720px
-    padding: 20px
-    margin: 10px 0
-    box-sizing: border-box
-    background: $white
-    border-radius: 5px
-    box-shadow: 0 0 10px -1px $grey
+.info-panel
+  height: 100%
+  width: 40%
+  min-width: 720px
+  padding: 20px
+  margin: 10px 0
+  box-sizing: border-box
+  background: $white
+  border-radius: 5px
+  box-shadow: 0 0 10px -1px $grey
 
 .profile-description
   margin: 0
@@ -42,39 +42,39 @@
   margin-bottom: 10px
   border-bottom: 1px solid $grey-bright
 
-  .profile-info
-    width: 100%
-    height: 100%
-    display: flex
-    align-items: flex-start
-    align-content: flex-start
-    margin-left: 20px
-    justify-content: flex-start
-    flex-wrap: wrap
+.profile-info
+  width: 100%
+  height: 100%
+  display: flex
+  align-items: flex-start
+  align-content: flex-start
+  margin-left: 20px
+  justify-content: flex-start
+  flex-wrap: wrap
 
-    .profile-name
-      width: 100%
-      margin: 0
-      font-size: 1.2em
-      font-family: $rubik
-      color: $pink
+.profile-name
+  width: 100%
+  margin: 0
+  font-size: 1.2em
+  font-family: $rubik
+  color: $pink
 
-    .profile-profession
-      margin: 0
-      font-family: $rubik
-      color: $grey
-      font-size: 0.9em
-      width: 100%
+.profile-profession
+  margin: 0
+  font-family: $rubik
+  color: $grey
+  font-size: 0.9em
+  width: 100%
 
-  #profile-img
-    content: url(../../assets/img/person-profile.jpeg)
+#profile-img
+  content: url(../../assets/img/person-profile.jpeg)
 
-  .profile-img
-    height: 100%
-    width: auto
-    border-radius: 5px
-    box-shadow: 2px
-    box-shadow: 0 0 10px -1px $grey
+.profile-img
+  height: 100%
+  width: auto
+  border-radius: 5px
+  box-shadow: 2px
+  box-shadow: 0 0 10px -1px $grey
 
 .schedule-beam
   width: 100%
@@ -85,39 +85,39 @@
   justify-content: space-between
   border-bottom: 2px solid $pink
 
-  .schedule-header
-    margin: 0
-    font-size: 1.5em
-    font-family: $rubik
-    color: $pink
+.schedule-header
+  margin: 0
+  font-size: 1.5em
+  font-family: $rubik
+  color: $pink
 
-  .schedule-arrow
-    border: none
-    background: $white
-    height: 60%
-    padding: 0
-    display: flex
-    align-items: center
-    justify-content: center
+.schedule-arrow
+  border: none
+  background: $white
+  height: 60%
+  padding: 0
+  display: flex
+  align-items: center
+  justify-content: center
 
-    &:focus
-      outline: none
+  &:focus
+    outline: none
 
-    .arrow
-      height: 100%
-      content: url(../../assets/svg/arrow/next-grey.svg)
-      display: flex
-      justify-content: center
-      align-items: center
+.arrow
+  height: 100%
+  content: url(../../assets/svg/arrow/next-grey.svg)
+  display: flex
+  justify-content: center
+  align-items: center
 
-      &:hover
-        content: url(../../assets/svg/arrow/next-pink.svg)
+  &:hover
+    content: url(../../assets/svg/arrow/next-pink.svg)
 
-    #schedule-arrow-left
-      transform: rotate(180deg)
+#schedule-arrow-left
+  transform: rotate(180deg)
 
-    #schedule-arrow-right
-      transform: rotate(0deg)
+#schedule-arrow-right
+  transform: rotate(0deg)
 
 .schedule-container
   width: 100%
@@ -126,69 +126,69 @@
   align-items: flex-start
   justify-content: space-between
 
-  .schedule-ul
-    padding: 0
-    margin: 0
-    list-style-type: none
-    width: 100%
-    height: auto
-    display: flex
-    justify-content: center
-    align-content: flex-start
-    flex-wrap: wrap
+.schedule-ul
+  padding: 0
+  margin: 0
+  list-style-type: none
+  width: 100%
+  height: auto
+  display: flex
+  justify-content: center
+  align-content: flex-start
+  flex-wrap: wrap
 
-    .schedule-ul-header
-      width: 100%
-      height: 45px
-      display: flex
-      align-items: flex-start
-      justify-content: center
-      flex-wrap: wrap
-      margin-bottom: 10px
-      align-content: flex-start
+.schedule-ul-header
+  width: 100%
+  height: 45px
+  display: flex
+  align-items: flex-start
+  justify-content: center
+  flex-wrap: wrap
+  margin-bottom: 10px
+  align-content: flex-start
 
-      .day
-        margin: 0
-        font-size: 0.9em
-        font-family: $rubik
-        color: $pink
-        width: 100%
-        display: flex
-        align-items: center
-        justify-content: center
+.day
+  margin: 0
+  font-size: 0.9em
+  font-family: $rubik
+  color: $pink
+  width: 100%
+  display: flex
+  align-items: center
+  justify-content: center
 
-      .data
-        width: 100%
-        font-size: 0.6em
-        margin: 0
-        display: flex
-        justify-content: center
-        align-items: center
-        color: $grey
-        font-family: $rubik
+.data
+  width: 100%
+  font-size: 0.6em
+  margin: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  color: $grey
+  font-family: $rubik
 
-    .schedule-li
-      width: 85%
-      height: 40px
-      background: $grey
-      border-radius: 5px
-      box-shadow: 0 0 5px -1px $black
-      display: flex
-      justify-content: center
-      align-items: center
-      color: $white
-      margin-bottom: 10px
-      font-family: $rubik
-      font-size: 0.9em
+.schedule-li
+  width: 85%
+  height: 40px
+  background: $grey
+  border-radius: 5px
+  box-shadow: 0 0 5px -1px $black
+  display: flex
+  justify-content: center
+  align-items: center
+  color: $white
+  margin-bottom: 10px
+  font-family: $rubik
+  font-size: 0.9em
 
-      &:hover
-        background: $pink
+  &:hover
+    background: $pink
 
-    .schedule-li-booked
-      background: $grey-bright
+.schedule-li-booked
+  background: $grey-bright
 
-      &:hover
-        background: $grey-bright
+  &:hover
+    background: $grey-bright
 
 .contact-beam, .price-beam, .add-info-beam
   width: 100%
@@ -206,100 +206,100 @@
   width: 100%
   height: auto
 
-  .contact-li, .price-li
-    display: flex
-    align-items: center
-    justify-content: space-between
-    margin-bottom: 10px
-    height: auto
-    width: 100%
-    border-bottom: 1px solid $grey
+.contact-li, .price-li
+  display: flex
+  align-items: center
+  justify-content: space-between
+  margin-bottom: 10px
+  height: auto
+  width: 100%
+  border-bottom: 1px solid $grey
 
-    .contact-type, .contact-value, .price-name, .price-value
-      margin: 0
-      height: 100%
-      width: 100%
-      font-family: $rubik
-      display: flex
-      justify-content: flex-start
-      align-items: center
-      font-size: 1.1em
-      color: $grey
+.contact-type, .contact-value, .price-name, .price-value
+  margin: 0
+  height: 100%
+  width: 100%
+  font-family: $rubik
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  font-size: 1.1em
+  color: $grey
 
-    .contact-value, .price-value
-      width: 150%
-      color: $pink
+.contact-value, .price-value
+  width: 150%
+  color: $pink
 
-    .price-value
-      width: 50%
-      justify-content: flex-end
+.price-value
+  width: 50%
+  justify-content: flex-end
 
 .add-info-ul
   list-style-type: none
   margin: 0
   padding: 0
 
-  .add-info-li
-    width: 100%
-    height: auto
-    margin-bottom: 10px
-    display: flex
-    align-items: flex-start
-    justify-content: flex-start
+.add-info-li
+  width: 100%
+  height: auto
+  margin-bottom: 10px
+  display: flex
+  align-items: flex-start
+  justify-content: flex-start
 
-    &:last-child
-      margin-bottom: 0
+  &:last-child
+    margin-bottom: 0
 
-    #profession-img
-      content: url(../../assets/svg/brush/brush-grey.svg)
+#profession-img
+  content: url(../../assets/svg/brush/brush-grey.svg)
 
-    #payment-img
-      content: url(../../assets/svg/card/credit-card-grey.svg)
+#payment-img
+  content: url(../../assets/svg/card/credit-card-grey.svg)
 
-    #certificate-img
-      content: url(../../assets/svg/education/mortarboard-grey.svg)
+#certificate-img
+  content: url(../../assets/svg/education/mortarboard-grey.svg)
 
-    #web-img
-      content: url(../../assets/svg/web/world-wide-web-grey.svg)
+#web-img
+  content: url(../../assets/svg/web/world-wide-web-grey.svg)
 
-    #exp-img
-      content: url(../../assets/svg/quality/quality-grey.svg)
+#exp-img
+  content: url(../../assets/svg/quality/quality-grey.svg)
 
-    #favorite-img
-      content: url(../../assets/svg/pin/safety-pin-grey.svg)
+#favorite-img
+  content: url(../../assets/svg/pin/safety-pin-grey.svg)
 
-    .add-info-img
-      width: 30px
-      height: 100%
-      padding-right: 10px
+.add-info-img
+  width: 30px
+  height: 100%
+  padding-right: 10px
 
-    .add-info-container
-      width: 100%
-      height: auto
-      display: flex
-      align-items: flex-start
-      justify-content: center
-      flex-wrap: wrap
+.add-info-container
+  width: 100%
+  height: auto
+  display: flex
+  align-items: flex-start
+  justify-content: center
+  flex-wrap: wrap
 
-      .add-info-header
-        width: 100%
-        height: 30px
-        margin: 0
-        font-family: $rubik
-        border-bottom: 1px solid $grey
-        color: $grey
-        font-size: 1em
+.add-info-header
+  width: 100%
+  height: 30px
+  margin: 0
+  font-family: $rubik
+  border-bottom: 1px solid $grey
+  color: $grey
+  font-size: 1em
 
-      .add-info-sub-ul
-        width: 100%
-        padding: 0
-        list-style-type: none
-        height: auto
+.add-info-sub-ul
+  width: 100%
+  padding: 0
+  list-style-type: none
+  height: auto
 
-        .add-info-sub-li
-          margin: 5px 0
-          font-family: $rubik
-          font-size: 0.9em
-          color: $grey-bright
-          width: 100%
-          border-bottom: 1px solid $grey-bright
+.add-info-sub-li
+  margin: 10px 0
+  font-family: $rubik
+  font-size: 0.9em
+  color: $grey-bright
+  width: 100%
+  border-bottom: 1px solid $grey-bright
