@@ -10,604 +10,606 @@
   align-items: flex-start
   position: relative
 
-  .informations-container
+.informations-container
+  background: $white
+  width: 40%
+  min-width: 720px
+  height: 100%
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  flex-wrap: nowrap
+  padding: 25px 0 25px 0
+  margin: 25px 0 25px 0
+  border-radius: 5px
+  box-shadow: 0 0 10px -1px $grey
+
+.account-label
+  width: 90%
+  height: 60px
+  display: flex
+  justify-content: start
+  align-items: center
+  font-size: 1.8em
+  font-family: $rubik
+  color: $grey
+  border: none
+  border-bottom: 3px solid $grey
+  margin-top: 0
+
+.delete-button
+  width: 90%
+  height: 75px
+  display: flex
+  justify-content: center
+  align-items: center
+  border: none
+  background: $grey
+  color: $white
+  border-radius: 5px
+  box-shadow: 0 0 10px -1px $grey-bright
+  font-size: 1.2em
+  font-family: $rubik
+
+  &:hover
+    background: $grey-bright
+
+  &:focus
+    outline: none
+
+.info-panel-default
+  width: 90%
+  height: auto
+  background: $pink
+  border-radius: 5px
+  box-shadow: 0 0 10px -1px $grey
+  margin-bottom: 25px
+  padding: 25px
+  box-sizing: border-box
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  align-items: center
+  position: relative
+
+  &:last-child
+    margin-bottom: 0
+
+.profile-photo-container
+  width: 100%
+  height: 75px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  flex-wrap: nowrap
+  flex-direction: row
+
+#photo
+  content: url(../../assets/img/person-profile.jpeg)
+
+.profile-picture
+  height: 100%
+  width: auto
+  border-radius: 5px
+  box-shadow: 0 0 10px -1px $grey
+
+.profile-button
+  width: 100%
+  margin-left: 5%
+  height: 100%
+  border: none
+  border-radius: 5px
+  box-shadow: 0 0 10px -1px $grey
+  font-family: $rubik
+  font-size: 1.2em
+
+  &:focus
+    outline: none
+
+.change-button
+  background: $white
+  color: $grey
+
+  &:hover
+    background: $white-hover
+
+.edit-profile
+  background: $grey
+  color: $white
+
+  &:hover
+    background: $grey-bright
+
+.info-ul
+  padding: 0
+  list-style-type: none
+  width: 100%
+  height: auto
+  margin-top: 25px
+  margin-bottom: 0
+  border-radius: 5px
+  background: white
+  padding: 20px
+  box-sizing: border-box
+  box-shadow: 0 0 10px -1px $grey
+
+.info-li
+  display: flex
+  justify-content: space-between
+  margin-bottom: 10px
+  border-bottom: 1px solid $grey
+
+  &:last-child
+    margin-bottom: 0
+
+.name-data
+  width: 50%
+  font-family: $rubik
+  color: $grey
+
+.data
+  width: 50%
+  font-family: $rubik
+  color: $pink
+
+.password-container
+  width: 48%
+  height: 75px
+  margin: 0
+  background: white
+  border-radius: 5px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 0 20px
+  box-sizing: border-box
+  box-shadow: 0 0 10px -1px $grey
+
+.password-area
+  font-family: $rubik
+  color: $grey
+
+.password-button
+  height: 75px
+  width: 48%
+  border-radius: 5px
+  border: none
+  background: $grey
+  color: $white
+  font-size: 1.2em
+  font-family: $rubik
+  box-shadow: 0 0 10px -1px $grey
+
+  &:focus
+    outline: none
+
+  &:hover
+    background: $grey-bright
+
+.paycard
+  background: #ffffff
+  box-shadow: 0 0 10px -1px $grey
+  margin: 0
+  border-radius: 5px
+  display: flex
+  width: 50%
+  min-width: 290px
+  height: 180px
+
+.card-buttons-container
+  height: 180px
+  width: 50%
+  display: flex
+  align-items: center
+  justify-content: flex-end
+  box-sizing: border-box
+  flex-wrap: wrap
+
+.remove-card-button
+  width: 90%
+  height: 75px
+  box-shadow: 0 0 10px -1px $grey
+  background: $grey
+  border: none
+  border-radius: 5px
+  font-size: 1.2em
+  font-family: 'Rubik'
+  color: $white
+
+.disable-card-button
+  width: 90%
+  height: 75px
+  box-shadow: 0 0 10px -1px $grey
+  background: $white
+  border: none
+  border-radius: 5px
+  font-size: 1.2em
+  font-family: 'Rubik'
+  color: $grey
+
+.soon-overlay
+  position: absolute
+  left: 0
+  width: 100%
+  height: 100%
+  background: $grey
+  opacity: 0.8
+  border-radius: 5px
+  display: flex
+  justify-content: center
+  align-items: center
+  color: $white
+  font-size: 3em
+
+.address-cotainer
+  width: 100%
+  height: auto
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+  .address-area
+    width: 48%
+    height: 75px
     background: $white
-    width: 40%
-    min-width: 720px
-    height: 100%
+    border-radius: 5px
     display: flex
-    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+    box-shadow: 0 0 10px -1px $grey
+    padding: 0 10px
+    box-sizing: border-box
+
+.info-img
+  width: 35px
+  height: auto
+
+#building-img
+  content: url(../../assets/svg/home/home-grey.svg)
+
+#map-img
+  content: url(../../assets/svg/placeholder/placeholder-grey.svg)
+
+.address-info
+  padding-left: 10px
+  margin: 0
+  font-size: 1.2em
+  font-family: $rubik
+  color: $grey
+
+.address-button
+  width: 100%
+  height: 75px
+  margin-top: 25px
+  border: none
+  border-radius: 5px
+  background: $grey
+  box-shadow: 0 0 10px -1px $grey
+  display: flex
+  justify-content: center
+  align-items: center
+  font-family: $rubik
+  font-size: 1.2em
+  color: $white
+
+  &:focus
+    outline: none
+
+  &:hover
+    background: $grey-bright
+
+.worker-informations-container
+  background: $grey
+  width: 100%
+  height: auto
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  flex-wrap: nowrap
+  padding: 25px 0 25px 0
+  margin: 0
+  margin-bottom: 25px
+
+.info-panel
+  width: 90%
+  height: auto
+  background: $white
+  border-radius: 5px
+  box-shadow: 0 0 10px -1px $grey-bright
+  margin-bottom: 25px
+  padding: 25px
+  box-sizing: border-box
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  align-items: center
+  position: relative
+
+  &:last-child
+    margin-bottom: 0
+
+.schedule-header
+  width: 100%
+  font-size: 1.4em
+  margin: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  border-bottom: $pink solid 2px
+  font-family: $rubik
+  color: $pink
+  margin-bottom: 25px
+
+.schedule-container
+  width: 100%
+  height: auto
+  display: flex
+  justify-content: flex-start
+  align-items: flex-start
+  box-sizing: border-box
+
+.day-container
+  display: flex
+  flex-direction: column
+  width: 100%
+  height: 100%
+  justify-content: flex-start
+  align-items: center
+  box-sizing: border-box
+
+.day-label
+  margin: 0
+  width: 100%
+  height: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  font-size: 0.7em
+  color: $pink
+  font-family: $rubik
+  margin-bottom: 5px
+
+.day-schedule
+  list-style-type: none
+  box-sizing: border-box
+  width: 85%
+  height: auto
+  margin: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: 0
+  flex-wrap: wrap
+
+  li
+    width: 100%
+    height: 35px
+    background: $grey
+    margin-bottom: 10px
+    border-radius: 5px
+    display: flex
     justify-content: center
     align-items: center
-    flex-wrap: nowrap
-    padding: 25px 0 25px 0
-    margin: 25px 0 25px 0
-    border-radius: 5px
-    box-shadow: 0 0 10px -1px $grey
-
-    .account-label
-      width: 90%
-      height: 60px
-      display: flex
-      justify-content: start
-      align-items: center
-      font-size: 1.8em
-      font-family: $rubik
-      color: $grey
-      border: none
-      border-bottom: 3px solid $grey
-      margin-top: 0
-
-    .delete-button
-      width: 90%
-      height: 75px
-      display: flex
-      justify-content: center
-      align-items: center
-      border: none
-      background: $grey
-      color: $white
-      border-radius: 5px
-      box-shadow: 0 0 10px -1px $grey-bright
-      font-size: 1.2em
-      font-family: $rubik
-
-      &:hover
-        background: $grey-bright
-
-      &:focus
-        outline: none
-
-    .info-panel
-      width: 90%
-      height: auto
-      background: $pink
-      border-radius: 5px
-      box-shadow: 0 0 10px -1px $grey
-      margin-bottom: 25px
-      padding: 25px
-      box-sizing: border-box
-      display: flex
-      flex-wrap: wrap
-      justify-content: space-between
-      align-items: center
-      position: relative
-
-      &:last-child
-        margin-bottom: 0
-
-      .profile-photo-container
-        width: 100%
-        height: 75px
-        display: flex
-        justify-content: space-between
-        align-items: center
-        flex-wrap: nowrap
-        flex-direction: row
-
-        #photo
-          content: url(../../assets/img/person-profile.jpeg)
-
-        .profile-picture
-          height: 100%
-          width: auto
-          border-radius: 5px
-          box-shadow: 0 0 10px -1px $grey
-
-        .profile-button
-          width: 100%
-          margin-left: 5%
-          height: 100%
-          border: none
-          border-radius: 5px
-          box-shadow: 0 0 10px -1px $grey
-          font-family: $rubik
-          font-size: 1.2em
-
-          &:focus
-            outline: none
-
-        .change-button
-          background: $white
-          color: $grey
-
-          &:hover
-            background: $white-hover
-
-        .edit-button
-          background: $grey
-          color: $white
-
-          &:hover
-            background: $grey-bright
-
-      .info-ul
-        padding: 0
-        list-style-type: none
-        width: 100%
-        height: auto
-        margin-top: 25px
-        margin-bottom: 0
-        border-radius: 5px
-        background: white
-        padding: 20px
-        box-sizing: border-box
-        box-shadow: 0 0 10px -1px $grey
-
-        .info-li
-          display: flex
-          justify-content: space-between
-          margin-bottom: 10px
-          border-bottom: 1px solid $grey
-
-          &:last-child
-            margin-bottom: 0
-
-          .name-data
-            width: 50%
-            font-family: $rubik
-            color: $grey
-
-          .data
-            width: 50%
-            font-family: $rubik
-            color: $pink
-
-      .password-container
-        width: 48%
-        height: 75px
-        margin: 0
-        background: white
-        border-radius: 5px
-        display: flex
-        justify-content: space-between
-        align-items: center
-        padding: 0 20px
-        box-sizing: border-box
-        box-shadow: 0 0 10px -1px $grey
-
-        .password-area
-          font-family: $rubik
-          color: $grey
-
-      .password-button
-        height: 75px
-        width: 48%
-        border-radius: 5px
-        border: none
-        background: $grey
-        color: $white
-        font-size: 1.2em
-        font-family: $rubik
-        box-shadow: 0 0 10px -1px $grey
-
-        &:focus
-          outline: none
-
-        &:hover
-          background: $grey-bright
-
-      .paycard
-        background: #ffffff
-        box-shadow: 0 0 10px -1px $grey
-        margin: 0
-        border-radius: 5px
-        display: flex
-        width: 50%
-        min-width: 290px
-        height: 180px
-
-      .card-buttons-container
-        height: 180px
-        width: 50%
-        display: flex
-        align-items: center
-        justify-content: flex-end
-        box-sizing: border-box
-        flex-wrap: wrap
-
-        .remove-card-button
-          width: 90%
-          height: 75px
-          box-shadow: 0 0 10px -1px $grey
-          background: $grey
-          border: none
-          border-radius: 5px
-          font-size: 1.2em
-          font-family: 'Rubik'
-          color: $white
-
-        .disable-card-button
-          width: 90%
-          height: 75px
-          box-shadow: 0 0 10px -1px $grey
-          background: $white
-          border: none
-          border-radius: 5px
-          font-size: 1.2em
-          font-family: 'Rubik'
-          color: $grey
-
-      .soon-overlay
-        position: absolute
-        left: 0
-        width: 100%
-        height: 100%
-        background: $grey
-        opacity: 0.8
-        border-radius: 5px
-        display: flex
-        justify-content: center
-        align-items: center
-        color: $white
-        font-size: 3em
-
-      .address-cotainer
-        width: 100%
-        height: auto
-        display: flex
-        align-items: center
-        justify-content: space-between
-
-        .address-area
-          width: 48%
-          height: 75px
-          background: $white
-          border-radius: 5px
-          display: flex
-          justify-content: flex-start
-          align-items: center
-          box-shadow: 0 0 10px -1px $grey
-          padding: 0 10px
-          box-sizing: border-box
-
-          .info-img
-            width: 35px
-            height: auto
-
-          #building-img
-            content: url(../../assets/svg/home/home-grey.svg)
-
-          #map-img
-            content: url(../../assets/svg/placeholder/placeholder-grey.svg)
-
-          .address-info
-            padding-left: 10px
-            margin: 0
-            font-size: 1.2em
-            font-family: $rubik
-            color: $grey
-
-      .address-button
-        width: 100%
-        height: 75px
-        margin-top: 25px
-        border: none
-        border-radius: 5px
-        background: $grey
-        box-shadow: 0 0 10px -1px $grey
-        display: flex
-        justify-content: center
-        align-items: center
-        font-family: $rubik
-        font-size: 1.2em
-        color: $white
-
-        &:focus
-          outline: none
-
-        &:hover
-          background: $grey-bright
-
-    .worker-informations-container
-      background: $grey
-      width: 100%
-      height: auto
-      display: flex
-      flex-direction: column
-      justify-content: center
-      align-items: center
-      flex-wrap: nowrap
-      padding: 25px 0 25px 0
-      margin: 0
-      margin-bottom: 25px
-
-      .info-panel
-        width: 90%
-        height: auto
-        background: $white
-        border-radius: 5px
-        box-shadow: 0 0 10px -1px $grey-bright
-        margin-bottom: 25px
-        padding: 25px
-        box-sizing: border-box
-        display: flex
-        flex-wrap: wrap
-        justify-content: space-between
-        align-items: center
-        position: relative
-
-        &:last-child
-          margin-bottom: 0
-
-        .schedule-header
-          width: 100%
-          font-size: 1.4em
-          margin: 0
-          display: flex
-          justify-content: center
-          align-items: center
-          border-bottom: $pink solid 2px
-          font-family: $rubik
-          color: $pink
-          margin-bottom: 25px
-
-        .schedule-container
-          width: 100%
-          height: auto
-          display: flex
-          justify-content: flex-start
-          align-items: flex-start
-          box-sizing: border-box
-
-          .day-container
-            display: flex
-            flex-direction: column
-            width: 100%
-            height: 100%
-            justify-content: flex-start
-            align-items: center
-            box-sizing: border-box
-
-            .day-label
-              margin: 0
-              width: 100%
-              height: 100%
-              display: flex
-              justify-content: center
-              align-items: center
-              font-size: 0.7em
-              color: $pink
-              font-family: $rubik
-              margin-bottom: 5px
-
-            .day-schedule
-              list-style-type: none
-              box-sizing: border-box
-              width: 85%
-              height: auto
-              margin: 0
-              display: flex
-              justify-content: center
-              align-items: center
-              padding: 0
-              flex-wrap: wrap
-
-              li
-                width: 100%
-                height: 35px
-                background: $grey
-                margin-bottom: 10px
-                border-radius: 5px
-                display: flex
-                justify-content: center
-                align-items: center
-                font-size: 0.75em
-                font-family: $rubik
-                color: $white
-
-            .day-schedule-button
-              display: flex
-              justify-content: center
-              align-items: center
-              font-size: 0.5em
-              border: none
-              background: $white
-              font-family: $rubik
-              color: $grey
-
-              &:hover
-                color: $pink
-
-              &:focus
-                outline: none
-
-        .decription-header
-          font-size: 1.2em
-          width: 100%
-          margin: 0
-          font-family: $rubik
-          color: $pink
-          border-bottom: 2px solid $pink
-          margin-bottom: 20px
-          display: flex
-          justify-content: flex-start
-          align-items: center
-
-        .description
-          margin: 0
-          font-size: 0.7em
-          margin-bottom: 20px
-          font-family: $rubik
-          width: 100%
-
-        .description-button
-          width: 100%
-          height: 75px
-          display: flex
-          justify-content: center
-          align-items: center
-          border: none
-          background: $pink
-          color: $white
-          border-radius: 5px
-          box-shadow: 0 0 10px -1px $grey
-          font-size: 1.2em
-          font-family: $rubik
-
-          &:hover
-            background: $pink-bright
-
-          &:focus
-            outline: none
-
-        .additional-info-header
-          font-size: 1.2em
-          width: 100%
-          margin: 0
-          font-family: $rubik
-          color: $pink
-          border-bottom: 2px solid $pink
-          margin-bottom: 20px
-          display: flex
-          justify-content: flex-start
-          align-items: center
-
-        .add-info-container
-          width: 100%
-          height: auto
-          display: flex
-          justify-content: flex-start
-          align-items: flex-start
-          margin-bottom: 20px
-
-          .add-info-img
-            width: 30px
-            height: 100%
-            display: flex
-            justify-content: center
-            align-items: flex-start
-
-          #profession-img
-            content: url(../../assets/svg/brush/brush-grey.svg)
-
-          #payment-img
-            content: url(../../assets/svg/card/credit-card-grey.svg)
-
-          #certificat-img
-            content: url(../../assets/svg/education/mortarboard-grey.svg)
-
-          #web-img
-            content: url(../../assets/svg/web/world-wide-web-grey.svg)
-
-          #exp-img
-            content: url(../../assets/svg/quality/quality-grey.svg)
-
-          #favorite-img
-            content: url(../../assets/svg/pin/safety-pin-grey.svg)
-
-          .add-info-area
-            width: 100%
-            height: auto
-            padding-left: 15px
-            display: flex
-            justify-content: center
-            align-items: flex-start
-            flex-wrap: wrap
-
-            .add-info-subheader
-              width: 100%
-              height: 30px
-              margin: 0
-              font-size: 1em
-              font-family: $rubik
-              color: $pink
-              border-bottom: 2px solid $grey
-
-            .informations
-              width: 100%
-              margin: 0
-              margin-top: 10px
-              padding: 0
-              list-style-type: none
-
-              li
-                font-size: 0.9em
-                border-bottom: 1px solid $grey-bright
-                margin-bottom: 10px
-                font-family: $rubik
-                color: $grey-bright
-
-        .add-info-button
-          width: 100%
-          height: 75px
-          display: flex
-          justify-content: center
-          align-items: center
-          border: none
-          background: $pink
-          color: $white
-          border-radius: 5px
-          box-shadow: 0 0 10px -1px $grey
-          font-size: 1.2em
-          font-family: "Rubik"
-
-          &:hover
-            background: $pink-bright
-
-          &:focus
-            outline: none
-
-        .price-header
-          width: 100%
-          font-size: 1.4em
-          margin: 0
-          display: flex
-          justify-content: center
-          align-items: center
-          border-bottom: $pink solid 2px
-          font-family: $rubik
-          color: $pink
-          margin-bottom: 25px
-
-        .price-button
-          width: 100%
-          height: 75px
-          display: flex
-          justify-content: center
-          align-items: center
-          border: none
-          background: $pink
-          color: $white
-          border-radius: 5px
-          box-shadow: 0 0 10px -1px $grey
-          font-size: 1.2em
-          font-family: "Rubik"
-
-          &:hover
-            background: $pink-bright
-
-          &:focus
-            outline: none
-
-        .price-list
-          margin: 0
-          margin-bottom: 25px
-          padding: 0
-          list-style-type: none
-          width: 100%
-
-          li
-            display: flex
-            justify-content: space-between
-            align-items: center
-            width: 100%
-            border-bottom: 2px solid $grey-bright
-            margin-bottom: 15px
-            font-family: $rubik
-            font-size: 0.9em
-
-            &:last-child
-              margin-bottom: 0
-
-            .name-price, .value-price
-              margin: 0
-
-            .name-price
-              color: $pink
-
-            .value-price
-              color: $grey
+    font-size: 0.75em
+    font-family: $rubik
+    color: $white
+
+.day-schedule-button
+  display: flex
+  justify-content: center
+  align-items: center
+  font-size: 0.5em
+  border: none
+  background: $white
+  font-family: $rubik
+  color: $grey
+
+  &:hover
+    color: $pink
+
+  &:focus
+    outline: none
+
+.decription-header
+  font-size: 1.2em
+  width: 100%
+  margin: 0
+  font-family: $rubik
+  color: $pink
+  border-bottom: 2px solid $pink
+  margin-bottom: 20px
+  display: flex
+  justify-content: flex-start
+  align-items: center
+
+.description
+  margin: 0
+  font-size: 0.7em
+  margin-bottom: 20px
+  font-family: $rubik
+  width: 100%
+
+.description-button
+  width: 100%
+  height: 75px
+  display: flex
+  justify-content: center
+  align-items: center
+  border: none
+  background: $pink
+  color: $white
+  border-radius: 5px
+  box-shadow: 0 0 10px -1px $grey
+  font-size: 1.2em
+  font-family: $rubik
+
+  &:hover
+    background: $pink-bright
+
+  &:focus
+    outline: none
+
+.additional-info-header
+  font-size: 1.2em
+  width: 100%
+  margin: 0
+  font-family: $rubik
+  color: $pink
+  border-bottom: 2px solid $pink
+  margin-bottom: 20px
+  display: flex
+  justify-content: flex-start
+  align-items: center
+
+.add-info-container
+  width: 100%
+  height: auto
+  display: flex
+  justify-content: flex-start
+  align-items: flex-start
+  margin-bottom: 20px
+
+.add-info-img
+  width: 30px
+  height: 100%
+  display: flex
+  justify-content: center
+  align-items: flex-start
+
+#profession-img
+  content: url(../../assets/svg/brush/brush-grey.svg)
+
+#payment-img
+  content: url(../../assets/svg/card/credit-card-grey.svg)
+
+#certificat-img
+  content: url(../../assets/svg/education/mortarboard-grey.svg)
+
+#web-img
+  content: url(../../assets/svg/web/world-wide-web-grey.svg)
+
+#exp-img
+  content: url(../../assets/svg/quality/quality-grey.svg)
+
+#favorite-img
+  content: url(../../assets/svg/pin/safety-pin-grey.svg)
+
+.add-info-area
+  width: 100%
+  height: auto
+  padding-left: 15px
+  display: flex
+  justify-content: center
+  align-items: flex-start
+  flex-wrap: wrap
+
+.add-info-subheader
+  width: 100%
+  height: 30px
+  margin: 0
+  font-size: 1em
+  font-family: $rubik
+  color: $pink
+  border-bottom: 2px solid $grey
+
+.informations
+  width: 100%
+  margin: 0
+  margin-top: 10px
+  padding: 0
+  list-style-type: none
+
+  li
+    font-size: 0.9em
+    border-bottom: 1px solid $grey-bright
+    margin-bottom: 10px
+    font-family: $rubik
+    color: $grey-bright
+
+.add-info-button
+  width: 100%
+  height: 75px
+  display: flex
+  justify-content: center
+  align-items: center
+  border: none
+  background: $pink
+  color: $white
+  border-radius: 5px
+  box-shadow: 0 0 10px -1px $grey
+  font-size: 1.2em
+  font-family: "Rubik"
+
+  &:hover
+    background: $pink-bright
+
+  &:focus
+    outline: none
+
+.price-header
+  width: 100%
+  font-size: 1.4em
+  margin: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  border-bottom: $pink solid 2px
+  font-family: $rubik
+  color: $pink
+  margin-bottom: 25px
+
+.price-button
+  width: 100%
+  height: 75px
+  display: flex
+  justify-content: center
+  align-items: center
+  border: none
+  background: $pink
+  color: $white
+  border-radius: 5px
+  box-shadow: 0 0 10px -1px $grey
+  font-size: 1.2em
+  font-family: "Rubik"
+
+  &:hover
+    background: $pink-bright
+
+  &:focus
+    outline: none
+
+.price-list
+  margin: 0
+  margin-bottom: 25px
+  padding: 0
+  list-style-type: none
+  width: 100%
+
+  li
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    margin-bottom: 15px
+    font-family: $rubik
+    font-size: 0.9em
+
+    &:last-child
+      margin-bottom: 0
+
+.price-li
+  border-bottom: 1px solid $grey
+
+.name-price, .value-price
+  margin: 0
+
+.name-price
+  color: $pink
+
+.value-price
+  color: $grey
 
 .edit-panel
   position: fixed
@@ -621,57 +623,57 @@
   border-radius: 5px
   box-shadow: 0 0px 5px -1px $grey
 
-  .edit-button
-    width: 100%
-    height: 75px
-    border: none
-    border-radius: 5px
-    background: $pink
-    color: $white
-    box-shadow: 0 0 10px -1px $grey
-    margin-top: 20px
-    font-size: 1.2em
-    font-family: $rubik
+.edit-button
+  width: 100%
+  height: 75px
+  border: none
+  border-radius: 5px
+  background: $pink
+  color: $white
+  box-shadow: 0 0 10px -1px $grey
+  margin-top: 10px
+  font-size: 1.2em
+  font-family: $rubik
 
-    &:hover
-      background: $pink-bright
+  &:hover
+    background: $pink-bright
 
-  .edit-top-beam
-    width: 100%
-    height: 50px
-    display: flex
-    justify-content: space-between
-    align-items: flex-end
-    margin-bottom: 20px
+.edit-top-beam
+  width: 100%
+  height: 50px
+  display: flex
+  justify-content: space-between
+  align-items: flex-end
+  margin-bottom: 10px
 
-    .edit-header
-      width: 100%
-      margin: 0
-      padding: 0
-      border-bottom: 2px solid $pink
-      font-size: 1.4em
-      font-family: $rubik
-      color: $pink
+.edit-header
+  width: 100%
+  margin: 0
+  padding: 0
+  border-bottom: 2px solid $pink
+  font-size: 1.4em
+  font-family: $rubik
+  color: $pink
 
-    .edit-exit
-      width: 50px
-      height: 50px
-      margin-left: 10px
-      box-sizing: initial
-      border: none
-      font-size: 1.8em
-      font-family: $rubik
-      display: flex
-      justify-content: center
-      align-items: center
-      background: $white
-      color: $grey
+.edit-exit
+  width: 50px
+  height: 50px
+  margin-left: 10px
+  box-sizing: initial
+  border: none
+  font-size: 1.8em
+  font-family: $rubik
+  display: flex
+  justify-content: center
+  align-items: center
+  background: $white
+  color: $grey
 
-      &:hover
-        color: $pink
+  &:hover
+    color: $pink
 
-      &:focus
-        outline: none
+  &:focus
+    outline: none
 
 .edit-photo-container
   width: 100%
@@ -682,43 +684,43 @@
   justify-content: center
   align-items: center
 
-  .edit-photo-button
-    display: none //to change
-    width: 50%
-    height: 50px
-    border: none
-    border-radius: 5px
-    background: $grey
+.edit-photo-button
+  display: none //to change
+  width: 50%
+  height: 50px
+  border: none
+  border-radius: 5px
+  background: $grey
+  color: $white
+  font-family: $rubik
+
+  &:hover
+    background: $pink
+
+  &:focus
+    outline: none
+
+.edit-photo-uploaded
+  width: 50%
+  height: 50px
+  border: none
+  border-radius: 5px
+  background: $white
+  color: $pink
+  font-family: $rubik
+
+  &::after
+    content: 'photo uploaded'
+
+  &:hover
+    background: $pink
     color: $white
-    font-family: $rubik
-
-    &:hover
-      background: $pink
-
-    &:focus
-      outline: none
-
-  .edit-photo-uploaded
-    width: 50%
-    height: 50px
-    border: none
-    border-radius: 5px
-    background: $white
-    color: $pink
-    font-family: $rubik
 
     &::after
-      content: 'photo uploaded'
+      content: 'reupload photo'
 
-    &:hover
-      background: $pink
-      color: $white
-
-      &::after
-        content: 'reupload photo'
-
-    &:focus
-      outline: none
+  &:focus
+    outline: none
 
 .edit-profile-container, .edit-address-container
   width: 100%
@@ -728,93 +730,93 @@
   align-items: flex-start
   flex-wrap: wrap
 
-  .edit-profile-area, .edit-address-area
-    width: 100%
-    height: 40px
-    display: flex
-    justify-content: space-between
-    align-items: center
-    margin-bottom: 10px
+.edit-profile-area, .edit-address-area
+  width: 100%
+  height: 40px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-bottom: 10px
 
-    .edit-standard-info, .edit-address
-      width: 100%
-      margin: 0
-      height: 100%
-      display: flex
-      justify-content: flex-start
-      align-items: center
-      font-size: 1.2em
-      font-family: $rubik
-      border-bottom: 2px solid $grey
+.edit-standard-info, .edit-address
+  width: 100%
+  margin: 0
+  height: 100%
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  font-size: 1.2em
+  font-family: $rubik
+  border-bottom: 1px solid $grey-bright
+  color: $pink
+
+.edit-standard-input, .edit-address-input
+  width: 100%
+  height: 90%
+  border: none
+  box-shadow: 0 0 10px -1px $grey
+  border-radius: 5px
+  margin-left: 10px
+  padding: 0 0 0 10px
+  box-sizing: border-box
+  color: $grey
+
+  &::placeholder
+    color: $grey-bright
+
+  &:focus
+    outline: none
+    color: $pink
+
+    &:hover
       color: $pink
 
-    .edit-standard-input, .edit-address-input
-      width: 100%
-      height: 90%
-      border: none
-      box-shadow: 0 0 10px -1px $grey
-      border-radius: 5px
-      margin-left: 10px
-      padding: 0 0 0 10px
-      box-sizing: border-box
-      color: $grey
+  &:hover
+    color: $pink-bright
 
-      &::placeholder
-        color: $grey-bright
+    &::placeholder
+      color: $pink-bright
 
-      &:focus
-        outline: none
-        color: $pink
+.edit-date-area
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  height: 100%
+  margin-left: 10px
 
-        &:hover
-          color: $pink
+.edit-date-input
+  width: 100%
+  height: 90%
+  border: none
+  padding: 0
+  box-shadow: 0 0 10px -1px $grey
+  border-radius: 5px
+  text-align: center
+  color: $grey
 
-      &:hover
-        color: $pink-bright
+  &::placeholder
+    color: $grey-bright
 
-        &::placeholder
-          color: $pink-bright
+  &:focus
+    outline: none
+    color: $pink
 
-    .edit-date-area
-      display: flex
-      justify-content: center
-      align-items: center
-      width: 100%
-      height: 100%
-      margin-left: 10px
+    &:hover
+      color: $pink
 
-      .edit-date-input
-        width: 100%
-        height: 90%
-        border: none
-        padding: 0
-        box-shadow: 0 0 10px -1px $grey
-        border-radius: 5px
-        text-align: center
-        color: $grey
+  &:hover
+    color: $pink-bright
 
-        &::placeholder
-          color: $grey-bright
+    &::placeholder
+      color: $pink-bright
 
-        &:focus
-          outline: none
-          color: $pink
+  &:nth-child(1)
+    width: 70%
 
-          &:hover
-            color: $pink
-
-        &:hover
-          color: $pink-bright
-
-          &::placeholder
-            color: $pink-bright
-
-        &:nth-child(1)
-          width: 70%
-
-        &:nth-child(2)
-          margin: 0 10px
-          width: 150%
+  &:nth-child(2)
+    margin: 0 10px
+    width: 150%
 
 .edit-password-container
   width: 100%
@@ -824,53 +826,53 @@
   align-items: flex-start
   flex-wrap: wrap
 
-  .edit-password-area
-    width: 100%
-    height: 40px
-    display: flex
-    justify-content: space-between
-    align-items: center
-    box-sizing: border-box
-    margin-bottom: 20px
+.edit-password-area
+  width: 100%
+  height: 40px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  box-sizing: border-box
+  margin-bottom: 20px
 
-    .edit-password
-      margin: 0
-      width: 100%
-      height: 100%
-      display: flex
-      justify-content: flex-start
-      align-items: center
-      border-bottom: 2px solid $grey
-      font-size: 1.2em
-      font-family: $rubik
+.edit-password
+  margin: 0
+  width: 100%
+  height: 100%
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  border-bottom: 1px solid $grey-bright
+  font-size: 1.2em
+  font-family: $rubik
+  color: $pink
+
+.edit-password-input
+  width: 100%
+  height: 90%
+  border: none
+  box-shadow: 0 0 10px -1px $grey
+  border-radius: 5px
+  margin-left: 10px
+  padding: 0 0 0 10px
+  box-sizing: border-box
+  color: $grey
+
+  &::placeholder
+    color: $grey-bright
+
+  &:focus
+    outline: none
+    color: $pink
+
+    &:hover
       color: $pink
 
-    .edit-password-input
-      width: 100%
-      height: 90%
-      border: none
-      box-shadow: 0 0 10px -1px $grey
-      border-radius: 5px
-      margin-left: 10px
-      padding: 0 0 0 10px
-      box-sizing: border-box
-      color: $grey
+  &:hover
+    color: $pink-bright
 
-      &::placeholder
-        color: $grey-bright
-
-      &:focus
-        outline: none
-        color: $pink
-
-        &:hover
-          color: $pink
-
-      &:hover
-        color: $pink-bright
-
-        &::placeholder
-          color: $pink-bright
+    &::placeholder
+      color: $pink-bright
 
 .edit-schedule-container
   width: 100%
@@ -880,144 +882,144 @@
   align-content: flex-start
   flex-wrap: wrap
 
-  .schedule-day
-    width: 100%
-    margin: 0
-    margin-bottom: 20px
-    font-size: 1.2em
-    border-bottom: 2px solid $grey
-    font-family: $rubik
+.schedule-day
+  width: 100%
+  margin: 0
+  margin-bottom: 20px
+  font-size: 1.2em
+  border-bottom: 2px solid $grey
+  font-family: $rubik
+  color: $pink
+
+.schedule-list
+  margin: 0
+  padding: 0
+  list-style-type: none
+  height: auto
+  width: 100%
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  flex-wrap: wrap
+  max-height: 500px
+  overflow: scroll
+  overflow-x: hidden
+  margin-bottom: 20px
+
+.schedule-list-element
+  width: 100%
+  height: 40px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-bottom: 15px
+  flex-direction: row-reverse
+
+.schedule-time
+  margin: 0
+  width: 48%
+  height: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  color: $white
+  background: $grey
+  border-radius: 5px
+  font-size: 1.2em
+  font-family: $rubik
+
+.schedule-delete-button
+  width: 48%
+  height: 100%
+  border: none
+  border-radius: 5px
+  font-size: 1.2em
+  font-family: $rubik
+  background: $white-hover
+  color: $grey
+
+  &:hover
+    background: $delete-color
+    color: $white
+
+    & + .schedule-time
+      background: $pink
+
+  &:focus
+    outline: none
+
+.schedule-input-area
+  width: 100%
+  height: 40px
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+.schedule-time-input
+  width: 48%
+  height: 100%
+  border: none
+  padding: 0
+  border-radius: 5px
+  box-shadow: 0 0px 5px -1px $grey
+  box-sizing: border-box
+  color: $grey
+  text-align: center
+
+  &::placeholder
+    color: $grey-bright
+
+  &:hover
+    color: $pink-bright
+
+    &:placeholder
+      color: $pink-bright
+
+  &:focus
+    outline: none
     color: $pink
 
-  .schedule-list
-    margin: 0
-    padding: 0
-    list-style-type: none
-    height: auto
-    width: 100%
-    display: flex
-    justify-content: flex-start
-    align-items: center
-    flex-wrap: wrap
-    max-height: 500px
-    overflow: scroll
-    overflow-x: hidden
-    margin-bottom: 20px
+    &:hover
+      color: $pink
 
-    .schedule-list-element
-      width: 100%
-      height: 40px
-      display: flex
-      justify-content: space-between
-      align-items: center
-      margin-bottom: 15px
-      flex-direction: row-reverse
+.schedule-time-add-button
+  width: 48%
+  height: 100%
+  border: none
+  border-radius: 5px
+  background: $grey
+  color: $white
+  box-shadow: 0 0px 5px -1px $grey-bright
 
-      .schedule-time
-        margin: 0
-        width: 48%
-        height: 100%
-        display: flex
-        justify-content: center
-        align-items: center
-        color: $white
-        background: $grey
-        border-radius: 5px
-        font-size: 1.2em
-        font-family: $rubik
+  &:hover
+    background: $pink
 
-      .schedule-delete-button
-        width: 48%
-        height: 100%
-        border: none
-        border-radius: 5px
-        font-size: 1.2em
-        font-family: $rubik
-        background: $white-hover
-        color: $grey
-
-        &:hover
-          background: $delete-color
-          color: $white
-
-          & + .schedule-time
-            background: $pink
-
-        &:focus
-          outline: none
-
-  .schedule-input-area
-    width: 100%
-    height: 40px
-    display: flex
-    align-items: center
-    justify-content: space-between
-
-    .schedule-time-input
-      width: 48%
-      height: 100%
-      border: none
-      padding: 0
-      border-radius: 5px
-      box-shadow: 0 0px 5px -1px $grey
-      box-sizing: border-box
-      color: $grey
-      text-align: center
-
-      &::placeholder
-        color: $grey-bright
-
-      &:hover
-        color: $pink-bright
-
-        &:placeholder
-          color: $pink-bright
-
-      &:focus
-        outline: none
-        color: $pink
-
-        &:hover
-          color: $pink
-
-    .schedule-time-add-button
-      width: 48%
-      height: 100%
-      border: none
-      border-radius: 5px
-      background: $grey
-      color: $white
-      box-shadow: 0 0px 5px -1px $grey-bright
-
-      &:hover
-        background: $pink
-
-      &:focus
-        outline: none
+  &:focus
+    outline: none
 
 .edit-description-container
     width: 100%
     height: 600px
 
-    .description-input
-      width: 100%
-      height: 100%
-      padding: 0
-      box-sizing: border-box
-      font-size: 0.8em
-      resize: none
-      padding: 5px
-      border: 2px solid $grey
-      border-radius: 5px
+.description-input
+  width: 100%
+  height: 100%
+  padding: 0
+  box-sizing: border-box
+  font-size: 0.8em
+  resize: none
+  padding: 5px
+  border: 2px solid $grey
+  border-radius: 5px
 
-      &:hover
-        border-color: $pink-bright
-        color: $pink-bright
+  &:hover
+    border-color: $pink-bright
+    color: $pink-bright
 
-      &:focus
-        outline: none
-        color: $black
-        border-color: $pink
+  &:focus
+    outline: none
+    color: $black
+    border-color: $pink
 
 .edit-add-info-container
   width: 100%
@@ -1031,310 +1033,308 @@
   flex-wrap: wrap
   padding-right: 25px
 
-  .add-info-area
-    width: 100%
-    height: auto
-    display: flex
-    align-items: flex-start
-    justify-content: center
-    flex-wrap: wrap
-    margin-bottom: 20px
+.add-info-area
+  width: 100%
+  height: auto
+  display: flex
+  align-items: flex-start
+  justify-content: center
+  flex-wrap: wrap
+  margin-bottom: 20px
 
-    &:nth-child(2)
-      margin-bottom: 0
+  &:nth-child(2)
+    margin-bottom: 0
 
-    .add-info-header
-      width: 100%
-      margin: 0
-      margin-bottom: 20px
-      font-size: 1.2em
-      font-family: $rubik
-      border-bottom: 2px solid $grey
+.add-info-header
+  width: 100%
+  margin: 0
+  margin-bottom: 20px
+  font-size: 1.2em
+  font-family: $rubik
+  border-bottom: 2px solid $grey
+  color: $pink
+
+.add-info-list
+  width: 100%
+  height: auto
+  margin: 0
+  margin-bottom: 20px
+  padding: 0
+  list-style-type: none
+
+.add-info-element
+  width: 100%
+  display: flex
+  justify-content: space-between
+  align-items: center
+  height: 40px
+  flex-direction: row-reverse
+  margin-bottom: 10px
+
+.add-info
+  font-family: $rubik
+  border-bottom: 1px solid $grey-bright
+  width: 100%
+  color: $grey-bright
+  margin: 0
+  height: 100%
+  display: flex
+  align-items: center
+
+.add-info-delete-button
+  width: 40px
+  height: 40px
+  margin-left: 10px
+  box-sizing: initial
+  border: none
+  font-size: 1.4em
+  font-family: $rubik
+  display: flex
+  justify-content: center
+  align-items: center
+  background: $white
+  color: $grey-bright
+  padding: 0
+
+  &:hover
+    color: $delete-color
+
+    & + .add-info
+      border-color: $delete-color
+      color: $delete-color
+
+.add-info-checkbox-container
+  width: 100%
+  height: 100%
+  display: flex
+  justify-content: flex-start
+  align-items: center
+
+.checkbox-label
+  width: 90%
+  height: 40px
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  font-family: $rubik
+  color: $grey
+
+.checkbox-mock
+  width: 30px
+  height: 30px
+  background: $white
+  border-radius: 5px
+  border: 2px solid $grey
+  margin-right: 20px
+
+  &:hover
+    border-color: $pink-bright
+
+input[type="checkbox"]
+  display: none
+
+  &:checked
+    & ~ .checkbox-mock
+      background: $pink
+      border-color: $pink
+
+      &:hover
+        background: $pink-bright
+        border-color: $pink-bright
+
+  &:disabled
+    & ~ .checkbox-mock
+      border-color: $grey
+
+      &:hover
+        border-color: $grey
+
+    &:checked
+      & ~ .checkbox-mock
+        background: $grey
+        border-color: $grey
+
+        &:hover
+          background: $grey
+          border-color: $grey
+
+.add-info-input-area
+  width: 100%
+  height: 40px
+  margin: 0
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+.add-info-input
+  width: 100%
+  height: 100%
+  font-size: 1.1em
+  border: none
+  border-radius: 5px
+  box-shadow: 0 0px 5px -1px $grey
+  box-sizing: border-box
+  margin-left: 5px
+  color: $grey
+  padding-left: 20px
+
+  &:hover
+    color: $pink-bright
+
+    &::placeholder
+        color: $pink-bright
+
+  &:focus
+    outline: none
+    color: $pink
+
+    &:hover
       color: $pink
 
-    .add-info-list
-      width: 100%
-      height: auto
-      margin: 0
-      margin-bottom: 20px
-      padding: 0
-      list-style-type: none
+  &::placeholder
+    color: $grey-bright
 
-      .add-info-element
-        width: 100%
-        display: flex
-        justify-content: space-between
-        align-items: center
-        height: 40px
-        flex-direction: row-reverse
-        margin-bottom: 10px
+.add-info-input-button
+  height: 40px
+  width: 40px
+  margin-left: 10px
+  border: none
+  border-radius: 5px
+  background: $grey-bright
+  font-size: 1.4em
+  color: $white
+  box-shadow: 0 0px 5px -1px $grey
 
-        .add-info
-          font-family: $rubik
-          border-bottom: 1px solid $grey-bright
-          width: 100%
-          color: $grey-bright
-          margin: 0
-          height: 100%
-          display: flex
-          align-items: center
+  &:hover
+    background: $pink
 
-        .add-info-delete-button
-          width: 40px
-          height: 40px
-          margin-left: 10px
-          box-sizing: initial
-          border: none
-          font-size: 1.4em
-          font-family: $rubik
-          display: flex
-          justify-content: center
-          align-items: center
-          background: $white
-          color: $grey-bright
-          padding: 0
-
-          &:hover
-            color: $delete-color
-
-            & + .add-info
-              border-color: $delete-color
-              color: $delete-color
-
-        .add-info-checkbox-container
-          width: 100%
-          height: 100%
-          display: flex
-          justify-content: flex-start
-          align-items: center
-
-          .checkbox-label
-            width: 90%
-            height: 40px
-            display: flex
-            justify-content: flex-start
-            align-items: center
-            font-family: $rubik
-            color: $grey
-
-          .checkbox-mock
-            width: 30px
-            height: 30px
-            background: $white
-            border-radius: 5px
-            border: 2px solid $grey
-            margin-right: 20px
-
-            &:hover
-              border-color: $pink-bright
-
-          input[type="checkbox"]
-            display: none
-
-            &:checked
-              & ~ .checkbox-mock
-                background: $pink
-                border-color: $pink
-
-                &:hover
-                  background: $pink-bright
-                  border-color: $pink-bright
-
-            &:disabled
-              & ~ .checkbox-mock
-                border-color: $grey
-
-                &:hover
-                  border-color: $grey
-
-              &:checked
-                & ~ .checkbox-mock
-                  background: $grey
-                  border-color: $grey
-
-                  &:hover
-                    background: $grey
-                    border-color: $grey
-
-    .add-info-input-area
-      width: 100%
-      height: 40px
-      margin: 0
-      display: flex
-      align-items: center
-      justify-content: space-between
-
-      .add-info-input
-        width: 100%
-        height: 100%
-        font-size: 1.1em
-        border: none
-        border-radius: 5px
-        box-shadow: 0 0px 5px -1px $grey
-        box-sizing: border-box
-        margin-left: 5px
-        color: $grey
-        padding-left: 20px
-
-        &:hover
-          color: $pink-bright
-
-          &::placeholder
-              color: $pink-bright
-
-        &:focus
-          outline: none
-          color: $pink
-
-          &:hover
-            color: $pink
-
-        &::placeholder
-          color: $grey-bright
-
-      .add-info-input-button
-        height: 40px
-        width: 40px
-        margin-left: 10px
-        border: none
-        border-radius: 5px
-        background: $grey-bright
-        font-size: 1.4em
-        color: $white
-        box-shadow: 0 0px 5px -1px $grey
-
-        &:hover
-          background: $pink
-
-        &:focus
-          outline: none
+  &:focus
+    outline: none
 
 .edit-price-container
   width: 100%
   height: auto
-  // max-height: 600px
-  // overflow: scroll
-  // overflow-x: hidden
   display: flex
   justify-content: center
   align-items: center
   flex-wrap: wrap
-  // padding-right: 25px
 
-  .price-area
-    width: 100%
-    height: auto
-    max-height: 500px
-    overflow: scroll
-    overflow-x: hidden
-    display: flex
-    align-items: flex-start
-    justify-content: center
-    flex-wrap: wrap
-    margin-bottom: 20px
-    padding-right: 25px
+.price-area
+  width: 100%
+  height: auto
+  max-height: 500px
+  overflow: scroll
+  overflow-x: hidden
+  display: flex
+  align-items: flex-start
+  justify-content: center
+  flex-wrap: wrap
+  margin-bottom: 20px
+  padding-right: 25px
 
-    .price-list
-      width: 100%
-      height: auto
-      margin: 0
-      margin-bottom: 20px
-      padding: 0
-      list-style-type: none
+.price-list
+  width: 100%
+  height: auto
+  margin: 0
+  margin-bottom: 20px
+  padding: 0
+  list-style-type: none
 
-      .price-element
-        width: 100%
-        display: flex
-        justify-content: space-between
-        align-items: center
-        height: 40px
-        flex-direction: row-reverse
-        margin-bottom: 10px
+.price-element
+  border-bottom: none
+  width: 100%
+  display: fl
+  justify-content: space-between
+  align-items: center
+  height: 40px
+  flex-direction: row-reverse
+  margin-bottom: 10px
 
-        .price-info
-          font-family: $rubik
-          border-bottom: 1px solid $grey-bright
-          width: 100%
-          color: $grey-bright
-          margin: 0
-          height: 100%
-          display: flex
-          align-items: center
-          margin-right: 10px
+.price-info
+  font-family: $rubik
+  border-bottom: 1px solid $grey-bright
+  width: 100%
+  color: $grey-bright
+  margin: 0
+  height: 100%
+  display: flex
+  align-items: center
+  margin-right: 10px
 
-        .price-delete-button
-          width: 40px
-          height: 40px
-          box-sizing: initial
-          border: none
-          font-size: 1.4em
-          font-family: $rubik
-          display: flex
-          justify-content: center
-          align-items: center
-          background: $white
-          color: $grey-bright
-          padding: 0
+.price-delete-button
+  width: 40px
+  height: 40px
+  box-sizing: initial
+  border: none
+  font-size: 1.4em
+  font-family: $rubik
+  display: flex
+  justify-content: center
+  align-items: center
+  background: $white
+  color: $grey-bright
+  padding: 0
 
-          &:hover
-            color: $delete-color
+  &:hover
+    color: $delete-color
 
-            & ~ .price-info
-              border-color: $delete-color
-              color: $delete-color
+    & ~ .price-info
+      border-color: $delete-color
+      color: $delete-color
 
-  .price-input-area
-    width: 100%
-    height: 40px
-    margin: 0
-    display: flex
-    align-items: center
-    justify-content: space-between
+.price-input-area
+  width: 100%
+  height: 40px
+  margin: 0
+  display: flex
+  align-items: center
+  justify-content: space-between
 
-    .price-input
-      width: 100%
-      height: 100%
-      font-size: 1.1em
-      border: none
-      border-radius: 5px
-      box-shadow: 0 0px 5px -1px $grey
-      box-sizing: border-box
-      margin-left: 5px
-      color: $grey
-      padding-left: 20px
-      margin-right: 10px
+.price-input
+  width: 100%
+  height: 100%
+  font-size: 1.1em
+  border: none
+  border-radius: 5px
+  box-shadow: 0 0px 5px -1px $grey
+  box-sizing: border-box
+  margin-left: 5px
+  color: $grey
+  padding-left: 20px
+  margin-right: 10px
 
-      &:hover
+  &:hover
+    color: $pink-bright
+
+    &::placeholder
         color: $pink-bright
 
-        &::placeholder
-            color: $pink-bright
+  &:focus
+    outline: none
+    color: $pink
 
-      &:focus
-        outline: none
-        color: $pink
+    &:hover
+      color: $pink
 
-        &:hover
-          color: $pink
+  &::placeholder
+    color: $grey-bright
 
-      &::placeholder
-        color: $grey-bright
+.price-input-button
+  height: 40px
+  width: 40px
+  min-width: 40px
+  border: none
+  border-radius: 5px
+  background: $grey-bright
+  font-size: 1.4em
+  color: $white
+  box-shadow: 0 0px 5px -1px $grey
 
-    .price-input-button
-      height: 40px
-      width: 40px
-      border: none
-      border-radius: 5px
-      background: $grey-bright
-      font-size: 1.4em
-      color: $white
-      box-shadow: 0 0px 5px -1px $grey
+  &:hover
+    background: $pink
 
-      &:hover
-        background: $pink
-
-      &:focus
-        outline: none
+  &:focus
+    outline: none
 
 .delete-panel
   width: 40%
@@ -1343,20 +1343,19 @@
   background: $grey
   box-shadow: 0 0px 5px -1px $black
 
-  .edit-top-beam
-    .delete-exit
-      background: $grey
-      color: $white
+.delete-exit
+  background: $grey
+  color: $white
 
-    .delete-header
-      border-color: $white
-      color: $white
+.delete-header
+  border-color: $white
+  color: $white
 
-  .delete-button
-    background: $grey-bright
+.delete-button
+  background: $grey-bright
 
-    &:hover
-      background: $delete-color
+  &:hover
+    background: $delete-color
 
 .delete-account-container
   width: 100%
@@ -1365,39 +1364,39 @@
   align-items: center
   justify-content: space-between
 
-  .delete-confrim-header
-    margin: 0
-    margin-right: 10px
-    width: 50%
-    height: 100%
-    display: flex
-    align-items: center
-    justify-content: flex-start
-    font-size: 1.2em
-    font-family: $rubik
-    color: $white
+.delete-confrim-header
+  margin: 0
+  margin-right: 10px
+  width: 50%
+  height: 100%
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  font-size: 1.2em
+  font-family: $rubik
+  color: $white
 
-  .delete-password-input
-    width: 100%
-    height: 60%
-    border-radius: 5px
-    border: none
-    box-shadow: 0 0px 5px -1px $black
-    padding-left: 20px
-    color: $grey
+.delete-password-input
+  width: 100%
+  height: 60%
+  border-radius: 5px
+  border: none
+  box-shadow: 0 0px 5px -1px $black
+  padding-left: 20px
+  color: $grey
+
+  &:hover
+      color: $pink-bright
+
+      &::placeholder
+          color: $pink-bright
+
+  &:focus
+    outline: none
+    color: $pink
 
     &:hover
-        color: $pink-bright
-
-        &::placeholder
-            color: $pink-bright
-
-    &:focus
-      outline: none
       color: $pink
 
-      &:hover
-        color: $pink
-
-    &::placeholder
-      color: $grey-bright
+  &::placeholder
+    color: $grey-bright

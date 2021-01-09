@@ -6,522 +6,582 @@
   justify-content: center;
   align-items: flex-start;
   position: relative; }
-  .middle-content .informations-container {
+
+.informations-container {
+  background: #ffffff;
+  width: 40%;
+  min-width: 720px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 25px 0 25px 0;
+  margin: 25px 0 25px 0;
+  border-radius: 5px;
+  box-shadow: 0 0 10px -1px #707070; }
+
+.account-label {
+  width: 90%;
+  height: 60px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 1.8em;
+  font-family: "Rubik";
+  color: #707070;
+  border: none;
+  border-bottom: 3px solid #707070;
+  margin-top: 0; }
+
+.delete-button {
+  width: 90%;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: #707070;
+  color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px -1px #a1a0a0;
+  font-size: 1.2em;
+  font-family: "Rubik"; }
+  .delete-button:hover {
+    background: #a1a0a0; }
+  .delete-button:focus {
+    outline: none; }
+
+.info-panel-default {
+  width: 90%;
+  height: auto;
+  background: #fa8072;
+  border-radius: 5px;
+  box-shadow: 0 0 10px -1px #707070;
+  margin-bottom: 25px;
+  padding: 25px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; }
+  .info-panel-default:last-child {
+    margin-bottom: 0; }
+
+.profile-photo-container {
+  width: 100%;
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row; }
+
+#photo {
+  content: url(../../assets/img/person-profile.jpeg); }
+
+.profile-picture {
+  height: 100%;
+  width: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px -1px #707070; }
+
+.profile-button {
+  width: 100%;
+  margin-left: 5%;
+  height: 100%;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 10px -1px #707070;
+  font-family: "Rubik";
+  font-size: 1.2em; }
+  .profile-button:focus {
+    outline: none; }
+
+.change-button {
+  background: #ffffff;
+  color: #707070; }
+  .change-button:hover {
+    background: #dddddd; }
+
+.edit-profile {
+  background: #707070;
+  color: #ffffff; }
+  .edit-profile:hover {
+    background: #a1a0a0; }
+
+.info-ul {
+  padding: 0;
+  list-style-type: none;
+  width: 100%;
+  height: auto;
+  margin-top: 25px;
+  margin-bottom: 0;
+  border-radius: 5px;
+  background: white;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px -1px #707070; }
+
+.info-li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #707070; }
+  .info-li:last-child {
+    margin-bottom: 0; }
+
+.name-data {
+  width: 50%;
+  font-family: "Rubik";
+  color: #707070; }
+
+.data {
+  width: 50%;
+  font-family: "Rubik";
+  color: #fa8072; }
+
+.password-container {
+  width: 48%;
+  height: 75px;
+  margin: 0;
+  background: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px -1px #707070; }
+
+.password-area {
+  font-family: "Rubik";
+  color: #707070; }
+
+.password-button {
+  height: 75px;
+  width: 48%;
+  border-radius: 5px;
+  border: none;
+  background: #707070;
+  color: #ffffff;
+  font-size: 1.2em;
+  font-family: "Rubik";
+  box-shadow: 0 0 10px -1px #707070; }
+  .password-button:focus {
+    outline: none; }
+  .password-button:hover {
+    background: #a1a0a0; }
+
+.paycard {
+  background: #ffffff;
+  box-shadow: 0 0 10px -1px #707070;
+  margin: 0;
+  border-radius: 5px;
+  display: flex;
+  width: 50%;
+  min-width: 290px;
+  height: 180px; }
+
+.card-buttons-container {
+  height: 180px;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  flex-wrap: wrap; }
+
+.remove-card-button {
+  width: 90%;
+  height: 75px;
+  box-shadow: 0 0 10px -1px #707070;
+  background: #707070;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  font-family: "Rubik";
+  color: #ffffff; }
+
+.disable-card-button {
+  width: 90%;
+  height: 75px;
+  box-shadow: 0 0 10px -1px #707070;
+  background: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  font-family: "Rubik";
+  color: #707070; }
+
+.soon-overlay {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #707070;
+  opacity: 0.8;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 3em; }
+
+.address-cotainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .address-cotainer .address-area {
+    width: 48%;
+    height: 75px;
     background: #ffffff;
-    width: 40%;
-    min-width: 720px;
-    height: 100%;
+    border-radius: 5px;
     display: flex;
-    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 0 10px -1px #707070;
+    padding: 0 10px;
+    box-sizing: border-box; }
+
+.info-img {
+  width: 35px;
+  height: auto; }
+
+#building-img {
+  content: url(../../assets/svg/home/home-grey.svg); }
+
+#map-img {
+  content: url(../../assets/svg/placeholder/placeholder-grey.svg); }
+
+.address-info {
+  padding-left: 10px;
+  margin: 0;
+  font-size: 1.2em;
+  font-family: "Rubik";
+  color: #707070; }
+
+.address-button {
+  width: 100%;
+  height: 75px;
+  margin-top: 25px;
+  border: none;
+  border-radius: 5px;
+  background: #707070;
+  box-shadow: 0 0 10px -1px #707070;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Rubik";
+  font-size: 1.2em;
+  color: #ffffff; }
+  .address-button:focus {
+    outline: none; }
+  .address-button:hover {
+    background: #a1a0a0; }
+
+.worker-informations-container {
+  background: #707070;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 25px 0 25px 0;
+  margin: 0;
+  margin-bottom: 25px; }
+
+.info-panel {
+  width: 90%;
+  height: auto;
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px -1px #a1a0a0;
+  margin-bottom: 25px;
+  padding: 25px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; }
+  .info-panel:last-child {
+    margin-bottom: 0; }
+
+.schedule-header {
+  width: 100%;
+  font-size: 1.4em;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: #fa8072 solid 2px;
+  font-family: "Rubik";
+  color: #fa8072;
+  margin-bottom: 25px; }
+
+.schedule-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  box-sizing: border-box; }
+
+.day-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box; }
+
+.day-label {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7em;
+  color: #fa8072;
+  font-family: "Rubik";
+  margin-bottom: 5px; }
+
+.day-schedule {
+  list-style-type: none;
+  box-sizing: border-box;
+  width: 85%;
+  height: auto;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  flex-wrap: wrap; }
+  .day-schedule li {
+    width: 100%;
+    height: 35px;
+    background: #707070;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: nowrap;
-    padding: 25px 0 25px 0;
-    margin: 25px 0 25px 0;
-    border-radius: 5px;
-    box-shadow: 0 0 10px -1px #707070; }
-    .middle-content .informations-container .account-label {
-      width: 90%;
-      height: 60px;
-      display: flex;
-      justify-content: start;
-      align-items: center;
-      font-size: 1.8em;
-      font-family: "Rubik";
-      color: #707070;
-      border: none;
-      border-bottom: 3px solid #707070;
-      margin-top: 0; }
-    .middle-content .informations-container .delete-button {
-      width: 90%;
-      height: 75px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: none;
-      background: #707070;
-      color: #ffffff;
-      border-radius: 5px;
-      box-shadow: 0 0 10px -1px #a1a0a0;
-      font-size: 1.2em;
-      font-family: "Rubik"; }
-      .middle-content .informations-container .delete-button:hover {
-        background: #a1a0a0; }
-      .middle-content .informations-container .delete-button:focus {
-        outline: none; }
-    .middle-content .informations-container .info-panel {
-      width: 90%;
-      height: auto;
-      background: #fa8072;
-      border-radius: 5px;
-      box-shadow: 0 0 10px -1px #707070;
-      margin-bottom: 25px;
-      padding: 25px;
-      box-sizing: border-box;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      position: relative; }
-      .middle-content .informations-container .info-panel:last-child {
-        margin-bottom: 0; }
-      .middle-content .informations-container .info-panel .profile-photo-container {
-        width: 100%;
-        height: 75px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: nowrap;
-        flex-direction: row; }
-        .middle-content .informations-container .info-panel .profile-photo-container #photo {
-          content: url(../../assets/img/person-profile.jpeg); }
-        .middle-content .informations-container .info-panel .profile-photo-container .profile-picture {
-          height: 100%;
-          width: auto;
-          border-radius: 5px;
-          box-shadow: 0 0 10px -1px #707070; }
-        .middle-content .informations-container .info-panel .profile-photo-container .profile-button {
-          width: 100%;
-          margin-left: 5%;
-          height: 100%;
-          border: none;
-          border-radius: 5px;
-          box-shadow: 0 0 10px -1px #707070;
-          font-family: "Rubik";
-          font-size: 1.2em; }
-          .middle-content .informations-container .info-panel .profile-photo-container .profile-button:focus {
-            outline: none; }
-        .middle-content .informations-container .info-panel .profile-photo-container .change-button {
-          background: #ffffff;
-          color: #707070; }
-          .middle-content .informations-container .info-panel .profile-photo-container .change-button:hover {
-            background: #dddddd; }
-        .middle-content .informations-container .info-panel .profile-photo-container .edit-button {
-          background: #707070;
-          color: #ffffff; }
-          .middle-content .informations-container .info-panel .profile-photo-container .edit-button:hover {
-            background: #a1a0a0; }
-      .middle-content .informations-container .info-panel .info-ul {
-        padding: 0;
-        list-style-type: none;
-        width: 100%;
-        height: auto;
-        margin-top: 25px;
-        margin-bottom: 0;
-        border-radius: 5px;
-        background: white;
-        padding: 20px;
-        box-sizing: border-box;
-        box-shadow: 0 0 10px -1px #707070; }
-        .middle-content .informations-container .info-panel .info-ul .info-li {
-          display: flex;
-          justify-content: space-between;
-          margin-bottom: 10px;
-          border-bottom: 1px solid #707070; }
-          .middle-content .informations-container .info-panel .info-ul .info-li:last-child {
-            margin-bottom: 0; }
-          .middle-content .informations-container .info-panel .info-ul .info-li .name-data {
-            width: 50%;
-            font-family: "Rubik";
-            color: #707070; }
-          .middle-content .informations-container .info-panel .info-ul .info-li .data {
-            width: 50%;
-            font-family: "Rubik";
-            color: #fa8072; }
-      .middle-content .informations-container .info-panel .password-container {
-        width: 48%;
-        height: 75px;
-        margin: 0;
-        background: white;
-        border-radius: 5px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 20px;
-        box-sizing: border-box;
-        box-shadow: 0 0 10px -1px #707070; }
-        .middle-content .informations-container .info-panel .password-container .password-area {
-          font-family: "Rubik";
-          color: #707070; }
-      .middle-content .informations-container .info-panel .password-button {
-        height: 75px;
-        width: 48%;
-        border-radius: 5px;
-        border: none;
-        background: #707070;
-        color: #ffffff;
-        font-size: 1.2em;
-        font-family: "Rubik";
-        box-shadow: 0 0 10px -1px #707070; }
-        .middle-content .informations-container .info-panel .password-button:focus {
-          outline: none; }
-        .middle-content .informations-container .info-panel .password-button:hover {
-          background: #a1a0a0; }
-      .middle-content .informations-container .info-panel .paycard {
-        background: #ffffff;
-        box-shadow: 0 0 10px -1px #707070;
-        margin: 0;
-        border-radius: 5px;
-        display: flex;
-        width: 50%;
-        min-width: 290px;
-        height: 180px; }
-      .middle-content .informations-container .info-panel .card-buttons-container {
-        height: 180px;
-        width: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        box-sizing: border-box;
-        flex-wrap: wrap; }
-        .middle-content .informations-container .info-panel .card-buttons-container .remove-card-button {
-          width: 90%;
-          height: 75px;
-          box-shadow: 0 0 10px -1px #707070;
-          background: #707070;
-          border: none;
-          border-radius: 5px;
-          font-size: 1.2em;
-          font-family: "Rubik";
-          color: #ffffff; }
-        .middle-content .informations-container .info-panel .card-buttons-container .disable-card-button {
-          width: 90%;
-          height: 75px;
-          box-shadow: 0 0 10px -1px #707070;
-          background: #ffffff;
-          border: none;
-          border-radius: 5px;
-          font-size: 1.2em;
-          font-family: "Rubik";
-          color: #707070; }
-      .middle-content .informations-container .info-panel .soon-overlay {
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #707070;
-        opacity: 0.8;
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #ffffff;
-        font-size: 3em; }
-      .middle-content .informations-container .info-panel .address-cotainer {
-        width: 100%;
-        height: auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between; }
-        .middle-content .informations-container .info-panel .address-cotainer .address-area {
-          width: 48%;
-          height: 75px;
-          background: #ffffff;
-          border-radius: 5px;
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          box-shadow: 0 0 10px -1px #707070;
-          padding: 0 10px;
-          box-sizing: border-box; }
-          .middle-content .informations-container .info-panel .address-cotainer .address-area .info-img {
-            width: 35px;
-            height: auto; }
-          .middle-content .informations-container .info-panel .address-cotainer .address-area #building-img {
-            content: url(../../assets/svg/home/home-grey.svg); }
-          .middle-content .informations-container .info-panel .address-cotainer .address-area #map-img {
-            content: url(../../assets/svg/placeholder/placeholder-grey.svg); }
-          .middle-content .informations-container .info-panel .address-cotainer .address-area .address-info {
-            padding-left: 10px;
-            margin: 0;
-            font-size: 1.2em;
-            font-family: "Rubik";
-            color: #707070; }
-      .middle-content .informations-container .info-panel .address-button {
-        width: 100%;
-        height: 75px;
-        margin-top: 25px;
-        border: none;
-        border-radius: 5px;
-        background: #707070;
-        box-shadow: 0 0 10px -1px #707070;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: "Rubik";
-        font-size: 1.2em;
-        color: #ffffff; }
-        .middle-content .informations-container .info-panel .address-button:focus {
-          outline: none; }
-        .middle-content .informations-container .info-panel .address-button:hover {
-          background: #a1a0a0; }
-    .middle-content .informations-container .worker-informations-container {
-      background: #707070;
-      width: 100%;
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: nowrap;
-      padding: 25px 0 25px 0;
-      margin: 0;
-      margin-bottom: 25px; }
-      .middle-content .informations-container .worker-informations-container .info-panel {
-        width: 90%;
-        height: auto;
-        background: #ffffff;
-        border-radius: 5px;
-        box-shadow: 0 0 10px -1px #a1a0a0;
-        margin-bottom: 25px;
-        padding: 25px;
-        box-sizing: border-box;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        position: relative; }
-        .middle-content .informations-container .worker-informations-container .info-panel:last-child {
-          margin-bottom: 0; }
-        .middle-content .informations-container .worker-informations-container .info-panel .schedule-header {
-          width: 100%;
-          font-size: 1.4em;
-          margin: 0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border-bottom: #fa8072 solid 2px;
-          font-family: "Rubik";
-          color: #fa8072;
-          margin-bottom: 25px; }
-        .middle-content .informations-container .worker-informations-container .info-panel .schedule-container {
-          width: 100%;
-          height: auto;
-          display: flex;
-          justify-content: flex-start;
-          align-items: flex-start;
-          box-sizing: border-box; }
-          .middle-content .informations-container .worker-informations-container .info-panel .schedule-container .day-container {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            height: 100%;
-            justify-content: flex-start;
-            align-items: center;
-            box-sizing: border-box; }
-            .middle-content .informations-container .worker-informations-container .info-panel .schedule-container .day-container .day-label {
-              margin: 0;
-              width: 100%;
-              height: 100%;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              font-size: 0.7em;
-              color: #fa8072;
-              font-family: "Rubik";
-              margin-bottom: 5px; }
-            .middle-content .informations-container .worker-informations-container .info-panel .schedule-container .day-container .day-schedule {
-              list-style-type: none;
-              box-sizing: border-box;
-              width: 85%;
-              height: auto;
-              margin: 0;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              padding: 0;
-              flex-wrap: wrap; }
-              .middle-content .informations-container .worker-informations-container .info-panel .schedule-container .day-container .day-schedule li {
-                width: 100%;
-                height: 35px;
-                background: #707070;
-                margin-bottom: 10px;
-                border-radius: 5px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 0.75em;
-                font-family: "Rubik";
-                color: #ffffff; }
-            .middle-content .informations-container .worker-informations-container .info-panel .schedule-container .day-container .day-schedule-button {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              font-size: 0.5em;
-              border: none;
-              background: #ffffff;
-              font-family: "Rubik";
-              color: #707070; }
-              .middle-content .informations-container .worker-informations-container .info-panel .schedule-container .day-container .day-schedule-button:hover {
-                color: #fa8072; }
-              .middle-content .informations-container .worker-informations-container .info-panel .schedule-container .day-container .day-schedule-button:focus {
-                outline: none; }
-        .middle-content .informations-container .worker-informations-container .info-panel .decription-header {
-          font-size: 1.2em;
-          width: 100%;
-          margin: 0;
-          font-family: "Rubik";
-          color: #fa8072;
-          border-bottom: 2px solid #fa8072;
-          margin-bottom: 20px;
-          display: flex;
-          justify-content: flex-start;
-          align-items: center; }
-        .middle-content .informations-container .worker-informations-container .info-panel .description {
-          margin: 0;
-          font-size: 0.7em;
-          margin-bottom: 20px;
-          font-family: "Rubik";
-          width: 100%; }
-        .middle-content .informations-container .worker-informations-container .info-panel .description-button {
-          width: 100%;
-          height: 75px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border: none;
-          background: #fa8072;
-          color: #ffffff;
-          border-radius: 5px;
-          box-shadow: 0 0 10px -1px #707070;
-          font-size: 1.2em;
-          font-family: "Rubik"; }
-          .middle-content .informations-container .worker-informations-container .info-panel .description-button:hover {
-            background: #ffb3aa; }
-          .middle-content .informations-container .worker-informations-container .info-panel .description-button:focus {
-            outline: none; }
-        .middle-content .informations-container .worker-informations-container .info-panel .additional-info-header {
-          font-size: 1.2em;
-          width: 100%;
-          margin: 0;
-          font-family: "Rubik";
-          color: #fa8072;
-          border-bottom: 2px solid #fa8072;
-          margin-bottom: 20px;
-          display: flex;
-          justify-content: flex-start;
-          align-items: center; }
-        .middle-content .informations-container .worker-informations-container .info-panel .add-info-container {
-          width: 100%;
-          height: auto;
-          display: flex;
-          justify-content: flex-start;
-          align-items: flex-start;
-          margin-bottom: 20px; }
-          .middle-content .informations-container .worker-informations-container .info-panel .add-info-container .add-info-img {
-            width: 30px;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start; }
-          .middle-content .informations-container .worker-informations-container .info-panel .add-info-container #profession-img {
-            content: url(../../assets/svg/brush/brush-grey.svg); }
-          .middle-content .informations-container .worker-informations-container .info-panel .add-info-container #payment-img {
-            content: url(../../assets/svg/card/credit-card-grey.svg); }
-          .middle-content .informations-container .worker-informations-container .info-panel .add-info-container #certificat-img {
-            content: url(../../assets/svg/education/mortarboard-grey.svg); }
-          .middle-content .informations-container .worker-informations-container .info-panel .add-info-container #web-img {
-            content: url(../../assets/svg/web/world-wide-web-grey.svg); }
-          .middle-content .informations-container .worker-informations-container .info-panel .add-info-container #exp-img {
-            content: url(../../assets/svg/quality/quality-grey.svg); }
-          .middle-content .informations-container .worker-informations-container .info-panel .add-info-container #favorite-img {
-            content: url(../../assets/svg/pin/safety-pin-grey.svg); }
-          .middle-content .informations-container .worker-informations-container .info-panel .add-info-container .add-info-area {
-            width: 100%;
-            height: auto;
-            padding-left: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            flex-wrap: wrap; }
-            .middle-content .informations-container .worker-informations-container .info-panel .add-info-container .add-info-area .add-info-subheader {
-              width: 100%;
-              height: 30px;
-              margin: 0;
-              font-size: 1em;
-              font-family: "Rubik";
-              color: #fa8072;
-              border-bottom: 2px solid #707070; }
-            .middle-content .informations-container .worker-informations-container .info-panel .add-info-container .add-info-area .informations {
-              width: 100%;
-              margin: 0;
-              margin-top: 10px;
-              padding: 0;
-              list-style-type: none; }
-              .middle-content .informations-container .worker-informations-container .info-panel .add-info-container .add-info-area .informations li {
-                font-size: 0.9em;
-                border-bottom: 1px solid #a1a0a0;
-                margin-bottom: 10px;
-                font-family: "Rubik";
-                color: #a1a0a0; }
-        .middle-content .informations-container .worker-informations-container .info-panel .add-info-button {
-          width: 100%;
-          height: 75px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border: none;
-          background: #fa8072;
-          color: #ffffff;
-          border-radius: 5px;
-          box-shadow: 0 0 10px -1px #707070;
-          font-size: 1.2em;
-          font-family: "Rubik"; }
-          .middle-content .informations-container .worker-informations-container .info-panel .add-info-button:hover {
-            background: #ffb3aa; }
-          .middle-content .informations-container .worker-informations-container .info-panel .add-info-button:focus {
-            outline: none; }
-        .middle-content .informations-container .worker-informations-container .info-panel .price-header {
-          width: 100%;
-          font-size: 1.4em;
-          margin: 0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border-bottom: #fa8072 solid 2px;
-          font-family: "Rubik";
-          color: #fa8072;
-          margin-bottom: 25px; }
-        .middle-content .informations-container .worker-informations-container .info-panel .price-button {
-          width: 100%;
-          height: 75px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border: none;
-          background: #fa8072;
-          color: #ffffff;
-          border-radius: 5px;
-          box-shadow: 0 0 10px -1px #707070;
-          font-size: 1.2em;
-          font-family: "Rubik"; }
-          .middle-content .informations-container .worker-informations-container .info-panel .price-button:hover {
-            background: #ffb3aa; }
-          .middle-content .informations-container .worker-informations-container .info-panel .price-button:focus {
-            outline: none; }
-        .middle-content .informations-container .worker-informations-container .info-panel .price-list {
-          margin: 0;
-          margin-bottom: 25px;
-          padding: 0;
-          list-style-type: none;
-          width: 100%; }
-          .middle-content .informations-container .worker-informations-container .info-panel .price-list li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            border-bottom: 2px solid #a1a0a0;
-            margin-bottom: 15px;
-            font-family: "Rubik";
-            font-size: 0.9em; }
-            .middle-content .informations-container .worker-informations-container .info-panel .price-list li:last-child {
-              margin-bottom: 0; }
-            .middle-content .informations-container .worker-informations-container .info-panel .price-list li .name-price, .middle-content .informations-container .worker-informations-container .info-panel .price-list li .value-price {
-              margin: 0; }
-            .middle-content .informations-container .worker-informations-container .info-panel .price-list li .name-price {
-              color: #fa8072; }
-            .middle-content .informations-container .worker-informations-container .info-panel .price-list li .value-price {
-              color: #707070; }
+    font-size: 0.75em;
+    font-family: "Rubik";
+    color: #ffffff; }
+
+.day-schedule-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.5em;
+  border: none;
+  background: #ffffff;
+  font-family: "Rubik";
+  color: #707070; }
+  .day-schedule-button:hover {
+    color: #fa8072; }
+  .day-schedule-button:focus {
+    outline: none; }
+
+.decription-header {
+  font-size: 1.2em;
+  width: 100%;
+  margin: 0;
+  font-family: "Rubik";
+  color: #fa8072;
+  border-bottom: 2px solid #fa8072;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; }
+
+.description {
+  margin: 0;
+  font-size: 0.7em;
+  margin-bottom: 20px;
+  font-family: "Rubik";
+  width: 100%; }
+
+.description-button {
+  width: 100%;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: #fa8072;
+  color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px -1px #707070;
+  font-size: 1.2em;
+  font-family: "Rubik"; }
+  .description-button:hover {
+    background: #ffb3aa; }
+  .description-button:focus {
+    outline: none; }
+
+.additional-info-header {
+  font-size: 1.2em;
+  width: 100%;
+  margin: 0;
+  font-family: "Rubik";
+  color: #fa8072;
+  border-bottom: 2px solid #fa8072;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; }
+
+.add-info-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 20px; }
+
+.add-info-img {
+  width: 30px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; }
+
+#profession-img {
+  content: url(../../assets/svg/brush/brush-grey.svg); }
+
+#payment-img {
+  content: url(../../assets/svg/card/credit-card-grey.svg); }
+
+#certificat-img {
+  content: url(../../assets/svg/education/mortarboard-grey.svg); }
+
+#web-img {
+  content: url(../../assets/svg/web/world-wide-web-grey.svg); }
+
+#exp-img {
+  content: url(../../assets/svg/quality/quality-grey.svg); }
+
+#favorite-img {
+  content: url(../../assets/svg/pin/safety-pin-grey.svg); }
+
+.add-info-area {
+  width: 100%;
+  height: auto;
+  padding-left: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap; }
+
+.add-info-subheader {
+  width: 100%;
+  height: 30px;
+  margin: 0;
+  font-size: 1em;
+  font-family: "Rubik";
+  color: #fa8072;
+  border-bottom: 2px solid #707070; }
+
+.informations {
+  width: 100%;
+  margin: 0;
+  margin-top: 10px;
+  padding: 0;
+  list-style-type: none; }
+  .informations li {
+    font-size: 0.9em;
+    border-bottom: 1px solid #a1a0a0;
+    margin-bottom: 10px;
+    font-family: "Rubik";
+    color: #a1a0a0; }
+
+.add-info-button {
+  width: 100%;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: #fa8072;
+  color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px -1px #707070;
+  font-size: 1.2em;
+  font-family: "Rubik"; }
+  .add-info-button:hover {
+    background: #ffb3aa; }
+  .add-info-button:focus {
+    outline: none; }
+
+.price-header {
+  width: 100%;
+  font-size: 1.4em;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: #fa8072 solid 2px;
+  font-family: "Rubik";
+  color: #fa8072;
+  margin-bottom: 25px; }
+
+.price-button {
+  width: 100%;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: #fa8072;
+  color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px -1px #707070;
+  font-size: 1.2em;
+  font-family: "Rubik"; }
+  .price-button:hover {
+    background: #ffb3aa; }
+  .price-button:focus {
+    outline: none; }
+
+.price-list {
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0;
+  list-style-type: none;
+  width: 100%; }
+  .price-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+    font-family: "Rubik";
+    font-size: 0.9em; }
+    .price-list li:last-child {
+      margin-bottom: 0; }
+
+.price-li {
+  border-bottom: 1px solid #707070; }
+
+.name-price, .value-price {
+  margin: 0; }
+
+.name-price {
+  color: #fa8072; }
+
+.value-price {
+  color: #707070; }
 
 .edit-panel {
   position: fixed;
@@ -534,51 +594,55 @@
   background: #ffffff;
   border-radius: 5px;
   box-shadow: 0 0px 5px -1px #707070; }
-  .edit-panel .edit-button {
-    width: 100%;
-    height: 75px;
-    border: none;
-    border-radius: 5px;
-    background: #fa8072;
-    color: #ffffff;
-    box-shadow: 0 0 10px -1px #707070;
-    margin-top: 20px;
-    font-size: 1.2em;
-    font-family: "Rubik"; }
-    .edit-panel .edit-button:hover {
-      background: #ffb3aa; }
-  .edit-panel .edit-top-beam {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 20px; }
-    .edit-panel .edit-top-beam .edit-header {
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      border-bottom: 2px solid #fa8072;
-      font-size: 1.4em;
-      font-family: "Rubik";
-      color: #fa8072; }
-    .edit-panel .edit-top-beam .edit-exit {
-      width: 50px;
-      height: 50px;
-      margin-left: 10px;
-      box-sizing: initial;
-      border: none;
-      font-size: 1.8em;
-      font-family: "Rubik";
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #ffffff;
-      color: #707070; }
-      .edit-panel .edit-top-beam .edit-exit:hover {
-        color: #fa8072; }
-      .edit-panel .edit-top-beam .edit-exit:focus {
-        outline: none; }
+
+.edit-button {
+  width: 100%;
+  height: 75px;
+  border: none;
+  border-radius: 5px;
+  background: #fa8072;
+  color: #ffffff;
+  box-shadow: 0 0 10px -1px #707070;
+  margin-top: 10px;
+  font-size: 1.2em;
+  font-family: "Rubik"; }
+  .edit-button:hover {
+    background: #ffb3aa; }
+
+.edit-top-beam {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 10px; }
+
+.edit-header {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-bottom: 2px solid #fa8072;
+  font-size: 1.4em;
+  font-family: "Rubik";
+  color: #fa8072; }
+
+.edit-exit {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  box-sizing: initial;
+  border: none;
+  font-size: 1.8em;
+  font-family: "Rubik";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  color: #707070; }
+  .edit-exit:hover {
+    color: #fa8072; }
+  .edit-exit:focus {
+    outline: none; }
 
 .edit-photo-container {
   width: 100%;
@@ -588,36 +652,38 @@
   display: flex;
   justify-content: center;
   align-items: center; }
-  .edit-photo-container .edit-photo-button {
-    display: none;
-    width: 50%;
-    height: 50px;
-    border: none;
-    border-radius: 5px;
-    background: #707070;
-    color: #ffffff;
-    font-family: "Rubik"; }
-    .edit-photo-container .edit-photo-button:hover {
-      background: #fa8072; }
-    .edit-photo-container .edit-photo-button:focus {
-      outline: none; }
-  .edit-photo-container .edit-photo-uploaded {
-    width: 50%;
-    height: 50px;
-    border: none;
-    border-radius: 5px;
-    background: #ffffff;
-    color: #fa8072;
-    font-family: "Rubik"; }
-    .edit-photo-container .edit-photo-uploaded::after {
-      content: "photo uploaded"; }
-    .edit-photo-container .edit-photo-uploaded:hover {
-      background: #fa8072;
-      color: #ffffff; }
-      .edit-photo-container .edit-photo-uploaded:hover::after {
-        content: "reupload photo"; }
-    .edit-photo-container .edit-photo-uploaded:focus {
-      outline: none; }
+
+.edit-photo-button {
+  display: none;
+  width: 50%;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  background: #707070;
+  color: #ffffff;
+  font-family: "Rubik"; }
+  .edit-photo-button:hover {
+    background: #fa8072; }
+  .edit-photo-button:focus {
+    outline: none; }
+
+.edit-photo-uploaded {
+  width: 50%;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  background: #ffffff;
+  color: #fa8072;
+  font-family: "Rubik"; }
+  .edit-photo-uploaded::after {
+    content: "photo uploaded"; }
+  .edit-photo-uploaded:hover {
+    background: #fa8072;
+    color: #ffffff; }
+    .edit-photo-uploaded:hover::after {
+      content: "reupload photo"; }
+  .edit-photo-uploaded:focus {
+    outline: none; }
 
 .edit-profile-container, .edit-address-container {
   width: 100%;
@@ -626,77 +692,82 @@
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap; }
-  .edit-profile-container .edit-profile-area, .edit-profile-container .edit-address-area, .edit-address-container .edit-profile-area, .edit-address-container .edit-address-area {
-    width: 100%;
-    height: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px; }
-    .edit-profile-container .edit-profile-area .edit-standard-info, .edit-profile-container .edit-profile-area .edit-address, .edit-profile-container .edit-address-area .edit-standard-info, .edit-profile-container .edit-address-area .edit-address, .edit-address-container .edit-profile-area .edit-standard-info, .edit-address-container .edit-profile-area .edit-address, .edit-address-container .edit-address-area .edit-standard-info, .edit-address-container .edit-address-area .edit-address {
-      width: 100%;
-      margin: 0;
-      height: 100%;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      font-size: 1.2em;
-      font-family: "Rubik";
-      border-bottom: 2px solid #707070;
+
+.edit-profile-area, .edit-address-area {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px; }
+
+.edit-standard-info, .edit-address {
+  width: 100%;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.2em;
+  font-family: "Rubik";
+  border-bottom: 1px solid #a1a0a0;
+  color: #fa8072; }
+
+.edit-standard-input, .edit-address-input {
+  width: 100%;
+  height: 90%;
+  border: none;
+  box-shadow: 0 0 10px -1px #707070;
+  border-radius: 5px;
+  margin-left: 10px;
+  padding: 0 0 0 10px;
+  box-sizing: border-box;
+  color: #707070; }
+  .edit-standard-input::placeholder, .edit-address-input::placeholder {
+    color: #a1a0a0; }
+  .edit-standard-input:focus, .edit-address-input:focus {
+    outline: none;
+    color: #fa8072; }
+    .edit-standard-input:focus:hover, .edit-address-input:focus:hover {
       color: #fa8072; }
-    .edit-profile-container .edit-profile-area .edit-standard-input, .edit-profile-container .edit-profile-area .edit-address-input, .edit-profile-container .edit-address-area .edit-standard-input, .edit-profile-container .edit-address-area .edit-address-input, .edit-address-container .edit-profile-area .edit-standard-input, .edit-address-container .edit-profile-area .edit-address-input, .edit-address-container .edit-address-area .edit-standard-input, .edit-address-container .edit-address-area .edit-address-input {
-      width: 100%;
-      height: 90%;
-      border: none;
-      box-shadow: 0 0 10px -1px #707070;
-      border-radius: 5px;
-      margin-left: 10px;
-      padding: 0 0 0 10px;
-      box-sizing: border-box;
-      color: #707070; }
-      .edit-profile-container .edit-profile-area .edit-standard-input::placeholder, .edit-profile-container .edit-profile-area .edit-address-input::placeholder, .edit-profile-container .edit-address-area .edit-standard-input::placeholder, .edit-profile-container .edit-address-area .edit-address-input::placeholder, .edit-address-container .edit-profile-area .edit-standard-input::placeholder, .edit-address-container .edit-profile-area .edit-address-input::placeholder, .edit-address-container .edit-address-area .edit-standard-input::placeholder, .edit-address-container .edit-address-area .edit-address-input::placeholder {
-        color: #a1a0a0; }
-      .edit-profile-container .edit-profile-area .edit-standard-input:focus, .edit-profile-container .edit-profile-area .edit-address-input:focus, .edit-profile-container .edit-address-area .edit-standard-input:focus, .edit-profile-container .edit-address-area .edit-address-input:focus, .edit-address-container .edit-profile-area .edit-standard-input:focus, .edit-address-container .edit-profile-area .edit-address-input:focus, .edit-address-container .edit-address-area .edit-standard-input:focus, .edit-address-container .edit-address-area .edit-address-input:focus {
-        outline: none;
-        color: #fa8072; }
-        .edit-profile-container .edit-profile-area .edit-standard-input:focus:hover, .edit-profile-container .edit-profile-area .edit-address-input:focus:hover, .edit-profile-container .edit-address-area .edit-standard-input:focus:hover, .edit-profile-container .edit-address-area .edit-address-input:focus:hover, .edit-address-container .edit-profile-area .edit-standard-input:focus:hover, .edit-address-container .edit-profile-area .edit-address-input:focus:hover, .edit-address-container .edit-address-area .edit-standard-input:focus:hover, .edit-address-container .edit-address-area .edit-address-input:focus:hover {
-          color: #fa8072; }
-      .edit-profile-container .edit-profile-area .edit-standard-input:hover, .edit-profile-container .edit-profile-area .edit-address-input:hover, .edit-profile-container .edit-address-area .edit-standard-input:hover, .edit-profile-container .edit-address-area .edit-address-input:hover, .edit-address-container .edit-profile-area .edit-standard-input:hover, .edit-address-container .edit-profile-area .edit-address-input:hover, .edit-address-container .edit-address-area .edit-standard-input:hover, .edit-address-container .edit-address-area .edit-address-input:hover {
-        color: #ffb3aa; }
-        .edit-profile-container .edit-profile-area .edit-standard-input:hover::placeholder, .edit-profile-container .edit-profile-area .edit-address-input:hover::placeholder, .edit-profile-container .edit-address-area .edit-standard-input:hover::placeholder, .edit-profile-container .edit-address-area .edit-address-input:hover::placeholder, .edit-address-container .edit-profile-area .edit-standard-input:hover::placeholder, .edit-address-container .edit-profile-area .edit-address-input:hover::placeholder, .edit-address-container .edit-address-area .edit-standard-input:hover::placeholder, .edit-address-container .edit-address-area .edit-address-input:hover::placeholder {
-          color: #ffb3aa; }
-    .edit-profile-container .edit-profile-area .edit-date-area, .edit-profile-container .edit-address-area .edit-date-area, .edit-address-container .edit-profile-area .edit-date-area, .edit-address-container .edit-address-area .edit-date-area {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 100%;
-      margin-left: 10px; }
-      .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input, .edit-profile-container .edit-address-area .edit-date-area .edit-date-input, .edit-address-container .edit-profile-area .edit-date-area .edit-date-input, .edit-address-container .edit-address-area .edit-date-area .edit-date-input {
-        width: 100%;
-        height: 90%;
-        border: none;
-        padding: 0;
-        box-shadow: 0 0 10px -1px #707070;
-        border-radius: 5px;
-        text-align: center;
-        color: #707070; }
-        .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input::placeholder, .edit-profile-container .edit-address-area .edit-date-area .edit-date-input::placeholder, .edit-address-container .edit-profile-area .edit-date-area .edit-date-input::placeholder, .edit-address-container .edit-address-area .edit-date-area .edit-date-input::placeholder {
-          color: #a1a0a0; }
-        .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input:focus, .edit-profile-container .edit-address-area .edit-date-area .edit-date-input:focus, .edit-address-container .edit-profile-area .edit-date-area .edit-date-input:focus, .edit-address-container .edit-address-area .edit-date-area .edit-date-input:focus {
-          outline: none;
-          color: #fa8072; }
-          .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input:focus:hover, .edit-profile-container .edit-address-area .edit-date-area .edit-date-input:focus:hover, .edit-address-container .edit-profile-area .edit-date-area .edit-date-input:focus:hover, .edit-address-container .edit-address-area .edit-date-area .edit-date-input:focus:hover {
-            color: #fa8072; }
-        .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input:hover, .edit-profile-container .edit-address-area .edit-date-area .edit-date-input:hover, .edit-address-container .edit-profile-area .edit-date-area .edit-date-input:hover, .edit-address-container .edit-address-area .edit-date-area .edit-date-input:hover {
-          color: #ffb3aa; }
-          .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input:hover::placeholder, .edit-profile-container .edit-address-area .edit-date-area .edit-date-input:hover::placeholder, .edit-address-container .edit-profile-area .edit-date-area .edit-date-input:hover::placeholder, .edit-address-container .edit-address-area .edit-date-area .edit-date-input:hover::placeholder {
-            color: #ffb3aa; }
-        .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input:nth-child(1), .edit-profile-container .edit-address-area .edit-date-area .edit-date-input:nth-child(1), .edit-address-container .edit-profile-area .edit-date-area .edit-date-input:nth-child(1), .edit-address-container .edit-address-area .edit-date-area .edit-date-input:nth-child(1) {
-          width: 70%; }
-        .edit-profile-container .edit-profile-area .edit-date-area .edit-date-input:nth-child(2), .edit-profile-container .edit-address-area .edit-date-area .edit-date-input:nth-child(2), .edit-address-container .edit-profile-area .edit-date-area .edit-date-input:nth-child(2), .edit-address-container .edit-address-area .edit-date-area .edit-date-input:nth-child(2) {
-          margin: 0 10px;
-          width: 150%; }
+  .edit-standard-input:hover, .edit-address-input:hover {
+    color: #ffb3aa; }
+    .edit-standard-input:hover::placeholder, .edit-address-input:hover::placeholder {
+      color: #ffb3aa; }
+
+.edit-date-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-left: 10px; }
+
+.edit-date-input {
+  width: 100%;
+  height: 90%;
+  border: none;
+  padding: 0;
+  box-shadow: 0 0 10px -1px #707070;
+  border-radius: 5px;
+  text-align: center;
+  color: #707070; }
+  .edit-date-input::placeholder {
+    color: #a1a0a0; }
+  .edit-date-input:focus {
+    outline: none;
+    color: #fa8072; }
+    .edit-date-input:focus:hover {
+      color: #fa8072; }
+  .edit-date-input:hover {
+    color: #ffb3aa; }
+    .edit-date-input:hover::placeholder {
+      color: #ffb3aa; }
+  .edit-date-input:nth-child(1) {
+    width: 70%; }
+  .edit-date-input:nth-child(2) {
+    margin: 0 10px;
+    width: 150%; }
 
 .edit-password-container {
   width: 100%;
@@ -705,46 +776,49 @@
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap; }
-  .edit-password-container .edit-password-area {
-    width: 100%;
-    height: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-    margin-bottom: 20px; }
-    .edit-password-container .edit-password-area .edit-password {
-      margin: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      border-bottom: 2px solid #707070;
-      font-size: 1.2em;
-      font-family: "Rubik";
+
+.edit-password-area {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  margin-bottom: 20px; }
+
+.edit-password {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #a1a0a0;
+  font-size: 1.2em;
+  font-family: "Rubik";
+  color: #fa8072; }
+
+.edit-password-input {
+  width: 100%;
+  height: 90%;
+  border: none;
+  box-shadow: 0 0 10px -1px #707070;
+  border-radius: 5px;
+  margin-left: 10px;
+  padding: 0 0 0 10px;
+  box-sizing: border-box;
+  color: #707070; }
+  .edit-password-input::placeholder {
+    color: #a1a0a0; }
+  .edit-password-input:focus {
+    outline: none;
+    color: #fa8072; }
+    .edit-password-input:focus:hover {
       color: #fa8072; }
-    .edit-password-container .edit-password-area .edit-password-input {
-      width: 100%;
-      height: 90%;
-      border: none;
-      box-shadow: 0 0 10px -1px #707070;
-      border-radius: 5px;
-      margin-left: 10px;
-      padding: 0 0 0 10px;
-      box-sizing: border-box;
-      color: #707070; }
-      .edit-password-container .edit-password-area .edit-password-input::placeholder {
-        color: #a1a0a0; }
-      .edit-password-container .edit-password-area .edit-password-input:focus {
-        outline: none;
-        color: #fa8072; }
-        .edit-password-container .edit-password-area .edit-password-input:focus:hover {
-          color: #fa8072; }
-      .edit-password-container .edit-password-area .edit-password-input:hover {
-        color: #ffb3aa; }
-        .edit-password-container .edit-password-area .edit-password-input:hover::placeholder {
-          color: #ffb3aa; }
+  .edit-password-input:hover {
+    color: #ffb3aa; }
+    .edit-password-input:hover::placeholder {
+      color: #ffb3aa; }
 
 .edit-schedule-container {
   width: 100%;
@@ -753,124 +827,133 @@
   justify-content: center;
   align-content: flex-start;
   flex-wrap: wrap; }
-  .edit-schedule-container .schedule-day {
-    width: 100%;
-    margin: 0;
-    margin-bottom: 20px;
-    font-size: 1.2em;
-    border-bottom: 2px solid #707070;
-    font-family: "Rubik";
+
+.schedule-day {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  border-bottom: 2px solid #707070;
+  font-family: "Rubik";
+  color: #fa8072; }
+
+.schedule-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  max-height: 500px;
+  overflow: scroll;
+  overflow-x: hidden;
+  margin-bottom: 20px; }
+
+.schedule-list-element {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-direction: row-reverse; }
+
+.schedule-time {
+  margin: 0;
+  width: 48%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  background: #707070;
+  border-radius: 5px;
+  font-size: 1.2em;
+  font-family: "Rubik"; }
+
+.schedule-delete-button {
+  width: 48%;
+  height: 100%;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  font-family: "Rubik";
+  background: #dddddd;
+  color: #707070; }
+  .schedule-delete-button:hover {
+    background: #d73a49;
+    color: #ffffff; }
+    .schedule-delete-button:hover + .schedule-time {
+      background: #fa8072; }
+  .schedule-delete-button:focus {
+    outline: none; }
+
+.schedule-input-area {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.schedule-time-input {
+  width: 48%;
+  height: 100%;
+  border: none;
+  padding: 0;
+  border-radius: 5px;
+  box-shadow: 0 0px 5px -1px #707070;
+  box-sizing: border-box;
+  color: #707070;
+  text-align: center; }
+  .schedule-time-input::placeholder {
+    color: #a1a0a0; }
+  .schedule-time-input:hover {
+    color: #ffb3aa; }
+    .schedule-time-input:hover:placeholder {
+      color: #ffb3aa; }
+  .schedule-time-input:focus {
+    outline: none;
     color: #fa8072; }
-  .edit-schedule-container .schedule-list {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    height: auto;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-    max-height: 500px;
-    overflow: scroll;
-    overflow-x: hidden;
-    margin-bottom: 20px; }
-    .edit-schedule-container .schedule-list .schedule-list-element {
-      width: 100%;
-      height: 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 15px;
-      flex-direction: row-reverse; }
-      .edit-schedule-container .schedule-list .schedule-list-element .schedule-time {
-        margin: 0;
-        width: 48%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #ffffff;
-        background: #707070;
-        border-radius: 5px;
-        font-size: 1.2em;
-        font-family: "Rubik"; }
-      .edit-schedule-container .schedule-list .schedule-list-element .schedule-delete-button {
-        width: 48%;
-        height: 100%;
-        border: none;
-        border-radius: 5px;
-        font-size: 1.2em;
-        font-family: "Rubik";
-        background: #dddddd;
-        color: #707070; }
-        .edit-schedule-container .schedule-list .schedule-list-element .schedule-delete-button:hover {
-          background: #d73a49;
-          color: #ffffff; }
-          .edit-schedule-container .schedule-list .schedule-list-element .schedule-delete-button:hover + .schedule-time {
-            background: #fa8072; }
-        .edit-schedule-container .schedule-list .schedule-list-element .schedule-delete-button:focus {
-          outline: none; }
-  .edit-schedule-container .schedule-input-area {
-    width: 100%;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; }
-    .edit-schedule-container .schedule-input-area .schedule-time-input {
-      width: 48%;
-      height: 100%;
-      border: none;
-      padding: 0;
-      border-radius: 5px;
-      box-shadow: 0 0px 5px -1px #707070;
-      box-sizing: border-box;
-      color: #707070;
-      text-align: center; }
-      .edit-schedule-container .schedule-input-area .schedule-time-input::placeholder {
-        color: #a1a0a0; }
-      .edit-schedule-container .schedule-input-area .schedule-time-input:hover {
-        color: #ffb3aa; }
-        .edit-schedule-container .schedule-input-area .schedule-time-input:hover:placeholder {
-          color: #ffb3aa; }
-      .edit-schedule-container .schedule-input-area .schedule-time-input:focus {
-        outline: none;
-        color: #fa8072; }
-        .edit-schedule-container .schedule-input-area .schedule-time-input:focus:hover {
-          color: #fa8072; }
-    .edit-schedule-container .schedule-input-area .schedule-time-add-button {
-      width: 48%;
-      height: 100%;
-      border: none;
-      border-radius: 5px;
-      background: #707070;
-      color: #ffffff;
-      box-shadow: 0 0px 5px -1px #a1a0a0; }
-      .edit-schedule-container .schedule-input-area .schedule-time-add-button:hover {
-        background: #fa8072; }
-      .edit-schedule-container .schedule-input-area .schedule-time-add-button:focus {
-        outline: none; }
+    .schedule-time-input:focus:hover {
+      color: #fa8072; }
+
+.schedule-time-add-button {
+  width: 48%;
+  height: 100%;
+  border: none;
+  border-radius: 5px;
+  background: #707070;
+  color: #ffffff;
+  box-shadow: 0 0px 5px -1px #a1a0a0; }
+  .schedule-time-add-button:hover {
+    background: #fa8072; }
+  .schedule-time-add-button:focus {
+    outline: none; }
 
 .edit-description-container {
   width: 100%;
   height: 600px; }
-  .edit-description-container .description-input {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    box-sizing: border-box;
-    font-size: 0.8em;
-    resize: none;
-    padding: 5px;
-    border: 2px solid #707070;
-    border-radius: 5px; }
-    .edit-description-container .description-input:hover {
-      border-color: #ffb3aa;
-      color: #ffb3aa; }
-    .edit-description-container .description-input:focus {
-      outline: none;
-      color: #000000;
-      border-color: #fa8072; }
+
+.description-input {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 0.8em;
+  resize: none;
+  padding: 5px;
+  border: 2px solid #707070;
+  border-radius: 5px; }
+  .description-input:hover {
+    border-color: #ffb3aa;
+    color: #ffb3aa; }
+  .description-input:focus {
+    outline: none;
+    color: #000000;
+    border-color: #fa8072; }
 
 .edit-add-info-container {
   width: 100%;
@@ -883,151 +966,164 @@
   align-items: center;
   flex-wrap: wrap;
   padding-right: 25px; }
-  .edit-add-info-container .add-info-area {
-    width: 100%;
-    height: auto;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 20px; }
-    .edit-add-info-container .add-info-area:nth-child(2) {
-      margin-bottom: 0; }
-    .edit-add-info-container .add-info-area .add-info-header {
-      width: 100%;
-      margin: 0;
-      margin-bottom: 20px;
-      font-size: 1.2em;
-      font-family: "Rubik";
-      border-bottom: 2px solid #707070;
+
+.add-info-area {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px; }
+  .add-info-area:nth-child(2) {
+    margin-bottom: 0; }
+
+.add-info-header {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  font-family: "Rubik";
+  border-bottom: 2px solid #707070;
+  color: #fa8072; }
+
+.add-info-list {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  list-style-type: none; }
+
+.add-info-element {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  flex-direction: row-reverse;
+  margin-bottom: 10px; }
+
+.add-info {
+  font-family: "Rubik";
+  border-bottom: 1px solid #a1a0a0;
+  width: 100%;
+  color: #a1a0a0;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  align-items: center; }
+
+.add-info-delete-button {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  box-sizing: initial;
+  border: none;
+  font-size: 1.4em;
+  font-family: "Rubik";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  color: #a1a0a0;
+  padding: 0; }
+  .add-info-delete-button:hover {
+    color: #d73a49; }
+    .add-info-delete-button:hover + .add-info {
+      border-color: #d73a49;
+      color: #d73a49; }
+
+.add-info-checkbox-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; }
+
+.checkbox-label {
+  width: 90%;
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: "Rubik";
+  color: #707070; }
+
+.checkbox-mock {
+  width: 30px;
+  height: 30px;
+  background: #ffffff;
+  border-radius: 5px;
+  border: 2px solid #707070;
+  margin-right: 20px; }
+  .checkbox-mock:hover {
+    border-color: #ffb3aa; }
+
+input[type="checkbox"] {
+  display: none; }
+  input[type="checkbox"]:checked ~ .checkbox-mock {
+    background: #fa8072;
+    border-color: #fa8072; }
+    input[type="checkbox"]:checked ~ .checkbox-mock:hover {
+      background: #ffb3aa;
+      border-color: #ffb3aa; }
+  input[type="checkbox"]:disabled ~ .checkbox-mock {
+    border-color: #707070; }
+    input[type="checkbox"]:disabled ~ .checkbox-mock:hover {
+      border-color: #707070; }
+  input[type="checkbox"]:disabled:checked ~ .checkbox-mock {
+    background: #707070;
+    border-color: #707070; }
+    input[type="checkbox"]:disabled:checked ~ .checkbox-mock:hover {
+      background: #707070;
+      border-color: #707070; }
+
+.add-info-input-area {
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.add-info-input {
+  width: 100%;
+  height: 100%;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0px 5px -1px #707070;
+  box-sizing: border-box;
+  margin-left: 5px;
+  color: #707070;
+  padding-left: 20px; }
+  .add-info-input:hover {
+    color: #ffb3aa; }
+    .add-info-input:hover::placeholder {
+      color: #ffb3aa; }
+  .add-info-input:focus {
+    outline: none;
+    color: #fa8072; }
+    .add-info-input:focus:hover {
       color: #fa8072; }
-    .edit-add-info-container .add-info-area .add-info-list {
-      width: 100%;
-      height: auto;
-      margin: 0;
-      margin-bottom: 20px;
-      padding: 0;
-      list-style-type: none; }
-      .edit-add-info-container .add-info-area .add-info-list .add-info-element {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 40px;
-        flex-direction: row-reverse;
-        margin-bottom: 10px; }
-        .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info {
-          font-family: "Rubik";
-          border-bottom: 1px solid #a1a0a0;
-          width: 100%;
-          color: #a1a0a0;
-          margin: 0;
-          height: 100%;
-          display: flex;
-          align-items: center; }
-        .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-delete-button {
-          width: 40px;
-          height: 40px;
-          margin-left: 10px;
-          box-sizing: initial;
-          border: none;
-          font-size: 1.4em;
-          font-family: "Rubik";
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background: #ffffff;
-          color: #a1a0a0;
-          padding: 0; }
-          .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-delete-button:hover {
-            color: #d73a49; }
-            .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-delete-button:hover + .add-info {
-              border-color: #d73a49;
-              color: #d73a49; }
-        .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-checkbox-container {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          justify-content: flex-start;
-          align-items: center; }
-          .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-checkbox-container .checkbox-label {
-            width: 90%;
-            height: 40px;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            font-family: "Rubik";
-            color: #707070; }
-          .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-checkbox-container .checkbox-mock {
-            width: 30px;
-            height: 30px;
-            background: #ffffff;
-            border-radius: 5px;
-            border: 2px solid #707070;
-            margin-right: 20px; }
-            .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-checkbox-container .checkbox-mock:hover {
-              border-color: #ffb3aa; }
-          .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-checkbox-container input[type="checkbox"] {
-            display: none; }
-            .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-checkbox-container input[type="checkbox"]:checked ~ .checkbox-mock {
-              background: #fa8072;
-              border-color: #fa8072; }
-              .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-checkbox-container input[type="checkbox"]:checked ~ .checkbox-mock:hover {
-                background: #ffb3aa;
-                border-color: #ffb3aa; }
-            .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-checkbox-container input[type="checkbox"]:disabled ~ .checkbox-mock {
-              border-color: #707070; }
-              .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-checkbox-container input[type="checkbox"]:disabled ~ .checkbox-mock:hover {
-                border-color: #707070; }
-            .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-checkbox-container input[type="checkbox"]:disabled:checked ~ .checkbox-mock {
-              background: #707070;
-              border-color: #707070; }
-              .edit-add-info-container .add-info-area .add-info-list .add-info-element .add-info-checkbox-container input[type="checkbox"]:disabled:checked ~ .checkbox-mock:hover {
-                background: #707070;
-                border-color: #707070; }
-    .edit-add-info-container .add-info-area .add-info-input-area {
-      width: 100%;
-      height: 40px;
-      margin: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between; }
-      .edit-add-info-container .add-info-area .add-info-input-area .add-info-input {
-        width: 100%;
-        height: 100%;
-        font-size: 1.1em;
-        border: none;
-        border-radius: 5px;
-        box-shadow: 0 0px 5px -1px #707070;
-        box-sizing: border-box;
-        margin-left: 5px;
-        color: #707070;
-        padding-left: 20px; }
-        .edit-add-info-container .add-info-area .add-info-input-area .add-info-input:hover {
-          color: #ffb3aa; }
-          .edit-add-info-container .add-info-area .add-info-input-area .add-info-input:hover::placeholder {
-            color: #ffb3aa; }
-        .edit-add-info-container .add-info-area .add-info-input-area .add-info-input:focus {
-          outline: none;
-          color: #fa8072; }
-          .edit-add-info-container .add-info-area .add-info-input-area .add-info-input:focus:hover {
-            color: #fa8072; }
-        .edit-add-info-container .add-info-area .add-info-input-area .add-info-input::placeholder {
-          color: #a1a0a0; }
-      .edit-add-info-container .add-info-area .add-info-input-area .add-info-input-button {
-        height: 40px;
-        width: 40px;
-        margin-left: 10px;
-        border: none;
-        border-radius: 5px;
-        background: #a1a0a0;
-        font-size: 1.4em;
-        color: #ffffff;
-        box-shadow: 0 0px 5px -1px #707070; }
-        .edit-add-info-container .add-info-area .add-info-input-area .add-info-input-button:hover {
-          background: #fa8072; }
-        .edit-add-info-container .add-info-area .add-info-input-area .add-info-input-button:focus {
-          outline: none; }
+  .add-info-input::placeholder {
+    color: #a1a0a0; }
+
+.add-info-input-button {
+  height: 40px;
+  width: 40px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #a1a0a0;
+  font-size: 1.4em;
+  color: #ffffff;
+  box-shadow: 0 0px 5px -1px #707070; }
+  .add-info-input-button:hover {
+    background: #fa8072; }
+  .add-info-input-button:focus {
+    outline: none; }
 
 .edit-price-container {
   width: 100%;
@@ -1036,104 +1132,114 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap; }
-  .edit-price-container .price-area {
-    width: 100%;
-    height: auto;
-    max-height: 500px;
-    overflow: scroll;
-    overflow-x: hidden;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-    padding-right: 25px; }
-    .edit-price-container .price-area .price-list {
-      width: 100%;
-      height: auto;
-      margin: 0;
-      margin-bottom: 20px;
-      padding: 0;
-      list-style-type: none; }
-      .edit-price-container .price-area .price-list .price-element {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 40px;
-        flex-direction: row-reverse;
-        margin-bottom: 10px; }
-        .edit-price-container .price-area .price-list .price-element .price-info {
-          font-family: "Rubik";
-          border-bottom: 1px solid #a1a0a0;
-          width: 100%;
-          color: #a1a0a0;
-          margin: 0;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          margin-right: 10px; }
-        .edit-price-container .price-area .price-list .price-element .price-delete-button {
-          width: 40px;
-          height: 40px;
-          box-sizing: initial;
-          border: none;
-          font-size: 1.4em;
-          font-family: "Rubik";
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background: #ffffff;
-          color: #a1a0a0;
-          padding: 0; }
-          .edit-price-container .price-area .price-list .price-element .price-delete-button:hover {
-            color: #d73a49; }
-            .edit-price-container .price-area .price-list .price-element .price-delete-button:hover ~ .price-info {
-              border-color: #d73a49;
-              color: #d73a49; }
-  .edit-price-container .price-input-area {
-    width: 100%;
-    height: 40px;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; }
-    .edit-price-container .price-input-area .price-input {
-      width: 100%;
-      height: 100%;
-      font-size: 1.1em;
-      border: none;
-      border-radius: 5px;
-      box-shadow: 0 0px 5px -1px #707070;
-      box-sizing: border-box;
-      margin-left: 5px;
-      color: #707070;
-      padding-left: 20px;
-      margin-right: 10px; }
-      .edit-price-container .price-input-area .price-input:hover {
-        color: #ffb3aa; }
-        .edit-price-container .price-input-area .price-input:hover::placeholder {
-          color: #ffb3aa; }
-      .edit-price-container .price-input-area .price-input:focus {
-        outline: none;
-        color: #fa8072; }
-        .edit-price-container .price-input-area .price-input:focus:hover {
-          color: #fa8072; }
-      .edit-price-container .price-input-area .price-input::placeholder {
-        color: #a1a0a0; }
-    .edit-price-container .price-input-area .price-input-button {
-      height: 40px;
-      width: 40px;
-      border: none;
-      border-radius: 5px;
-      background: #a1a0a0;
-      font-size: 1.4em;
-      color: #ffffff;
-      box-shadow: 0 0px 5px -1px #707070; }
-      .edit-price-container .price-input-area .price-input-button:hover {
-        background: #fa8072; }
-      .edit-price-container .price-input-area .price-input-button:focus {
-        outline: none; }
+
+.price-area {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  overflow: scroll;
+  overflow-x: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding-right: 25px; }
+
+.price-list {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  list-style-type: none; }
+
+.price-element {
+  border-bottom: none;
+  width: 100%;
+  display: fl;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  flex-direction: row-reverse;
+  margin-bottom: 10px; }
+
+.price-info {
+  font-family: "Rubik";
+  border-bottom: 1px solid #a1a0a0;
+  width: 100%;
+  color: #a1a0a0;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-right: 10px; }
+
+.price-delete-button {
+  width: 40px;
+  height: 40px;
+  box-sizing: initial;
+  border: none;
+  font-size: 1.4em;
+  font-family: "Rubik";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  color: #a1a0a0;
+  padding: 0; }
+  .price-delete-button:hover {
+    color: #d73a49; }
+    .price-delete-button:hover ~ .price-info {
+      border-color: #d73a49;
+      color: #d73a49; }
+
+.price-input-area {
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.price-input {
+  width: 100%;
+  height: 100%;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0px 5px -1px #707070;
+  box-sizing: border-box;
+  margin-left: 5px;
+  color: #707070;
+  padding-left: 20px;
+  margin-right: 10px; }
+  .price-input:hover {
+    color: #ffb3aa; }
+    .price-input:hover::placeholder {
+      color: #ffb3aa; }
+  .price-input:focus {
+    outline: none;
+    color: #fa8072; }
+    .price-input:focus:hover {
+      color: #fa8072; }
+  .price-input::placeholder {
+    color: #a1a0a0; }
+
+.price-input-button {
+  height: 40px;
+  width: 40px;
+  min-width: 40px;
+  border: none;
+  border-radius: 5px;
+  background: #a1a0a0;
+  font-size: 1.4em;
+  color: #ffffff;
+  box-shadow: 0 0px 5px -1px #707070; }
+  .price-input-button:hover {
+    background: #fa8072; }
+  .price-input-button:focus {
+    outline: none; }
 
 .delete-panel {
   width: 40%;
@@ -1141,16 +1247,19 @@
   top: 40%;
   background: #707070;
   box-shadow: 0 0px 5px -1px #000000; }
-  .delete-panel .edit-top-beam .delete-exit {
-    background: #707070;
-    color: #ffffff; }
-  .delete-panel .edit-top-beam .delete-header {
-    border-color: #ffffff;
-    color: #ffffff; }
-  .delete-panel .delete-button {
-    background: #a1a0a0; }
-    .delete-panel .delete-button:hover {
-      background: #d73a49; }
+
+.delete-exit {
+  background: #707070;
+  color: #ffffff; }
+
+.delete-header {
+  border-color: #ffffff;
+  color: #ffffff; }
+
+.delete-button {
+  background: #a1a0a0; }
+  .delete-button:hover {
+    background: #d73a49; }
 
 .delete-account-container {
   width: 100%;
@@ -1158,35 +1267,37 @@
   display: flex;
   align-items: center;
   justify-content: space-between; }
-  .delete-account-container .delete-confrim-header {
-    margin: 0;
-    margin-right: 10px;
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    font-size: 1.2em;
-    font-family: "Rubik";
-    color: #ffffff; }
-  .delete-account-container .delete-password-input {
-    width: 100%;
-    height: 60%;
-    border-radius: 5px;
-    border: none;
-    box-shadow: 0 0px 5px -1px #000000;
-    padding-left: 20px;
-    color: #707070; }
-    .delete-account-container .delete-password-input:hover {
+
+.delete-confrim-header {
+  margin: 0;
+  margin-right: 10px;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1.2em;
+  font-family: "Rubik";
+  color: #ffffff; }
+
+.delete-password-input {
+  width: 100%;
+  height: 60%;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0px 5px -1px #000000;
+  padding-left: 20px;
+  color: #707070; }
+  .delete-password-input:hover {
+    color: #ffb3aa; }
+    .delete-password-input:hover::placeholder {
       color: #ffb3aa; }
-      .delete-account-container .delete-password-input:hover::placeholder {
-        color: #ffb3aa; }
-    .delete-account-container .delete-password-input:focus {
-      outline: none;
+  .delete-password-input:focus {
+    outline: none;
+    color: #fa8072; }
+    .delete-password-input:focus:hover {
       color: #fa8072; }
-      .delete-account-container .delete-password-input:focus:hover {
-        color: #fa8072; }
-    .delete-account-container .delete-password-input::placeholder {
-      color: #a1a0a0; }
+  .delete-password-input::placeholder {
+    color: #a1a0a0; }
 
 /*# sourceMappingURL=info-page.css.map */
