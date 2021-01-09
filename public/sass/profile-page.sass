@@ -1,6 +1,8 @@
 @import './variables/fonts'
 @import './variables/colors'
 
+*
+  overflow-wrap: anywhere
 
 .middle-content
   height: auto
@@ -209,7 +211,8 @@
     align-items: center
     justify-content: space-between
     margin-bottom: 10px
-    height: 40px
+    height: auto
+    width: 100%
     border-bottom: 1px solid $grey
 
     .contact-type, .contact-value, .price-name, .price-value
@@ -228,6 +231,7 @@
       color: $pink
 
     .price-value
+      width: 50%
       justify-content: flex-end
 
 .add-info-ul

@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Rubik:wght@300&display=swap");
+* {
+  overflow-wrap: anywhere; }
+
 .middle-content {
   height: auto;
   width: 100%;
@@ -184,7 +187,8 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
-    height: 40px;
+    height: auto;
+    width: 100%;
     border-bottom: 1px solid #707070; }
     .contact-ul .contact-li .contact-type, .contact-ul .contact-li .contact-value, .contact-ul .contact-li .price-name, .contact-ul .contact-li .price-value, .contact-ul .price-li .contact-type, .contact-ul .price-li .contact-value, .contact-ul .price-li .price-name, .contact-ul .price-li .price-value, .price-ul .contact-li .contact-type, .price-ul .contact-li .contact-value, .price-ul .contact-li .price-name, .price-ul .contact-li .price-value, .price-ul .price-li .contact-type, .price-ul .price-li .contact-value, .price-ul .price-li .price-name, .price-ul .price-li .price-value {
       margin: 0;
@@ -200,6 +204,7 @@
       width: 150%;
       color: #fa8072; }
     .contact-ul .contact-li .price-value, .contact-ul .price-li .price-value, .price-ul .contact-li .price-value, .price-ul .price-li .price-value {
+      width: 50%;
       justify-content: flex-end; }
 
 .add-info-ul {
