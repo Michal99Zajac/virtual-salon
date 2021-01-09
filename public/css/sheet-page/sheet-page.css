@@ -199,7 +199,7 @@
       width: 20%;
       text-align: center; }
 
-.sheet-personal-data {
+.sheet-personal-data, .sheet-address {
   width: 100%;
   height: auto;
   display: flex;
