@@ -232,3 +232,46 @@
       width: 20%
       text-align: center
 
+.sheet-personal-data
+  width: 100%
+  height: auto
+  display: flex
+  justify-content: center
+  align-items: flex-start
+  flex-wrap: wrap
+
+.sheet-text-input
+  width: 100%
+  height: 40px
+  margin: 5px 0
+  padding: 0
+  padding-left: 20px
+  border: none
+  box-shadow: 0 0 10px -1px $grey
+  font-family: $rubik
+  font-size: 0.9em
+  border-radius: 5px
+  color: $grey
+
+  &:focus
+    outline: none
+    color: $pink
+
+    &::placeholder
+      color: $pink-bright
+
+    &:hover
+      color: $pink
+
+      &::placeholder
+        color: $pink
+
+  &::placeholder
+    color: $grey-bright
+
+  &:hover
+    color: $pink-bright
+
+    &::placeholder
+      color: $pink-bright
+
