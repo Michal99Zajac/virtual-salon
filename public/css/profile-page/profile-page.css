@@ -59,14 +59,14 @@
       color: #707070;
       font-size: 0.9em;
       width: 100%; }
+  .profile-beam #profile-img {
+    content: url(../../assets/img/person-profile.jpeg); }
   .profile-beam .profile-img {
     height: 100%;
     width: auto;
     border-radius: 5px;
     box-shadow: 2px;
     box-shadow: 0 0 10px -1px #707070; }
-  .profile-beam #profile-img {
-    content: url(../../assets/img/person-profile.jpeg); }
 
 .schedule-beam {
   width: 100%;

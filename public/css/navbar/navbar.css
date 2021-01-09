@@ -87,11 +87,11 @@ body {
         height: 100%;
         width: 100%; }
       .nav-bar-container .search-input-container .search-button #search-img {
-        content: url(../../assets/svg/lens/magnifying-glass-white.svg); }
+        content: url(../../assets/svg/lens/magnifying-glass-black.svg); }
       .nav-bar-container .search-input-container .search-button:focus {
         outline: none; }
       .nav-bar-container .search-input-container .search-button:hover #search-img {
-        content: url(../../assets/svg/lens/magnifying-glass-black.svg); }
+        content: url(../../assets/svg/lens/magnifying-glass-white.svg); }
 
 .nav-tabs-container {
   width: 100%;
@@ -148,7 +148,7 @@ body {
       border-radius: 5px 0 0 5px; }
       .nav-tabs-container .login-container .input-img:hover {
         opacity: 0.9; }
-    .nav-tabs-container .login-container #profile-img {
+    .nav-tabs-container .login-container #beam-profile-img {
       content: url(../../assets/img/person-profile.jpeg); }
   .nav-tabs-container .logout-container {
     width: 20%;
