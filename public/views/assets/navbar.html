@@ -7,26 +7,21 @@
   <link rel="stylesheet" href="../../css/navbar/navbar.css">
 </head>
 <body>
-  <div class="nav-bar-container">
-    <h1 class="logo">Virtual Salon</h1>
-    <div class="search-input-container">
-      <input class="search-input" type="text" placeholder="search">
-      <button class="search-button"><div id="search-img" class="input-img"></div></button>
-    </div>
-    <!-- classes: nav-tabs-container, nav-tabs-container-login nav-tabs-container-logout -->
-    <div class="nav-tabs-container nav-tabs-container-logout">
-      <a href="./search-page.html" class="nav-tab">search</a>
-      <a href="#" class="nav-tab login-nav-tab">orders</a>
-      <a href="#" class="nav-tab login-nav-tab">reservation</a>
-      <!-- id: nav-tab-current -->
-      <a href="#" class="nav-tab login-nav-tab">my info.</a>
-      <div class="login-container">
-        <div id="beam-profile-img" class="input-img"></div>
-        <button class="log-button">log out</button>
+  <div class="nb-container">
+    <h1 class="nb-logo">
+      <a class="nb-logo-a" href="./search-page.html">Virtual Salon</a>
+    </h1>
+    <div class="nb-right-section">
+      <a class="nb-tab nb-none" href="#">orders.</a>
+      <a class="nb-tab nb-none" href="#">reservations.</a>
+      <a class="nb-tab nb-none" id="nb-current-tab" href="#">my info.</a>
+      <div class="nb-profile nb-none">
+        <div id="nb-profile-photo" class="nb-profile-img"></div>
+        <button class="nb-button">logout</button>
       </div>
-      <div class="logout-container">
-        <button class="login-button sign-in-button">sign in</button>
-        <button class="login-button sign-up-button">sign out</button>
+      <div class="nb-sign">
+        <button class="nb-sign-button nb-sign-in">sign in</button>
+        <button class="nb-sign-button nb-sign-up">sign up</button>
       </div>
     </div>
   </div>

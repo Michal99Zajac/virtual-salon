@@ -16,209 +16,143 @@ body
   justify-content: center
   flex-wrap: wrap
 
-.nav-bar-container
+.nb-container
   padding: 0
   margin: 0
   width: 100%
-  min-width: fit-content
-  height: 5%
-  min-height: 50px
-  display: flex
-  flex-direction: row
+  min-width: 300px
+  height: 50px
+  min-height: 20px
   background-color: $pink
-  align-items: center
   box-sizing: border-box
   box-shadow: 0 0px 5px -1px $grey
+  display: flex
+  justify-content: space-between
+  align-items: center
 
-  .logo
-    height: 100%
-    width: 20%
-    min-width: 215px
-    display: flex
-    justify-content: center
-    align-items: center
-    font-size: 1.5em
-    margin: 0
-    color: $white
-    font-family: $dancing-script
-    text-decoration: none
+.nb-logo
+  width: auto
+  height: auto
+  margin: 0
+  font-size: 1.5em
+  padding: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  font-family: $dancing-script
+  margin: 0
+  min-width: 300px
+  box-sizing: border-box
 
-  .search-input-container
-    width: 35%
-    min-width: 305px
-    height: 100%
-    display: flex
-    justify-content: space-between
-    align-items: center
-    position: relative
+.nb-logo-a
+  font-size: inherit
+  color: $white
+  text-decoration: none
+  font-family: inherit
+  min-width: 180px
 
-    .search-input
-      width: 85%
-      min-width: 240px
-      height: 80%
-      padding: 0
-      margin: 0
-      border-radius: 5px
-      border: none
-      padding-left: 20px
-      font-size: 1em
-      font-family: $rubik
-      color: $grey-bright
-
-      &:focus
-        outline: none
-        color: $pink
-
-        &::placeholder
-          color: $pink
-
-        &:hover
-          color: $pink
-
-          &::placeholder
-            color: $pink
-
-      &:hover
-        color: $pink-bright
-
-        &::placeholder
-          color: $pink-bright
-
-    .search-button
-      height: 80%
-      min-height: 40px
-      width: 40px
-      min-width: 40px
-      border: none
-      padding: 4px
-      margin: 0
-      border-radius: 5px
-      margin-left: 2px
-      background: $pink
-
-      .input-img
-        height: 100%
-        width: 100%
-
-      #search-img
-        content: url(../../assets/svg/lens/magnifying-glass-black.svg)
-
-      &:focus
-        outline: none
-
-      &:hover #search-img
-        content: url(../../assets/svg/lens/magnifying-glass-white.svg)
-
-.nav-tabs-container
-  width: 100%
-  height: 100%
+.nb-right-section
   display: flex
   justify-content: flex-end
   align-items: center
+  width: 100%
+  height: 100%
 
-  .nav-tab
-    border: none
-    background: transparent
-    font-size: 0.7em
-    font-family: $rubik
-    font-weight: bold
-    margin: 0 0.5%
-    padding: 0
-    min-width: 85px
-    display: flex
-    justify-content: center
-    align-items: center
-    text-decoration: none
-    color: $black
+.nb-tab
+  margin: 0 10px
+  width: auto
+  height: 100%
+  display: flex
+  align-items: center
+  justify-content: center
+  box-sizing: border-box
+  color: $white
+  text-decoration: none
+  max-width: max-content
+  font-size: 0.8em
+  font-family: $rubik
+  white-space: nowrap
 
-    &:hover
-      color: $white
+  &:hover
+    border-bottom: 5px solid $white
 
-  #nav-tab-current
+#nb-current-tab
+  font-weight: bold
+  border-bottom: 5px solid $white
+
+.nb-profile, .nb-sign
+  width: auto
+  height: auto
+  display: flex
+  justify-content: center
+  align-items: center
+  min-width: max-content
+  margin: 0 10px
+  box-sizing: border-box
+  border-radius: 5px
+
+.nb-button
+  width: auto
+  height: 40px
+  border-radius: 0 5px 5px 0
+  border: none
+  background: $white
+  color: $pink
+  font-size: 0.8em
+  min-width: 100px
+  padding: 0
+  display: flex
+  justify-content: center
+  align-items: center
+
+  &:focus
+    outline: none
+
+  &:hover
+    background: $pink-bright
     color: $white
 
-  .login-container
-    width: 16%
-    height: 100%
-    display: flex
-    justify-content: space-between
-    align-items: center
-    margin: 0 1%
-    min-width: 130px
+.nb-profile-img
+  width: 40px
+  height: 40px
+  min-width: 40px
+  min-height: 40px
+  border-radius: 5px 0 0 5px
 
-    .log-button
-      height: 80%
-      width: 100%
-      border: none
-      border-radius: 0 5px 5px 0
-      display: flex
-      justify-content: center
-      align-items: center
-      padding: 0
-      margin: 0
-      font-size: 0.8em
-      color: $grey
-      background: $white
+  &:hover
+    opacity: 0.9
 
-      &:focus
-        outline: none
+#nb-profile-photo
+  content: url(../../assets/img/person-profile.jpeg)
 
-      &:hover
-        color: $pink
+.nb-sign-button
+  width: 100px
+  margin: 0 5px
+  padding: 0
+  height: 40px
+  border-radius: 5px
+  border: none
+  font-size: 0.8em
+  font-family: $rubik
+  color: $pink
+  min-width: 100px
+  box-sizing: border-box
 
-    .input-img
-      height: 80%
-      width: auto
-      border-radius: 5px 0 0 5px
+  &:hover
+    color: $white
 
-      &:hover
-        opacity: 0.9
+.nb-sign-in
+  background: $white
 
-    #beam-profile-img
-      content: url(../../assets/img/person-profile.jpeg)
+  &:hover
+    background: $pink-bright
 
-  .logout-container
-    width: 20%
-    height: 100%
-    display: flex
-    justify-content: space-between
-    align-items: center
-    margin: 0 1%
-    min-width: 150px
+.nb-sign-up
+  background: $grey-bright
+  color: $white
 
-    .login-button
-      width: 48%
-      font-size: 0.7em
-      height: 80%
-      border-radius: 5px
-      border: none
-      box-shadow: 0 0 10px -1px $grey-bright
+  &:hover
+    background: $pink-bright
 
-    .sign-in-button
-      background: $white
-      color: $pink
-
-      &:hover
-        background: $white-hover
-
-    .sign-up-button
-      background: $grey
-      color: $white
-
-      &:hover
-        background: $grey-bright
-
-.nav-tabs-container-logout
-  min-width: 200px
-
-  .login-container
-    display: none
-
-  .login-nav-tab
-    display: none
-
-.nav-tabs-container-login
-  min-width: 500px
-
-  .logout-container
-    display: none
+.nb-none
+  display: none
