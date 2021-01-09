@@ -121,7 +121,7 @@
 
 .sheet-type {
   width: 100%;
-  height: 50px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: space-between; }
@@ -135,7 +135,7 @@
         background: #fa8072; }
     .sheet-type .sheet-radio .radio-sheet-label {
       width: 100%;
-      height: 100%;
+      height: 50px;
       margin: 5px;
       box-sizing: border-box;
       display: flex;
@@ -147,5 +147,56 @@
       color: #ffffff;
       font-size: 1.1em;
       font-family: "Rubik"; }
+
+.sheet-treatment-ul {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+  .sheet-treatment-ul .sheet-treatment-li {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin: 10px 0; }
+    .sheet-treatment-ul .sheet-treatment-li .treatment-checkbox {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      border: 2px solid #707070;
+      border-radius: 5px;
+      margin-left: 20px;
+      background: #ffffff; }
+      .sheet-treatment-ul .sheet-treatment-li .treatment-checkbox:hover {
+        border-color: #fa8072; }
+        .sheet-treatment-ul .sheet-treatment-li .treatment-checkbox:hover ~ .treatment-p {
+          color: #fa8072; }
+    .sheet-treatment-ul .sheet-treatment-li .checkbox-input {
+      display: none; }
+      .sheet-treatment-ul .sheet-treatment-li .checkbox-input:checked + .treatment-checkbox {
+        border-color: #fa8072;
+        background: #fa8072; }
+        .sheet-treatment-ul .sheet-treatment-li .checkbox-input:checked + .treatment-checkbox ~ .treatment-p {
+          color: #fa8072; }
+        .sheet-treatment-ul .sheet-treatment-li .checkbox-input:checked + .treatment-checkbox:hover {
+          border-color: #707070;
+          background: #707070; }
+          .sheet-treatment-ul .sheet-treatment-li .checkbox-input:checked + .treatment-checkbox:hover ~ .treatment-p {
+            color: #a1a0a0; }
+    .sheet-treatment-ul .sheet-treatment-li .treatment-p {
+      width: 100%;
+      margin: 0;
+      margin-right: 10px;
+      border-bottom: 1px solid #a1a0a0;
+      font-family: "Rubik";
+      font-size: 0.9em;
+      color: #a1a0a0;
+      overflow-wrap: anywhere; }
+    .sheet-treatment-ul .sheet-treatment-li .treatment-value {
+      width: 20%;
+      text-align: center; }
 
 /*# sourceMappingURL=sheet-page.css.map */
