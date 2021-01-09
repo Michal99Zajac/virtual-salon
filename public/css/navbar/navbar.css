@@ -130,7 +130,11 @@ body {
   font-family: "Rubik";
   color: #fa8072;
   min-width: 100px;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
   .nb-sign-button:hover {
     color: #ffffff; }
 

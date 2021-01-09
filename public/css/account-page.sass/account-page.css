@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Rubik:wght@300&display=swap");
+* {
+  font-size: 24px; }
+
+body {
+  height: 100vh;
+  width: 100%;
+  min-width: min-content;
+  padding: 0;
+  margin: 0;
+  background: #fa8072;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+
+.ac-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 30%;
+  height: auto;
+  min-width: 500px;
+  min-height: max-content;
+  background: #ffffff;
+  border-radius: 5px;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px -1px #707070;
+  margin: 20px;
+  padding-bottom: 30px; }
+
+.ac-logo {
+  margin: 0 auto 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5em;
+  color: #fa8072;
+  font-family: "Dancing Script"; }
+
+.ac-a {
+  color: inherit;
+  text-decoration: none;
+  font-size: inherit;
+  font-family: inherit; }
+
+.ac-input-area {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap; }
+
+.ac-input-text {
+  width: 90%;
+  height: auto;
+  margin-bottom: 25px;
+  font-size: 1.2em;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 10px -1px #707070;
+  font-family: "Rubik";
+  box-sizing: border-box;
+  color: #707070; }
+  .ac-input-text::placeholder {
+    color: #a1a0a0; }
+  .ac-input-text:focus {
+    outline: none;
+    color: #fa8072; }
+    .ac-input-text:focus::placeholder {
+      color: #fa8072; }
+    .ac-input-text:focus:hover {
+      color: #fa8072; }
+  .ac-input-text:hover {
+    color: #ffb3aa; }
+    .ac-input-text:hover::placeholder {
+      color: #fa8072; }
+
+.ac-button {
+  width: 90%;
+  font-size: 1.2em;
+  padding: 10px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 5px;
+  font-family: "Rubik";
+  color: #ffffff;
+  background: #707070;
+  box-shadow: 0 0 10px -1px #707070;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none; }
+  .ac-button:focus {
+    outline: none; }
+  .ac-button:hover {
+    background: #fa8072; }
+
+.ac-question {
+  margin: 0;
+  width: 90%;
+  font-size: 0.8em;
+  font-family: "Rubik"; }
+
+/*# sourceMappingURL=account-page.css.map */

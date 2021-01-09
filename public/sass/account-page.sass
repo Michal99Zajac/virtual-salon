@@ -1,0 +1,117 @@
+@import './variables/fonts'
+@import './variables/colors'
+
+*
+  font-size: 24px
+
+body
+  height: 100vh
+  width: 100%
+  min-width: min-content
+  padding: 0
+  margin: 0
+  background: $pink
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+
+.ac-container
+  display: flex
+  justify-content: center
+  align-items: flex-start
+  flex-wrap: wrap
+  width: 30%
+  height: auto
+  min-width: 500px
+  min-height: max-content
+  background: $white
+  border-radius: 5px
+  padding: 20px
+  box-sizing: border-box
+  box-shadow: 0 0 10px -1px $grey
+  margin: 20px
+  padding-bottom: 30px
+
+.ac-logo
+  margin: 0 auto 20px auto
+  display: flex
+  justify-content: center
+  align-items: center
+  font-size: 2.5em
+  color: $pink
+  font-family: $dancing-script
+
+.ac-a
+  color: inherit
+  text-decoration: none
+  font-size: inherit
+  font-family: inherit
+
+.ac-input-area
+  width: auto
+  height: auto
+  display: flex
+  align-items: flex-start
+  justify-content: center
+  flex-wrap: wrap
+
+.ac-input-text
+  width: 90%
+  height: auto
+  margin-bottom: 25px
+  font-size: 1.2em
+  padding: 10px
+  border: none
+  border-radius: 5px
+  box-shadow: 0 0 10px -1px $grey
+  font-family: $rubik
+  box-sizing: border-box
+  color: $grey
+
+  &::placeholder
+    color: $grey-bright
+
+  &:focus
+    outline: none
+    color: $pink
+
+    &::placeholder
+      color: $pink
+
+    &:hover
+      color: $pink
+
+  &:hover
+    color: $pink-bright
+
+    &::placeholder
+      color: $pink
+
+.ac-button
+  width: 90%
+  font-size: 1.2em
+  padding: 10px
+  box-sizing: border-box
+  border: none
+  border-radius: 5px
+  font-family: $rubik
+  color: $white
+  background: $grey
+  box-shadow: 0 0 10px -1px $grey
+  display: flex
+  justify-content: center
+  align-items: center
+  text-decoration: none
+
+  &:focus
+    outline: none
+
+  &:hover
+    background: $pink
+
+.ac-question
+  margin: 0
+  width: 90%
+  font-size: 0.8em
+  font-family: $rubik
