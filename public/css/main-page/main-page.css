@@ -124,6 +124,11 @@ input[type="checkbox"] {
     background: #fa8072; }
   input[type="checkbox"]:checked ~ .mp-checkbox-label {
     color: #fa8072; }
+  input[type="checkbox"]:disabled + .mp-checkbox {
+    border-color: #dddddd;
+    background: #dddddd; }
+  input[type="checkbox"]:disabled ~ .mp-checkbox-label {
+    color: #dddddd; }
 
 .mp-checkbox {
   width: 20px;
