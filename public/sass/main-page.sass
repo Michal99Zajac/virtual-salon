@@ -110,3 +110,57 @@
   color: $pink
   padding-bottom: 5px
   border-bottom: 1px solid $grey-bright
+
+.mp-search-ul
+  margin: 0
+  padding: 0
+  list-style-type: none
+  width: 100%
+  height: auto
+  margin-bottom: 20px
+
+.mp-search-li
+  width: 100%
+  height: auto
+  margin-bottom: 5px
+  padding: 5px
+  padding-left: 0
+  box-sizing: border-box
+  border-bottom: 1px solid $grey-bright
+  display: flex
+  align-items: center
+
+input[type="checkbox"]
+  display: none
+
+  &:checked
+    & + .mp-checkbox
+      border-color: $pink
+      background: $pink
+
+    & ~ .mp-checkbox-label
+      color: $pink
+
+.mp-checkbox
+  width: 20px
+  height: 20px
+  min-height: 20px
+  min-width: 20px
+  border: 2px solid $grey
+  border-radius: 5px
+  margin-right: 10px
+
+  &:hover
+    border-color: $pink-bright
+    background: $pink-bright
+
+    & + .mp-checkbox-label
+      color: $pink-bright
+
+.mp-checkbox-label
+  width: 100%
+  height: 100%
+  font-size: 0.8em
+  font-family: $rubik
+  color: $grey
+  overflow-wrap: anywhere
