@@ -104,8 +104,7 @@
   padding: 0;
   list-style-type: none;
   width: 100%;
-  height: auto;
-  margin-bottom: 20px; }
+  height: auto; }
 
 .mp-search-li {
   width: 100%;
@@ -147,5 +146,8 @@ input[type="checkbox"] {
   font-family: "Rubik";
   color: #707070;
   overflow-wrap: anywhere; }
+
+.mp-price-text-input {
+  margin-bottom: 0; }
 
 /*# sourceMappingURL=main-page.css.map */
