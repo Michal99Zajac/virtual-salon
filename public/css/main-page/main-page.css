@@ -1,3 +1,102 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Rubik:wght@300&display=swap");
+.nb-logo {
+  min-width: 400px; }
+
+.middle-content {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; }
+
+.mp-center-area {
+  width: 300px;
+  height: auto;
+  height: 100%; }
+
+.mp-left-area {
+  width: 25%;
+  height: auto;
+  min-height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  min-width: 400px;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap; }
+
+.mp-left-panel {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px -1px #707070;
+  margin-bottom: 20px; }
+
+.mp-search-section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px; }
+  .mp-search-section:first-child {
+    margin-bottom: 0; }
+
+.mp-search-text-input {
+  margin: 0;
+  margin-bottom: 20px;
+  width: 100%;
+  height: auto;
+  font-family: "Rubik";
+  padding: 5px 5px 5px 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 10px -1px #707070;
+  color: #707070; }
+  .mp-search-text-input::placeholder {
+    color: #a1a0a0; }
+  .mp-search-text-input:focus {
+    outline: none;
+    color: #fa8072; }
+    .mp-search-text-input:focus::placeholder {
+      color: #fa8072; }
+    .mp-search-text-input:focus:hover {
+      color: #fa8072; }
+      .mp-search-text-input:focus:hover::placeholder {
+        color: #ffb3aa; }
+  .mp-search-text-input:hover {
+    color: #ffb3aa; }
+    .mp-search-text-input:hover::placeholder {
+      color: #ffb3aa; }
+
+.mp-search-button {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background: #707070;
+  color: #ffffff;
+  box-shadow: 0 0 10px -1px #707070; }
+  .mp-search-button:hover {
+    background: #fa8072; }
+  .mp-search-button:focus {
+    outline: none; }
+
+.mp-search-section-header {
+  margin: 0;
+  margin-bottom: 20px;
+  width: 100%;
+  height: auto;
+  font-size: 1.1em;
+  font-family: "Rubik";
+  color: #fa8072;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #a1a0a0; }
 
 /*# sourceMappingURL=main-page.css.map */
