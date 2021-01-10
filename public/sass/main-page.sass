@@ -140,6 +140,14 @@ input[type="checkbox"]
     & ~ .mp-checkbox-label
       color: $pink
 
+  &:disabled
+    & + .mp-checkbox
+      border-color: $white-hover
+      background: $white-hover
+
+    & ~ .mp-checkbox-label
+      color: $white-hover
+
 .mp-checkbox
   width: 20px
   height: 20px
