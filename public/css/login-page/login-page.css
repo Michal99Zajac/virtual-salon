@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Rubik:wght@300&display=swap");
+* {
+  font-size: 24px; }
+
 body {
   width: 100vw;
   height: 100vh;
@@ -6,172 +9,155 @@ body {
   margin: 0;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   background: transparent url(../../assets/img/login-background-opta.png) 0% 0% no-repeat padding-box;
   background-size: cover; }
 
-.login-container {
-  height: 100%;
-  min-height: 600px;
+.lo-container {
+  height: auto;
+  min-height: max-content;
   width: 24%;
-  min-width: 450px;
-  margin-right: 5%;
+  min-width: 420px;
+  background: #ffffff;
   display: flex;
   justify-content: center;
-  align-items: center;
-  align-content: center;
+  align-items: flex-start;
   flex-wrap: wrap;
-  flex-direction: column; }
+  padding: 20px;
+  box-sizing: border-box;
+  margin-right: 100px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px -1px #707070; }
 
-.logo {
+.lo-logo {
   width: 100%;
-  height: 68px;
+  height: auto;
   margin: 0;
-  margin-bottom: 30%;
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center; }
-  .logo h1 {
-    font-family: "Dancing Script";
-    color: #fa8072;
-    margin: 0;
-    min-width: 90px;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 68px; }
-  .logo img {
-    height: 100%;
-    width: auto; }
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 2.5em;
+  font-family: "Dancing Script";
+  color: #fa8072; }
+  .lo-logo a {
+    font-size: inherit;
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit; }
 
-.role-input {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-  height: 20%;
-  margin-bottom: 5%; }
-  .role-input .radio-container {
-    width: 50%;
-    height: auto;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; }
-    .role-input .radio-container .radio-label {
-      font-size: 28px;
-      color: #707070; }
-    .role-input .radio-container .radio-widget {
-      border: 4px solid #707070;
-      border-radius: 5px;
-      height: 150px;
-      width: 150px;
-      justify-content: center;
-      display: flex;
-      align-items: center; }
-      .role-input .radio-container .radio-widget .radio-img {
-        height: 100px;
-        width: auto; }
-      .role-input .radio-container .radio-widget #chair-img {
-        content: url(../../assets/svg/chair/chair-grey.svg); }
-      .role-input .radio-container .radio-widget #dryer-img {
-        content: url(../../assets/svg/hair-dryer/hair-dryer-grey.svg); }
-    .role-input .radio-container:hover .radio-label {
-      color: #a1a0a0; }
-    .role-input .radio-container:hover .radio-widget {
-      border-color: #a1a0a0; }
-      .role-input .radio-container:hover .radio-widget #chair-img {
-        content: url(../../assets/svg/chair/chair-grey-bright.svg); }
-      .role-input .radio-container:hover .radio-widget #dryer-img {
-        content: url(../../assets/svg/hair-dryer/hair-dryer-grey-bright.svg); }
-    .role-input .radio-container .login-radio {
-      display: none; }
-      .role-input .radio-container .login-radio:checked ~ .radio-label {
-        color: #fa8072; }
-      .role-input .radio-container .login-radio:checked ~ .radio-widget {
-        border-color: #fa8072; }
-        .role-input .radio-container .login-radio:checked ~ .radio-widget #chair-img {
-          content: url(../../assets/svg/chair/chair-pink.svg); }
-        .role-input .radio-container .login-radio:checked ~ .radio-widget #dryer-img {
-          content: url(../../assets/svg/hair-dryer/hair-dryer-pink.svg); }
-
-.data-container {
-  width: 80%;
+.lo-radio-section {
+  width: 100%;
   height: auto;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center; }
-  .data-container .log-container {
-    width: 100%;
-    height: 60px;
-    margin: 0;
-    margin-bottom: 5%;
-    display: flex;
-    align-items: center; }
-    .data-container .log-container .data-input {
-      height: 100%;
-      width: 100%;
-      border: none;
-      background: transparent;
-      font-size: 24px;
-      padding-left: 40px;
-      color: #707070;
-      border-bottom: 2px solid #707070;
-      box-sizing: border-box; }
-    .data-container .log-container .input-img {
-      position: absolute;
-      height: 30px; }
-    .data-container .log-container #envelop-img {
-      content: url(../../assets/svg/envelop/email-grey.svg); }
-    .data-container .log-container #padlock-img {
-      content: url(../../assets/svg/padlock/padlock-grey.svg); }
-    .data-container .log-container:hover .data-input {
-      color: #a1a0a0;
-      border-color: #a1a0a0; }
-      .data-container .log-container:hover .data-input::placeholder {
-        color: #a1a0a0; }
-    .data-container .log-container:hover #envelop-img {
-      content: url(../../assets/svg/envelop/email-grey-bright.svg); }
-    .data-container .log-container:hover #padlock-img {
-      content: url(../../assets/svg/padlock/padlock-grey-bright.svg); }
-    .data-container .log-container .data-input:focus {
-      outline: none;
-      color: #fa8072;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  box-sizing: border-box; }
+
+.lo-radio-area {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 15px;
+  box-sizing: border-box; }
+
+.lo-radio {
+  width: 100%;
+  height: auto;
+  border: 4px solid #707070;
+  background: #707070;
+  padding: 25px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px -1px #707070; }
+  .lo-radio:hover {
+    border-color: #ffb3aa;
+    background: #ffb3aa; }
+
+.lo-radio-img {
+  width: 100%; }
+
+#lo-chair {
+  content: url(../../assets/svg/chair/chair-white.svg); }
+
+#lo-firm {
+  content: url(../../assets/svg/firm/signboard-white.svg); }
+
+input[type="radio"] {
+  display: none; }
+  input[type="radio"]:checked ~ .lo-radio {
+    background: #fa8072;
+    border-color: #fa8072; }
+    input[type="radio"]:checked ~ .lo-radio:hover {
+      background: #fa8072;
       border-color: #fa8072; }
-      .data-container .log-container .data-input:focus::placeholder {
-        color: #fa8072; }
-      .data-container .log-container .data-input:focus + #envelop-img {
-        content: url(../../assets/svg/envelop/email-pink.svg); }
-      .data-container .log-container .data-input:focus + #padlock-img {
-        content: url(../../assets/svg/padlock/padlock-pink.svg); }
-  .data-container .sign-button {
+
+.lo-radio-label {
+  font-family: "Rubik";
+  font-size: 1.1em;
+  color: #707070; }
+
+.lo-input-text-area {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px; }
+
+.lo-input-text {
+  width: 100%;
+  height: auto;
+  margin: 10px;
+  padding: 10px 5px 10px 15px;
+  font-size: 1.1em;
+  font-family: "Rubik";
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 10px -1px #707070;
+  box-sizing: border-box;
+  color: #707070; }
+  .lo-input-text::placeholder {
+    color: #a1a0a0; }
+  .lo-input-text:hover {
+    color: #ffb3aa; }
+    .lo-input-text:hover::placeholder {
+      color: #ffb3aa; }
+  .lo-input-text:focus {
+    outline: none;
+    color: #fa8072; }
+    .lo-input-text:focus::placeholder {
+      color: #ffb3aa; }
+    .lo-input-text:focus:hover {
+      color: #fa8072; }
+
+.lo-button {
+  width: 100%;
+  height: auto;
+  padding: 10px 5px;
+  margin: 0 10px;
+  border: none;
+  color: #ffffff;
+  background: #707070;
+  border-radius: 5px;
+  font-family: "Rubik";
+  font-size: 1.4em;
+  box-shadow: 0 0 10px -1px #707070; }
+  .lo-button:hover {
+    background: #fa8072; }
+  .lo-button:focus {
+    outline: none; }
+  .lo-button + a {
     width: 100%;
-    height: 60px;
-    border-radius: 5px;
-    border: none;
-    background-color: #fa8072;
-    color: white;
-    font-size: 24px; }
-    .data-container .sign-button:hover {
-      background-color: #ffb3aa; }
-    .data-container .sign-button:focus {
-      outline: none; }
-  .data-container .subsign-button {
-    width: 50%;
-    margin-right: 50%;
-    border: none;
-    background: transparent;
-    display: flex;
-    justify-content: left;
-    padding: 0;
-    font-size: 15px; }
-    .data-container .subsign-button:focus {
-      outline: none; }
+    margin: 10px 10px 0 10px;
+    font-size: 0.6em;
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    font-family: "Rubik"; }
+    .lo-button + a:hover {
+      color: #fa8072; }
 
 /*# sourceMappingURL=login-page.css.map */

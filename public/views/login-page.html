@@ -7,39 +7,26 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="login-container">
-    <div class="logo">
-      <h1>Virtual Salon</h1>
-      <img src="../assets/svg/salon/beauty-salon-pink.svg" alt="logo">
+  <div class="lo-container">
+    <h1 class="lo-logo"><a href="#">Virtual Salon</a></h1>
+    <div class="lo-radio-section">
+      <div class="lo-radio-area">
+        <input type="radio" name="role" id="lo-client">
+        <label class="lo-radio-label" for="lo-client">client</label>
+        <label class="lo-radio" for="lo-client"><div id="lo-chair" class="lo-radio-img"></div></label>
+      </div>
+      <div class="lo-radio-area">
+        <input type="radio" name="role" id="lo-worker">
+        <label class="lo-radio-label" for="lo-worker">business</label>
+        <label class="lo-radio" for="lo-worker"><div id="lo-firm" class="lo-radio-img"></div></label>
+      </div>
     </div>
-    <form class="role-input">
-      <div class="radio-container">
-        <input class="login-radio" type="radio" name="role" id="client-radio">
-        <label class="radio-label" for="client-radio">client</label>
-        <label class="radio-widget" for="client-radio">
-          <div class="radio-img" id="chair-img"></div>
-        </label>
-      </div>
-      <div class="radio-container">
-        <input class="login-radio" id="bussines-radio" type="radio" name="role">
-        <label class="radio-label" for="bussines-radio">bussines</label>
-        <label class="radio-widget" for="bussines-radio">
-          <div class="radio-img" id="dryer-img"></div>
-        </label>
-      </div>
-    </form>
-    <form class="data-container">
-      <div class="log-container">
-        <input class="data-input" type="text" placeholder="email">
-        <div id="envelop-img" class="input-img"></div>
-      </div>
-      <div class="log-container">
-        <input class="data-input" type="password" placeholder="password">
-        <div id="padlock-img" class="input-img"></div>
-      </div>
-      <button class="sign-button">sign in</button>
-      <button class="subsign-button"><b>not a member? sign up</b></button>
-    </form>
+    <div class="lo-input-text-area">
+      <input class="lo-input-text" type="text" placeholder="email">
+      <input class="lo-input-text" type="password" placeholder="password">
+    </div>
+    <button class="lo-button">sign in</button>
+    <a href="./account-page.html">Not a member yet? sign up!</a>
   </div>
 </body>
 </html>
