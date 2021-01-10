@@ -15,9 +15,8 @@
   align-items: flex-start; }
 
 .mp-center-area {
-  width: 300px;
-  height: auto;
-  height: 100%; }
+  width: 50%;
+  height: auto; }
 
 .mp-left-area, .mp-right-area {
   width: 25%;
@@ -26,7 +25,7 @@
   min-height: 100%;
   padding: 20px;
   box-sizing: border-box;
-  min-width: 400px;
+  min-width: 300px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -215,5 +214,44 @@ input[type="checkbox"] {
 .mp-selected-ul .mp-selected-li:last-child {
   margin-bottom: 0;
   border: none; }
+
+.mp-page-select-area {
+  width: 100%;
+  height: auto;
+  max-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.mp-page-select-ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.mp-page-select-li {
+  padding: 10px;
+  margin: 5px;
+  background: #fa8072;
+  box-sizing: border-box;
+  font-size: 1.2em;
+  border-radius: 5px;
+  color: #ffffff;
+  font-family: "Rubik";
+  min-width: 50px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px -1px #707070; }
+  .mp-page-select-li:hover {
+    background: #707070; }
+
+#page-selected {
+  background: #707070; }
 
 /*# sourceMappingURL=main-page.css.map */
