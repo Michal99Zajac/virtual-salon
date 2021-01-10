@@ -99,4 +99,53 @@
   padding-bottom: 5px;
   border-bottom: 1px solid #a1a0a0; }
 
+.mp-search-ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px; }
+
+.mp-search-li {
+  width: 100%;
+  height: auto;
+  margin-bottom: 5px;
+  padding: 5px;
+  padding-left: 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid #a1a0a0;
+  display: flex;
+  align-items: center; }
+
+input[type="checkbox"] {
+  display: none; }
+  input[type="checkbox"]:checked + .mp-checkbox {
+    border-color: #fa8072;
+    background: #fa8072; }
+  input[type="checkbox"]:checked ~ .mp-checkbox-label {
+    color: #fa8072; }
+
+.mp-checkbox {
+  width: 20px;
+  height: 20px;
+  min-height: 20px;
+  min-width: 20px;
+  border: 2px solid #707070;
+  border-radius: 5px;
+  margin-right: 10px; }
+  .mp-checkbox:hover {
+    border-color: #ffb3aa;
+    background: #ffb3aa; }
+    .mp-checkbox:hover + .mp-checkbox-label {
+      color: #ffb3aa; }
+
+.mp-checkbox-label {
+  width: 100%;
+  height: 100%;
+  font-size: 0.8em;
+  font-family: "Rubik";
+  color: #707070;
+  overflow-wrap: anywhere; }
+
 /*# sourceMappingURL=main-page.css.map */
