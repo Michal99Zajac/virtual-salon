@@ -3,6 +3,10 @@
 
 .nb-logo
   min-width: 400px
+  width: 25%
+
+.nb-right-section
+  width: auto
 
 .middle-content
   width: 100%
@@ -19,12 +23,12 @@
 
 .mp-left-area
   width: 25%
+  max-width: 500px
   height: auto
   min-height: 100%
   padding: 20px
   box-sizing: border-box
   min-width: 400px
-  max-width: 400px
   display: flex
   justify-content: center
   align-items: flex-start
@@ -38,6 +42,10 @@
   border-radius: 5px
   box-shadow: 0 0 10px -1px $grey
   margin-bottom: 20px
+  box-sizing: border-box
+
+  &:last-child
+    margin-bottom: 0
 
 .mp-search-section
   width: 100%
@@ -174,3 +182,17 @@ input[type="checkbox"]
 
 .mp-price-text-input
   margin-bottom: 0
+
+.mp-show-button
+  margin-top: 5px
+  font-size: 0.6em
+  font-family: $rubik
+  border: none
+  background: $white
+  color: $grey-bright
+
+  &:focus
+    outline: none
+
+  &:hover
+    color: $pink
