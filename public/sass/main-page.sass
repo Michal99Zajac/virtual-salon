@@ -298,6 +298,7 @@ input[type="checkbox"]
   justify-content: space-between
   margin-bottom: 20px
   box-shadow: 0 0 10px -1px $grey
+  flex-wrap: wrap
 
   &:last-child
     margin-bottom: 0
@@ -309,10 +310,17 @@ input[type="checkbox"]
   display: flex
   justify-content: center
   align-items: flex-start
-  width: 100%
+  width: 50%
   height: auto
   flex-wrap: wrap
   border-right: 1px solid $grey-bright
+  padding-right: 5px
+  box-sizing: border-box
+
+  &:last-child
+    padding-left: 5px
+    padding-right: 0
+    border-right: none
 
 .mp-profile-area
   width: 100%
@@ -353,3 +361,44 @@ input[type="checkbox"]
   color: $grey-bright
   width: 100%
   height: auto
+
+.mp-profile-description
+  margin: 0
+  margin-top: 10px
+  font-size: 0.6em
+  font-family: $rubik
+  color: $grey
+  width: 100%
+  height: auto
+
+.mp-center-price-list
+  width: 100%
+  height: auto
+  margin: 0
+  padding: 0
+  list-style-type: none
+  margin-top: 10px
+
+.mp-center-price-li
+  width: 100%
+  height: auto
+  display: flex
+  justify-content: space-between
+  align-items: center
+  border-bottom: 1px solid $grey-bright
+  margin-bottom: 10px
+
+.mp-price-name, .mp-price-value
+  font-size: 0.8em
+  font-family: $rubik
+  margin: 0
+  overflow-wrap: anywhere
+  color: $black
+
+.mp-price-name
+  width: 80%
+  text-align: left
+
+.mp-price-value
+  width: 20%
+  text-align: right
