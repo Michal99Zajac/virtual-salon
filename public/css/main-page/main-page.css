@@ -228,7 +228,8 @@ input[type="checkbox"] {
   max-height: 100px;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  padding: 10px 0; }
 
 .mp-page-select-ul {
   margin: 0;
@@ -275,5 +276,57 @@ input[type="checkbox"] {
   box-shadow: 0 0 10px -1px #707070; }
   .mp-center-panel:last-child {
     margin-bottom: 0; }
+
+#mp-photo {
+  content: url(../../assets/img/person-profile.jpeg); }
+
+.mp-center-subarea {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+  border-right: 1px solid #a1a0a0; }
+
+.mp-profile-area {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start; }
+
+.mp-profile-photo {
+  width: 70px;
+  height: auto;
+  min-width: 70px;
+  border-radius: 5px;
+  margin-right: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px -1px #707070; }
+
+.mp-profile-header {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap; }
+
+.mp-profile-h1 {
+  width: 100%;
+  margin: 0;
+  font-family: "Rubik";
+  color: #fa8072;
+  margin-bottom: 5px;
+  font-size: 1em; }
+
+.mp-profile-p {
+  margin: 0;
+  font-family: "Rubik";
+  font-size: 0.7em;
+  color: #a1a0a0;
+  width: 100%;
+  height: auto; }
 
 /*# sourceMappingURL=main-page.css.map */
