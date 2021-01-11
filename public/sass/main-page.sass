@@ -294,8 +294,8 @@ input[type="checkbox"]
   padding: 20px
   box-sizing: border-box
   display: flex
-  align-items: center
-  justify-content: space-between
+  align-items: flex-start
+  justify-content: center
   margin-bottom: 20px
   box-shadow: 0 0 10px -1px $grey
   flex-wrap: wrap
@@ -308,19 +308,18 @@ input[type="checkbox"]
 
 .mp-center-subarea
   display: flex
-  justify-content: center
+  justify-content: space-evenly
   align-items: flex-start
   width: 50%
   height: auto
   flex-wrap: wrap
-  border-right: 1px solid $grey-bright
-  padding-right: 5px
   box-sizing: border-box
+  padding-right: 15px
 
-  &:last-child
+  &:nth-child(2)
     padding-left: 5px
     padding-right: 0
-    border-right: none
+    border-left: 1px solid $grey-bright
 
 .mp-profile-area
   width: 100%
@@ -402,3 +401,77 @@ input[type="checkbox"]
 .mp-price-value
   width: 20%
   text-align: right
+
+.mp-schedule-column
+  margin: 0
+  padding: 0
+  list-style-type: none
+  width: 30%
+  height: auto
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: flex-start
+
+.mp-schedule-header
+  margin: 0
+  font-family: $rubik
+  color: $pink
+  font-size: 0.7em
+  box-sizing: border-box
+
+.mp-schedule-subheader
+  margin: 0
+  font-family: $rubik
+  color: $grey-bright
+  font-size: 0.6em
+  padding-bottom: 5px
+
+.mp-schedule-li
+  width: 90%
+  height: auto
+  display: flex
+  align-items: center
+  justify-content: center
+  font-size: 0.8em
+  padding: 10px 0
+  margin-bottom: 10px
+  background: $grey
+  border-radius: 5px
+  font-family: $rubik
+  color: $white
+  box-shadow: 0 0 5px -1px $black
+
+  &:last-child
+    margin-bottom: 0
+
+  &:hover
+    background: $pink
+
+.mp-reserved-li
+  background: $grey-bright
+
+  &:hover
+    background: $grey-bright
+
+.mp-info-img
+  height: 20px
+  margin-left: 10px
+  content: url(../../assets/svg/arrow-fill/next-grey.svg)
+
+.mp-center-info
+  font-size: 0.8em
+  display: flex
+  align-items: center
+  text-decoration: none
+  color: $grey
+  height: auto
+  margin-top: 20px
+  font-family: $rubik
+  box-sizing: border-box
+
+  &:hover
+    color: $pink
+
+    .mp-info-img
+      content: url(../../assets/svg/arrow-fill/next-pink.svg)
