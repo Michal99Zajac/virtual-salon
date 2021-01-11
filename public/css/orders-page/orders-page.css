@@ -4,8 +4,9 @@
   height: auto;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: flex-start; }
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column; }
 
 .mp-page-select-area {
   width: 100%;
@@ -71,11 +72,11 @@
 
 .or-panel-right-area {
   width: 40%;
-  padding-left: 5px; }
+  padding-left: 10px; }
 
 .or-panel-left-area {
   width: 60%;
-  padding-right: 15px;
+  padding-right: 20px;
   border-right: 1px solid #a1a0a0; }
 
 .or-header {
@@ -86,7 +87,7 @@
   font-family: "Rubik";
   color: #fa8072; }
 
-.or-price-ul {
+.or-price-ul, .or-data-ul {
   width: 100%;
   margin: 0;
   padding: 0;
@@ -126,7 +127,8 @@
   font-family: "Rubik";
   color: #fa8072;
   font-size: 1.1em;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  text-align: right; }
 
 .or-panel-done {
   width: 40%;
@@ -142,5 +144,67 @@
     background: #d73a49; }
   .or-panel-done:focus {
     outline: none; }
+
+.or-profile-header {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 20px;
+  padding-bottom: 10px; }
+
+#or-profile-photo {
+  content: url(../../assets/img/person-profile.jpeg); }
+
+.or-profile-img {
+  height: auto;
+  width: 50px;
+  margin-right: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px -1px #707070; }
+
+.or-profile-h1 {
+  margin: 0;
+  width: 100%;
+  overflow-wrap: anywhere;
+  font-family: "Rubik";
+  font-size: 0.9em;
+  color: #707070; }
+
+.or-data-li {
+  width: 100%;
+  height: auto;
+  padding-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #a1a0a0; }
+
+.or-data-info {
+  margin: 0;
+  font-size: 0.8em;
+  font-family: "Rubik";
+  margin-left: 10px;
+  color: #707070; }
+
+.or-data-img {
+  height: 25px; }
+
+.or-date-img {
+  content: url(../../assets/svg/calendar/calendar-grey.svg); }
+
+.or-map-img {
+  content: url(../../assets/svg/placeholder/placeholder-grey.svg); }
+
+.or-person-img {
+  content: url(../../assets/svg/user/user-grey.svg); }
+
+.or-phone-img {
+  content: url(../../assets/svg/phone/telephone-grey.svg); }
+
+.or-email-img {
+  content: url(../../assets/svg/envelop/email-grey-bright.svg); }
 
 /*# sourceMappingURL=orders-page.css.map */
