@@ -64,3 +64,154 @@
   justify-content: flex-end
   align-items: flex-start
   flex-wrap: wrap
+
+.re-panel-right-area, .re-panel-left-area
+  height: auto
+  display: flex
+  align-items: flex-start
+  justify-content: center
+  flex-wrap: wrap
+  box-sizing: border-box
+
+.re-panel-right-area
+  width: 40%
+  padding-left: 10px
+
+.re-panel-left-area
+  width: 60%
+  padding-right: 20px
+  border-right: 1px solid $grey-bright
+
+.re-header
+  width: 100%
+  margin: 0
+  text-align: center
+  font-size: 1.4em
+  font-family: $rubik
+  color: $pink
+
+.re-price-ul, .re-data-ul
+  width: 100%
+  margin: 0
+  padding: 0
+  list-style-type: none
+  margin: 10px 0
+
+.re-price-li
+  width: 100%
+  height: auto
+  display: flex
+  justify-content: space-between
+  align-items: center
+  border-bottom: 1px solid $grey-bright
+  margin-bottom: 10px
+
+  &:last-child
+    margin-bottom: 0
+
+.re-price-name, .re-price-value
+  height: auto
+  margin: 0
+  font-size: 0.9em
+  font-family: $rubik
+  color: $grey
+  overflow-wrap: anywhere
+
+.re-price-name
+  width: 80%
+  text-align: left
+
+.re-price-value
+  width: 20%
+  text-align: right
+
+.re-price-sum
+  width: 100%
+  margin: 0
+  font-family: $rubik
+  color: $pink
+  font-size: 1.1em
+  margin-bottom: 10px
+  text-align: right
+
+.re-panel-cancel
+  width: 40%
+  margin-top: 10px
+  padding: 5px 0
+  background: $grey
+  border: none
+  border-radius: 5px
+  font-family: $rubik
+  color: $white
+  box-shadow: 0 0 5px -1px $black
+
+  &:hover
+    background: $delete-color
+
+  &:focus
+    outline: none
+
+.re-profile-header
+  width: 100%
+  height: auto
+  display: flex
+  align-items: flex-start
+  justify-content: flex-start
+  margin-top: 20px
+  padding-bottom: 10px
+
+#re-profile-photo
+  content: url(../../assets/img/person-profile.jpeg)
+
+.re-profile-img
+  height: auto
+  width: 50px
+  margin-right: 10px
+  border-radius: 5px
+  box-shadow: 0 0 10px -1px $grey
+
+  &:hover
+    opacity: 0.8
+
+.re-profile-h1
+  margin: 0
+  width: 100%
+  overflow-wrap: anywhere
+  font-family: $rubik
+  font-size: 0.9em
+  color: $grey
+
+.re-data-li
+  width: 100%
+  height: auto
+  padding-bottom: 5px
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  margin-bottom: 20px
+  border-bottom: 1px solid $grey-bright
+
+.re-data-info
+  margin: 0
+  font-size: 0.8em
+  font-family: $rubik
+  margin-left: 10px
+  color: $grey
+
+.re-data-img
+  height: 25px
+
+.re-date-img
+  content: url(../../assets/svg/calendar/calendar-grey.svg)
+
+.re-map-img
+  content: url(../../assets/svg/placeholder/placeholder-grey.svg)
+
+.re-person-img
+  content: url(../../assets/svg/user/user-grey.svg)
+
+.re-phone-img
+  content: url(../../assets/svg/phone/telephone-grey.svg)
+
+.re-email-img
+  content: url(../../assets/svg/envelop/email-grey.svg)
