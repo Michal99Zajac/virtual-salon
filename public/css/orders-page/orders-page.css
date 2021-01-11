@@ -47,4 +47,100 @@
 #page-selected {
   background: #707070; }
 
+.or-panel {
+  width: 40%;
+  padding: 20px;
+  min-width: 720px;
+  background: #ffffff;
+  box-sizing: border-box;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px -1px #707070;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-wrap: wrap; }
+
+.or-panel-right-area, .or-panel-left-area {
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  box-sizing: border-box; }
+
+.or-panel-right-area {
+  width: 40%;
+  padding-left: 5px; }
+
+.or-panel-left-area {
+  width: 60%;
+  padding-right: 15px;
+  border-right: 1px solid #a1a0a0; }
+
+.or-header {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  font-size: 1.4em;
+  font-family: "Rubik";
+  color: #fa8072; }
+
+.or-price-ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  margin: 10px 0; }
+
+.or-price-li {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #a1a0a0;
+  margin-bottom: 10px; }
+  .or-price-li:last-child {
+    margin-bottom: 0; }
+
+.or-price-name, .or-price-value {
+  height: auto;
+  margin: 0;
+  font-size: 0.9em;
+  font-family: "Rubik";
+  color: #707070;
+  overflow-wrap: anywhere; }
+
+.or-price-name {
+  width: 80%;
+  text-align: left; }
+
+.or-price-value {
+  width: 20%;
+  text-align: right; }
+
+.or-price-sum {
+  width: 100%;
+  margin: 0;
+  font-family: "Rubik";
+  color: #fa8072;
+  font-size: 1.1em;
+  margin-bottom: 10px; }
+
+.or-panel-done {
+  width: 40%;
+  margin-top: 10px;
+  padding: 5px 0;
+  background: #707070;
+  border: none;
+  border-radius: 5px;
+  font-family: "Rubik";
+  color: #ffffff;
+  box-shadow: 0 0 5px -1px #000000; }
+  .or-panel-done:hover {
+    background: #d73a49; }
+  .or-panel-done:focus {
+    outline: none; }
+
 /*# sourceMappingURL=orders-page.css.map */
