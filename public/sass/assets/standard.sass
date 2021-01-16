@@ -1,0 +1,123 @@
+@import '../variables/fonts'
+@import '../variables/colors'
+
+body
+  margin: 0
+
+input:focus
+  outline: none
+
+button:focus
+  outline: none
+
+form
+  width: inherit
+  height: inherit
+  display: inherit
+  justify-content: inherit
+  align-items: inherit
+  flex-wrap: inherit
+  flex-direction: inherit
+
+.form-width-max
+  width: 100%
+
+.form-width-auto
+  width: auto
+
+.form-height-auto
+  height: auto
+
+.form-margin-top
+  margin-top: 1em
+
+.form-margin-bottom
+  margin-bottom: 1em
+
+.form-margin-vertical
+  margin: 1em 0
+
+.no-wrap-form
+  flex-wrap: nowrap
+
+.form-row-reverse
+  flex-direction: row-reverse
+
+.form-align-center
+  align-items: center
+
+.form-row-spacebetween
+  justify-content: space-between
+
+.container
+  width: 100%
+  min-height: 100vh
+  background: transparent radial-gradient(closest-side at 50% 50%, #E0E0E0 0%, #B5B5B5 100%)
+
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: flex-start
+  align-content: flex-start
+  flex-wrap: wrap
+
+a
+  text-decoration: none
+  color: inherit
+  font-size: inherit
+  font-family: inherit
+
+div
+  display: flex
+  justify-content: center
+  align-content: center
+  width: 100%
+
+.div-row-reverse
+  flex-direction: row-reverse
+
+.standard-button
+  font-size: 1.4em
+  padding: 0.4em
+  width: 100%
+  box-sizing: border-box
+  margin: 0.4em
+  box-shadow: 0 0 0.3em -1px $black
+  background: $grey
+  border-radius: 0.3em
+  text-align: center
+  font-family: $rubik
+  color: $white
+  border: none
+
+  &:focus
+    outline: none
+
+  &:hover
+    background: $pink
+
+.center-panels
+  width: 40%
+  margin: 0 1.2em
+  height: auto
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: center
+
+.panel
+  width: 100%
+  height: auto
+  margin: 1.2em 0 0 0
+  padding: 1.2em
+  box-sizing: border-box
+  background: $white
+  border-radius: 0.3em
+  display: flex
+  align-items: flex-start
+  justify-content: center
+  flex-wrap: wrap
+  box-shadow: 0 0 0.3em -1px $grey
+
+  &:last-child
+    margin-bottom: 1.2em

@@ -1,44 +1,19 @@
 @import './variables/fonts'
 @import './variables/colors'
 
-*
-  font-size: 24px
-
-body
-  height: 100vh
-  width: 100%
-  min-width: min-content
-  padding: 0
-  margin: 0
-  background: $pink
-  display: flex
-  align-items: center
-  justify-content: center
+.container
   flex-direction: column
+  align-content: center
 
-.ac-container
-  display: flex
-  justify-content: center
-  align-items: flex-start
-  flex-wrap: wrap
+.panel
   width: 30%
-  height: auto
-  min-width: 500px
-  min-height: max-content
-  background: $white
-  border-radius: 5px
-  padding: 20px
-  box-sizing: border-box
-  box-shadow: 0 0 10px -1px $grey
-  margin: 20px
-  padding-bottom: 30px
 
 .ac-logo
-  margin: 0 auto 20px auto
+  margin: 0 auto 1.25em auto
   display: flex
   justify-content: center
   align-items: center
-  font-size: 2.5em
+  font-size: 3.2em
   color: $pink
   font-family: $dancing-script
 
@@ -59,12 +34,12 @@ body
 .ac-input-text
   width: 90%
   height: auto
-  margin-bottom: 25px
-  font-size: 1.2em
-  padding: 10px
+  margin-bottom: 1.5em
+  font-size: 1.4em
+  padding: 0.6em
   border: none
-  border-radius: 5px
-  box-shadow: 0 0 10px -1px $grey
+  border-radius: 0.3em
+  box-shadow: 0 0 0.6em -1px $grey
   font-family: $rubik
   box-sizing: border-box
   color: $grey
@@ -88,31 +63,12 @@ body
     &::placeholder
       color: $pink
 
-.ac-button
-  width: 90%
-  font-size: 1.2em
-  padding: 10px
-  box-sizing: border-box
-  border: none
-  border-radius: 5px
-  font-family: $rubik
-  color: $white
-  background: $grey
-  box-shadow: 0 0 10px -1px $grey
-  display: flex
-  justify-content: center
-  align-items: center
-  text-decoration: none
-
-  &:focus
-    outline: none
-
-  &:hover
-    background: $pink
-
 .ac-question
   margin: 0
   width: 90%
   font-size: 0.8em
   font-family: $rubik
-  margin-bottom: 5px
+  margin-bottom: 0.3em
+
+.standard-button
+  width: 90%

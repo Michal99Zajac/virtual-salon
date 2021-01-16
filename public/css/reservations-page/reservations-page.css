@@ -1,67 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Rubik:wght@300&display=swap");
-.middle-content {
-  width: 100%;
-  height: auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column; }
-
-.mp-page-select-area {
-  width: 100%;
-  height: auto;
-  max-height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 0; }
-
-.mp-page-select-ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  width: 100%;
-  height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-
-.mp-page-select-li {
-  padding: 10px;
-  margin: 5px;
-  background: #fa8072;
-  box-sizing: border-box;
-  font-size: 1.2em;
-  border-radius: 5px;
-  color: #ffffff;
-  font-family: "Rubik";
-  min-width: 50px;
-  min-height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 10px -1px #707070; }
-  .mp-page-select-li:hover {
-    background: #707070; }
-
-#page-selected {
-  background: #707070; }
-
-.re-panel {
-  width: 40%;
-  padding: 20px;
-  min-width: 720px;
-  background: #ffffff;
-  box-sizing: border-box;
-  margin-top: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px -1px #707070;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  flex-wrap: wrap; }
-
 .re-panel-right-area, .re-panel-left-area {
   height: auto;
   display: flex;
@@ -72,18 +9,18 @@
 
 .re-panel-right-area {
   width: 40%;
-  padding-left: 10px; }
+  padding-left: 0.6em; }
 
 .re-panel-left-area {
   width: 60%;
-  padding-right: 20px;
+  padding-right: 1.25em;
   border-right: 1px solid #a1a0a0; }
 
 .re-header {
   width: 100%;
   margin: 0;
   text-align: center;
-  font-size: 1.4em;
+  font-size: 2em;
   font-family: "Rubik";
   color: #fa8072; }
 
@@ -92,7 +29,7 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
-  margin: 10px 0; }
+  margin: 0.6em 0; }
 
 .re-price-li {
   width: 100%;
@@ -101,17 +38,18 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #a1a0a0;
-  margin-bottom: 10px; }
+  margin-bottom: 0.6em; }
   .re-price-li:last-child {
     margin-bottom: 0; }
 
 .re-price-name, .re-price-value {
   height: auto;
   margin: 0;
-  font-size: 0.9em;
+  font-size: 1.2em;
   font-family: "Rubik";
   color: #707070;
-  overflow-wrap: anywhere; }
+  overflow-wrap: anywhere;
+  white-space: nowrap; }
 
 .re-price-name {
   width: 80%;
@@ -126,20 +64,21 @@
   margin: 0;
   font-family: "Rubik";
   color: #fa8072;
-  font-size: 1.1em;
-  margin-bottom: 10px;
+  font-size: 1.4em;
+  margin-bottom: 0.6em;
   text-align: right; }
 
 .re-panel-cancel {
-  width: 40%;
-  margin-top: 10px;
-  padding: 5px 0;
+  width: 100%;
+  margin-top: 0.6em;
+  padding: 0.3em 0;
   background: #707070;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.3em;
   font-family: "Rubik";
   color: #ffffff;
-  box-shadow: 0 0 5px -1px #000000; }
+  box-shadow: 0 0 0.3em -1px #000000;
+  font-size: 1.2em; }
   .re-panel-cancel:hover {
     background: #d73a49; }
   .re-panel-cancel:focus {
@@ -151,18 +90,15 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  margin-top: 20px;
-  padding-bottom: 10px; }
-
-#re-profile-photo {
-  content: url(../../assets/img/person-profile.jpeg); }
+  margin-top: 1.25em;
+  padding-bottom: 0.6em; }
 
 .re-profile-img {
   height: auto;
-  width: 50px;
-  margin-right: 10px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px -1px #707070; }
+  width: 3.1em;
+  margin-right: 0.6em;
+  border-radius: 0.3em;
+  box-shadow: 0 0 0.6em -1px #707070; }
   .re-profile-img:hover {
     opacity: 0.8; }
 
@@ -171,42 +107,27 @@
   width: 100%;
   overflow-wrap: anywhere;
   font-family: "Rubik";
-  font-size: 0.9em;
+  font-size: 1.2em;
   color: #707070; }
 
 .re-data-li {
   width: 100%;
   height: auto;
-  padding-bottom: 5px;
+  padding-bottom: 0.3em;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-bottom: 20px;
+  margin-bottom: 1.25em;
   border-bottom: 1px solid #a1a0a0; }
 
 .re-data-info {
   margin: 0;
-  font-size: 0.8em;
+  font-size: 1.2em;
   font-family: "Rubik";
-  margin-left: 10px;
+  margin-left: 0.6em;
   color: #707070; }
 
 .re-data-img {
-  height: 25px; }
-
-.re-date-img {
-  content: url(../../assets/svg/calendar/calendar-grey.svg); }
-
-.re-map-img {
-  content: url(../../assets/svg/placeholder/placeholder-grey.svg); }
-
-.re-person-img {
-  content: url(../../assets/svg/user/user-grey.svg); }
-
-.re-phone-img {
-  content: url(../../assets/svg/phone/telephone-grey.svg); }
-
-.re-email-img {
-  content: url(../../assets/svg/envelop/email-grey.svg); }
+  height: 1.6em; }
 
 /*# sourceMappingURL=reservations-page.css.map */

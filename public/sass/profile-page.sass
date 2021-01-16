@@ -1,45 +1,25 @@
 @import './variables/fonts'
 @import './variables/colors'
 
-*
-  overflow-wrap: anywhere
-
-.middle-content
-  height: auto
-  width: 100%
-  display: flex
-  justify-content: flex-start
-  align-items: center
-  position: relative
-  flex-direction: column
-
-.info-panel
-  height: 100%
-  width: 40%
-  min-width: 720px
-  padding: 20px
-  margin: 10px 0
-  box-sizing: border-box
-  background: $white
-  border-radius: 5px
-  box-shadow: 0 0 10px -1px $grey
+div
+  width: auto
 
 .profile-description
   margin: 0
   width: 100%
   height: auto
   font-family: $rubik
-  font-size: 0.7em
+  font-size: 1em
   color: $grey
 
 .profile-beam
   width: 100%
-  height: 90px
+  height: 5.6em
   display: flex
   justify-content: flex-start
   align-items: center
-  padding-bottom: 10px
-  margin-bottom: 10px
+  padding-bottom: 0.6em
+  margin-bottom: 0.6em
   border-bottom: 1px solid $grey-bright
 
 .profile-info
@@ -48,14 +28,14 @@
   display: flex
   align-items: flex-start
   align-content: flex-start
-  margin-left: 20px
+  margin-left: 1.25em
   justify-content: flex-start
   flex-wrap: wrap
 
 .profile-name
   width: 100%
   margin: 0
-  font-size: 1.2em
+  font-size: 1.6em
   font-family: $rubik
   color: $pink
 
@@ -63,23 +43,20 @@
   margin: 0
   font-family: $rubik
   color: $grey
-  font-size: 0.9em
+  font-size: 1.1em
   width: 100%
-
-#profile-img
-  content: url(../../assets/img/person-profile.jpeg)
 
 .profile-img
   height: 100%
   width: auto
-  border-radius: 5px
-  box-shadow: 2px
-  box-shadow: 0 0 10px -1px $grey
+  border-radius: 0.3em
+  box-shadow: 0.1em
+  box-shadow: 0 0 0.6em -1px $grey
 
 .schedule-beam
   width: 100%
-  height: 60px
-  margin-bottom: 10px
+  height: 3.75em
+  margin-bottom: 0.6em
   display: flex
   align-items: center
   justify-content: space-between
@@ -87,7 +64,7 @@
 
 .schedule-header
   margin: 0
-  font-size: 1.5em
+  font-size: 2em
   font-family: $rubik
   color: $pink
 
@@ -139,17 +116,16 @@
 
 .schedule-ul-header
   width: 100%
-  height: 45px
   display: flex
   align-items: flex-start
   justify-content: center
   flex-wrap: wrap
-  margin-bottom: 10px
+  margin-bottom: 0.6em
   align-content: flex-start
 
 .day
   margin: 0
-  font-size: 0.9em
+  font-size: 1.1em
   font-family: $rubik
   color: $pink
   width: 100%
@@ -159,7 +135,7 @@
 
 .data
   width: 100%
-  font-size: 0.6em
+  font-size: 0.8em
   margin: 0
   display: flex
   justify-content: center
@@ -169,17 +145,18 @@
 
 .schedule-li
   width: 85%
-  height: 40px
+  height: 2.5em
   background: $grey
-  border-radius: 5px
-  box-shadow: 0 0 5px -1px $black
+  border-radius: 0.3em
+  box-shadow: 0 0 0.3em -1px $black
   display: flex
   justify-content: center
   align-items: center
   color: $white
-  margin-bottom: 10px
+  margin-bottom: 0.6em
   font-family: $rubik
-  font-size: 0.9em
+  font-size: 1.1em
+  border: none
 
   &:hover
     background: $pink
@@ -194,10 +171,10 @@
   width: 100%
   margin: 0
   font-family: $rubik
-  font-size: 1.4em
+  font-size: 2em
   color: $pink
   border-bottom: 2px solid $pink
-  margin-bottom: 10px
+  margin-bottom: 0.6em
 
 .contact-ul, .price-ul
   margin: 0
@@ -210,7 +187,7 @@
   display: flex
   align-items: center
   justify-content: space-between
-  margin-bottom: 10px
+  margin-bottom: 0.6em
   height: auto
   width: 100%
   border-bottom: 1px solid $grey
@@ -223,7 +200,7 @@
   display: flex
   justify-content: flex-start
   align-items: center
-  font-size: 1.1em
+  font-size: 1.4em
   color: $grey
 
 .contact-value, .price-value
@@ -238,11 +215,12 @@
   list-style-type: none
   margin: 0
   padding: 0
+  width: 100%
 
 .add-info-li
   width: 100%
   height: auto
-  margin-bottom: 10px
+  margin-bottom: 0.6em
   display: flex
   align-items: flex-start
   justify-content: flex-start
@@ -250,28 +228,10 @@
   &:last-child
     margin-bottom: 0
 
-#profession-img
-  content: url(../../assets/svg/brush/brush-grey.svg)
-
-#payment-img
-  content: url(../../assets/svg/card/credit-card-grey.svg)
-
-#certificate-img
-  content: url(../../assets/svg/education/mortarboard-grey.svg)
-
-#web-img
-  content: url(../../assets/svg/web/world-wide-web-grey.svg)
-
-#exp-img
-  content: url(../../assets/svg/quality/quality-grey.svg)
-
-#favorite-img
-  content: url(../../assets/svg/pin/safety-pin-grey.svg)
-
 .add-info-img
-  width: 30px
+  width: 1.9em
   height: 100%
-  padding-right: 10px
+  padding-right: 0.6em
 
 .add-info-container
   width: 100%
@@ -283,12 +243,11 @@
 
 .add-info-header
   width: 100%
-  height: 30px
+  font-size: 1.6em
   margin: 0
   font-family: $rubik
   border-bottom: 1px solid $grey
   color: $grey
-  font-size: 1em
 
 .add-info-sub-ul
   width: 100%
@@ -297,9 +256,9 @@
   height: auto
 
 .add-info-sub-li
-  margin: 10px 0
+  margin: 0.6em 0
   font-family: $rubik
-  font-size: 0.9em
+  font-size: 1.3em
   color: $grey-bright
   width: 100%
   border-bottom: 1px solid $grey-bright

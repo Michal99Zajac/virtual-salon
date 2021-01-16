@@ -1,252 +1,95 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Rubik:wght@300&display=swap");
-* {
-  font-size: 24px; }
-
-body {
-  width: 100vw;
-  height: 100vh;
-  padding: 0;
-  margin: 0;
+.container {
   background: transparent url(../../assets/img/search-background-stationary.png) 0% 0% no-repeat padding-box;
   background-size: cover;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   align-content: start; }
 
 .top-area {
-  height: 10%;
-  width: 100%;
-  min-width: 940px;
-  min-height: 98px;
-  display: flex;
   align-items: center;
-  justify-content: flex-end; }
+  justify-content: flex-end;
+  display: flex;
+  width: 100%; }
 
 .profile-area {
-  width: 20%;
-  min-width: 310px;
-  height: 50%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center; }
-
-.profile {
-  width: 70%;
-  height: 100%;
-  align-items: center;
-  justify-content: flex-end;
-  display: flex;
-  box-shadow: 0 0px 5px -1px #000000;
-  border-radius: 5px; }
+  height: auto;
+  width: auto;
+  margin: 1em; }
 
 .profile-photo {
-  height: 100%;
-  width: auto;
-  border-radius: 5px 0 0 5px; }
-  .profile-photo:hover {
-    opacity: 0.9; }
-
-#profile-img {
-  content: url(../../assets/img/person-profile.jpeg); }
+  height: 3em;
+  border-radius: 0.3em 0 0 0.3em;
+  border: none; }
 
 .profile-logout {
-  width: 100%;
-  height: 100%;
+  font-size: 1.4em;
+  padding: 0 1.5em;
   border: none;
-  border-radius: 0 5px 5px 0;
-  font-family: "Rubik";
-  font-size: 1.1em;
-  background: #ffffff;
-  color: #707070; }
+  border-radius: 0 0.3em 0.3em 0;
+  color: #fa8072;
+  background: #ffffff; }
   .profile-logout:hover {
-    color: #fa8072; }
-  .profile-logout:focus {
-    outline: none; }
-
-.sign-button {
-  height: 100%;
-  width: 40%;
-  font-size: 0.9em;
-  border-radius: 5px;
-  border: none;
-  min-width: 150px;
-  margin: auto;
-  font-family: "Rubik";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none; }
-  .sign-button:focus {
-    outline: none; }
-
-#sign-in-button {
-  background: #fa8072;
-  color: #ffffff; }
-  #sign-in-button:hover {
-    background-color: #ffb3aa; }
-
-#sign-up-button {
-  background: #ffffff;
-  color: #fa8072; }
-  #sign-up-button:hover {
-    background-color: #dddddd; }
-
-.logo {
-  width: 25%;
-  min-width: 395px;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center; }
-
-.logo-image {
-  height: 70%;
-  width: auto;
-  content: url(../../assets/svg/salon/beauty-salon-pink.svg); }
+    background: #fa8072;
+    color: #ffffff; }
 
 .logo-text {
-  height: 70%;
-  width: 70%;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  font-size: 2.2em;
+  margin: 0.2em 1em;
+  font-size: 4em;
   font-family: "Dancing Script";
   color: #fa8072; }
 
 .search-container {
-  width: 80%;
-  min-width: 940px;
-  height: 60%;
-  min-height: 120px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto; }
+  margin-top: 30%; }
 
-.search-input-container {
-  height: 100%;
-  width: 35%;
-  min-width: 350px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  position: relative; }
-  .search-input-container .input-img {
-    height: 40px;
-    width: 40px;
-    position: absolute;
-    left: 20px;
-    bottom: 40px; }
-
-#building-img {
-  content: url(../../assets/svg/home/home-grey.svg); }
-
-#map-img {
-  content: url(../../assets/svg/placeholder/placeholder-grey.svg); }
-
-.search-input {
-  width: 100%;
-  min-height: 120px;
-  min-width: 340px;
-  border: none;
-  border-radius: 5px;
-  padding: 0;
-  margin: 0;
-  font-size: 1.4em;
-  padding-left: 80px;
+.search-input, .search-button {
+  padding: 1em;
+  margin: 0.5em;
+  font-size: 1.8em;
   box-sizing: border-box;
-  color: #707070; }
-  .search-input::placeholder {
-    color: #707070; }
-  .search-input:focus {
-    outline: none;
+  border-radius: 0.3em;
+  border: none;
+  font-family: "Rubik";
+  color: #707070;
+  box-shadow: 0 0 0.6em -1px #000000; }
+  .search-input:focus, .search-button:focus {
     color: #fa8072; }
-    .search-input:focus::placeholder {
+    .search-input:focus::placeholder, .search-button:focus::placeholder {
+      color: #ffb3aa; }
+    .search-input:focus:hover, .search-button:focus:hover {
       color: #fa8072; }
-    .search-input:focus + #building-img {
-      content: url(../../assets/svg/home/home-pink.svg); }
-    .search-input:focus + #map-img {
-      content: url(../../assets/svg/placeholder/placeholder-pink.svg); }
-    .search-input:focus:hover {
-      color: #fa8072; }
-      .search-input:focus:hover::placeholder {
+      .search-input:focus:hover::placeholder, .search-button:focus:hover::placeholder {
         color: #fa8072; }
-      .search-input:focus:hover + #building-img {
-        content: url(../../assets/svg/home/home-pink.svg); }
-      .search-input:focus:hover + #map-img {
-        content: url(../../assets/svg/placeholder/placeholder-pink.svg); }
-  .search-input:hover {
+  .search-input::placeholder, .search-button::placeholder {
     color: #a1a0a0; }
-    .search-input:hover::placeholder {
-      color: #a1a0a0; }
-    .search-input:hover + #building-img {
-      content: url(../../assets/svg/home/home-grey-bright.svg); }
-    .search-input:hover + #map-img {
-      content: url(../../assets/svg/placeholder/placeholder-grey-bright.svg); }
-
-.search-button-container {
-  width: 25%;
-  height: 100%;
-  min-width: 220px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end; }
+  .search-input:hover, .search-button:hover {
+    color: #ffb3aa; }
+    .search-input:hover::placeholder, .search-button:hover::placeholder {
+      color: #ffb3aa; }
 
 .search-button {
-  width: 100%;
-  min-height: 120px;
-  padding: 0;
-  margin: 0;
-  border: none;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 1em 3em;
   background: #fa8072;
-  color: #ffffff;
-  font-size: 1.4em;
-  font-family: "Rubik"; }
-  .search-button:focus {
-    outline: none; }
+  color: #ffffff; }
   .search-button:hover {
+    color: #ffffff;
     background: #ffb3aa; }
-  .search-button #lens-img {
-    content: url(../../assets/svg/lens/magnifying-glass-white.svg); }
-  .search-button .input-img {
-    width: 40px;
-    height: auto;
-    margin-right: 10px; }
 
-.hedlines-container {
-  width: 80%;
-  min-width: 940px;
-  height: 15%;
-  min-height: 69px;
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  align-items: center;
-  align-content: center; }
-
-.main-headline {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  font-size: 1.3em;
+.sign-button {
+  font-size: 1.4em;
+  background: #ffffff;
+  margin: 0.3em;
+  padding: 0.5em 1em;
+  border-radius: 0.3em;
   color: #fa8072;
+  box-shadow: 0 0 0.6em -1px #000000;
   font-family: "Rubik"; }
-
-.sub-headline {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  font-size: 1.1em;
-  color: #ffffff;
-  font-family: "Rubik"; }
+  .sign-button:hover {
+    background: #fa8072;
+    color: #ffffff; }
+  .sign-button:last-child {
+    background: #fa8072;
+    color: #ffffff; }
+    .sign-button:last-child:hover {
+      background: #ffffff;
+      color: #fa8072; }
 
 /*# sourceMappingURL=search-page.css.map */

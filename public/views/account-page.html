@@ -3,26 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>account page</title>
+  <link rel="stylesheet" href="../css/standard-body/standard-body.css">
   <link rel="stylesheet" href="../css/account-page.sass/account-page.css">
 </head>
 <body>
-  <div class="ac-container">
-    <h1 class="ac-logo">
-      <a class="ac-a" href="./search-page.html">Virtual Salon</a>
-    </h1>
-    <div class="ac-input-area">
-      <input class="ac-input-text" placeholder="email" type="text">
-      <input class="ac-input-text" placeholder="name" type="text">
-      <input class="ac-input-text" placeholder="surname" type="text">
-      <input class="ac-input-text" placeholder="password" type="password">
-      <input class="ac-input-text" placeholder="confirm password" type="password">
+  <div class="container">
+    <div class="panel">
+      <h1 class="ac-logo">
+        <a class="ac-a" href="./search-page.html">Virtual Salon</a>
+      </h1>
+      <form class="form-width-auto">
+        <div class="ac-input-area">
+          <input class="ac-input-text" placeholder="email" type="text">
+          <input class="ac-input-text" placeholder="name" type="text">
+          <input class="ac-input-text" placeholder="surname" type="text">
+          <input class="ac-input-text" placeholder="password" type="password">
+          <input class="ac-input-text" placeholder="confirm password" type="password">
+        </div>
+        <button class="standard-button">sign up</button>
+      </form>
     </div>
-    <button class="ac-button">sign up</button>
-  </div>
-  <div class="ac-container">
-    <p class="ac-question">Have an account?</p>
-    <a class="ac-button" href="./login-page.html">sign in</a>
+    <div class="panel">
+      <p class="ac-question">Have an account?</p>
+      <a class="standard-button" href="./login-page.html">sign in</a>
+    </div>
   </div>
 </body>
 </html>

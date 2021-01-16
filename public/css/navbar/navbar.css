@@ -1,155 +1,101 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Rubik:wght@300&display=swap");
-* {
-  font-size: 24px; }
-
-body {
-  height: 100vh;
-  width: 100%;
-  min-width: min-content;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  align-items: flex-start;
-  align-content: space-between;
-  justify-content: center;
-  flex-wrap: wrap; }
-
 .nb-container {
-  padding: 0;
-  margin: 0;
   width: 100%;
-  min-width: 300px;
-  height: 50px;
-  min-height: 20px;
-  background-color: #fa8072;
-  box-sizing: border-box;
-  box-shadow: 0 0px 5px -1px #707070;
-  display: flex;
-  justify-content: space-between;
-  align-items: center; }
-
-.nb-logo {
-  width: auto;
   height: auto;
-  margin: 0;
-  font-size: 1.5em;
-  padding: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-family: "Dancing Script";
-  margin: 0;
-  min-width: 300px;
+  justify-content: space-between;
+  background: #fa8072;
+  box-shadow: 0 0px 0.3em -1px #707070;
+  padding: 0.3em 0;
   box-sizing: border-box; }
 
-.nb-logo-a {
-  font-size: inherit;
+.nb-logo {
+  margin: 0;
+  font-size: 2.4em;
+  font-family: rubik;
+  width: 25%;
+  text-align: center;
+  font-family: "Dancing Script";
   color: #ffffff;
-  text-decoration: none;
-  font-family: inherit;
-  min-width: 180px; }
+  white-space: nowrap;
+  min-width: min-content; }
 
 .nb-right-section {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
-  height: 100%; }
-
-.nb-tab {
-  margin: 0 10px;
-  width: auto;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  color: #ffffff;
-  text-decoration: none;
-  max-width: max-content;
-  font-size: 0.8em;
-  font-family: "Rubik";
-  white-space: nowrap; }
-  .nb-tab:hover {
-    border-bottom: 5px solid #ffffff; }
-
-#nb-current-tab {
-  font-weight: bold;
-  border-bottom: 5px solid #ffffff; }
-
-.nb-profile, .nb-sign {
   width: auto;
   height: auto;
   display: flex;
-  justify-content: center;
   align-items: center;
-  min-width: max-content;
-  margin: 0 10px;
+  justify-content: flex-end;
+  padding: 0 0.3em;
   box-sizing: border-box;
-  border-radius: 5px; }
+  min-width: max-content; }
 
-.nb-button {
+.nb-none {
+  display: none; }
+
+.nb-sign {
   width: auto;
-  height: 40px;
-  border-radius: 0 5px 5px 0;
-  border: none;
-  background: #ffffff;
-  color: #fa8072;
-  font-size: 0.8em;
-  min-width: 100px;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-  .nb-button:focus {
-    outline: none; }
-  .nb-button:hover {
-    background: #ffb3aa;
-    color: #ffffff; }
-
-.nb-profile-img {
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  min-height: 40px;
-  border-radius: 5px 0 0 5px; }
-  .nb-profile-img:hover {
-    opacity: 0.9; }
-
-#nb-profile-photo {
-  content: url(../../assets/img/person-profile.jpeg); }
+  height: auto; }
 
 .nb-sign-button {
-  width: 100px;
-  margin: 0 5px;
-  padding: 0;
-  height: 40px;
-  border-radius: 5px;
-  border: none;
-  font-size: 0.8em;
+  font-size: 1.3em;
   font-family: "Rubik";
-  color: #fa8072;
-  min-width: 100px;
-  box-sizing: border-box;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-  .nb-sign-button:hover {
-    color: #ffffff; }
+  margin: 0 0.2em;
+  padding: 0.4em;
+  border-radius: 0.3em;
+  box-shadow: 0 0 0.3em -1px #000000;
+  white-space: nowrap; }
 
 .nb-sign-in {
-  background: #ffffff; }
-  .nb-sign-in:hover {
-    background: #ffb3aa; }
+  background: #ffffff;
+  color: #fa8072; }
 
 .nb-sign-up {
   background: #a1a0a0;
   color: #ffffff; }
-  .nb-sign-up:hover {
-    background: #ffb3aa; }
 
-.nb-none {
-  display: none; }
+.nb-tab {
+  margin: 0 0.4em;
+  font-size: 1.1em;
+  font-family: "Rubik";
+  padding: 0.1em 0.4em;
+  color: #ffffff; }
+  .nb-tab:hover {
+    border-bottom: 0.3em solid #ffffff; }
+
+#nb-current-tab {
+  background: #ffffff;
+  color: #fa8072;
+  border-radius: 0.3em; }
+  #nb-current-tab:hover {
+    border-bottom: 0; }
+
+.nb-profile {
+  width: auto;
+  height: 2.6em;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.nb-button {
+  height: 100%;
+  font-size: 1.2em;
+  box-sizing: border-box;
+  font-family: "Rubik";
+  border: none;
+  border-radius: 0 0.3em 0.3em 0;
+  color: #fa8072;
+  background: #ffffff;
+  padding: 0.1em 0.5em; }
+  .nb-button:hover {
+    background: #ffb3aa;
+    color: #ffffff; }
+  .nb-button:focus {
+    outline: none; }
+
+.nb-profile-img {
+  height: 100%;
+  border-radius: 0.3em 0 0 0.3em; }
 
 /*# sourceMappingURL=navbar.css.map */

@@ -1,42 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Rubik:wght@300&display=swap");
-* {
-  font-size: 24px; }
+.container {
+  flex-direction: column;
+  align-content: center; }
 
-body {
-  height: 100vh;
-  width: 100%;
-  min-width: min-content;
-  padding: 0;
-  margin: 0;
-  background: #fa8072;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column; }
-
-.ac-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  width: 30%;
-  height: auto;
-  min-width: 500px;
-  min-height: max-content;
-  background: #ffffff;
-  border-radius: 5px;
-  padding: 20px;
-  box-sizing: border-box;
-  box-shadow: 0 0 10px -1px #707070;
-  margin: 20px;
-  padding-bottom: 30px; }
+.panel {
+  width: 30%; }
 
 .ac-logo {
-  margin: 0 auto 20px auto;
+  margin: 0 auto 1.25em auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2.5em;
+  font-size: 3.2em;
   color: #fa8072;
   font-family: "Dancing Script"; }
 
@@ -57,12 +32,12 @@ body {
 .ac-input-text {
   width: 90%;
   height: auto;
-  margin-bottom: 25px;
-  font-size: 1.2em;
-  padding: 10px;
+  margin-bottom: 1.5em;
+  font-size: 1.4em;
+  padding: 0.6em;
   border: none;
-  border-radius: 5px;
-  box-shadow: 0 0 10px -1px #707070;
+  border-radius: 0.3em;
+  box-shadow: 0 0 0.6em -1px #707070;
   font-family: "Rubik";
   box-sizing: border-box;
   color: #707070; }
@@ -80,31 +55,14 @@ body {
     .ac-input-text:hover::placeholder {
       color: #fa8072; }
 
-.ac-button {
-  width: 90%;
-  font-size: 1.2em;
-  padding: 10px;
-  box-sizing: border-box;
-  border: none;
-  border-radius: 5px;
-  font-family: "Rubik";
-  color: #ffffff;
-  background: #707070;
-  box-shadow: 0 0 10px -1px #707070;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none; }
-  .ac-button:focus {
-    outline: none; }
-  .ac-button:hover {
-    background: #fa8072; }
-
 .ac-question {
   margin: 0;
   width: 90%;
   font-size: 0.8em;
   font-family: "Rubik";
-  margin-bottom: 5px; }
+  margin-bottom: 0.3em; }
+
+.standard-button {
+  width: 90%; }
 
 /*# sourceMappingURL=account-page.css.map */

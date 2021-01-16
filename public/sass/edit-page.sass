@@ -1,0 +1,337 @@
+@import './variables/fonts'
+@import './variables/colors'
+
+.panel-header, .panel-subheader
+  width: 100%
+  margin: 0
+  margin-bottom: 0.5em
+  padding-bottom: 0.1em
+  border-bottom: 0.08em solid $grey
+  box-sizing: border-box
+  font-family: $rubik
+  color: $pink
+  font-size: 2em
+
+.panel-subheader
+  border-color: $grey-bright
+  color: $grey-bright
+  font-size: 1.8em
+  margin-top: 0.8em
+
+.first-panel-subheader
+  margin-top: 0
+
+.panel-photo-container
+  width: 100%
+  height: auto
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+#file-photo
+  display: none
+
+.file-label
+  font-size: 1.4em
+  padding: 0.4em
+  width: 100%
+  box-sizing: border-box
+  margin: 0.4em
+  box-shadow: 0 0 0.3em -1px $grey
+  background: $pink-bright
+  border-radius: 0.3em
+  text-align: center
+  font-family: $rubik
+  color: $white
+
+  &:hover
+    background: $grey-bright
+
+.panel form div
+  margin-bottom: 1.2em
+
+  &:last-child
+    margin-bottom: 0
+
+.input-text
+  width: 75%
+  font-size: 1.4em
+  border: 0.08em solid $pink
+  border-radius: 0 0.3em 0.3em 0
+  padding: 0.2em 0.1em
+  color: $grey
+
+  &::placeholder
+    color: $grey-bright
+
+  &:focus
+    outline: none
+    color: $pink
+
+    &::placeholder
+      color: $pink-bright
+
+    &:hover
+      color: $pink
+
+  &:hover
+    color: $pink
+
+    &::placeholder
+      color: $pink-bright
+
+.input-text-span
+  width: 25%
+  font-size: 1.4em
+  display: flex
+  justify-content: center
+  align-items: center
+  font-family: $rubik
+  background: $pink
+  border-radius: 0.3em 0 0 0.3em
+  color: $white
+
+.schedule-day-input
+  margin: 0.2em
+  font-size: 1.2em
+  padding: 0.3em 0.4em
+  border: none
+  border-radius: 0.3em
+  background: $grey
+  color: $white
+  font-family: $rubik
+  box-shadow: 0 0 0.3em -1px $black
+
+  &:hover
+    background: $pink
+
+  &:focus
+    outline: none
+
+.delete-input-button
+  width: 80%
+  margin-top: 0.6em
+  font-size: 1.3em
+  padding: 0.3em
+  box-sizing: border-box
+  border: none
+  border-radius: 0.3em
+  color: $white
+  background: $grey-bright
+  overflow-wrap: anywhere
+  white-space: normal
+
+  &:hover
+    background: $delete-color
+
+.add-input-text
+  width: 70%
+  font-size: 1.6em
+  border-radius: 0.3em 0 0 0.3em
+  border: 0.06em solid $grey
+  text-align: center
+  color: $grey
+
+  &::placeholder
+    color: $grey-bright
+
+  &:focus
+    outline: none
+    color: $pink
+
+    &::placeholder
+      color: $pink-bright
+
+    &:hover
+      color: $pink
+
+  &:hover
+    color: $pink
+
+    &::placeholder
+      color: $pink-bright
+
+.add-button
+  width: 25%
+  font-size: 1.55em
+  border: 0.08em solid $grey
+  border-radius: 0 0.3em 0.3em 0
+  background: $grey
+  color: $white
+  font-family: $rubik
+  box-sizing: border-box
+
+  &:hover
+    background: $pink
+
+    & + .add-input-text
+      border-color: $pink
+
+input[name="description"]
+  width: 100%
+  border: 0.08em solid $grey
+  font-size: 1.4em
+  border-radius: 0.3em
+  padding: 0.2em
+  font-family: $rubik
+  margin-bottom: 0.5em
+
+  &::placeholder
+    color: $grey-bright
+
+  &:focus
+    outline: none
+    color: $pink
+    border-color: $pink
+
+    &::placeholder
+      color: $pink-bright
+
+    &:hover
+      color: $pink
+
+  &:hover
+    color: $pink
+
+    &::placeholder
+      color: $pink-bright
+
+.max-delete-input
+    width: 100%
+    margin-top: 0
+    margin-bottom: 0.6em
+
+    &:last-child
+      margin-bottom: 0
+
+.checkbox-label
+  width: 90%
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  font-family: $rubik
+  color: $grey
+  font-size: 1.1em
+
+.checkbox-mock
+  width: 1.4em
+  height: 1.4em
+  background: $white
+  border-radius: 0.3em
+  border: 0.1px solid $grey
+  margin-right: 0.8em
+
+input[type="checkbox"]
+  display: none
+
+  &:checked
+    & ~ .checkbox-mock
+      background: $pink
+      border-color: $pink
+
+      &:hover
+        background: $pink
+        border-color: $pink
+
+  &:disabled
+    & ~ .checkbox-mock
+      border-color: $grey-bright
+      background: $grey-bright
+
+      &:hover
+        border-color: $grey-bright
+
+    &:checked
+      & ~ .checkbox-mock
+        background: $grey-bright
+        border-color: $grey-bright
+
+        &:hover
+          background: $grey-bright
+          border-color: $grey-bright
+
+.list-span
+  width: 70%
+  font-size: 1.3em
+  font-family: $rubik
+  padding: 0.2em 0.6em
+  box-sizing: border-box
+  border-radius: 0.3em
+  background: $grey
+  color: $white
+  margin-right: 0.5em
+  overflow-wrap: anywhere
+  box-shadow: 0 0 0.3em -1px $black
+
+.delete-button
+  font-size: 1.3em
+  font-family: $rubik
+  border: none
+  border-radius: 0.3em
+  padding: 0.2em 0.6em
+  color: $white
+  background: $grey-bright
+  box-shadow: 0 0 0.3em -1px $black
+
+  &:hover
+    background: $delete-color
+
+    & ~ .list-span
+      background: $delete-color
+
+.list-price
+  width: max-content
+  white-space: nowrap
+
+.add-button-product
+  width: 15%
+  font-size: 1.2em
+  margin: 0.2em
+  font-family: $rubik
+  border: none
+  border-radius: 0.3em
+  color: $white
+  background: $grey-bright
+  padding: 0.2em 0.6em
+  box-shadow: 0 0 0.3em -1px $black
+
+  &:focus
+    outline: none
+
+  &:hover
+    background: $pink
+
+    & ~ .add-input-specjal
+      border-color: $pink
+
+.add-input-specjal
+  padding: 0.2em 0.6em
+  font-size: 1.2em
+  margin: 0 0.2em
+  border: 0.08em solid $grey
+  border-radius: 0.3em
+  font-family: $rubik
+
+  &::placeholder
+    color: $grey-bright
+
+  &:focus
+    color: $pink
+
+    &::placeholder
+      color: $pink-bright
+
+    &:hover
+      color: $pink
+
+  &:hover
+    color: $pink
+
+    &::placeholder
+      color: $pink-bright
+
+.add-product
+  width: 50%
+
+.add-price
+  width: 20%

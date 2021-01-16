@@ -1,162 +1,105 @@
 @import '../variables/fonts'
 @import '../variables/colors'
 
-*
-  font-size: 24px
-
-body
-  height: 100vh
-  width: 100%
-  min-width: min-content
-  padding: 0
-  margin: 0
-  display: flex
-  align-items: flex-start
-  align-content: space-between
-  justify-content: center
-  flex-wrap: wrap
-
 .nb-container
-  padding: 0
-  margin: 0
   width: 100%
-  min-width: 300px
-  height: 50px
-  min-height: 20px
-  background-color: $pink
-  box-sizing: border-box
-  box-shadow: 0 0px 5px -1px $grey
+  height: auto
   display: flex
-  justify-content: space-between
   align-items: center
+  justify-content: space-between
+  background: $pink
+  box-shadow: 0 0px 0.3em -1px $grey
+  padding: 0.3em 0
+  box-sizing: border-box
 
 .nb-logo
-  width: auto
-  height: auto
   margin: 0
-  font-size: 1.5em
-  padding: 0
-  display: flex
-  justify-content: center
-  align-items: center
+  font-size: 2.4em
+  font-family: rubik
+  width: 25%
+  text-align: center
   font-family: $dancing-script
-  margin: 0
-  min-width: 300px
-  box-sizing: border-box
-
-.nb-logo-a
-  font-size: inherit
   color: $white
-  text-decoration: none
-  font-family: inherit
-  min-width: 180px
+  white-space: nowrap
+  min-width: min-content
 
 .nb-right-section
-  display: flex
-  justify-content: flex-end
-  align-items: center
-  width: 100%
-  height: 100%
-
-.nb-tab
-  margin: 0 10px
-  width: auto
-  height: 100%
-  display: flex
-  align-items: center
-  justify-content: center
-  box-sizing: border-box
-  color: $white
-  text-decoration: none
-  max-width: max-content
-  font-size: 0.8em
-  font-family: $rubik
-  white-space: nowrap
-
-  &:hover
-    border-bottom: 5px solid $white
-
-#nb-current-tab
-  font-weight: bold
-  border-bottom: 5px solid $white
-
-.nb-profile, .nb-sign
   width: auto
   height: auto
   display: flex
-  justify-content: center
   align-items: center
-  min-width: max-content
-  margin: 0 10px
+  justify-content: flex-end
+  padding: 0 0.3em
   box-sizing: border-box
-  border-radius: 5px
+  min-width: max-content
 
-.nb-button
+.nb-none
+  display: none
+
+.nb-sign
   width: auto
-  height: 40px
-  border-radius: 0 5px 5px 0
-  border: none
-  background: $white
-  color: $pink
-  font-size: 0.8em
-  min-width: 100px
-  padding: 0
-  display: flex
-  justify-content: center
-  align-items: center
-
-  &:focus
-    outline: none
-
-  &:hover
-    background: $pink-bright
-    color: $white
-
-.nb-profile-img
-  width: 40px
-  height: 40px
-  min-width: 40px
-  min-height: 40px
-  border-radius: 5px 0 0 5px
-
-  &:hover
-    opacity: 0.9
-
-#nb-profile-photo
-  content: url(../../assets/img/person-profile.jpeg)
+  height: auto
 
 .nb-sign-button
-  width: 100px
-  margin: 0 5px
-  padding: 0
-  height: 40px
-  border-radius: 5px
-  border: none
-  font-size: 0.8em
+  font-size: 1.3em
   font-family: $rubik
-  color: $pink
-  min-width: 100px
-  box-sizing: border-box
-  text-decoration: none
-  display: flex
-  justify-content: center
-  align-items: center
-
-  &:hover
-    color: $white
+  margin: 0 0.2em
+  padding: 0.4em
+  border-radius: 0.3em
+  box-shadow: 0 0 0.3em -1px $black
+  white-space: nowrap
 
 .nb-sign-in
   background: $white
-
-  &:hover
-    background: $pink-bright
+  color: $pink
 
 .nb-sign-up
   background: $grey-bright
   color: $white
 
+.nb-tab
+  margin: 0 0.4em
+  font-size: 1.1em
+  font-family: $rubik
+  padding: 0.1em 0.4em
+  color: $white
+
+  &:hover
+    border-bottom: 0.3em solid $white
+
+#nb-current-tab
+  background: $white
+  color: $pink
+  border-radius: 0.3em
+
+  &:hover
+    border-bottom: 0
+
+.nb-profile
+  width: auto
+  height: 2.6em
+  display: flex
+  align-items: center
+  justify-content: center
+
+.nb-button
+  height: 100%
+  font-size: 1.2em
+  box-sizing: border-box
+  font-family: $rubik
+  border: none
+  border-radius: 0 0.3em 0.3em 0
+  color: $pink
+  background: $white
+  padding: 0.1em 0.5em
+
   &:hover
     background: $pink-bright
+    color: $white
 
-.nb-none
-  display: none
+  &:focus
+    outline: none
+
+.nb-profile-img
+  height: 100%
+  border-radius: 0.3em 0 0 0.3em
