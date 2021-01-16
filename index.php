@@ -1,26 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <?php
-  pre_r($_POST);
-  ?>
-  <form action="" method="post">
-    <input name="name" type="text">
-    <input type="submit" name="monday" value="Monday">
-    <input type="submit" name="monday" value="Thu">
-  </form>
-</body>
-</html>
-
 <?php
-  function pre_r( $array ) {
-    echo '<pre>';
-    print_r($array);
-    echo '</pre>';
-  }
-?>
+
+require_once 'Routing.php';
+
+$path = trim($_SERVER['REQUEST_URI'], '/');
+$path = parse_url($path, PHP_URL_PATH);
+
+Router::get('', 'DefaultController');
+Router::get('search', 'DefaultController');
+Router::get('login', 'DefaultController');
+Router::get('create', 'DefaultController');
+Router::get('edit', 'DefaultController');
+Router::get('info', 'DefaultController');
+Router::get('main', 'DefaultController');
+Router::get('orders', 'DefaultController');
+Router::get('profile', 'DefaultController');
+Router::get('reservations', 'DefaultController');
+Router::get('sheet', 'DefaultController');
+
+Router::run($path);
