@@ -26,7 +26,7 @@
         </div>
         <div class="nb-sign nb-none">
           <a  href="./login" class="nb-sign-button nb-sign-in">sign in</a>
-          <a href="./create" class="nb-sign-button nb-sign-up">sign up</a>
+          <a href="./register" class="nb-sign-button nb-sign-up">sign up</a>
         </div>
       </div>
     </div>

@@ -11,14 +11,15 @@
   <div class="container">
     <div class="top-area">
       <div class="profile-area">
-        <a href="./login" class="sign-button">sign in</a>
-        <a href="./create" class="sign-button">sign up</a>
-      </div>
-      <div class="profile-area">
-        <img src="public/assets/img/person-profile.jpeg" class="profile-photo">
-        <form>
-          <button class="profile-logout">logout</button>
-        </form>
+        <?php
+          if (!isset($_SESSION['userid'])) {
+            echo '<a href="./login" class="sign-button">sign in</a>';
+            echo '<a href="./register" class="sign-button">sign up</a>';
+          } else {
+            echo '<img src="public/assets/img/person-profile.jpeg" class="profile-photo">';
+            echo '<form action="logout" method="post"><button type="submit" class="profile-logout">logout</button></form>';
+          }
+        ?>
       </div>
       <h1 class="logo-text">Virtual Salon</h1>
     </div>

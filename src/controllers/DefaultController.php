@@ -3,10 +3,6 @@
 require_once 'AppController.php';
 
 class DefaultController extends AppController {
-  public function create() {
-    $this->render('account-page');
-  }
-
   public function edit() {
     $this->render('edit-page');
   }
@@ -39,7 +35,7 @@ class DefaultController extends AppController {
     $this->render('search-page');
   }
 
-  public function login() {
-    $this->render('login-page');
-  }
+  //public function login() {
+  //  $this->render('login-page');
+  //}
 }

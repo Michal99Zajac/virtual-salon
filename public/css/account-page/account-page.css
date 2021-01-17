@@ -7,7 +7,7 @@
   width: 30%; }
 
 .ac-logo {
-  margin: 0 auto 1.25em auto;
+  margin: 0 auto 0.2em auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,7 +32,7 @@
 .ac-input-text {
   width: 90%;
   height: auto;
-  margin-bottom: 1.5em;
+  margin-bottom: 0.8em;
   font-size: 1.4em;
   padding: 0.6em;
   border: none;
@@ -62,7 +62,37 @@
   font-family: "Rubik";
   margin-bottom: 0.3em; }
 
-.standard-button {
-  width: 90%; }
+.radio-container {
+  width: 45%;
+  height: auto;
+  padding: 0.4em;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center; }
+
+input[type="radio"] {
+  display: none; }
+  input[type="radio"]:checked ~ .radio {
+    background: #fa8072; }
+  input[type="radio"]:checked:hover ~ .radio {
+    background: #fa8072; }
+  input[type="radio"]:hover ~ .radio {
+    background: #a1a0a0; }
+
+.radio {
+  padding: 1em;
+  width: 50%;
+  margin: 0.4em 0.6em 0.6em 1em;
+  border-radius: 0.3em;
+  background: #707070;
+  box-shadow: 0 0 0.6em -1px #000000; }
+
+.radio-label {
+  font-family: "Rubik";
+  font-size: 1.4em;
+  color: #707070; }
+
+img {
+  width: 100%; }
 
 /*# sourceMappingURL=account-page.css.map */
