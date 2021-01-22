@@ -16,7 +16,7 @@
   margin: 1em; }
 
 .profile-photo {
-  height: 3em;
+  height: 100%;
   border-radius: 0.3em 0 0 0.3em;
   border: none; }
 
@@ -91,5 +91,13 @@
     .sign-button:last-child:hover {
       background: #ffffff;
       color: #fa8072; }
+
+button[name="id"] {
+  padding: 0;
+  border: 0;
+  height: 4em;
+  width: 4em; }
+  button[name="id"]:hover {
+    opacity: 0.9; }
 
 /*# sourceMappingURL=search-page.css.map */

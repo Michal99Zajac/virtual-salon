@@ -11,23 +11,23 @@
   <div class="container">
     <div class="top-area">
       <div class="profile-area">
-        <?php
-          if (!isset($_SESSION['userid'])) {
-            echo '<a href="./login" class="sign-button">sign in</a>';
-            echo '<a href="./register" class="sign-button">sign up</a>';
-          } else {
-            echo '<img src="public/assets/img/person-profile.jpeg" class="profile-photo">';
-            echo '<form action="logout" method="post"><button type="submit" class="profile-logout">logout</button></form>';
-          }
-        ?>
+        <?php if(!isset($_SESSION['id'])) : ?>
+          <a href="./login" class="sign-button">sign in</a>
+          <a href="./register" class="sign-button">sign up</a>
+        <?php else : ?>
+          <form method="GET" action="info">
+            <button value="<?php echo $_SESSION['id'] ?>" name="id" type="submit"><img src="public/assets/img/person-profile.jpeg" class="profile-photo"></button>
+          </form>
+          <form action="logout" method="post"><button type="submit" class="profile-logout">logout</button></form>
+        <?php endif; ?>
       </div>
       <h1 class="logo-text">Virtual Salon</h1>
     </div>
     <div class="search-container">
-      <form>
-        <input class="search-input" type="text" placeholder="city">
-        <input class="search-input" type="text" placeholder="street addres">
-        <button class="search-button">search</button>
+      <form action="main" method="GET">
+        <input class="search-input" name="city" type="text" placeholder="city">
+        <input class="search-input" name="address" type="text" placeholder="street address">
+        <button type="submit" class="search-button">search</button>
       </form>
     </div>
   </div>

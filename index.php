@@ -12,7 +12,7 @@ Router::get('search', 'DefaultController');
 Router::post('login', 'SecurityController');
 Router::get('register', 'SecurityController');
 Router::get('edit', 'DefaultController');
-Router::get('info', 'DefaultController');
+Router::get('info', 'ProfileController');
 Router::get('main', 'DefaultController');
 Router::get('orders', 'DefaultController');
 Router::get('profile', 'DefaultController');

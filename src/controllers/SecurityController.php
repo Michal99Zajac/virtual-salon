@@ -5,11 +5,21 @@ require_once __DIR__ . '/../models/User.php';
 require_once __DIR__.'/../repository/UserRepository.php';
 
 
-class SecurityController extends AppController
-{
+class SecurityController extends AppController {
+  private $userRepository;
+
+  public function __construct()
+  {
+    parent::__construct();
+    $this->userRepository = new UserRepository();
+  }
+
   public function login()
   {
-    $userRepository = new UserRepository();
+    if ($this->isSession()) {
+      header("Location: {$this->url}/search");
+      exit();
+    }
 
     if (!$this->isPost()) {
       return $this->render('login-page');
@@ -23,7 +33,7 @@ class SecurityController extends AppController
       exit();
     }
 
-    $user = $this->userExists($userRepository, $email);
+    $user = $this->userExists($email);
     if ($user === false) {
       header("Location: {$this->url}/login?error=userdoesntexists");
       exit();
@@ -39,7 +49,10 @@ class SecurityController extends AppController
   }
 
   public function register() {
-    $userRepository = new UserRepository();
+    if ($this->isSession()) {
+      header("Location: {$this->url}/search");
+      exit();
+    }
 
     if (!$this->isPost()) {
       return $this->render('account-page');
@@ -67,22 +80,25 @@ class SecurityController extends AppController
       exit();
     }
 
-    if ($this->userExists($userRepository, $email) !== false) {
+    if ($this->userExists($email) !== false) {
       header("Location: {$this->url}/register?error=userexists");
       exit();
     }
 
-    $this->registerUser($userRepository, $email, $name, $surname, $pwd);
+    $user = new User($email, $pwd, $role, $name, $surname);
+
+    $this->registerUser($user);
     return $this->render('search-page');
   }
 
-  private function registerUser($repo, $email, $name, $surname, $pwd) {
-    $repo->createUser($name, $surname, $email, $pwd);
+  private function registerUser(User $user) {
+    $this->userRepository->addUser($user);
   }
 
   private function loginUser(User $user) {
-    $_SESSION['userid'] = $user->getId();
-    $_SESSION['useremail'] = $user->getEmail();
+    $_SESSION['email'] = $user->getEmail();
+    $_SESSION['role'] = $user->getRole();
+    $_SESSION['id'] = $this->userRepository->getUserId($user->getEmail());
   }
 
   private function emptyInputSignup($email, $name, $surname, $pwd, $pwdRepeat, $role) {
@@ -117,8 +133,8 @@ class SecurityController extends AppController
     return $result;
   }
 
-  private function userExists($repo, $email) {
-    $user = $repo->getUser($email);
+  private function userExists($email) {
+    $user = $this->userRepository->getUserByEmail($email);
     if ($user) {
       return $user;
     } else {

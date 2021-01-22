@@ -39,26 +39,27 @@
           </form>
         </div>
         <ul class="info-ul">
-          <li class="info-li"><span class="name-data">name</span><span class="data">Elliot</span></li>
-          <li class="info-li"><span class="name-data">surname</span><span class="data">Bernard</span></li>
-          <li class="info-li"><span class="name-data">email</span><span class="data">e.bernard@email.com</span></li>
-          <li class="info-li"><span class="name-data">date of birth</span><span class="data">18 April 1989</span></li>
-          <li class="info-li"><span class="name-data">country or region</span><span class="data">Poland</span></li>
-          <li class="info-li"><span class="name-data">phone number</span><span class="data">+32 872 395 654</span></li>
+          <li class="info-li"><span class="name-data">name</span><span class="data"><?= $user->getName(); ?></span></li>
+          <li class="info-li"><span class="name-data">surname</span><span class="data"><?= $user->getSurname() ;?></span></li>
+          <li class="info-li"><span class="name-data">email</span><span class="data"><?= $user->getEmail(); ?></span></li>
+          <li class="info-li"><span class="name-data">date of birth</span><span class="data"><?= $user->getDateBirth(); ?></span></li>
+          <li class="info-li"><span class="name-data">country or region</span><span class="data"><?= $user->getCountry(); ?></span></li>
+          <li class="info-li"><span class="name-data">phone number</span><span class="data"><?= $user->getPhone(); ?></span></li>
         </ul>
       </div>
       <div class="panel panel-pink">
         <div class="address-cotainer">
           <div class="address-area">
             <img src="public/assets/svg/home/home-grey.svg" class="info-img">
-            <p class="address-info">Warsow</p>
+            <p class="address-info"><?= $user->getCity(); ?></p>
           </div>
           <div class="address-area">
             <img src="public/assets/svg/placeholder/placeholder-grey.svg" class="info-img">
-            <p class="address-info">Nowogordzka 96</p>
+            <p class="address-info"><?= $user->getAddress(); ?></p>
           </div>
         </div>
       </div>
+      <?php if($user->getRole() == 'business') : ?>
       <div class="panel">
         <h1 class="schedule-header">SCHEDULE</h1>
         <div class="schedule-container">
@@ -174,6 +175,7 @@
           <li class="price-li"><p class="name-price">price</p><p class="value-price">value</p></li>
         </ul>
       </div>
+      <?php endif; ?>
       <div class="panel">
         <button class="standard-button">delete account</button>
       </div>
