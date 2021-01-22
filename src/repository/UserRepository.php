@@ -7,32 +7,27 @@ class UserRepository extends Repository
 {
   public function getUserWithDetails(int $id) {
     // get user with role and details
-    $stmt = $this->database->connect()->prepare(
-      'SELECT * FROM (SELECT u.id, u.id_users_details, u.email, u.password, ru.name as role FROM users u
-    LEFT JOIN (SELECT ur.id_users, r.name FROM roles r RIGHT JOIN users_roles ur ON r.id = ur.id_roles) ru ON u.id = ru.id_users
-    WHERE u.id = :id) u RIGHT JOIN users_details ud ON u.id_users_details = ud.id'
-    );
-    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-    $stmt->execute();
-    $ordinaryUser = $stmt->fetch(PDO::FETCH_ASSOC);
+    $user = $this->getUserById($id);
 
     // check if user exists
-    if ($ordinaryUser === false) {
+    if ($user === null) {
       return null;
     }
 
-    $user = new User(
-      $ordinaryUser['email'],
-      $ordinaryUser['password'],
-      $ordinaryUser['role'],
-      $ordinaryUser['name'],
-      $ordinaryUser['surname']
+    $stmt = $this->database->connect()->prepare(
+      'SELECT * FROM users_details ud RIGHT JOIN users u ON ud.id = u.id_users_details WHERE u.id = :id'
     );
-    $user->setPhone($ordinaryUser['phone']);
-    $user->setCountry($ordinaryUser['country']);
-    $user->setCity($ordinaryUser['city']);
-    $user->setAddress($ordinaryUser['address']);
-    $user->setDateBirth($ordinaryUser['date_of_birth']);
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+    $userData = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    $user->setName($userData['name']);
+    $user->setSurname($userData['surname']);
+    $user->setPhone($userData['phone']);
+    $user->setCountry($userData['country']);
+    $user->setCity($userData['city']);
+    $user->setAddress($userData['address']);
+    $user->setDateBirth($userData['date_of_birth']);
 
     return $user;
   }

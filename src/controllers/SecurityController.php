@@ -3,15 +3,18 @@
 require_once 'AppController.php';
 require_once __DIR__ . '/../models/User.php';
 require_once __DIR__.'/../repository/UserRepository.php';
+require_once __DIR__.'/../repository/EmployeeRepository.php';
 
 
 class SecurityController extends AppController {
   private $userRepository;
+  private $empRespository;
 
   public function __construct()
   {
     parent::__construct();
     $this->userRepository = new UserRepository();
+    $this->empRespository = new EmployeeRepository();
   }
 
   public function login()
@@ -93,6 +96,12 @@ class SecurityController extends AppController {
 
   private function registerUser(User $user) {
     $this->userRepository->addUser($user);
+
+    if ($user->getRole() == 'business') {
+      $this->empRespository->addEmployee(
+        $this->userRepository->getUserId($user->getEmail())
+      );
+    }
   }
 
   private function loginUser(User $user) {
