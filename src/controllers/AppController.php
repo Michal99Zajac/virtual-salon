@@ -26,7 +26,7 @@ class AppController {
     return $_GET['id'] == $_SESSION['id'];
   }
 
-  protected function logout() {
+  public function logout() {
     if (!$this->isPost()) {
       return header("Location: {$this->url}/search");
     }

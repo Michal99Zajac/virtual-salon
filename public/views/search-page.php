@@ -16,7 +16,7 @@
           <a href="./register" class="sign-button">sign up</a>
         <?php else : ?>
           <form method="GET" action="info">
-            <button value="<?php echo $_SESSION['id'] ?>" name="id" type="submit"><img src="public/assets/img/person-profile.jpeg" class="profile-photo"></button>
+            <button value="<?= $_SESSION['id'] ?>" name="id" type="submit"><img src="public/assets/img/person-profile.jpeg" class="profile-photo"></button>
           </form>
           <form action="logout" method="post"><button type="submit" class="profile-logout">logout</button></form>
         <?php endif; ?>

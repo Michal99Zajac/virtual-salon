@@ -82,8 +82,8 @@ class UserRepository extends Repository
   }
 
   public function addUser(User $user) {
-    // add user in users_details
     $conn = $this->database->connect();
+    // add user in users_details
     $stmt = $conn->prepare(
       'INSERT INTO users_details (name, surname) VALUES (?, ?)'
     );

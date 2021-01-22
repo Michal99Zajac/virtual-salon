@@ -36,4 +36,8 @@ class ProfileController extends AppController {
 
     return $this->render('info-page', ['user' => $user]);
   }
+
+  private function isEmployee(User $user) {
+    ;
+  }
 }
