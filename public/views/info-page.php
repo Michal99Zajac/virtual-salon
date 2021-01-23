@@ -35,7 +35,7 @@
         <div class="profile-photo-container">
           <img src="public/assets/img/person-profile.jpeg" class="profile-picture">
           <form method="get" action="edit">
-            <button type="submit" class="profile-button edit-profile">edit profile</button>
+            <button name="id" value="<?= $_SESSION['id'] ?>" type="submit" class="profile-button edit-profile">edit profile</button>
           </form>
         </div>
         <ul class="info-ul">
@@ -66,51 +66,64 @@
           <div class="day-container">
             <p class="day-label">Monday</p>
             <ul class="day-schedule">
+              <?php if (isset($schedules['Monday'])): foreach ($schedules['Monday'] as $schedule): ?>
+                <li><?= $schedule->getHour() ?></li>
+              <?php endforeach; endif; ?>
             </ul>
           </div>
           <div class="day-container">
             <p class="day-label">Tuesday</p>
             <ul class="day-schedule">
-              <li>13:45</li>
-              <li>13:45</li>
-              <li>13:45</li>
+              <?php if (isset($schedules['Tuesday'])): foreach ($schedules['Tuesday'] as $schedule): ?>
+                <li><?= $schedule->getHour() ?></li>
+              <?php endforeach; endif; ?>
             </ul>
           </div>
           <div class="day-container">
             <p class="day-label">Wednesday</p>
             <ul class="day-schedule">
-              <li>13:45</li>
+              <?php if (isset($schedules['Wednesday'])): foreach ($schedules['Wednesday'] as $schedule): ?>
+                <li><?= $schedule->getHour() ?></li>
+              <?php endforeach; endif; ?>
             </ul>
           </div>
           <div class="day-container">
             <p class="day-label">Thursday</p>
             <ul class="day-schedule">
-              <li>13:45</li>
+              <?php if (isset($schedules['Thursday'])): foreach ($schedules['Thursday'] as $schedule): ?>
+                <li><?= $schedule->getHour() ?></li>
+              <?php endforeach; endif; ?>
             </ul>
           </div>
           <div class="day-container">
             <p class="day-label">Friday</p>
             <ul class="day-schedule">
-              <li>13:45</li>
+              <?php if (isset($schedules['Friday'])): foreach ($schedules['Friday'] as $schedule): ?>
+                <li><?= $schedule->getHour() ?></li>
+              <?php endforeach; endif; ?>
             </ul>
           </div>
           <div class="day-container">
             <p class="day-label">Saturday</p>
             <ul class="day-schedule">
-              <li>13:45</li>
+              <?php if (isset($schedules['Saturday'])): foreach ($schedules['Saturday'] as $schedule): ?>
+                <li><?= $schedule->getHour() ?></li>
+              <?php endforeach; endif; ?>
             </ul>
           </div>
           <div class="day-container">
             <p class="day-label">Sunday</p>
             <ul class="day-schedule">
-              <li>13:45</li>
+              <?php if (isset($schedules['Sunday'])): foreach ($schedules['Sunday'] as $schedule): ?>
+                <li><?= $schedule->getHour() ?></li>
+              <?php endforeach; endif; ?>
             </ul>
           </div>
         </div>
       </div>
       <div class="panel">
         <h1 class="decription-header">description</h1>
-        <p class="description">Elliot Bernard Patel is a 25-year-old P.P.E. student who enjoys bargain hunting, watching sport and social media. She is giving and smart, but can also be very rude and a bit violent. She is addicted to video games, something which her friend Christine Monique Shaw pointed out when she was 17. The problem intensified in 2014. In 2018, Elliot Bernard lost her job as a town counsellor as a result of her addiction. She is French who defines herself as pansexual. She is currently at college. studying philosophy, politics and economics.</p>
+        <p class="description"><?= $employee->getDescription() ?></p>
       </div>
       <div class="panel">
         <h1 class="additional-info-header">additional information</h1>
@@ -119,7 +132,7 @@
           <div class="add-info-area">
             <h2 class="add-info-subheader">profession</h2>
             <ul class="informations">
-              <li>text</li>
+              <li><?= $employee->getProfession() ?></li>
             </ul>
           </div>
         </div>
@@ -128,6 +141,9 @@
           <div class="add-info-area">
             <h2 class="add-info-subheader">payment methods</h2>
             <ul class="informations">
+              <?php foreach ($employee->getPayment() as $payment): ?>
+              <li><?= $payment ?></li>
+              <?php endforeach; ?>
             </ul>
           </div>
         </div>
@@ -136,7 +152,7 @@
           <div class="add-info-area">
             <h2 class="add-info-subheader">certificates</h2>
             <ul class="informations">
-              <li>text</li>
+              <li><?= $employee->getCertificate() ?></li>
             </ul>
           </div>
         </div>
@@ -145,7 +161,7 @@
           <div class="add-info-area">
             <h2 class="add-info-subheader">web</h2>
             <ul class="informations">
-              <li>text</li>
+              <li><?= $employee->getWeb() ?></li>
             </ul>
           </div>
         </div>
@@ -154,7 +170,7 @@
           <div class="add-info-area">
             <h2 class="add-info-subheader">years of experience</h2>
             <ul class="informations">
-              <li>text</li>
+              <li><?= $employee->getLastJob() ?></li>
             </ul>
           </div>
         </div>
@@ -163,7 +179,7 @@
           <div class="add-info-area">
             <h2 class="add-info-subheader">the most favorite treatments</h2>
             <ul class="informations">
-              <li>text</li>
+              <li><?= $employee->getFavTreatment() ?></li>
             </ul>
           </div>
         </div>
@@ -171,8 +187,9 @@
       <div class="panel">
         <h1 class="price-header">PRICE LIST</h1>
         <ul class="price-list">
-          <li class="price-li"><p class="name-price">price</p><p class="value-price">value</p></li>
-          <li class="price-li"><p class="name-price">price</p><p class="value-price">value</p></li>
+          <?php foreach ($treatments as $treatment): ?>
+          <li class="price-li"><p class="name-price"><?= $treatment->getName() ?></p><p class="value-price"><?= $treatment->getPrice() ?> $</p></li>
+          <?php endforeach; ?>
         </ul>
       </div>
       <?php endif; ?>

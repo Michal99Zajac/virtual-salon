@@ -1,6 +1,6 @@
 <?php
 
-require_once './Repository.php';
+require_once 'Repository.php';
 
 class ProfessionRepository extends Repository {
   public function getProfessionId(string $name) {
@@ -15,6 +15,20 @@ class ProfessionRepository extends Repository {
     }
 
     return $id;
+  }
+
+  public function getProfession(int $id) {
+    $stmt = $this->database->connect()->prepare(
+      'SELECT * FROM professions p WHERE p.id = :id'
+    );
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+    $profession = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($profession == false) {
+      return null;
+    }
+
+    return $profession;
   }
 
   public function addProfession(string $name) {

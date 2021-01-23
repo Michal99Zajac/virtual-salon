@@ -4,6 +4,7 @@
 class Employee {
   private $treatments;
   private $schedules;
+  private $payment;
 
   private $description;
   private $favTreatment;
@@ -11,6 +12,14 @@ class Employee {
   private $web;
   private $lastJob;
   private $profession;
+
+  public function getPayment() {
+    return $this->payment;
+  }
+
+  public function setPayment($payment) {
+    $this->payment = $payment;
+  }
 
   public function getTreatments() {
     return $this->treatments;
@@ -75,6 +84,4 @@ class Employee {
   public function setProfession($profession) {
     $this->profession = $profession;
   }
-
-
 }

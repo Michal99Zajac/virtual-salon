@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>edit page</title>
+  <link rel="stylesheet" type="text/css" href="public/css/navbar/navbar.css">
+  <link rel="stylesheet" type="text/css" href="public/css/standard-body/standard-body.css">
   <link rel="stylesheet" type="text/css" href="public/css/edit-page/edit-page.css">
 </head>
 <body>
