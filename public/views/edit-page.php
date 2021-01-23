@@ -15,13 +15,13 @@
         <a class="nb-logo-a" href="./search">Virtual Salon</a>
       </h1>
       <div class="nb-right-section">
-        <a class="nb-tab" href="./orders">orders.</a>
-        <a class="nb-tab" href="./reservations">reservations.</a>
-        <a class="nb-tab" href="./info">my info.</a>
+        <a class="nb-tab" href="./orders?id=<?= $_SESSION['id'] ?>">orders.</a>
+        <a class="nb-tab" href="./reservations?id=<?= $_SESSION['id'] ?>">reservations.</a>
+        <a class="nb-tab" href="./info?id=<?= $_SESSION['id'] ?>">my info.</a>
         <div class="nb-profile">
-          <form action="" method="get">
+          <form action="logout" method="post">
             <img src="public/assets/img/person-profile.jpeg" class="nb-profile-img"></img>
-            <button class="nb-button">logout</button>
+            <button type="submit" class="nb-button">logout</button>
           </form>
         </div>
         <div class="nb-sign nb-none">
@@ -44,27 +44,27 @@
         <form>
           <div>
             <span class="input-text-span">name</span>
-            <input class="input-text" type="text" placeholder="name">
+            <input class="input-text" type="text" value="<?= $user->getName() ?>" placeholder="name">
           </div>
           <div>
             <span class="input-text-span">surname</span>
-            <input class="input-text" type="text" placeholder="surname">
+            <input class="input-text" type="text" value="<?= $user->getSurname() ?>" placeholder="surname">
           </div>
           <div>
             <span class="input-text-span">birth</span>
-            <input class="input-text" type="date">
+            <input class="input-text" value="<?= $user->getDateBirth() ?>" type="date">
           </div>
           <div>
             <span class="input-text-span">email</span>
-            <input class="input-text" type="text" placeholder="email@email.com">
+            <input class="input-text" type="text" value="<?= $user->getEmail() ?>" placeholder="email@email.com">
           </div>
           <div>
             <span class="input-text-span">phone</span>
-            <input class="input-text" type="text" placeholder="phone number">
+            <input class="input-text" type="text" value="<?= $user->getPhone() ?>" placeholder="phone number">
           </div>
           <div>
             <span class="input-text-span">country</span>
-            <input class="input-text" type="text" placeholder="country">
+            <input class="input-text" type="text" value="<?= $user->getCountry() ?>" placeholder="country">
           </div>
           <button class="standard-button">submit</button>
         </form>
@@ -92,36 +92,41 @@
         <form>
           <div>
             <span class="input-text-span">city</span>
-            <input class="input-text" type="text" placeholder="Warsaw">
+            <input class="input-text" type="text" value="<?= $user->getCity() ?>" placeholder="Warsaw">
           </div>
           <div>
             <span class="input-text-span">street/nr</span>
-            <input class="input-text" type="text" placeholder="Nowogrodzka 96">
+            <input class="input-text" type="text" value="<?= $user->getAddress() ?>" placeholder="Nowogrodzka 96">
           </div>
           <button class="standard-button">submit</button>
         </form>
       </div>
+      <?php if($user->getRole() == 'business') : ?>
       <div class="panel">
         <h1 class="panel-header">Edit Schedule</h1>
         <form>
-          <input class="schedule-day-input" type="submit" name="scheduleDay" value="Monday">
-          <input class="schedule-day-input" type="submit" name="scheduleDay" value="Tuesday">
-          <input class="schedule-day-input" type="submit" name="scheduleDay" value="Wednesday">
-          <input class="schedule-day-input" type="submit" name="scheduleDay" value="Thursday">
-          <input class="schedule-day-input" type="submit" name="scheduleDay" value="Friday">
-          <input class="schedule-day-input" type="submit" name="scheduleDay" value="Saturday">
-          <input class="schedule-day-input" type="submit" name="scheduleDay" value="Sunday">
+          <input type="hidden" name="id" value="<?= $_SESSION['id'] ?>">
+          <input class="schedule-day-input" type="submit" name="day" value="Monday">
+          <input class="schedule-day-input" type="submit" name="day" value="Tuesday">
+          <input class="schedule-day-input" type="submit" name="day" value="Wednesday">
+          <input class="schedule-day-input" type="submit" name="day" value="Thursday">
+          <input class="schedule-day-input" type="submit" name="day" value="Friday">
+          <input class="schedule-day-input" type="submit" name="day" value="Saturday">
+          <input class="schedule-day-input" type="submit" name="day" value="Sunday">
         </form>
-        <form>
+        <?php if (isset($schedules[$_GET['day']])): ; foreach ($schedules[$_GET['day']] as $schedule): ?>
+        <form action="">
           <div class="schedule-time-container">
-            <p class="schedule-time">13:00</p>
+            <p class="schedule-time"><?= $schedule->getHour() ?></p>
             <div class="schedule-time-subcontainer">
-              <p class="schedule-time-day">Monday</p>
-              <input type="hidden" name="hour" value="13:30">
+              <p class="schedule-time-day"><?= $schedule->getDay() ?></p>
+              <input type="hidden" name="hour" value="<?= $schedule->getHour() ?>">
+              <input type="hidden" name="day" value="<?= $schedule->getDay() ?>">
               <button class="schedule-time-button" type="submit">delete</button>
             </div>
           </div>
         </form>
+        <?php endforeach; endif; ?>
         <form class="form-margin-top form-row-reverse">
           <button class="add-button">add</button>
           <input placeholder="00:00" class="add-input-text" type="text" name="scheduleNewHour">
@@ -130,7 +135,7 @@
       <div class="panel">
         <h1 class="panel-header">Edit Description</h1>
         <form>
-          <textarea placeholder="description" maxlength="1024" name="description"></textarea>
+          <textarea placeholder="description" maxlength="1024" name="description"><?= $employee->getDescription() ?></textarea>
           <button class="standard-button">submit</button>
         </form>
       </div>
@@ -140,7 +145,7 @@
           <h2 class="panel-subheader first-panel-subheader">proffesion</h2>
           <div>
             <span class="input-text-span">old profession</span>
-            <p class="input-text">barber</p>
+            <p class="input-text"><?= $employee->getProfession() ?></p>
           </div>
           <div>
             <span class="input-text-span">new profession</span>
@@ -151,17 +156,17 @@
         <form>
           <h2 class="panel-subheader">payment methods</h2>
           <div>
-            <input type="checkbox" name="payment-method" id="cash">
+            <input <?php if (in_array('cash', $employee->getPayment())): ?>checked<?php endif; ?> type="checkbox" name="payment-cash" value="cash" id="cash">
             <label class="checkbox-mock" for="cash"></label>
             <label class="checkbox-label" for="cash">cash</label>
           </div>
           <div>
-            <input disabled type="checkbox" name="payment-method" id="terminal">
+            <input disabled <?php if (in_array('terminal', $employee->getPayment())): ?>checked<?php endif; ?> type="checkbox" value="terminal" name="payment-terminal" id="terminal">
             <label class="checkbox-mock" for="terminal"></label>
             <label class="checkbox-label" for="terminal">terminal</label>
           </div>
           <div>
-            <input disabled type="checkbox" name="payment-method" id="application">
+            <input disabled <?php if (in_array('application', $employee->getPayment())): ?>checked<?php endif; ?> type="checkbox" value="application" name="payment-app" id="application">
             <label class="checkbox-mock" for="application"></label>
             <label class="checkbox-label" for="application">application</label>
           </div>
@@ -171,7 +176,7 @@
           <h2 class="panel-subheader">certificates</h2>
           <div>
             <span class="input-text-span">old certificate</span>
-            <p class="input-text">barber</p>
+            <p class="input-text"><?= $employee->getCertificate() ?></p>
           </div>
           <div>
             <span class="input-text-span">new certificate</span>
@@ -183,7 +188,7 @@
           <h2 class="panel-subheader">web</h2>
           <div>
             <span class="input-text-span">old web</span>
-            <p class="input-text">barber</p>
+            <p class="input-text"><?= $employee->getWeb() ?></p>
           </div>
           <div>
             <span class="input-text-span">new web</span>
@@ -195,7 +200,7 @@
           <h2 class="panel-subheader">years of experience</h2>
           <div>
             <span class="input-text-span">old job</span>
-            <p class="input-text">barber</p>
+            <p class="input-text"><?= $employee->getLastJob() ?></p>
           </div>
           <div>
             <span class="input-text-span">new job</span>
@@ -207,7 +212,7 @@
           <h2 class="panel-subheader">the most favorite treatments</h2>
           <div>
             <span class="input-text-span">old the most favorite treatment</span>
-            <p class="input-text">barber</p>
+            <p class="input-text"><?= $employee->getFavTreatment() ?></p>
           </div>
           <div>
             <span class="input-text-span">new the most favorite treatment</span>
@@ -218,22 +223,20 @@
       </div>
       <div class="panel">
         <h1 class="panel-header">Edit Price List</h1>
+        <?php foreach ($treatments as $treatment): ?>
         <form class="form-align-center form-row-left">
           <button class="delete-button" type="submit">delete</button>
-          <span class="list-span list-price">13 $</span>
-          <span class="list-span">treatment treatment treatment treatment treatment treatment</span>
+          <span class="list-span list-price"><?= $treatment->getPrice() ?> $</span>
+          <span class="list-span"><?= $treatment->getName() ?></span>
         </form>
-        <form class="form-align-center form-row-left">
-          <button class="delete-button" type="submit">delete</button>
-          <span class="list-span list-price">13 $</span>
-          <span class="list-span">treatment treatment treatment treatment</span>
-        </form>
+        <?php endforeach; ?>
         <form class="form-row-reverse form-align-center">
           <button class="add-button-product">add</button>
           <input placeholder="price" class="add-input-specjal add-price" type="text" name="priceValue">
           <input placeholder="product" class="add-input-specjal add-product" type="text" name="productValue">
         </form>
       </div>
+      <?php endif; ?>
     </div>
   </div>
 </body>

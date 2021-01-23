@@ -35,6 +35,7 @@
         <div class="profile-photo-container">
           <img src="public/assets/img/person-profile.jpeg" class="profile-picture">
           <form method="get" action="edit">
+            <input type="hidden" value="Monday" name="day">
             <button name="id" value="<?= $_SESSION['id'] ?>" type="submit" class="profile-button edit-profile">edit profile</button>
           </form>
         </div>

@@ -21,6 +21,45 @@ class ProfileController extends AppController {
     $this->treatmentRepository = new TreatmentRepository();
   }
 
+  public function edit() {
+    if (!$this->isSession()) {
+      header("Location: {$this->url}/search");
+      exit();
+    }
+
+    if (!$this->isGet()) {
+      return $this->render('search-page');
+    }
+
+    if(!$this->isItForMe()) {
+      header("Location: {$this->url}/search?error=notforyou");
+      exit();
+    }
+
+    $user = $this->userRepository->getUserWithDetails($_SESSION['id']);
+    if (!$user) {
+      header("Location: {$this->url}/search?error=noneuser");
+      exit();
+    }
+
+    if ($user->getRole() == 'business') {
+      $employee = $this->employeeRepository->getEmployee($_SESSION['id']);
+      $empId = $this->employeeRepository->getEmployeeId($_SESSION['id']);
+
+      $schedules = $this->scheduleRepository->getBasicSchedule($empId);
+      $treatments = $this->treatmentRepository->getTreatments($empId);
+
+      return $this->render('edit-page', [
+        'user' => $user,
+        'employee' => $employee,
+        'schedules' => $schedules,
+        'treatments' => $treatments
+      ]);
+    }
+
+    return $this->render('edit-page', ['user' => $user]);
+  }
+
   public function info() {
     if (!$this->isSession()) {
       header("Location: {$this->url}/search");

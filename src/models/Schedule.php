@@ -8,16 +8,16 @@ class Schedule {
   private $date;
 
   public function __construct($day, $hour) {
-    $this->name = $name;
+    $this->day = $day;
     $this->hour = $hour;
   }
 
   public function getDay() {
-    return $this->name;
+    return $this->day;
   }
 
-  public function setDay($name) {
-    $this->name = $name;
+  public function setDay($day) {
+    $this->day = $day;
   }
 
   public function getHour() {
