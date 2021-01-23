@@ -47,6 +47,9 @@ form {
 .form-row-spacebetween {
   justify-content: space-between; }
 
+.form-row-left {
+  justify-content: left; }
+
 .container {
   width: 100%;
   min-height: 100vh;

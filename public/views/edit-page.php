@@ -113,8 +113,14 @@
           <input class="schedule-day-input" type="submit" name="scheduleDay" value="Sunday">
         </form>
         <form>
-          <input class="delete-input-button" type="submit" name="scheduleDayHour" value="13:30">
-          <input class="delete-input-button" type="submit" name="scheduleDayHour" value="14:30">
+          <div class="schedule-time-container">
+            <p class="schedule-time">13:00</p>
+            <div class="schedule-time-subcontainer">
+              <p class="schedule-time-day">Monday</p>
+              <input type="hidden" name="hour" value="13:30">
+              <button class="schedule-time-button" type="submit">delete</button>
+            </div>
+          </div>
         </form>
         <form class="form-margin-top form-row-reverse">
           <button class="add-button">add</button>
@@ -124,7 +130,7 @@
       <div class="panel">
         <h1 class="panel-header">Edit Description</h1>
         <form>
-          <input type="text" placeholder="description" maxlength="1024" name="description">
+          <textarea placeholder="description" maxlength="1024" name="description"></textarea>
           <button class="standard-button">submit</button>
         </form>
       </div>
@@ -132,16 +138,15 @@
         <h1 class="panel-header">Edit Additional Informations</h1>
         <form>
           <h2 class="panel-subheader first-panel-subheader">proffesion</h2>
-          <input class="delete-input-button max-delete-input" type="submit" name="proffesion" value="long long long text">
-          <input class="delete-input-button max-delete-input" type="submit" name="proffesion" value="long long long text">
-          <input class="delete-input-button max-delete-input" type="submit" name="proffesion" value="long long long text">
-          <input class="delete-input-button max-delete-input" type="submit" name="proffesion" value="long long long text">
-          <input class="delete-input-button max-delete-input" type="submit" name="proffesion" value="long long long text">
-          <input class="delete-input-button max-delete-input" type="submit" name="proffesion" value="long long long text">
-        </form>
-        <form class="form-margin-vertical form-row-reverse">
-          <button class="add-button">add</button>
-          <input placeholder="proffesion" class="add-input-text" type="text" name="proffesionValue">
+          <div>
+            <span class="input-text-span">old profession</span>
+            <p class="input-text">barber</p>
+          </div>
+          <div>
+            <span class="input-text-span">new profession</span>
+            <input class="input-text" type="text" placeholder="new profession">
+          </div>
+          <button class="standard-button">add</button>
         </form>
         <form>
           <h2 class="panel-subheader">payment methods</h2>
@@ -164,70 +169,66 @@
         </form>
         <form>
           <h2 class="panel-subheader">certificates</h2>
-          <input class="delete-input-button max-delete-input" type="submit" name="certificate" value="long long long text">
-          <input class="delete-input-button max-delete-input" type="submit" name="certificate" value="long long long text">
-          <input class="delete-input-button max-delete-input" type="submit" name="certificate" value="long long long text">
-          <input class="delete-input-button max-delete-input" type="submit" name="certificate" value="long long long text">
-          <input class="delete-input-button max-delete-input" type="submit" name="certificate" value="long long long text">
-          <input class="delete-input-button max-delete-input" type="submit" name="certificate" value="long long long text">
-        </form>
-        <form class="form-margin-vertical form-row-reverse">
-          <button class="add-button">add</button>
-          <input placeholder="certificate" class="add-input-text" type="text" name="certificateValue">
+          <div>
+            <span class="input-text-span">old certificate</span>
+            <p class="input-text">barber</p>
+          </div>
+          <div>
+            <span class="input-text-span">new certificate</span>
+            <input class="input-text" type="text" placeholder="new certificate">
+          </div>
+          <button class="standard-button">add</button>
         </form>
         <form>
           <h2 class="panel-subheader">web</h2>
-          <input class="delete-input-button max-delete-input" type="submit" name="web" value="long long long text">
-          <input class="delete-input-button max-delete-input" type="submit" name="web" value="long long long text">
-          <input class="delete-input-button max-delete-input" type="submit" name="web" value="long long long text">
-          <input class="delete-input-button max-delete-input" type="submit" name="web" value="long long long text">
-          <input class="delete-input-button max-delete-input" type="submit" name="web" value="long long long text">
-          <input class="delete-input-button max-delete-input" type="submit" name="web" value="long long long text">
-        </form>
-        <form class="form-margin-vertical form-row-reverse">
-          <button class="add-button">add</button>
-          <input placeholder="web" class="add-input-text" type="text" name="webValue">
+          <div>
+            <span class="input-text-span">old web</span>
+            <p class="input-text">barber</p>
+          </div>
+          <div>
+            <span class="input-text-span">new web</span>
+            <input class="input-text" type="text" placeholder="new web">
+          </div>
+          <button class="standard-button">add</button>
         </form>
         <form>
           <h2 class="panel-subheader">years of experience</h2>
-          <input class="delete-input-button max-delete-input" type="submit" name="exp" value="long long long text">
-          <input class="delete-input-button max-delete-input" type="submit" name="exp" value="long long long text">
-          <input class="delete-input-button max-delete-input" type="submit" name="exp" value="long long long text">
-          <input class="delete-input-button max-delete-input" type="submit" name="exp" value="long long long text">
-          <input class="delete-input-button max-delete-input" type="submit" name="exp" value="long long long text">
-          <input class="delete-input-button max-delete-input" type="submit" name="exp" value="long long long text">
-        </form>
-        <form class="form-margin-vertical form-row-reverse">
-          <button class="add-button">add</button>
-          <input placeholder="previous work places" class="add-input-text" type="text" name="expValue">
+          <div>
+            <span class="input-text-span">old job</span>
+            <p class="input-text">barber</p>
+          </div>
+          <div>
+            <span class="input-text-span">new job</span>
+            <input class="input-text" type="text" placeholder="new job">
+          </div>
+          <button class="standard-button">add</button>
         </form>
         <form>
           <h2 class="panel-subheader">the most favorite treatments</h2>
-          <input class="delete-input-button max-delete-input" type="submit" name="treatment" value="long long long text">
-          <input class="delete-input-button max-delete-input" type="submit" name="treatment" value="long long long text">
-          <input class="delete-input-button max-delete-input" type="submit" name="treatment" value="long long long text">
-          <input class="delete-input-button max-delete-input" type="submit" name="treatment" value="long long long text">
-          <input class="delete-input-button max-delete-input" type="submit" name="treatment" value="long long long text">
-          <input class="delete-input-button max-delete-input" type="submit" name="treatment" value="long long long text">
-        </form>
-        <form class="form-margin-vertical form-row-reverse">
-          <button class="add-button">add</button>
-          <input placeholder="favorite treatment" class="add-input-text" type="text" name="treatmentValue">
+          <div>
+            <span class="input-text-span">old the most favorite treatment</span>
+            <p class="input-text">barber</p>
+          </div>
+          <div>
+            <span class="input-text-span">new the most favorite treatment</span>
+            <input class="input-text" type="text" placeholder="new the most favorite treatment">
+          </div>
+          <button class="standard-button">add</button>
         </form>
       </div>
       <div class="panel">
         <h1 class="panel-header">Edit Price List</h1>
-        <form class="form-row-reverse form-row-spacebetween form-align-center form-margin-bottom no-wrap-form">
+        <form class="form-align-center form-row-left">
           <button class="delete-button" type="submit">delete</button>
           <span class="list-span list-price">13 $</span>
           <span class="list-span">treatment treatment treatment treatment treatment treatment</span>
         </form>
-        <form class="form-row-reverse form-row-spacebetween form-align-center no-wrap-form">
+        <form class="form-align-center form-row-left">
           <button class="delete-button" type="submit">delete</button>
           <span class="list-span list-price">13 $</span>
           <span class="list-span">treatment treatment treatment treatment</span>
         </form>
-        <form class="form-row-reverse form-row-spacebetween form-align-center no-wrap-form form-margin-top">
+        <form class="form-row-reverse form-align-center">
           <button class="add-button-product">add</button>
           <input placeholder="price" class="add-input-specjal add-price" type="text" name="priceValue">
           <input placeholder="product" class="add-input-specjal add-product" type="text" name="productValue">
