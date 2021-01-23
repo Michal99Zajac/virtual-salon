@@ -63,7 +63,7 @@ class SecurityController extends AppController {
 
     $email = $_POST['email'];
     $name = $_POST['name'];
-    $surname = $_POST['surname'];
+    $surname = $_POprivateST['surname'];
     $pwd = $_POST['pwd'];
     $pwdRepeat = $_POST['pwdrepeat'];
     $role = $_POST['role'];

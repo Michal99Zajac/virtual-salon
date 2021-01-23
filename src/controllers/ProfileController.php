@@ -27,13 +27,8 @@ class ProfileController extends AppController {
       exit();
     }
 
-    if (!$this->isGet()) {
-      return $this->render('search-page');
-    }
-
-    if(!$this->isItForMe()) {
-      header("Location: {$this->url}/search?error=notforyou");
-      exit();
+    if ($this->isPost()) {
+      $this->update();
     }
 
     $user = $this->userRepository->getUserWithDetails($_SESSION['id']);
@@ -66,15 +61,6 @@ class ProfileController extends AppController {
       exit();
     }
 
-    if (!$this->isGet()) {
-      return $this->render('search-page');
-    }
-
-    if(!$this->isItForMe()) {
-      header("Location: {$this->url}/search?error=notforyou");
-      exit();
-    }
-
     $user = $this->userRepository->getUserWithDetails($_SESSION['id']);
     if (!$user) {
       header("Location: {$this->url}/search?error=noneuser");
@@ -97,5 +83,15 @@ class ProfileController extends AppController {
     }
 
     return $this->render('info-page', ['user' => $user]);
+  }
+
+  private function update() {
+    if ($_POST['update'] == 'standard-data') {
+      $this->userRepository->updateStandard();
+    } elseif ($_POST['update'] == 'password-data') {
+      $this->userRepository->updatePassword();
+    } elseif ($_POST['update'] == 'address-data') {
+      $this->userRepository->updateAddress();
+    }
   }
 }

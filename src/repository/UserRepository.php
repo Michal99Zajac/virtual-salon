@@ -112,6 +112,80 @@ class UserRepository extends Repository
     return $stmt->fetch(PDO::FETCH_ASSOC)['id'];
   }
 
+  public function updateStandard() {
+    $conn = $this->database->connect();
+    $stmt = $conn->prepare(
+      'UPDATE users u SET email = ? WHERE u.id = ?'
+    );
+    $stmt->execute([$_POST['email'], $_SESSION['id']]);
+
+    $stmt = $conn->prepare(
+      'SELECT id_users_details FROM users WHERE id = ?'
+    );
+    $stmt->execute([$_SESSION['id']]);
+    $detailId = $stmt->fetch(PDO::FETCH_ASSOC)['id_users_details'];
+
+    $stmt = $conn->prepare(
+      'UPDATE users_details SET name = ?, surname = ?, date_of_birth = ?, country = ?, phone = ? WHERE  id = ?'
+    );
+
+    if (!$_POST['dateBirth']) {
+      $date = new DateTime();
+      $_POST['dateBirth'] = $date->format('Y-m-d');
+    }
+
+    $stmt->execute([
+      $_POST['name'],
+      $_POST['surname'],
+      $_POST['dateBirth'],
+      $_POST['country'],
+      $_POST['phone'],
+      $detailId
+    ]);
+  }
+
+  public function updatePassword() {
+    $conn = $this->database->connect();
+    $stmt = $conn->prepare(
+      'SELECT password FROM users WHERE id = ?'
+    );
+    $stmt->execute([$_SESSION['id']]);
+    $password = $stmt->fetch(PDO::FETCH_ASSOC)['password'];
+
+    if (!password_verify($_POST['old-password'], $password)) {
+      return null;
+    }
+
+    if ($_POST['new-password'] != $_POST['repeat-password']) {
+      return null;
+    }
+
+    $hashPassword = password_hash($_POST['new-password'], PASSWORD_DEFAULT);
+
+    $stmt = $conn->prepare(
+      'UPDATE users SET password = ? WHERE id = ?'
+    );
+    $stmt->execute([$hashPassword, $_SESSION['id']]);
+  }
+
+  public function updateAddress() {
+    $conn = $this->database->connect();
+    $stmt = $conn->prepare(
+      'SELECT id_users_details FROM users WHERE id = ?'
+    );
+    $stmt->execute([$_SESSION['id']]);
+    $detailId = $stmt->fetch(PDO::FETCH_ASSOC)['id_users_details'];
+
+    $stmt = $conn->prepare(
+      'UPDATE users_details SET city = ?, address = ? WHERE id = ?'
+    );
+    $stmt->execute([
+      $_POST['city'],
+      $_POST['address'],
+      $detailId
+    ]);
+  }
+
   private function updateRoleUser(int $userId, User $user) {
     $stmt = $this->database->connect()->prepare(
       'SELECT id FROM roles r WHERE ? = name'

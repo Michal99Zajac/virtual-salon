@@ -92,12 +92,12 @@
       background: #ffffff;
       color: #fa8072; }
 
-button[name="id"] {
+.profile-button {
   padding: 0;
   border: 0;
   height: 4em;
   width: 4em; }
-  button[name="id"]:hover {
+  .profile-button:hover {
     opacity: 0.9; }
 
 /*# sourceMappingURL=search-page.css.map */

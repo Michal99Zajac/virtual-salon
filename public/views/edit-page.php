@@ -15,9 +15,9 @@
         <a class="nb-logo-a" href="./search">Virtual Salon</a>
       </h1>
       <div class="nb-right-section">
-        <a class="nb-tab" href="./orders?id=<?= $_SESSION['id'] ?>">orders.</a>
-        <a class="nb-tab" href="./reservations?id=<?= $_SESSION['id'] ?>">reservations.</a>
-        <a class="nb-tab" href="./info?id=<?= $_SESSION['id'] ?>">my info.</a>
+        <a class="nb-tab" href="./orders">orders.</a>
+        <a class="nb-tab" href="./reservations">reservations.</a>
+        <a class="nb-tab" href="./info">my info.</a>
         <div class="nb-profile">
           <form action="logout" method="post">
             <img src="public/assets/img/person-profile.jpeg" class="nb-profile-img"></img>
@@ -41,64 +41,64 @@
       </div>
       <div class="panel">
         <h1 class="panel-header">Edit Profile</h1>
-        <form>
+        <form action="edit" method="post">
           <div>
             <span class="input-text-span">name</span>
-            <input class="input-text" type="text" value="<?= $user->getName() ?>" placeholder="name">
+            <input class="input-text" type="text" value="<?= $user->getName() ?>" name="name" placeholder="name">
           </div>
           <div>
             <span class="input-text-span">surname</span>
-            <input class="input-text" type="text" value="<?= $user->getSurname() ?>" placeholder="surname">
+            <input class="input-text" type="text" value="<?= $user->getSurname() ?>" name="surname" placeholder="surname">
           </div>
           <div>
             <span class="input-text-span">birth</span>
-            <input class="input-text" value="<?= $user->getDateBirth() ?>" type="date">
+            <input class="input-text" value="<?= $user->getDateBirth() ?>" name="dateBirth" type="date">
           </div>
           <div>
             <span class="input-text-span">email</span>
-            <input class="input-text" type="text" value="<?= $user->getEmail() ?>" placeholder="email@email.com">
+            <input class="input-text" type="text" value="<?= $user->getEmail() ?>" name="email" placeholder="email@email.com">
           </div>
           <div>
             <span class="input-text-span">phone</span>
-            <input class="input-text" type="text" value="<?= $user->getPhone() ?>" placeholder="phone number">
+            <input class="input-text" type="text" value="<?= $user->getPhone() ?>" name="phone" placeholder="phone number">
           </div>
           <div>
             <span class="input-text-span">country</span>
-            <input class="input-text" type="text" value="<?= $user->getCountry() ?>" placeholder="country">
+            <input class="input-text" type="text" value="<?= $user->getCountry() ?>" name="country" placeholder="country">
           </div>
-          <button class="standard-button">submit</button>
+          <button type="submit" name="update" value="standard-data" class="standard-button">submit</button>
         </form>
       </div>
       <div class="panel">
         <h1 class="panel-header">Edit Password</h1>
-        <form>
+        <form action="edit" method="post">
           <div>
             <span class="input-text-span">old</span>
-            <input class="input-text" type="password" placeholder="old password">
+            <input class="input-text" name="old-password" type="password" placeholder="old password">
           </div>
           <div>
             <span class="input-text-span">new</span>
-            <input class="input-text" type="password" placeholder="new password">
+            <input class="input-text" name="new-password" type="password" placeholder="new password">
           </div>
           <div>
             <span class="input-text-span">repeat</span>
-            <input class="input-text" type="password" placeholder="repeat password">
+            <input class="input-text" name="repeat-password" type="password" placeholder="repeat password">
           </div>
-          <button class="standard-button">submit</button>
+          <button type="submit" name="update" value="password-data" class="standard-button">submit</button>
         </form>
       </div>
       <div class="panel">
         <h1 class="panel-header">Edit Address</h1>
-        <form>
+        <form method="post" action="edit">
           <div>
             <span class="input-text-span">city</span>
-            <input class="input-text" type="text" value="<?= $user->getCity() ?>" placeholder="Warsaw">
+            <input class="input-text" name="city" type="text" value="<?= $user->getCity() ?>" placeholder="Warsaw">
           </div>
           <div>
             <span class="input-text-span">street/nr</span>
-            <input class="input-text" type="text" value="<?= $user->getAddress() ?>" placeholder="Nowogrodzka 96">
+            <input class="input-text" name="address" type="text" value="<?= $user->getAddress() ?>" placeholder="Nowogrodzka 96">
           </div>
-          <button class="standard-button">submit</button>
+          <button type="submit" name="update" value="address-data" class="standard-button">submit</button>
         </form>
       </div>
       <?php if($user->getRole() == 'business') : ?>
@@ -114,6 +114,7 @@
           <input class="schedule-day-input" type="submit" name="day" value="Saturday">
           <input class="schedule-day-input" type="submit" name="day" value="Sunday">
         </form>
+        <?php if (!isset($_GET['day'])) { $_GET['day'] = 'Monday'; } ?>
         <?php if (isset($schedules[$_GET['day']])): ; foreach ($schedules[$_GET['day']] as $schedule): ?>
         <form action="">
           <div class="schedule-time-container">

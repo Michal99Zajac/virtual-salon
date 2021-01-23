@@ -15,9 +15,9 @@
         <a class="nb-logo-a" href="./search">Virtual Salon</a>
       </h1>
       <div class="nb-right-section">
-        <a class="nb-tab" href="./orders?id=<?= $_SESSION['id'] ?>">orders.</a>
-        <a class="nb-tab" href="./reservations?id=<?= $_SESSION['id'] ?>">reservations.</a>
-        <a class="nb-tab" id="nb-current-tab" href="./info?id=<?= $_SESSION['id'] ?>">my info.</a>
+        <a class="nb-tab" href="./orders">orders.</a>
+        <a class="nb-tab" href="./reservations">reservations.</a>
+        <a class="nb-tab" id="nb-current-tab" href="./info">my info.</a>
         <div class="nb-profile">
           <form action="logout" method="post">
             <img src="public/assets/img/person-profile.jpeg" class="nb-profile-img"></img>
@@ -35,8 +35,7 @@
         <div class="profile-photo-container">
           <img src="public/assets/img/person-profile.jpeg" class="profile-picture">
           <form method="get" action="edit">
-            <input type="hidden" value="Monday" name="day">
-            <button name="id" value="<?= $_SESSION['id'] ?>" type="submit" class="profile-button edit-profile">edit profile</button>
+            <button type="submit" class="profile-button edit-profile">edit profile</button>
           </form>
         </div>
         <ul class="info-ul">
