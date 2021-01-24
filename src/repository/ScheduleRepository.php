@@ -22,4 +22,40 @@ class ScheduleRepository extends Repository {
 
     return $result;
   }
+
+  public function deleteSchedule() {
+    $conn = $this->database->connect();
+    $stmt = $conn->prepare(
+      'SELECT id FROM employees WHERE id_users = ?'
+    );
+    $stmt->execute([$_SESSION['id']]);
+    $empId = $stmt->fetch(PDO::FETCH_ASSOC)['id'];
+
+    $stmt = $conn->prepare(
+      'DELETE FROM schedules WHERE id_employees = ? AND day = ? AND hour = ?'
+    );
+    $stmt->execute([
+      $empId,
+      $_POST['day'],
+      $_POST['hour']
+    ]);
+  }
+
+  public function addSchedule() {
+    $conn = $this->database->connect();
+    $stmt = $conn->prepare(
+      'SELECT id FROM employees WHERE id_users = ?'
+    );
+    $stmt->execute([$_SESSION['id']]);
+    $empId = $stmt->fetch(PDO::FETCH_ASSOC)['id'];
+
+    $stmt = $conn->prepare(
+      'INSERT INTO schedules (id_employees, day, hour) VALUES (?, ?, ?)'
+    );
+    $stmt->execute([
+      $empId,
+      $_POST['day'],
+      $_POST['hour']
+    ]);
+  }
 }

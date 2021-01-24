@@ -104,8 +104,7 @@
       <?php if($user->getRole() == 'business') : ?>
       <div class="panel">
         <h1 class="panel-header">Edit Schedule</h1>
-        <form>
-          <input type="hidden" name="id" value="<?= $_SESSION['id'] ?>">
+        <form method="get" action="edit">
           <input class="schedule-day-input" type="submit" name="day" value="Monday">
           <input class="schedule-day-input" type="submit" name="day" value="Tuesday">
           <input class="schedule-day-input" type="submit" name="day" value="Wednesday">
@@ -114,35 +113,35 @@
           <input class="schedule-day-input" type="submit" name="day" value="Saturday">
           <input class="schedule-day-input" type="submit" name="day" value="Sunday">
         </form>
-        <?php if (!isset($_GET['day'])) { $_GET['day'] = 'Monday'; } ?>
         <?php if (isset($schedules[$_GET['day']])): ; foreach ($schedules[$_GET['day']] as $schedule): ?>
-        <form action="">
+        <form method="post" action="edit">
           <div class="schedule-time-container">
             <p class="schedule-time"><?= $schedule->getHour() ?></p>
             <div class="schedule-time-subcontainer">
               <p class="schedule-time-day"><?= $schedule->getDay() ?></p>
               <input type="hidden" name="hour" value="<?= $schedule->getHour() ?>">
               <input type="hidden" name="day" value="<?= $schedule->getDay() ?>">
-              <button class="schedule-time-button" type="submit">delete</button>
+              <button name="update" value="schedule-del-data" class="schedule-time-button" type="submit">delete</button>
             </div>
           </div>
         </form>
         <?php endforeach; endif; ?>
-        <form class="form-margin-top form-row-reverse">
-          <button class="add-button">add</button>
-          <input placeholder="00:00" class="add-input-text" type="text" name="scheduleNewHour">
+        <form method="post" action="edit" class="form-margin-top form-row-reverse">
+          <button type="submit" name="update" value="schedule-add-data" class="add-button">add</button>
+          <input type="hidden" name="day" value="<?= $_GET['day'] ?>">
+          <input placeholder="00:00" class="add-input-text" type="text" name="hour">
         </form>
       </div>
       <div class="panel">
         <h1 class="panel-header">Edit Description</h1>
-        <form>
+        <form action="edit" method="post">
           <textarea placeholder="description" maxlength="1024" name="description"><?= $employee->getDescription() ?></textarea>
-          <button class="standard-button">submit</button>
+          <button type="submit" name="update" value="description-data" class="standard-button">submit</button>
         </form>
       </div>
       <div class="panel">
         <h1 class="panel-header">Edit Additional Informations</h1>
-        <form>
+        <form method="post" action="edit">
           <h2 class="panel-subheader first-panel-subheader">proffesion</h2>
           <div>
             <span class="input-text-span">old profession</span>
@@ -150,11 +149,11 @@
           </div>
           <div>
             <span class="input-text-span">new profession</span>
-            <input class="input-text" type="text" placeholder="new profession">
+            <input class="input-text" name="profession" type="text" placeholder="new profession">
           </div>
-          <button class="standard-button">add</button>
+          <button type="submit" name="update" value="profession-data" class="standard-button">add</button>
         </form>
-        <form>
+        <form action="edit" method="post">
           <h2 class="panel-subheader">payment methods</h2>
           <div>
             <input <?php if (in_array('cash', $employee->getPayment())): ?>checked<?php endif; ?> type="checkbox" name="payment-cash" value="cash" id="cash">
@@ -162,7 +161,7 @@
             <label class="checkbox-label" for="cash">cash</label>
           </div>
           <div>
-            <input disabled <?php if (in_array('terminal', $employee->getPayment())): ?>checked<?php endif; ?> type="checkbox" value="terminal" name="payment-terminal" id="terminal">
+            <input <?php if (in_array('terminal', $employee->getPayment())): ?>checked<?php endif; ?> type="checkbox" value="terminal" name="payment-terminal" id="terminal">
             <label class="checkbox-mock" for="terminal"></label>
             <label class="checkbox-label" for="terminal">terminal</label>
           </div>
@@ -171,9 +170,9 @@
             <label class="checkbox-mock" for="application"></label>
             <label class="checkbox-label" for="application">application</label>
           </div>
-          <button class="standard-button">submit</button>
+          <button type="submit" name="update" value="payment-data" class="standard-button">submit</button>
         </form>
-        <form>
+        <form method="post" action="edit">
           <h2 class="panel-subheader">certificates</h2>
           <div>
             <span class="input-text-span">old certificate</span>
@@ -181,11 +180,11 @@
           </div>
           <div>
             <span class="input-text-span">new certificate</span>
-            <input class="input-text" type="text" placeholder="new certificate">
+            <input name="certificate" class="input-text" type="text" placeholder="new certificate">
           </div>
-          <button class="standard-button">add</button>
+          <button type="submit" name="update" value="certificate-data" class="standard-button">add</button>
         </form>
-        <form>
+        <form method="post" action="edit">
           <h2 class="panel-subheader">web</h2>
           <div>
             <span class="input-text-span">old web</span>
@@ -193,11 +192,11 @@
           </div>
           <div>
             <span class="input-text-span">new web</span>
-            <input class="input-text" type="text" placeholder="new web">
+            <input name="web" class="input-text" type="text" placeholder="new web">
           </div>
-          <button class="standard-button">add</button>
+          <button type="submit" name="update" value="web-data" class="standard-button">add</button>
         </form>
-        <form>
+        <form method="post" action="edit">
           <h2 class="panel-subheader">years of experience</h2>
           <div>
             <span class="input-text-span">old job</span>
@@ -205,11 +204,11 @@
           </div>
           <div>
             <span class="input-text-span">new job</span>
-            <input class="input-text" type="text" placeholder="new job">
+            <input name="exp" class="input-text" type="text" placeholder="new job">
           </div>
-          <button class="standard-button">add</button>
+          <button type="submit" name="update" value="exp-data" class="standard-button">add</button>
         </form>
-        <form>
+        <form method="post" action="edit">
           <h2 class="panel-subheader">the most favorite treatments</h2>
           <div>
             <span class="input-text-span">old the most favorite treatment</span>
@@ -217,24 +216,26 @@
           </div>
           <div>
             <span class="input-text-span">new the most favorite treatment</span>
-            <input class="input-text" type="text" placeholder="new the most favorite treatment">
+            <input name="fav" class="input-text" type="text" placeholder="new the most favorite treatment">
           </div>
-          <button class="standard-button">add</button>
+          <button type="submit" name="update" value="fav-data" class="standard-button">add</button>
         </form>
       </div>
       <div class="panel">
         <h1 class="panel-header">Edit Price List</h1>
         <?php foreach ($treatments as $treatment): ?>
-        <form class="form-align-center form-row-left">
-          <button class="delete-button" type="submit">delete</button>
+        <form method="post" action="edit" class="form-align-center form-row-left">
+          <input type="hidden" name="price" value="<?= $treatment->getPrice() ?>">
+          <input type="hidden" name="name" value="<?= $treatment->getName() ?>">
+          <button name="update" value="product-del-data" class="delete-button" type="submit">delete</button>
           <span class="list-span list-price"><?= $treatment->getPrice() ?> $</span>
           <span class="list-span"><?= $treatment->getName() ?></span>
         </form>
         <?php endforeach; ?>
-        <form class="form-row-reverse form-align-center">
-          <button class="add-button-product">add</button>
-          <input placeholder="price" class="add-input-specjal add-price" type="text" name="priceValue">
-          <input placeholder="product" class="add-input-specjal add-product" type="text" name="productValue">
+        <form method="post" action="edit" class="form-row-reverse form-align-center">
+          <button type="submit" name="update" value="product-add-data" class="add-button-product">add</button>
+          <input placeholder="price" class="add-input-specjal add-price" type="text" name="price">
+          <input placeholder="product" class="add-input-specjal add-product" type="text" name="name">
         </form>
       </div>
       <?php endif; ?>

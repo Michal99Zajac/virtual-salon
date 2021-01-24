@@ -23,4 +23,36 @@ class TreatmentRepository extends Repository {
 
     return $result;
   }
+
+  public function deleteTreatment() {
+    $conn = $this->database->connect();
+    $stmt = $conn->prepare(
+      'SELECT id FROM employees WHERE id_users = ?'
+    );
+    $stmt->execute([$_SESSION['id']]);
+    $empId = $stmt->fetch(PDO::FETCH_ASSOC)['id'];
+
+    $stmt = $conn->prepare(
+      'DELETE FROM treatments WHERE name = ? AND id_employees = ?'
+    );
+    $stmt->execute([$_POST['name'], $empId]);
+  }
+
+  public function addTreatment() {
+    if (!$_POST['name'] || !$_POST['price']) {
+      return null;
+    }
+
+    $conn = $this->database->connect();
+    $stmt = $conn->prepare(
+      'SELECT id FROM employees WHERE id_users = ?'
+    );
+    $stmt->execute([$_SESSION['id']]);
+    $empId = $stmt->fetch(PDO::FETCH_ASSOC)['id'];
+
+    $stmt = $conn->prepare(
+      'INSERT INTO treatments (id_employees, name, price) VALUES (?, ?, ?)'
+    );
+    $stmt->execute([$empId, $_POST['name'], $_POST['price']]);
+  }
 }

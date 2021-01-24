@@ -31,6 +31,14 @@ class ProfileController extends AppController {
       $this->update();
     }
 
+    if (!isset($_GET['day'])) {
+      if (isset($_POST['day'])) {
+        $_GET['day'] = $_POST['day'];
+      } else {
+        $_GET['day'] = 'Monday';
+      }
+    }
+
     $user = $this->userRepository->getUserWithDetails($_SESSION['id']);
     if (!$user) {
       header("Location: {$this->url}/search?error=noneuser");
@@ -92,6 +100,28 @@ class ProfileController extends AppController {
       $this->userRepository->updatePassword();
     } elseif ($_POST['update'] == 'address-data') {
       $this->userRepository->updateAddress();
+    } elseif ($_POST['update'] == 'schedule-del-data') {
+      $this->scheduleRepository->deleteSchedule();
+    } elseif ($_POST['update'] == 'schedule-add-data') {
+      $this->scheduleRepository->addSchedule();
+    } elseif ($_POST['update'] == 'description-data') {
+      $this->employeeRepository->updateDescription();
+    } elseif ($_POST['update'] == 'profession-data') {
+      $this->employeeRepository->updateProfession();
+    } elseif ($_POST['update'] == 'payment-data') {
+      $this->employeeRepository->updatePayment();
+    } elseif ($_POST['update'] == 'certificate-data') {
+      $this->employeeRepository->updateCertificate();
+    } elseif ($_POST['update'] == 'web-data') {
+      $this->employeeRepository->updateWeb();
+    } elseif ($_POST['update'] == 'exp-data') {
+      $this->employeeRepository->updateExp();
+    } elseif ($_POST['update'] == 'fav-data') {
+      $this->employeeRepository->updateFav();
+    } elseif ($_POST['update'] == 'product-del-data') {
+      $this->treatmentRepository->deleteTreatment();
+    } elseif ($_POST['update'] == 'product-add-data') {
+      $this->treatmentRepository->addTreatment();
     }
   }
 }

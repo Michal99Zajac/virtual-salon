@@ -5,19 +5,19 @@ require_once 'Repository.php';
 class ProfessionRepository extends Repository {
   public function getProfessionId(string $name) {
     $stmt = $this->database->connect()->prepare(
-      'SELECT p.id FROM professions p WHERE p.name = :name'
+      'SELECT id FROM professions WHERE name = :name'
     );
     $stmt->bindParam(':name', $name, PDO::PARAM_STR);
-    $id = $stmt->execute();
-
+    $stmt->execute();
+    $id = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($id === false) {
       $id = $this->addProfession($name);
+      return $id;
     }
-
-    return $id;
+    return $id['id'];
   }
 
-  public function getProfession(int $id) {
+  public function getProfession($id) {
     $stmt = $this->database->connect()->prepare(
       'SELECT * FROM professions p WHERE p.id = :id'
     );
@@ -39,6 +39,7 @@ class ProfessionRepository extends Repository {
     $stmt->bindParam(':name', $name, PDO::PARAM_STR);
     $conn->beginTransaction();
     $stmt->execute();
+    $conn->commit();
 
     return $conn->lastInsertId();
   }
