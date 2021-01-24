@@ -7,6 +7,46 @@ require_once 'ScheduleRepository.php';
 require_once 'Repository.php';
 
 class EmployeeRepository extends Repository {
+  public function getFullEmployee(int $userid, $dateFrom=0) {
+    $professionRepository = new ProfessionRepository();
+    $treatmentRepository = new TreatmentRepository();
+    $scheduleRepository = new ScheduleRepository();
+    $conn = $this->database->connect();
+    $stmt = $conn->prepare(
+      'SELECT * FROM users_details ud INNER JOIN (SELECT * FROM users u
+      INNER JOIN (SELECT *, e.id as empid FROM employees e
+      INNER JOIN employees_details ed ON ed.id = e.id_employees_details) e ON e.id_users = u.id) eu 
+      ON eu.id_users_details = ud.id WHERE id_users = ?'
+    );
+    $stmt->execute([$userid]);
+    $employee = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($employee === false) {
+      return null;
+    }
+
+    $emp = new Employee($employee['email']);
+    $emp->setName($employee['name']);
+    $emp->setSurname($employee['surname']);
+    $emp->setDateBirth($employee['date_of_birth']);
+    $emp->setCountry($employee['country']);
+    $emp->setPhone($employee['phone']);
+    $emp->setDescription($employee['description']);
+    $emp->setLastJob($employee['last_job']);
+    $emp->setWeb($employee['web']);
+    $emp->setCertificate($employee['certificate']);
+    $emp->setFavTreatment($employee['favorite_treatment']);
+    $emp->setCity($employee['city']);
+    $emp->setAddress($employee['address']);
+
+    $emp->setPayment($this->getEmployeePayments($employee['id_employees_details']));
+    $emp->setProfession($professionRepository->getProfession($employee['id_professions'])['name']);
+    $emp->setTreatments($treatmentRepository->getTreatments($employee['empid']));
+    $emp->setSchedules($scheduleRepository->getScheduleFrom($employee['empid'], $dateFrom));
+
+    return $emp;
+  }
+
   public function getEmployee(int $userid): ?Employee {
     $empDetail = $this->getEmployeeDetail($userid);
     $emp = new Employee('');
@@ -77,38 +117,8 @@ class EmployeeRepository extends Repository {
     return $result;
   }
 
-  public function getEmployeesByParams($city, $street, $professions) {
-    $substmt = [];
-
-    if (!$city == '') {
-      $substmt[] = "city = '{$city}'";
-    }
-
-    if (!$street == '') {
-      $substmt[] = "address LIKE '%{$street}%'";
-    }
-
-    if (!$professions == []) {
-      $values = '';
-      for($i=0; $i < count($professions); $i++) {
-        if ($i == 0) {
-          $values = "'" . $professions[$i] . "'";
-        } else {
-          $values = $values . ' , ' . "'" . $professions[$i] . "'";
-        }
-      }
-      $substmt[] = "profession IN ({$values})";
-    }
-
-    $condition = '';
-    for ($i=0; $i < count($substmt); $i++) {
-      if ($i == 0) {
-        $condition = ' WHERE ' . $substmt[$i];
-      } else {
-        $condition = $condition . ' AND ' . $substmt[$i];
-      }
-    }
-
+  public function getEmployeesByParams($city, $street, $professions = []) {
+    $condition = $this->composeCondition($city, $street, $professions);
     $conn = $this->database->connect();
     $stmt = $conn->prepare(
       "SELECT name, surname, profession, description, email, empId, e.id as id, city, address FROM users_details ud
@@ -331,5 +341,40 @@ class EmployeeRepository extends Repository {
     }
 
     return $result;
+  }
+
+  private function composeCondition($city, $street, $professions = []) {
+    $substmt = [];
+
+    if (!$city == '') {
+      $substmt[] = "city = '{$city}'";
+    }
+
+    if (!$street == '') {
+      $substmt[] = "address LIKE '%{$street}%'";
+    }
+
+    if (!$professions == []) {
+      $values = '';
+      for($i=0; $i < count($professions); $i++) {
+        if ($i == 0) {
+          $values = "'" . $professions[$i] . "'";
+        } else {
+          $values = $values . ' , ' . "'" . $professions[$i] . "'";
+        }
+      }
+      $substmt[] = "profession IN ({$values})";
+    }
+
+    $condition = '';
+    for ($i=0; $i < count($substmt); $i++) {
+      if ($i == 0) {
+        $condition = ' WHERE ' . $substmt[$i];
+      } else {
+        $condition = $condition . ' AND ' . $substmt[$i];
+      }
+    }
+
+    return $condition;
   }
 }

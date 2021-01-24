@@ -19,9 +19,9 @@
         <a class="nb-tab" href="./reservations">reservations.</a>
         <a class="nb-tab" href="./info">my info.</a>
         <div class="nb-profile">
-          <form action="" method="get">
+          <form action="logout" method="post">
             <img src="public/assets/img/person-profile.jpeg" class="nb-profile-img"></img>
-            <button class="nb-button">logout</button>
+            <button type="submit" class="nb-button">logout</button>
           </form>
         </div>
         <div class="nb-sign nb-none">
@@ -35,18 +35,23 @@
         <div class="profile-beam">
           <img src="public/assets/img/person-profile.jpeg" class="profile-img">
           <div class="profile-info">
-            <h1 class="profile-name">Elliot Bernard Patel</h1>
-            <p class="profile-profession">barber</p>
+            <h1 class="profile-name"><?= $employee->getName() . ' ' . $employee->getSurname() ?></h1>
+            <p class="profile-profession"><?= $employee->getProfession() ?></p>
           </div>
         </div>
-        <p class="profile-description">Elliot Bernard Patel is a 25-year-old P.P.E. student who enjoys bargain hunting, watching sport and social media. She is giving and smart, but can also be very rude and a bit violent. She is addicted to video games, something which her friend Christine Monique Shaw pointed out when she was 17. The problem intensified in 2014. In 2018, Elliot Bernard lost her job as a town counsellor as a result of her addiction. She is French who defines herself as pansexual. She is currently at college. studying philosophy, politics and economics.</p>
+        <p class="profile-description"><?= $employee->getDescription() ?></p>
       </div>
+      <?php print_r($employee->getSchedules())  ?>
       <div class="panel">
         <div class="schedule-beam">
-          <button class="schedule-arrow"><div class="arrow" id="schedule-arrow-left"></div></button>
-          <h1 class="schedule-header">SCHEDULE</h1>
-          <button class="schedule-arrow"><div class="arrow" id="schedule-arrow-right"></div></button>
+          <form action="profile" method="get">
+            <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
+            <button type="submit" name="add" value="-5" class="schedule-arrow"><div class="arrow" id="schedule-arrow-left"></div></button>
+            <h1 class="schedule-header">SCHEDULE</h1>
+            <button type="submit" name="add" value="+5"<?= date('Y-m-d', strtotime($employee->getSchedules()[4].'+1 day')) ?>" class="schedule-arrow"><div class="arrow" id="schedule-arrow-right"></div></button>
+          </form>
         </div>
+        <?php print_r(date('Y-m-d', strtotime($employee->getSchedules()[4].'+0 day'))) ?>
         <div class="schedule-container">
           <form>
             <ul class="schedule-ul">

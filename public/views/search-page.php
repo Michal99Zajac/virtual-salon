@@ -26,8 +26,8 @@
     <div class="search-container">
       <form action="main" method="GET">
         <input class="search-input" name="city" type="text" placeholder="city">
-        <input class="search-input" name="address" type="text" placeholder="street address">
-        <button type="submit" class="search-button">search</button>
+        <input class="search-input" name="street" type="text" placeholder="street">
+        <button type="submit" name="search" value="spec" class="search-button">search</button>
       </form>
     </div>
   </div>

@@ -23,6 +23,59 @@ class ScheduleRepository extends Repository {
     return $result;
   }
 
+  public function getScheduleFrom($empId, $dateFrom = '') {
+    $result = [];
+    $from = '';
+    if ($dateFrom == '') {
+      $dateTime = new DateTime();
+      $from = $dateTime->format('Y-m-d');
+    } else {
+      $from = $dateFrom;
+    }
+
+    $result[date('Y-m-d', strtotime($from))] = [];
+    $result[date('Y-m-d', strtotime($from . "+1 day"))] = [];
+    $result[date('Y-m-d', strtotime($from . "+2 day"))] = [];
+    $result[date('Y-m-d', strtotime($from . "+3 day"))] = [];
+    $result[date('Y-m-d', strtotime($from . "+4 day"))] = [];
+    $result[date('Y-m-d', strtotime($from . "+5 day"))] = [];
+
+    $conn = $this->database->connect();
+    $stmt = $conn->prepare(
+      'SELECT * FROM schedules s LEFT JOIN schedules_details sd on s.id = sd.id_schedules 
+      WHERE id_employees = ? 
+      AND ( sd.date = ? OR sd.date = ? OR sd.date = ? OR sd.date = ? OR sd.date = ? OR sd.date = ? OR sd.date is NULL ) 
+      AND (s.day = ? OR s.day = ? OR s.day = ? OR s.day = ? OR s.day = ? OR s.day = ?) ORDER BY hour'
+    );
+    $stmt->execute([
+      $empId,
+      $from,
+      date('Y-m-d', strtotime($from . "+1 day")),
+      date('Y-m-d', strtotime($from . "+2 day")),
+      date('Y-m-d', strtotime($from . "+3 day")),
+      date('Y-m-d', strtotime($from . "+4 day")),
+      date('Y-m-d', strtotime($from . "+5 day")),
+      date('l', strtotime(date('Y-m-d', strtotime($from)))),
+      date('l', strtotime(date('Y-m-d', strtotime($from . "+1 day")))),
+      date('l', strtotime(date('Y-m-d', strtotime($from . "+2 day")))),
+      date('l', strtotime(date('Y-m-d', strtotime($from . "+3 day")))),
+      date('l', strtotime(date('Y-m-d', strtotime($from . "+4 day")))),
+      date('l', strtotime(date('Y-m-d', strtotime($from . "+5 day"))))
+    ]);
+
+    $schedules = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($schedules as $schedule) {
+      $sch = new Schedule($schedule['day'], $schedule['hour']);
+      $sch->setReserved($schedule['reserved']);
+      $sch->setDate(date('Y-m-d', strtotime("next {$schedule['day']}", strtotime($from . '-1 day'))));
+
+      array_push($result[$sch->getDate()], $sch);
+    }
+
+    return $result;
+  }
+
   public function getThreeShedule($empId) {
     $result = [];
     $date = new DateTime();
