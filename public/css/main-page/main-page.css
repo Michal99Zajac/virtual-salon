@@ -325,7 +325,9 @@ input[type="checkbox"] {
   height: auto;
   margin-top: 1.25em;
   font-family: "Rubik";
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  border: none;
+  background: transparent; }
   .mp-center-info:hover {
     color: #fa8072; }
     .mp-center-info:hover .mp-info-img {

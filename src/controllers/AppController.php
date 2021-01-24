@@ -22,10 +22,6 @@ class AppController {
     return isset($_SESSION['id']);
   }
 
-//  protected function isItForMe(): bool {
-//    return $_GET['id'] == $_SESSION['id'];
-//  }
-
   public function logout() {
     if (!$this->isPost()) {
       return header("Location: {$this->url}/search");

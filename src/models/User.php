@@ -14,7 +14,7 @@ class User
   private $city;
   private $address;
 
-  public function __construct(string $email, string $pwd, string $role, string $name = '', string $surname = '')
+  public function __construct(string $email, string $role = '', string $pwd = '', string $name = '', string $surname = '')
   {
     $this->name = $name;
     $this->surname = $surname;

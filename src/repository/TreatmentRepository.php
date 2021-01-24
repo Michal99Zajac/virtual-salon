@@ -55,4 +55,19 @@ class TreatmentRepository extends Repository {
     );
     $stmt->execute([$empId, $_POST['name'], $_POST['price']]);
   }
+
+  public function getAllTreatmentsNames() {
+    $result = [];
+    $stmt = $this->database->connect()->prepare(
+      'SELECT name FROM treatments GROUP BY name'
+    );
+    $stmt->execute();
+    $names = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($names as $name) {
+      $result[] = new Treatment($name['name']);
+    }
+
+    return $result;
+  }
 }

@@ -49,8 +49,8 @@ class UserRepository extends Repository
 
     return new User(
       $user['email'],
-      $user['password'],
-      $user['role']
+      $user['role'],
+      $user['password']
     );
   }
 
@@ -71,8 +71,8 @@ class UserRepository extends Repository
 
     return new User(
       $user['email'],
-      $user['password'],
-      $user['role']
+      $user['role'],
+      $user['password']
     );
   }
 

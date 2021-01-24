@@ -19,9 +19,9 @@
         <a class="nb-tab" href="./reservations">reservations.</a>
         <a class="nb-tab" href="./info">my info.</a>
         <div class="nb-profile">
-          <form action="" method="get">
+          <form action="logout" method="post">
             <img src="public/assets/img/person-profile.jpeg" class="nb-profile-img"></img>
-            <button class="nb-button">logout</button>
+            <button type="submit" class="nb-button">logout</button>
           </form>
         </div>
         <div class="nb-sign nb-none">
@@ -33,158 +33,77 @@
     <div class="mp-left-area">
       <div class="panel">
         <div class="mp-search-section">
-          <form>
-            <input class="mp-search-text-input" placeholder="person" type="text">
-            <button class="mp-search-button">search</button>
+          <form method="get" action="main">
+            <input class="mp-search-text-input" name="person" placeholder="person" type="text">
+            <button type="submit" name="search" value="person" class="mp-search-button">search</button>
           </form>
         </div>
       </div>
       <div class="panel">
-        <form>
+        <form action="main" method="get">
           <div class="mp-search-section">
             <h1 class="mp-search-section-header">location</h1>
-            <input class="mp-search-text-input" placeholder="city" type="text">
-            <input class="mp-search-text-input" placeholder="street" type="text">
+            <input name="city" class="mp-search-text-input" placeholder="city" type="text">
+            <input name="street" class="mp-search-text-input" placeholder="street" type="text">
           </div>
           <div class="mp-search-section">
             <h1 class="mp-search-section-header">profession</h1>
             <ul class="mp-search-ul">
+              <?php foreach ($professions as $profession): ?>
               <li class="mp-search-li">
-                <input type="checkbox" name="profession" id="profession-1">
-                <label class="mp-checkbox" for="profession-1"></label>
-                <label class="mp-checkbox-label" for="profession-1">barber</label>
+                <input type="checkbox" name="professions[]" value="<?= $profession->getName() ?>" id="<?= $profession->getName() ?>">
+                <label class="mp-checkbox" for="<?= $profession->getName() ?>"></label>
+                <label class="mp-checkbox-label" for="<?= $profession->getName() ?>"><?= $profession->getName() ?></label>
               </li>
-              <li class="mp-search-li">
-                <input type="checkbox" name="profession" id="profession-2">
-                <label class="mp-checkbox" for="profession-2"></label>
-                <label class="mp-checkbox-label" for="profession-2">aaaaaaaaaaaaaaaaaaaaa</label>
-              </li>
+              <?php endforeach; ?>
             </ul>
-            <button class="mp-show-button">show more</button>
+            <button style="display: none;" class="mp-show-button">show more</button>
           </div>
-          <div class="mp-search-section">
-            <h1 class="mp-search-section-header">services</h1>
-            <ul class="mp-search-ul">
-              <li class="mp-search-li">
-                <input type="checkbox" name="service" id="service-1">
-                <label class="mp-checkbox" for="service-1"></label>
-                <label class="mp-checkbox-label" for="service-1">barber</label>
-              </li>
-              <li class="mp-search-li">
-                <input type="checkbox" name="service" id="service-2">
-                <label class="mp-checkbox" for="service-2"></label>
-                <label class="mp-checkbox-label" for="service-2">aaaaaaaaaaaaaaaaaaaaa</label>
-              </li>
-            </ul>
-            <button class="mp-show-button">show more</button>
-          </div>
-          <div class="mp-search-section">
-            <h1 class="mp-search-section-header">min price</h1>
-            <input class="mp-search-text-input mp-price-text-input" placeholder="0.0 $" type="text">
-          </div>
-          <div class="mp-search-section">
-            <h1 class="mp-search-section-header">max price</h1>
-            <input class="mp-search-text-input mp-price-text-input" placeholder="100.0 $" type="text">
-          </div>
-          <div class="mp-search-section">
-            <h1 class="mp-search-section-header">payment method</h1>
-            <ul class="mp-search-ul">
-              <li class="mp-search-li">
-                <input type="checkbox" name="payment" id="payment-1">
-                <label class="mp-checkbox" for="payment-1"></label>
-                <label class="mp-checkbox-label" for="payment-1">cash</label>
-              </li>
-              <li class="mp-search-li">
-                <input disabled type="checkbox" name="payment" id="payment-2">
-                <label class="mp-checkbox" for="payment-2"></label>
-                <label class="mp-checkbox-label" for="payment-2">terminal</label>
-              </li>
-              <li class="mp-search-li">
-                <input disabled type="checkbox" name="payment" id="payment-3">
-                <label class="mp-checkbox" for="payment-3"></label>
-                <label class="mp-checkbox-label" for="payment-3">by application</label>
-              </li>
-            </ul>
-          </div>
-          <button class="mp-search-button">search</button>
+          <button type="submit" name="search" value="spec" class="mp-search-button">search</button>
         </form>
       </div>
     </div>
     <div class="center-panels">
+      <?php foreach ($employees as $employee): ?>
       <div class="panel">
         <div class="mp-center-subarea">
           <div class="mp-profile-area">
             <div id="mp-photo" class="mp-profile-photo"></div>
             <div class="mp-profile-header">
-              <h1 class="mp-profile-h1">Mary Adams</h1>
-              <p class="mp-profile-p">hairdresser</p>
+              <h1 class="mp-profile-h1"><?= $employee->getName() . ' ' . $employee->getSurname() ?></h1>
+              <p class="mp-profile-p"><?= $employee->getProfession() ?></p>
             </div>
           </div>
-          <p class="mp-profile-description">Mary Adams is a 28-year-old former local activist who enjoys charity work, running and playing card games. She is friendly and entertaining, but can also be very standoffish and a bit lazy. She is Italian. She has a post-graduate degree in philosophy, politics and economics. She is obsessed with cats.</p>
+          <p class="mp-profile-description"><?= $employee->getDescription() ?></p>
           <ul class="mp-center-price-list">
+            <?php foreach ($employee->getTreatments() as $treatment): ?>
             <li class="mp-center-price-li">
-              <p class="mp-price-name">buns and pin-ups</p>
-              <p class="mp-price-value"> 12.50 $</p>
+              <p class="mp-price-name"><?= $treatment->getName() ?></p>
+              <p class="mp-price-value"><?= $treatment->getPrice() ?> $</p>
             </li>
-            <li class="mp-center-price-li">
-              <p class="mp-price-name">buns and pin-ups</p>
-              <p class="mp-price-value"> 12.50 $</p>
-            </li>
-            <li class="mp-center-price-li">
-              <p class="mp-price-name">buns and pin-ups</p>
-              <p class="mp-price-value"> 12.50 $</p>
-            </li>
-            <li class="mp-center-price-li">
-              <p class="mp-price-name">buns and pin-ups</p>
-              <p class="mp-price-value"> 12.50 $</p>
-            </li>
-            <li class="mp-center-price-li">
-              <p class="mp-price-name">buns and pin-ups</p>
-              <p class="mp-price-value"> 12.50 $</p>
-            </li>
+            <?php endforeach; ?>
           </ul>
         </div>
         <div class="mp-center-subarea">
+          <?php foreach ($employee->getSchedules() as $schedule): ?>
           <ul class="mp-schedule-column">
-            <h2 class="mp-schedule-header">today</h2>
-            <p class="mp-schedule-subheader">aa</p>
-            <form class="form-width-max">
-              <input class="mp-schedule-li" type="button" value="13:30">
-              <input class="mp-schedule-li" type="button" value="13:30">
-              <input class="mp-schedule-li" type="button" value="13:30">
-              <input class="mp-schedule-li" type="button" value="13:30">
-              <input class="mp-schedule-li" type="button" value="13:30">
+            <h2 class="mp-schedule-header"><?= date('l', strtotime(array_search($schedule, $employee->getSchedules()))) ?></h2>
+            <p class="mp-schedule-subheader"><?= array_search($schedule, $employee->getSchedules()) ?></p>
+            <form method="get" action="sheet" class="form-width-max">
+              <input type="hidden" value="<?= array_search($schedule, $employee->getSchedules()) ?>" name="date">
+              <input type="hidden" name="id" value="<?= array_search($employee, $employees) ?>">
+              <?php foreach ($schedule as $day): ?>
+              <input <?= $day->getReserved() ? 'disabled' : '' ?> class="mp-schedule-li" type="submit" name="hour" value="<?= $day->getHour() ?>">
+              <?php endforeach; ?>
             </form>
           </ul>
-          <ul class="mp-schedule-column">
-            <h2 class="mp-schedule-header">tommorow</h2>
-            <p class="mp-schedule-subheader">aa</p>
-            <form class="form-width-max">
-              <input class="mp-schedule-li mp-reserved-li" type="button" value="13:30">
-              <input class="mp-schedule-li mp-reserved-li" type="button" value="13:30">
-              <input class="mp-schedule-li" type="button" value="13:30">
-            </form>
-          </ul>
-          <ul class="mp-schedule-column">
-            <h2 class="mp-schedule-header">aaa</h2>
-            <p class="mp-schedule-subheader">aa</p>
-            <form class="form-width-max">
-              <input class="mp-schedule-li mp-reserved-li" type="button" value="13:30">
-              <input class="mp-schedule-li mp-reserved-li" type="button" value="13:30">
-              <input class="mp-schedule-li" type="button" value="13:30">
-              <input class="mp-schedule-li mp-reserved-li" type="button" value="13:30">
-              <input class="mp-schedule-li mp-reserved-li" type="button" value="13:30">
-              <input class="mp-schedule-li" type="button" value="13:30">
-              <input class="mp-schedule-li mp-reserved-li" type="button" value="13:30">
-              <input class="mp-schedule-li mp-reserved-li" type="button" value="13:30">
-              <input class="mp-schedule-li" type="button" value="13:30">
-            </form>
-          </ul>
+          <?php endforeach; ?>
         </div>
-        <form>
-          <a class="mp-center-info" href="#">more info<div class="mp-info-img"></div></a>
+        <form action="profile" method="get">
+          <button type="submit" name="id" value="<?= array_search($employee, $employees) ?>" class="mp-center-info">more info<div class="mp-info-img"></div></button>
         </form>
       </div>
+      <?php endforeach; ?>
     </div>
   </div>
 </body>

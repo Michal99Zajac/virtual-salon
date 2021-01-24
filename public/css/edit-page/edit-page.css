@@ -64,7 +64,8 @@
   border: none;
   box-shadow: 0 0 0.3em -1px #000000;
   margin: 0;
-  font-family: "Rubik"; }
+  font-family: "Rubik";
+  min-height: 1.2em; }
   .input-text::placeholder {
     color: #a1a0a0; }
   .input-text:focus {

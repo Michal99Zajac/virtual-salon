@@ -23,6 +23,41 @@ class ScheduleRepository extends Repository {
     return $result;
   }
 
+  public function getThreeShedule($empId) {
+    $result = [];
+    $date = new DateTime();
+    $today = $date->format('Y-m-d');
+    $tomorrow = date('Y-m-d', strtotime($today . '+1 day'));
+    $dayafter = date('Y-m-d', strtotime($today . '+2 day'));
+    $todayDay = date('l', strtotime($today));
+    $tomorrowDay = date('l', strtotime($tomorrow));
+    $dayafterDay = date('l', strtotime($dayafter));
+
+    $result[$today] = [];
+    $result[$tomorrow] = [];
+    $result[$dayafter] = [];
+
+    $conn = $this->database->connect();
+    $stmt = $conn->prepare(
+      'SELECT * FROM schedules s LEFT JOIN schedules_details sd on s.id = sd.id_schedules 
+    WHERE id_employees = ? 
+    AND ( sd.date = ? OR sd.date = ? OR sd.date = ? OR sd.date is NULL ) 
+    AND (s.day = ? OR s.day = ? OR s.day = ?) ORDER BY hour'
+    );
+    $stmt->execute([$empId, $today, $tomorrow, $dayafter, $todayDay, $tomorrowDay, $dayafterDay]);
+    $schedules = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($schedules as $schedule) {
+      $sch = new Schedule($schedule['day'], $schedule['hour']);
+      $sch->setReserved($schedule['reserved']);
+      $sch->setDate(date('Y-m-d', strtotime("next {$schedule['day']}", strtotime($today . '-1 day'))));
+
+      array_push($result[$sch->getDate()], $sch);
+    }
+
+    return $result;
+  }
+
   public function deleteSchedule() {
     $conn = $this->database->connect();
     $stmt = $conn->prepare(

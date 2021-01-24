@@ -63,7 +63,7 @@ class SecurityController extends AppController {
 
     $email = $_POST['email'];
     $name = $_POST['name'];
-    $surname = $_POprivateST['surname'];
+    $surname = $_POST['surname'];
     $pwd = $_POST['pwd'];
     $pwdRepeat = $_POST['pwdrepeat'];
     $role = $_POST['role'];
@@ -88,7 +88,7 @@ class SecurityController extends AppController {
       exit();
     }
 
-    $user = new User($email, $pwd, $role, $name, $surname);
+    $user = new User($email, $role, $pwd, $name, $surname);
 
     $this->registerUser($user);
     return $this->render('search-page');

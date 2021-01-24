@@ -2,12 +2,14 @@
 
 require_once __DIR__.'/../models/Employee.php';
 require_once 'ProfessionRepository.php';
+require_once 'TreatmentRepository.php';
+require_once 'ScheduleRepository.php';
 require_once 'Repository.php';
 
 class EmployeeRepository extends Repository {
   public function getEmployee(int $userid): ?Employee {
     $empDetail = $this->getEmployeeDetail($userid);
-    $emp = new Employee();
+    $emp = new Employee('');
     $emp->setDescription($empDetail['description']);
     $emp->setFavTreatment($empDetail['favorite_treatment']);
     $emp->setCertificate($empDetail['certificate']);
@@ -33,6 +35,94 @@ class EmployeeRepository extends Repository {
     $stmt->execute([$userId, $idEmpDetail]);
   }
 
+  public function getEmployees() {
+    $conn = $this->database->connect();
+    $stmt = $conn->prepare(
+      'SELECT name, surname, profession, description, email, empId, e.id as id FROM users_details ud
+      INNER JOIN (SELECT profession, description, email, id_users_details, id, empId FROM users u
+      INNER JOIN (SELECT description, name as profession, e.id_users, e.id as empId FROM employees e LEFT JOIN professions p
+      ON p.id = e.id_professions) e ON e.id_users = u.id) e ON ud.id = e.id_users_details'
+    );
+    $stmt->execute();
+    $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $result = $this->composeEmployee($employees);
+
+    return $result;
+  }
+
+  public function getEmployeesByName(string $fullname) {
+    $full = explode(' ', $fullname);
+    $name = '_';
+    $surname = '_';
+
+    if (count($full) == 2) {
+      $name = '%'.$full[0].'%';
+      $surname = '%'.$full[1].'%';
+    } else {
+      $name = '%'.$full[0].'%';
+      $surname = '%'.$full[0].'%';
+    }
+
+    $conn = $this->database->connect();
+    $stmt = $conn->prepare(
+      "SELECT name, surname, profession, description, email, empId, e.id as id FROM users_details ud
+      INNER JOIN (SELECT profession, description, email, id_users_details, id, empId FROM users u
+      INNER JOIN (SELECT description, name as profession, e.id_users, e.id as empId FROM employees e LEFT JOIN professions p
+      ON p.id = e.id_professions) e ON e.id_users = u.id) e ON ud.id = e.id_users_details WHERE name LIKE ? OR surname LIKE ?"
+    );
+    $stmt->execute([$name, $surname]);
+    $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $result = $this->composeEmployee($employees);
+
+    return $result;
+  }
+
+  public function getEmployeesByParams($city, $street, $professions) {
+    $substmt = [];
+
+    if (!$city == '') {
+      $substmt[] = "city = '{$city}'";
+    }
+
+    if (!$street == '') {
+      $substmt[] = "address LIKE '%{$street}%'";
+    }
+
+    if (!$professions == []) {
+      $values = '';
+      for($i=0; $i < count($professions); $i++) {
+        if ($i == 0) {
+          $values = "'" . $professions[$i] . "'";
+        } else {
+          $values = $values . ' , ' . "'" . $professions[$i] . "'";
+        }
+      }
+      $substmt[] = "profession IN ({$values})";
+    }
+
+    $condition = '';
+    for ($i=0; $i < count($substmt); $i++) {
+      if ($i == 0) {
+        $condition = ' WHERE ' . $substmt[$i];
+      } else {
+        $condition = $condition . ' AND ' . $substmt[$i];
+      }
+    }
+
+    $conn = $this->database->connect();
+    $stmt = $conn->prepare(
+      "SELECT name, surname, profession, description, email, empId, e.id as id, city, address FROM users_details ud
+      INNER JOIN (SELECT profession, description, email, id_users_details, id, empId FROM users u
+      INNER JOIN (SELECT e.description, p.name as profession, e.id_users, e.id as empId FROM employees e LEFT JOIN professions p
+      ON p.id = e.id_professions) e ON e.id_users = u.id) e ON ud.id = e.id_users_details" . $condition
+    );
+    $stmt->execute();
+    $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $result = $this->composeEmployee($employees);
+
+    return $result;
+  }
+
   public function getEmployeeId(int $userId): ?int {
     $stmt = $this->database->connect()->prepare(
       'SELECT id FROM employees e WHERE e.id_users = :userId'
@@ -48,6 +138,7 @@ class EmployeeRepository extends Repository {
     return $empId['id'];
   }
 
+  // start update section
   public function updateDescription() {
     if (strlen($_POST['description']) > 1024) {
       return null;
@@ -170,6 +261,7 @@ class EmployeeRepository extends Repository {
     );
     $stmt->execute([$_POST['fav'], $id]);
   }
+  // end update section
 
   private function addEmployeeDetail($conn): int {
     $stmt = $conn->prepare(
@@ -213,6 +305,29 @@ class EmployeeRepository extends Repository {
 
     foreach ($payments as $payment) {
       $result[] = $payment['name'];
+    }
+
+    return $result;
+  }
+
+  private function composeEmployee($employees) {
+    $treatmentRepository = new TreatmentRepository();
+    $scheduleRepository = new ScheduleRepository();
+    $result = [];
+
+    foreach ($employees as $employee) {
+      $emp = new Employee($employee['email']);
+      $emp->setName($employee['name']);
+      $emp->setSurname($employee['surname']);
+      $emp->setProfession($employee['profession']);
+      $emp->setDescription($employee['description']);
+      $emp->setTreatments(
+        $treatmentRepository->getTreatments($employee['empid'])
+      );
+      $emp->setSchedules(
+        $scheduleRepository->getThreeShedule($employee['empid'])
+      );
+      $result[$employee['id']] = $emp;
     }
 
     return $result;

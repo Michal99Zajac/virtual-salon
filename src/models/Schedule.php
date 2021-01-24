@@ -33,7 +33,11 @@ class Schedule {
   }
 
   public function setReserved($reserved) {
-    $this->reserved = $reserved;
+    if ($reserved == null) {
+      $this->reserved = false;
+    } else {
+      $this->reserved = $reserved;
+    }
   }
 
   public function getDate() {

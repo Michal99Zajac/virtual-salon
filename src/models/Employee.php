@@ -1,7 +1,8 @@
 <?php
 
+require_once 'User.php';
 
-class Employee {
+class Employee extends User {
   private $treatments;
   private $schedules;
   private $payment;

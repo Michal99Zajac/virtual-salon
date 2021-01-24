@@ -1,6 +1,7 @@
 <?php
 
 require_once 'Repository.php';
+require_once __DIR__.'/../models/Profession.php';
 
 class ProfessionRepository extends Repository {
   public function getProfessionId(string $name) {
@@ -42,5 +43,20 @@ class ProfessionRepository extends Repository {
     $conn->commit();
 
     return $conn->lastInsertId();
+  }
+
+  public function getProfessions() {
+    $result = [];
+    $stmt = $this->database->connect()->prepare(
+      'SELECT * FROM professions'
+    );
+    $stmt->execute();
+    $professions = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($professions as $profession) {
+      $result[] = new Profession($profession['name']);
+    }
+
+    return $result;
   }
 }
