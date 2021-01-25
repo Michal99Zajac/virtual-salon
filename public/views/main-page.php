@@ -85,17 +85,17 @@
           </ul>
         </div>
         <div class="mp-center-subarea">
-          <?php foreach ($employee->getSchedules() as $schedule): ?>
+          <?php foreach (array_keys($employee->getSchedules()) as $date): ?>
           <ul class="mp-schedule-column">
-            <h2 class="mp-schedule-header"><?= date('l', strtotime(array_search($schedule, $employee->getSchedules()))) ?></h2>
-            <p class="mp-schedule-subheader"><?= array_search($schedule, $employee->getSchedules()) ?></p>
+            <h2 class="mp-schedule-header"><?= date('l', strtotime($date)) ?></h2>
+            <p class="mp-schedule-subheader"><?= $date ?></p>
+            <?php foreach ($employee->getSchedules()[$date] as $day): ?>
             <form method="get" action="sheet" class="form-width-max">
-              <input type="hidden" value="<?= array_search($schedule, $employee->getSchedules()) ?>" name="date">
+              <input type="hidden" value="<?= $date ?>" name="date">
               <input type="hidden" name="id" value="<?= array_search($employee, $employees) ?>">
-              <?php foreach ($schedule as $day): ?>
               <input <?= $day->getReserved() ? 'disabled' : '' ?> class="mp-schedule-li" type="submit" name="hour" value="<?= $day->getHour() ?>">
-              <?php endforeach; ?>
             </form>
+            <?php endforeach; ?>
           </ul>
           <?php endforeach; ?>
         </div>
