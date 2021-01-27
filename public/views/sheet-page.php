@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="center-panels">
-      <form class="form-width-max">
+      <form method="post" action="order" class="form-width-max">
         <div class="panel">
           <h1 class="sheet-header">ordering a visit</h1>
           <div class="profile-beam">
@@ -61,16 +61,15 @@
           </ul>
         </div>
         <div class="panel">
-          <form>
           <div class="sheet-section">
             <h2 class="sheet-section-header">Who are you making an appointment for?</h2>
             <div class="sheet-type">
               <div class="sheet-radio">
-                <input checked class="radio-input" type="radio" name="type-visit" id="self-visit">
+                <input checked class="radio-input" type="radio" name="type-visit" value="myself" id="self-visit">
                 <label class="radio-sheet-label" for="self-visit">for myself</label>
               </div>
               <div class="sheet-radio">
-                <input class="radio-input" type="radio" name="type-visit" id="someone-visit">
+                <input class="radio-input" type="radio" name="type-visit" value="someone" id="someone-visit">
                 <label class="radio-sheet-label" for="someone-visit">for someone</label>
               </div>
             </div>
@@ -80,7 +79,7 @@
             <ul class="sheet-treatment-ul">
               <?php foreach ($employee->getTreatments() as $treatment): ?>
               <li class="sheet-treatment-li">
-                <input class="checkbox-input" type="checkbox" name="treatment[]" id="<?= $treatment->getName() ?>">
+                <input class="checkbox-input" type="checkbox" name="treatments[]" value="<?= $treatment->getName() ?>" id="<?= $treatment->getName() ?>">
                 <label class="treatment-checkbox" for="<?= $treatment->getName() ?>"></label>
                 <p class="treatment-p"><?= $treatment->getName() ?></p>
                 <p class="treatment-p treatment-value"><?= $treatment->getPrice() ?> $</p>
@@ -91,37 +90,40 @@
           <div class="sheet-section">
             <h2 class="sheet-section-header">ordering party's personal data</h2>
             <div class="sheet-personal-data">
-              <input class="sheet-text-input" placeholder="name" type="text">
-              <input class="sheet-text-input" placeholder="surname" type="text">
+              <input class="sheet-text-input" name="ordering_name" placeholder="name" type="text">
+              <input class="sheet-text-input" name="ordering_surname" placeholder="surname" type="text">
             </div>
           </div>
           <div class="sheet-section">
             <h2 class="sheet-section-header">personal data</h2>
             <div class="sheet-personal-data">
-              <input class="sheet-text-input" <?php if(isset($user)):?>value="<?= $user->getName() ?>"<?php endif; ?> placeholder="name" type="text">
-              <input class="sheet-text-input" <?php if(isset($user)):?>value="<?= $user->getSurname() ?>"<?php endif; ?> placeholder="surname" type="text">
+              <input class="sheet-text-input" <?php if(isset($user)):?>value="<?= $user->getName() ?>"<?php endif; ?> name="name" placeholder="name" type="text">
+              <input class="sheet-text-input" <?php if(isset($user)):?>value="<?= $user->getSurname() ?>"<?php endif; ?> name="surname" placeholder="surname" type="text">
             </div>
           </div>
           <div class="sheet-section">
             <h2 class="sheet-section-header">address</h2>
             <div class="sheet-address">
-              <input class="sheet-text-input" <?php if(isset($user)):?>value="<?= $user->getCity() ?>"<?php endif; ?> placeholder="city" type="text">
-              <input class="sheet-text-input" <?php if(isset($user)):?>value="<?= $user->getAddress() ?>"<?php endif; ?> placeholder="street and house number/apartment number" type="text">
+              <input class="sheet-text-input" <?php if(isset($user)):?>value="<?= $user->getCity() ?>"<?php endif; ?> name="city" placeholder="city" type="text">
+              <input class="sheet-text-input" <?php if(isset($user)):?>value="<?= $user->getAddress() ?>"<?php endif; ?> name="address" placeholder="street and house number/apartment number" type="text">
             </div>
           </div>
           <div class="sheet-section">
             <h2 class="sheet-section-header">contact details</h2>
             <div class="sheet-contact">
-              <input class="sheet-text-input" <?php if(isset($user)):?>value="<?= $user->getPhone() ?>"<?php endif; ?> placeholder="phone number" type="text">
-              <input class="sheet-text-input" <?php if(isset($user)):?>value="<?= $user->getEmail() ?>"<?php endif; ?> placeholder="email@email.com" type="text">
+              <input class="sheet-text-input" <?php if(isset($user)):?>value="<?= $user->getPhone() ?>"<?php endif; ?> name="phone" placeholder="phone number" type="text">
+              <input class="sheet-text-input" <?php if(isset($user)):?>value="<?= $user->getEmail() ?>"<?php endif; ?> name="email" placeholder="email@email.com" type="text">
             </div>
           </div>
         </div>
+        <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
+        <input type="hidden" name="date" value="<?= $_GET['date'] ?>">
+        <input type="hidden" name="hour" value="<?= $_GET['hour'] ?>">
         <div class="panel">
-          <button class="standard-button">order</button>
+          <button type="submit" class="standard-button">order</button>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
 </body>
 </html>

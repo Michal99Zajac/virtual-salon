@@ -302,6 +302,10 @@ input[type="checkbox"] {
   border: none; }
   .mp-schedule-li:hover {
     background: #fa8072; }
+  .mp-schedule-li:disabled {
+    background: #a1a0a0; }
+    .mp-schedule-li:disabled:hover {
+      background: #a1a0a0; }
 
 .mp-reserved-li {
   background: #a1a0a0; }

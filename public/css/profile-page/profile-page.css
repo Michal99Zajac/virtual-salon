@@ -155,6 +155,10 @@ div {
   border: none; }
   .schedule-li:hover {
     background: #fa8072; }
+  .schedule-li:disabled {
+    background: #a1a0a0; }
+    .schedule-li:disabled:hover {
+      background: #a1a0a0; }
 
 .schedule-li-booked {
   background: #a1a0a0; }

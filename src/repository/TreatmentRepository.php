@@ -24,6 +24,30 @@ class TreatmentRepository extends Repository {
     return $result;
   }
 
+  public function getSelectedTreatments($empId, $treatments) {
+    $q = ' AND ( ';
+    for ($i=0;$i<count($treatments);$i++) {
+      if ($i == count($treatments) - 1) {
+        $q = $q . 'name = \'' . $treatments[$i]->getName() . '\' )';
+      } else {
+        $q = $q . 'name = \'' . $treatments[$i]->getName() . '\' OR ';
+      }
+    }
+
+    $stmt = $this->database->connect()->prepare(
+      'SELECT id FROM treatments WHERE id_employees = ?' . $q
+    );
+    $stmt->execute([$empId]);
+    $treats = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $ids = [];
+
+    foreach ($treats as $treat) {
+      $ids[] = $treat['id'];
+    }
+
+    return $ids;
+  }
+
   public function deleteTreatment() {
     $conn = $this->database->connect();
     $stmt = $conn->prepare(

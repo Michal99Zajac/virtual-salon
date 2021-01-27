@@ -4,6 +4,28 @@ require_once 'Repository.php';
 require_once __DIR__.'/../models/Schedule.php';
 
 class ScheduleRepository extends Repository {
+  public function getScheduleId($empid, $hour, $date) {
+    $stmt = $this->database->connect()->prepare(
+      'SELECT sd.id as sdid FROM schedules s INNER JOIN schedules_details sd ON s.id = sd.id_schedules WHERE CAST(sd.date as DATE) = ? AND hour = ? AND id_employees = ?'
+    );
+    $stmt->execute([$date, $hour, $empid]);
+    return $stmt->fetch(PDO::FETCH_ASSOC)['sdid'];
+  }
+
+  public function reserveSchedule($scheduleId) {
+    $stmt = $this->database->connect()->prepare(
+      'UPDATE schedules_details SET reserved = ? WHERE id = ?'
+    );
+    $stmt->execute([true, $scheduleId]);
+  }
+
+  public function unreserveSchedule($scheduleId) {
+    $stmt = $this->database->connect()->prepare(
+      'UPDATE schedules_details SET reserved = ? WHERE id = ?'
+    );
+    $stmt->execute([false, $scheduleId]);
+  }
+
   public function getBasicSchedule($empId) {
     $result = [];
     $stmt = $this->database->connect()->prepare(

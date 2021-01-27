@@ -12,8 +12,11 @@ class ClientRepository extends Repository {
 //  }
 
   public function addClient(Client $client) {
+    $conn = $this->database->connect();
+    $conn->beginTransaction();
+
     if (isset($_SESSION['id'])) {
-      $stmt = $this->database->connect()->prepare(
+      $stmt = $conn->prepare(
         'INSERT INTO clients (id_users, name, surname, ordering_name, ordering_surname, city, address, phone, email)  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)'
       );
       $stmt->execute([
@@ -27,8 +30,9 @@ class ClientRepository extends Repository {
         $client->getPhone(),
         $client->getEmail()
       ]);
+
     } else {
-      $stmt = $this->database->connect()->prepare(
+      $stmt = $conn->prepare(
         'INSERT INTO clients (name, surname, ordering_name, ordering_surname, city, address, phone, email)  VALUES (?, ?, ?, ?, ?, ?, ?, ?)'
       );
       $stmt->execute([
@@ -42,5 +46,7 @@ class ClientRepository extends Repository {
         $client->getEmail()
       ]);
     }
-}
+    $conn->commit();
+    return$conn->lastInsertId();
+  }
 }
