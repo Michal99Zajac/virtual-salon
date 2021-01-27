@@ -19,9 +19,9 @@
         <a class="nb-tab" href="./reservations">reservations.</a>
         <a class="nb-tab" href="./info">my info.</a>
         <div class="nb-profile">
-          <form action="" method="get">
+          <form action="logout" method="post">
             <img src="public/assets/img/person-profile.jpeg" class="nb-profile-img"></img>
-            <button class="nb-button">logout</button>
+            <button type="submit" class="nb-button">logout</button>
           </form>
         </div>
         <div class="nb-sign nb-none">
@@ -37,26 +37,26 @@
           <div class="profile-beam">
             <img src="public/assets/img/person-profile.jpeg" class="profile-img">
             <div class="profile-info">
-              <h1 class="profile-name">Elliot Bernard Patel</h1>
-              <p class="profile-profession">barber</p>
+              <h1 class="profile-name"><?= $employee->getName() . ' ' . $employee->getSurname() ?></h1>
+              <p class="profile-profession"><?= $employee->getProfession() ?></p>
             </div>
           </div>
           <ul class="sheet-info-ul">
             <li class="sheet-info-li">
               <img src="public/assets/svg/calendar/calendar-grey.svg" class="sheet-info-img">
-              <p class="sheet-info">12 Nov 2021, 20:00</p>
+              <p class="sheet-info"><?= $employee->getSchedules()->getDate() ?>, <?= $employee->getSchedules()->getHour() ?></p>
             </li>
             <li class="sheet-info-li">
               <img src="public/assets/svg/phone/telephone-grey.svg" class="sheet-info-img">
-              <p class="sheet-info">865 305 731</p>
+              <p class="sheet-info"><?= $employee->getPhone() ?></p>
             </li>
             <li class="sheet-info-li">
               <img src="public/assets/svg/envelop/email-grey.svg" class="sheet-info-img">
-              <p class="sheet-info">email@email.com</p>
+              <p class="sheet-info"><?= $employee->getEmail() ?></p>
             </li>
             <li class="sheet-info-li">
               <img src="public/assets/svg/card/credit-card-grey.svg" class="sheet-info-img">
-              <p class="sheet-info">cash</p>
+              <p class="sheet-info"><?php foreach ($employee->getPayment() as $payment): ?><?= $payment . ' ' ?><?php endforeach; ?></p>
             </li>
           </ul>
         </div>
@@ -66,7 +66,7 @@
             <h2 class="sheet-section-header">Who are you making an appointment for?</h2>
             <div class="sheet-type">
               <div class="sheet-radio">
-                <input class="radio-input" type="radio" name="type-visit" id="self-visit">
+                <input checked class="radio-input" type="radio" name="type-visit" id="self-visit">
                 <label class="radio-sheet-label" for="self-visit">for myself</label>
               </div>
               <div class="sheet-radio">
@@ -78,24 +78,14 @@
           <div class="sheet-section">
             <h2 class="sheet-section-header">treatments</h2>
             <ul class="sheet-treatment-ul">
+              <?php foreach ($employee->getTreatments() as $treatment): ?>
               <li class="sheet-treatment-li">
-                <input class="checkbox-input" type="checkbox" name="treatment" id="treatment-1">
-                <label class="treatment-checkbox" for="treatment-1"></label>
-                <p class="treatment-p">treatment</p>
-                <p class="treatment-p treatment-value">value</p>
+                <input class="checkbox-input" type="checkbox" name="treatment[]" id="<?= $treatment->getName() ?>">
+                <label class="treatment-checkbox" for="<?= $treatment->getName() ?>"></label>
+                <p class="treatment-p"><?= $treatment->getName() ?></p>
+                <p class="treatment-p treatment-value"><?= $treatment->getPrice() ?> $</p>
               </li>
-              <li class="sheet-treatment-li">
-                <input class="checkbox-input" type="checkbox" name="treatment" id="treatment-2">
-                <label class="treatment-checkbox" for="treatment-2"></label>
-                <p class="treatment-p">treatment</p>
-                <p class="treatment-p treatment-value">value</p>
-              </li>
-              <li class="sheet-treatment-li">
-                <input class="checkbox-input" type="checkbox" name="treatment" id="treatment-3">
-                <label class="treatment-checkbox" for="treatment-3"></label>
-                <p class="treatment-p">treatment</p>
-                <p class="treatment-p treatment-value">value</p>
-              </li>
+              <?php endforeach; ?>
             </ul>
           </div>
           <div class="sheet-section">
@@ -108,22 +98,22 @@
           <div class="sheet-section">
             <h2 class="sheet-section-header">personal data</h2>
             <div class="sheet-personal-data">
-              <input class="sheet-text-input" placeholder="name" type="text">
-              <input class="sheet-text-input" placeholder="surname" type="text">
+              <input class="sheet-text-input" <?php if(isset($user)):?>value="<?= $user->getName() ?>"<?php endif; ?> placeholder="name" type="text">
+              <input class="sheet-text-input" <?php if(isset($user)):?>value="<?= $user->getSurname() ?>"<?php endif; ?> placeholder="surname" type="text">
             </div>
           </div>
           <div class="sheet-section">
             <h2 class="sheet-section-header">address</h2>
             <div class="sheet-address">
-              <input class="sheet-text-input" placeholder="city" type="text">
-              <input class="sheet-text-input" placeholder="street and house number/apartment number" type="text">
+              <input class="sheet-text-input" <?php if(isset($user)):?>value="<?= $user->getCity() ?>"<?php endif; ?> placeholder="city" type="text">
+              <input class="sheet-text-input" <?php if(isset($user)):?>value="<?= $user->getAddress() ?>"<?php endif; ?> placeholder="street and house number/apartment number" type="text">
             </div>
           </div>
           <div class="sheet-section">
             <h2 class="sheet-section-header">contact details</h2>
             <div class="sheet-contact">
-              <input class="sheet-text-input" placeholder="phone number" type="text">
-              <input class="sheet-text-input" placeholder="email@email.com" type="text">
+              <input class="sheet-text-input" <?php if(isset($user)):?>value="<?= $user->getPhone() ?>"<?php endif; ?> placeholder="phone number" type="text">
+              <input class="sheet-text-input" <?php if(isset($user)):?>value="<?= $user->getEmail() ?>"<?php endif; ?> placeholder="email@email.com" type="text">
             </div>
           </div>
         </div>

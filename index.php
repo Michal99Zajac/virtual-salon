@@ -17,7 +17,7 @@ Router::get('main', 'WorkersController');
 Router::get('orders', 'DefaultController');
 Router::get('profile', 'WorkersController');
 Router::get('reservations', 'DefaultController');
-Router::get('sheet', 'DefaultController');
+Router::get('sheet', 'SheetController');
 Router::get('logout', 'DefaultController');
 
 Router::run($path);

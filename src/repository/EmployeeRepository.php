@@ -47,6 +47,46 @@ class EmployeeRepository extends Repository {
     return $emp;
   }
 
+  public function getEmplyeeToSheet(int $userId, $date, $hour): ?Employee {
+    $professionRepository = new ProfessionRepository();
+    $treatmentRepository = new TreatmentRepository();
+    $scheduleRepository = new ScheduleRepository();
+    $conn = $this->database->connect();
+    $stmt = $conn->prepare(
+      'SELECT * FROM users_details ud INNER JOIN (SELECT * FROM users u
+      INNER JOIN (SELECT *, e.id as empid FROM employees e
+      INNER JOIN employees_details ed ON ed.id = e.id_employees_details) e ON e.id_users = u.id) eu 
+      ON eu.id_users_details = ud.id WHERE id_users = ?'
+    );
+    $stmt->execute([$userId]);
+    $employee = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($employee === false) {
+      return null;
+    }
+
+    $emp = new Employee($employee['email']);
+    $emp->setName($employee['name']);
+    $emp->setSurname($employee['surname']);
+    $emp->setDateBirth($employee['date_of_birth']);
+    $emp->setCountry($employee['country']);
+    $emp->setPhone($employee['phone']);
+    $emp->setDescription($employee['description']);
+    $emp->setLastJob($employee['last_job']);
+    $emp->setWeb($employee['web']);
+    $emp->setCertificate($employee['certificate']);
+    $emp->setFavTreatment($employee['favorite_treatment']);
+    $emp->setCity($employee['city']);
+    $emp->setAddress($employee['address']);
+
+    $emp->setPayment($this->getEmployeePayments($employee['id_employees_details']));
+    $emp->setProfession($professionRepository->getProfession($employee['id_professions'])['name']);
+    $emp->setTreatments($treatmentRepository->getTreatments($employee['empid']));
+    $emp->setSchedules($scheduleRepository->getScheduleToSheet($employee['empid'], $date, $hour));
+
+    return $emp;
+  }
+
   public function getEmployee(int $userid): ?Employee {
     $empDetail = $this->getEmployeeDetail($userid);
     $emp = new Employee('');

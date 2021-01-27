@@ -23,6 +23,43 @@ class ScheduleRepository extends Repository {
     return $result;
   }
 
+  public function getScheduleToSheet($empId, $date, $hour) {
+    $conn = $this->database->connect();
+    $day = date('l', strtotime($date));
+    $stmt = $conn->prepare(
+      'SELECT * FROM schedules s INNER JOIN schedules_details sd ON s.id = sd.id_schedules WHERE CAST(sd.date as DATE) = ? AND day = ? AND hour = ? AND id_employees = ?'
+    );
+    $stmt->execute([$date, $day, $hour, $empId]);
+    $basicSchedule = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($basicSchedule === false) {
+      $stmt = $conn->prepare(
+        'SELECT * FROM schedules WHERE id_employees = ? AND day = ? AND hour = ?'
+      );
+      $stmt->execute([$empId, $day, $hour]);
+      $scheduleId = $stmt->fetch(PDO::FETCH_ASSOC)['id'];
+
+      $stmt = $conn->prepare(
+        'INSERT INTO schedules_details (date, id_schedules) VALUES (?, ?)'
+      );
+      $stmt->execute([$date, $scheduleId]);
+    }
+
+    $stmt = $conn->prepare(
+      'SELECT * FROM schedules s INNER JOIN schedules_details sd ON s.id = sd.id_schedules WHERE s.day = ? AND s.hour = ? AND s.id_employees = ? AND sd.date = ?'
+    );
+    $stmt->execute([$day, $hour, $empId, $date]);
+    $schedule = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    $sch = new Schedule(
+      $schedule['day'],
+      $schedule['hour']
+    );
+    $sch->setReserved($schedule['reserved']);
+    $sch->setDate($schedule['date']);
+    return $sch;
+  }
+
   public function getScheduleFrom($empId, $dateFrom = '') {
     $result = [];
     $from = '';
