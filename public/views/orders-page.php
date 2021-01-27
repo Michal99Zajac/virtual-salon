@@ -31,58 +31,55 @@
       </div>
     </div>
     <div class="center-panels">
+      <?php foreach ($orders as $order): ?>
+      <?php [$employee, $client] = $order ?>
       <div class="panel">
         <div class="or-panel-left-area">
           <h1 class="or-header">client data</h1>
-          <div class="or-profile-header">
-            <img src="public/assets/img/person-profile.jpeg" class="or-profile-img">
-            <h1 class="or-profile-h1">Mary Adams</h1>
-          </div>
           <ul class="or-data-ul">
             <li class="or-data-li">
               <img src="public/assets/svg/calendar/calendar-grey.svg" class="or-data-img">
-              <p class="or-data-info">12 Nov 2021, 20:00</p>
+              <?php $schedule = $employee->getSchedules() ?>
+              <p class="or-data-info"><?= $schedule->getDate() . ', ' . $schedule->getHour() ?></p>
             </li>
             <li class="or-data-li">
               <img src="public/assets/svg/placeholder/placeholder-grey.svg" class="or-data-img">
-              <p class="or-data-info">Warsaw, Nowogordzka 96/12</p>
+              <p class="or-data-info"><?= $client->getCity() . ', ' . $client->getAddress() ?></p>
             </li>
             <li class="or-data-li">
               <img src="public/assets/svg/user/user-grey.svg" class="or-data-img">
-              <p class="or-data-info">Mary Adams</p>
+              <p class="or-data-info"><?= $client->getOrderingName() . ' ' . $client->getOrderingSurname() ?></p>
             </li>
             <li class="or-data-li">
               <img src="public/assets/svg/phone/telephone-grey.svg" class="or-data-img">
-              <p class="or-data-info">764 985 123</p>
+              <p class="or-data-info"><?= $client->getPhone() ?></p>
             </li>
             <li class="or-data-li">
               <img src="public/assets/svg/envelop/email-grey.svg" class="or-data-img">
-              <p class="or-data-info">email@email.com</p>
+              <p class="or-data-info"><?= $client->getEmail() ?></p>
             </li>
           </ul>
         </div>
         <div class="or-panel-right-area">
           <h1 class="or-header">orders</h1>
+          <?php $price = 0 ?>
           <ul class="or-price-ul">
+            <?php foreach ($employee->getTreatments() as $treatment): ?>
             <li class="or-price-li">
               <p class="or-price-name">name</p>
               <p class="or-price-value">10 $</p>
             </li>
-            <li class="or-price-li">
-              <p class="or-price-name">name</p>
-              <p class="or-price-value">10 $</p>
-            </li>
-            <li class="or-price-li">
-              <p class="or-price-name">name</p>
-              <p class="or-price-value">10 $</p>
-            </li>
+            <?php $price += $treatment->getPrice() ?>
+            <?php endforeach; ?>
           </ul>
-          <h1 class="or-price-sum">full: 10 $</h1>
+          <h1 class="or-price-sum">full: <?= $price ?>  $</h1>
         </div>
-        <form>
-          <button type="submit" class="or-panel-done">done!</button>
+        <form action="deleteOrder" method="post">
+          <input type="hidden" value="<?= array_search($order, $orders) ?>" name="orderid">
+          <button type="submit" value="<?= $client->getId() ?>" name="clientid" class="or-panel-done">done!</button>
         </form>
       </div>
+      <?php endforeach; ?>
     </div>
   </div>
 </body>

@@ -87,6 +87,20 @@ class EmployeeRepository extends Repository {
     return $emp;
   }
 
+  public function getEmployeeFromId($empId) {
+    $stmt = $this->database->connect()->prepare(
+      'SELECT * FROM employees e INNER JOIN (SELECT email, surname, u.id as id, name, phone FROM users u INNER JOIN users_details ud ON u.id_users_details = ud.id) ud ON ud.id = e.id_users WHERE e.id = ?'
+    );
+    $stmt->execute([$empId]);
+    $employee = $stmt->fetch(PDO::FETCH_ASSOC);
+    $emp = new Employee($employee['email']);
+    $emp->setName($employee['name']);
+    $emp->setSurname($employee['surname']);
+    $emp->setPhone($employee['phone']);
+
+    return $emp;
+  }
+
   public function getEmployee(int $userid): ?Employee {
     $empDetail = $this->getEmployeeDetail($userid);
     $emp = new Employee('');

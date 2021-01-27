@@ -10,6 +10,7 @@ class Client {
   private $address;
   private $phone;
   private $email;
+  private $id;
 
   public function __construct($name, $surname, $city, $address, $phone, $email) {
     $this->name = $name;
@@ -18,6 +19,14 @@ class Client {
     $this->address = $address;
     $this->phone = $phone;
     $this->email = $email;
+  }
+
+  public function setId($id): void {
+    $this->id = $id;
+  }
+
+  public function getId() {
+    return $this->id;
   }
 
   public function getName() {

@@ -4,6 +4,19 @@ require_once 'Repository.php';
 require_once __DIR__.'/../models/Schedule.php';
 
 class ScheduleRepository extends Repository {
+  public function getSchedule($scheduleIdDetail) {
+    $stmt = $this->database->connect()->prepare(
+      'SELECT * FROM schedules_details sd INNER JOIN schedules s ON sd.id_schedules = s.id WHERE sd.id = ?'
+    );
+    $stmt->execute([$scheduleIdDetail]);
+    $schedule = $stmt->fetch(PDO::FETCH_ASSOC);
+    $sch = new Schedule($schedule['day'], $schedule['hour']);
+    $sch->setReserved($schedule['reserved']);
+    $sch->setDate($schedule['date']);
+
+    return [$sch, $schedule['id_employees']];
+  }
+
   public function getScheduleId($empid, $hour, $date) {
     $stmt = $this->database->connect()->prepare(
       'SELECT sd.id as sdid FROM schedules s INNER JOIN schedules_details sd ON s.id = sd.id_schedules WHERE CAST(sd.date as DATE) = ? AND hour = ? AND id_employees = ?'
@@ -19,11 +32,18 @@ class ScheduleRepository extends Repository {
     $stmt->execute([true, $scheduleId]);
   }
 
-  public function unreserveSchedule($scheduleId) {
-    $stmt = $this->database->connect()->prepare(
-      'UPDATE schedules_details SET reserved = ? WHERE id = ?'
+  public function unreserveSchedule($orderId) {
+    $conn = $this->database->connect();
+    $stmt = $conn->prepare(
+      'SELECT sd.id FROM schedules_details sd RIGHT JOIN orders o ON sd.id = o.id_schedules_details WHERE o.id = ?'
     );
-    $stmt->execute([false, $scheduleId]);
+    $stmt->execute([$orderId]);
+    $order = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    $stmt = $this->database->connect()->prepare(
+      'UPDATE schedules_details SET reserved = false WHERE id = ?'
+    );
+    $stmt->execute([$order['id']]);
   }
 
   public function getBasicSchedule($empId) {

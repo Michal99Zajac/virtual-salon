@@ -34,58 +34,70 @@
       </div>
     </div>
     <div class="center-panels">
+      <?php foreach ($orders as $order): ?>
+      <?php [$employee, $client] = $order ?>
       <div class="panel">
         <div class="re-panel-left-area">
-          <h1 class="re-header">employee data</h1>
+          <h1 class="re-header">Employee</h1>
           <div class="re-profile-header">
             <img src="public/assets/img/person-profile.jpeg" class="re-profile-img">
-            <h1 class="re-profile-h1">Mary Adams</h1>
+            <h1 class="re-profile-h1"><?= $employee->getName() . ' ' . $employee->getSurname() ?></h1>
           </div>
           <ul class="re-data-ul">
             <li class="re-data-li">
-              <img src="public/assets/svg/calendar/calendar-grey.svg" class="re-data-img">
-              <p class="re-data-info">12 Nov 2021, 20:00</p>
-            </li>
-            <li class="re-data-li">
-              <img src="public/assets/svg/placeholder/placeholder-grey.svg" class="re-data-img">
-              <p class="re-data-info">Warsaw, Nowogordzka 96/12</p>
-            </li>
-            <li class="re-data-li">
-              <img src="public/assets/svg/user/user-grey.svg" class="re-data-img">
-              <p class="re-data-info">Mary Adams</p>
-            </li>
-            <li class="re-data-li">
               <img src="public/assets/svg/phone/telephone-grey.svg" class="re-data-img">
-              <p class="re-data-info">764 985 123</p>
+              <p class="re-data-info"><?= $employee->getPhone() ?></p>
             </li>
             <li class="re-data-li">
               <img src="public/assets/svg/envelop/email-grey.svg" class="re-data-img">
-              <p class="re-data-info">email@email.com</p>
+              <p class="re-data-info"><?= $employee->getEmail() ?></p>
+            </li>
+          </ul>
+          <h1 class="re-header">Client</h1>
+          <ul class="re-data-ul">
+            <li class="re-data-li">
+              <img src="public/assets/svg/calendar/calendar-grey.svg" class="re-data-img">
+              <?php $schedule = $employee->getSchedules() ?>
+              <p class="re-data-info"><?= $schedule->getDate() . ', ' . $schedule->getHour() ?></p>
+            </li>
+            <li class="re-data-li">
+              <img src="public/assets/svg/placeholder/placeholder-grey.svg" class="re-data-img">
+              <p class="re-data-info"><?= $client->getCity() . ', ' . $client->getAddress() ?></p>
+            </li>
+            <li class="re-data-li">
+              <img src="public/assets/svg/user/user-grey.svg" class="re-data-img">
+              <p class="re-data-info"><?= $client->getOrderingName() . ' ' . $client->getOrderingSurname() ?></p>
+            </li>
+            <li class="re-data-li">
+              <img src="public/assets/svg/phone/telephone-grey.svg" class="re-data-img">
+              <p class="re-data-info"><?= $client->getPhone() ?></p>
+            </li>
+            <li class="re-data-li">
+              <img src="public/assets/svg/envelop/email-grey.svg" class="re-data-img">
+              <p class="re-data-info"><?= $client->getEmail() ?></p>
             </li>
           </ul>
         </div>
         <div class="re-panel-right-area">
-          <h1 class="re-header">orders</h1>
+          <h1 class="re-header">Treatments</h1>
+          <?php $price = 0 ?>
           <ul class="re-price-ul">
+            <?php foreach ($employee->getTreatments() as $treatment): ?>
             <li class="re-price-li">
-              <p class="re-price-name">name</p>
-              <p class="re-price-value">10 $</p>
+              <p class="re-price-name"><?= $treatment->getName() ?></p>
+              <p class="re-price-value"><?= $treatment->getPrice() ?> $</p>
             </li>
-            <li class="re-price-li">
-              <p class="re-price-name">name</p>
-              <p class="re-price-value">10 $</p>
-            </li>
-            <li class="re-price-li">
-              <p class="re-price-name">name</p>
-              <p class="re-price-value">10 $</p>
-            </li>
+            <?php $price += $treatment->getPrice() ?>
+            <?php endforeach; ?>
           </ul>
-          <h1 class="re-price-sum">full: 10 $</h1>
+          <h1 class="re-price-sum">full: <?= $price ?> $</h1>
         </div>
-        <form>
-          <button class="re-panel-cancel">cancel</button>
+        <form action="deleteReservation" method="post">
+          <input type="hidden" value="<?= array_search($order, $orders) ?>" name="orderid">
+          <button type="submit" value="<?= $client->getId() ?>" name="clientid" class="re-panel-cancel">cancel</button>
         </form>
       </div>
+      <?php endforeach; ?>
     </div>
   </div>
 </body>

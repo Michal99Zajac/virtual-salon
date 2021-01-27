@@ -14,11 +14,13 @@ Router::get('register', 'SecurityController');
 Router::get('edit', 'ProfileController');
 Router::get('info', 'ProfileController');
 Router::get('main', 'WorkersController');
-Router::get('orders', 'DefaultController');
+Router::get('orders', 'OrderController');
 Router::get('profile', 'WorkersController');
-Router::get('reservations', 'DefaultController');
+Router::get('reservations', 'OrderController');
 Router::get('sheet', 'SheetController');
 Router::get('logout', 'DefaultController');
 Router::post('order', 'SheetController');
+Router::post('deleteReservation', 'OrderController');
+Router::post('deleteOrder', 'OrderController');
 
 Router::run($path);

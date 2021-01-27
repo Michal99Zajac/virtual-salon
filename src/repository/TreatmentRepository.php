@@ -4,6 +4,21 @@ require_once 'Repository.php';
 require_once __DIR__.'/../models/Treatment.php';
 
 class TreatmentRepository extends Repository {
+  public function getOrderTreatments($orderid) {
+    $result = [];
+    $stmt = $this->database->connect()->prepare(
+      'SELECT * FROM treatments t RIGHT JOIN treatments_orders too ON t.id = too.id_treatments WHERE too.id_orders = ?'
+    );
+    $stmt->execute([$orderid]);
+    $treatments = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($treatments as $treatment) {
+      $result[] = new Treatment($treatment['name'], $treatment['price']);
+    }
+
+    return $result;
+  }
+
   public function getTreatments($empId) {
     $result = [];
     $stmt = $this->database->connect()->prepare(

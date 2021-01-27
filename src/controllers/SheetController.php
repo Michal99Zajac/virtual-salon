@@ -62,7 +62,7 @@ class SheetController extends AppController {
     }
 
     if (!$this->emptyInput()) {
-      header("Location: {$this->url}/main?date={$_POST['date']}&id={$_POST['id']}&hour={$_POST['hour']}&error=emptyinput");
+      header("Location: {$this->url}/sheet?date={$_POST['date']}&id={$_POST['id']}&hour={$_POST['hour']}&error=emptyinput");
       exit();
     }
 
@@ -112,6 +112,10 @@ class SheetController extends AppController {
     }
 
     if (empty($_POST['email'])) {
+      return false;
+    }
+
+    if (empty($_POST['treatments'])) {
       return false;
     }
 
