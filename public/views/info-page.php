@@ -184,7 +184,9 @@
       </div>
       <?php endif; ?>
       <div class="panel">
-        <button class="standard-button">delete account</button>
+        <form action="delete" method="post">
+          <button type="submit" class="standard-button">delete account</button>
+        </form>
       </div>
     </div>
   </div>

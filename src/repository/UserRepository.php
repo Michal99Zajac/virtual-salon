@@ -186,6 +186,32 @@ class UserRepository extends Repository
     ]);
   }
 
+  public function deleteUser(int $userid) {
+    $conn = $this->database->connect();
+
+    $stmt = $conn->prepare(
+      'SELECT * FROM clients WHERE id_users = ?'
+    );
+    $stmt->execute([$userid]);
+    $invalid = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($invalid) {
+      return false;
+    }
+
+    $stmt = $conn->prepare(
+      'SELECT id_users_details as udId FROM users WHERE id = ?'
+    );
+    $stmt->execute([$userid]);
+    $userDetailId = $stmt->fetch(PDO::FETCH_ASSOC)['udId'];
+
+    $stmt = $conn->prepare(
+      'DELETE FROM users_details WHERE id = ?'
+    );
+    $stmt->execute([$userDetailId]);
+
+    return true;
+  }
+
   private function updateRoleUser(int $userId, User $user) {
     $stmt = $this->database->connect()->prepare(
       'SELECT id FROM roles r WHERE ? = name'

@@ -10,26 +10,7 @@
 </head>
 <body>
   <div class="container">
-    <div class="nb-container">
-      <h1 class="nb-logo">
-        <a class="nb-logo-a" href="./search">Virtual Salon</a>
-      </h1>
-      <div class="nb-right-section">
-        <a class="nb-tab" href="./orders">orders.</a>
-        <a class="nb-tab" href="./reservations">reservations.</a>
-        <a class="nb-tab" href="./info">my info.</a>
-        <div class="nb-profile">
-          <form action="logout" method="post">
-            <img src="public/assets/img/person-profile.jpeg" class="nb-profile-img"></img>
-            <button type="submit" class="nb-button">logout</button>
-          </form>
-        </div>
-        <div class="nb-sign nb-none">
-          <a  href="./login" class="nb-sign-button nb-sign-in">sign in</a>
-          <a href="./register" class="nb-sign-button nb-sign-up">sign up</a>
-        </div>
-      </div>
-    </div>
+    <?php include_once 'navbar.php' ?>
     <div class="center-panels">
       <div class="panel">
         <h1 class="panel-header">Change Photo</h1>

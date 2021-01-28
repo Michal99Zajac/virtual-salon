@@ -327,6 +327,48 @@ class EmployeeRepository extends Repository {
   }
   // end update section
 
+  public function deleteEmployee($userid) {
+    $userRepositoty = new UserRepository();
+    $conn = $this->database->connect();
+
+    $stmt = $conn->prepare(
+      'SELECT * FROM clients c INNER JOIN
+      (SELECT id_clients FROM orders o INNER JOIN
+      (SELECT id as sdid, empid FROM schedules_details sd INNER JOIN
+      (SELECT s.id as schid, e.id as empid FROM schedules s INNER JOIN
+      (SELECT id FROM employees e WHERE e.id_users = ?) e ON e.id = s.id_employees) e
+      ON sd.id_schedules =  e.schid) sd ON sd.sdid = o.id_schedules_details) o
+      ON o.id_clients = c.id'
+    );
+    $stmt->execute([$userid]);
+    $invalid = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($invalid) {
+      return false;
+    }
+
+    $stmt = $conn->prepare(
+      'SELECT id as edid FROM employees_details ed INNER JOIN 
+    (SELECT id_employees_details FROM employees e INNER JOIN users u ON u.id = e.id_users 
+    WHERE u.id = ?) e ON e.id_employees_details = ed.id'
+    );
+    $stmt->execute([$userid]);
+    $edid = $stmt->fetch(PDO::FETCH_ASSOC)['edid'];
+
+    $valid = $userRepositoty->deleteUser($userid);
+
+    if (!$valid) {
+      return false;
+    }
+
+    $stmt = $conn->prepare(
+      'DELETE FROM employees_details WHERE id = ?'
+    );
+    $stmt->execute([$edid]);
+
+    return true;
+  }
+
   private function addEmployeeDetail($conn): int {
     $stmt = $conn->prepare(
       'INSERT INTO employees_details DEFAULT VALUES'
