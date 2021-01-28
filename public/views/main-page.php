@@ -10,26 +10,7 @@
 </head>
 <body>
   <div class="container">
-    <div class="nb-container">
-      <h1 class="nb-logo">
-        <a class="nb-logo-a" href="./search">Virtual Salon</a>
-      </h1>
-      <div class="nb-right-section">
-        <a class="nb-tab" href="./orders">orders.</a>
-        <a class="nb-tab" href="./reservations">reservations.</a>
-        <a class="nb-tab" href="./info">my info.</a>
-        <div class="nb-profile">
-          <form action="logout" method="post">
-            <img src="public/assets/img/person-profile.jpeg" class="nb-profile-img"></img>
-            <button type="submit" class="nb-button">logout</button>
-          </form>
-        </div>
-        <div class="nb-sign nb-none">
-          <a  href="./login" class="nb-sign-button nb-sign-in">sign in</a>
-          <a href="./register" class="nb-sign-button nb-sign-up">sign up</a>
-        </div>
-      </div>
-    </div>
+    <?php include_once 'navbar.php' ?>
     <div class="mp-left-area">
       <div class="panel">
         <div class="mp-search-section">
@@ -63,12 +44,22 @@
         </form>
       </div>
     </div>
+    <?php $files = scandir(dirname(__DIR__).'/uploads'); ?>
     <div class="center-panels">
       <?php foreach ($employees as $employee): ?>
+      <?php
+        $id = array_search($employee, $employees);
+        $profile = null;
+        if (in_array("profile_{$id}.jpeg", $files)) {
+          $profile = "profile_{$id}.jpeg";
+        } else {
+          $profile = "profile_0.jpeg";
+        }
+      ?>
       <div class="panel">
         <div class="mp-center-subarea">
           <div class="mp-profile-area">
-            <div id="mp-photo" class="mp-profile-photo"></div>
+            <img src="public/uploads/<?= $profile ?>" class="mp-profile-photo">
             <div class="mp-profile-header">
               <h1 class="mp-profile-h1"><?= $employee->getName() . ' ' . $employee->getSurname() ?></h1>
               <p class="mp-profile-p"><?= $employee->getProfession() ?></p>
@@ -100,7 +91,7 @@
           <?php endforeach; ?>
         </div>
         <form action="profile" method="get">
-          <button type="submit" name="id" value="<?= array_search($employee, $employees) ?>" class="mp-center-info">more info<div class="mp-info-img"></div></button>
+          <button type="submit" name="id" value="<?= $id ?>" class="mp-center-info">more info<div class="mp-info-img"></div></button>
         </form>
       </div>
       <?php endforeach; ?>

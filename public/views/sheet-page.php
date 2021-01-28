@@ -10,32 +10,22 @@
 </head>
 <body>
   <div class="container">
-    <div class="nb-container">
-      <h1 class="nb-logo">
-        <a class="nb-logo-a" href="./search">Virtual Salon</a>
-      </h1>
-      <div class="nb-right-section">
-        <a class="nb-tab" href="./orders">orders.</a>
-        <a class="nb-tab" href="./reservations">reservations.</a>
-        <a class="nb-tab" href="./info">my info.</a>
-        <div class="nb-profile">
-          <form action="logout" method="post">
-            <img src="public/assets/img/person-profile.jpeg" class="nb-profile-img"></img>
-            <button type="submit" class="nb-button">logout</button>
-          </form>
-        </div>
-        <div class="nb-sign nb-none">
-          <a  href="./login" class="nb-sign-button nb-sign-in">sign in</a>
-          <a href="./register" class="nb-sign-button nb-sign-up">sign up</a>
-        </div>
-      </div>
-    </div>
+    <?php include_once 'navbar.php' ?>
     <div class="center-panels">
       <form method="post" action="order" class="form-width-max">
         <div class="panel">
           <h1 class="sheet-header">ordering a visit</h1>
           <div class="profile-beam">
-            <img src="public/assets/img/person-profile.jpeg" class="profile-img">
+            <?php
+              $files = scandir(dirname(__DIR__).'/uploads');
+              $profile = null;
+              if (in_array("profile_{$_GET['id']}.jpeg", $files)) {
+                $profile = "profile_{$_GET['id']}.jpeg";
+              } else {
+                $profile = "profile_0.jpeg";
+              }
+            ?>
+            <img src="public/uploads/<?= $profile ?>" class="profile-img">
             <div class="profile-info">
               <h1 class="profile-name"><?= $employee->getName() . ' ' . $employee->getSurname() ?></h1>
               <p class="profile-profession"><?= $employee->getProfession() ?></p>

@@ -13,26 +13,7 @@
 </head>
 <body>
   <div class="container">
-    <div class="nb-container">
-      <h1 class="nb-logo">
-        <a class="nb-logo-a" href="./search">Virtual Salon</a>
-      </h1>
-      <div class="nb-right-section">
-        <a class="nb-tab" href="./orders">orders.</a>
-        <a class="nb-tab" id="nb-current-tab" href="./reservations">reservations.</a>
-        <a class="nb-tab" href="./info">my info.</a>
-        <div class="nb-profile">
-          <form action="" method="get">
-            <img src="public/assets/img/person-profile.jpeg" class="nb-profile-img"></img>
-            <button class="nb-button">logout</button>
-          </form>
-        </div>
-        <div class="nb-sign nb-none">
-          <a  href="./login" class="nb-sign-button nb-sign-in">sign in</a>
-          <a href="./register" class="nb-sign-button nb-sign-up">sign up</a>
-        </div>
-      </div>
-    </div>
+    <?php include_once 'navbar.php' ?>
     <div class="center-panels">
       <?php foreach ($orders as $order): ?>
       <?php [$employee, $client] = $order ?>
@@ -40,8 +21,7 @@
         <div class="re-panel-left-area">
           <h1 class="re-header">Employee</h1>
           <div class="re-profile-header">
-            <img src="public/assets/img/person-profile.jpeg" class="re-profile-img">
-            <h1 class="re-profile-h1"><?= $employee->getName() . ' ' . $employee->getSurname() ?></h1>
+            <h1 class="re-profile-h1">fullname: <?= $employee->getName() . ' ' . $employee->getSurname() ?></h1>
           </div>
           <ul class="re-data-ul">
             <li class="re-data-li">

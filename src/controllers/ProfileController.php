@@ -8,6 +8,11 @@ require_once __DIR__.'/../repository/TreatmentRepository.php';
 require_once __DIR__.'/../models/User.php';
 
 class ProfileController extends AppController {
+
+  const MAX_FILE_SIZE = 1024*1024;
+  const SUPPORTED_TYPES = ['image/png', 'image/jpeg'];
+  const UPLOAD_DIRECTORY = '/../public/uploads/';
+
   private $userRepository;
   private $employeeRepository;
   private $scheduleRepository;
@@ -91,6 +96,42 @@ class ProfileController extends AppController {
     }
 
     return $this->render('info-page', ['user' => $user]);
+  }
+
+  public function upload() {
+    if (!$this->isSession()) {
+      header("Location: {$this->url}/search");
+      exit();
+    }
+
+    if (!$this->isPost()) {
+      header("Location: {$this->url}/edit");
+      exit();
+    }
+
+    if (is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])) {
+      move_uploaded_file(
+        $_FILES['file']['tmp_name'],
+        dirname(__DIR__).self::UPLOAD_DIRECTORY.'profile_'.$_SESSION['id'].'.jpeg'
+      );
+
+      header("Location: {$this->url}/edit?status=uploaded");
+      exit();
+    }
+
+    return header("Location: {$this->url}/edit?status=nouploaded");
+  }
+
+  private function validate(array $file): bool
+  {
+    if ($file['size'] > self::MAX_FILE_SIZE) {
+      return false;
+    }
+
+    if (!isset($file['type']) || !in_array($file['type'], self::SUPPORTED_TYPES)) {
+      return false;
+    }
+    return true;
   }
 
   private function update() {

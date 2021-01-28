@@ -33,10 +33,10 @@
     <div class="center-panels">
       <div class="panel">
         <h1 class="panel-header">Change Photo</h1>
-        <form>
+        <form action="upload" method="post" ENCTYPE="multipart/form-data">
           <input type="file" name="file" id="file-photo">
           <label class="file-label" for="file-photo">choose file</label>
-          <button class="standard-button">upload</button>
+          <button type="submit" class="standard-button">upload</button>
         </form>
       </div>
       <div class="panel">

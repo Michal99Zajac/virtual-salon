@@ -10,26 +10,7 @@
 </head>
 <body>
   <div class="container">
-    <div class="nb-container">
-      <h1 class="nb-logo">
-        <a class="nb-logo-a" href="./search">Virtual Salon</a>
-      </h1>
-      <div class="nb-right-section">
-        <a class="nb-tab" id="nb-current-tab" href="./orders">orders.</a>
-        <a class="nb-tab" href="./reservations">reservations.</a>
-        <a class="nb-tab" href="./info">my info.</a>
-        <div class="nb-profile">
-          <form action="" method="get">
-            <img src="public/assets/img/person-profile.jpeg" class="nb-profile-img"></img>
-            <button class="nb-button">logout</button>
-          </form>
-        </div>
-        <div class="nb-sign nb-none">
-          <a  href="./login" class="nb-sign-button nb-sign-in">sign in</a>
-          <a href="./register" class="nb-sign-button nb-sign-up">sign up</a>
-        </div>
-      </div>
-    </div>
+    <?php include_once 'navbar.php' ?>
     <div class="center-panels">
       <?php foreach ($orders as $order): ?>
       <?php [$employee, $client] = $order ?>

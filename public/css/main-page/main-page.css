@@ -162,9 +162,6 @@ input[type="checkbox"] {
   .mp-show-button:hover {
     color: #fa8072; }
 
-#mp-photo {
-  content: url(../../assets/img/person-profile.jpeg); }
-
 .mp-center-subarea {
   display: flex;
   justify-content: space-evenly;

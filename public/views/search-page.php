@@ -15,8 +15,17 @@
           <a href="./login" class="sign-button">sign in</a>
           <a href="./register" class="sign-button">sign up</a>
         <?php else : ?>
+          <?php
+            $files = scandir(dirname(__DIR__).'/uploads');
+            $profile = null;
+            if (in_array("profile_{$_SESSION['id']}.jpeg", $files)) {
+              $profile = "profile_{$_SESSION['id']}.jpeg";
+            } else {
+              $profile = "profile_0.jpeg";
+            }
+          ?>
           <form method="GET" action="info">
-            <button class="profile-button" type="submit"><img src="public/assets/img/person-profile.jpeg" class="profile-photo"></button>
+            <button class="profile-button" type="submit"><img src="public/uploads/<?= $profile ?>" class="profile-photo"></button>
           </form>
           <form action="logout" method="post"><button type="submit" class="profile-logout">logout</button></form>
         <?php endif; ?>

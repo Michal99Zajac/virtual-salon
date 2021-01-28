@@ -22,5 +22,6 @@ Router::get('logout', 'DefaultController');
 Router::post('order', 'SheetController');
 Router::post('deleteReservation', 'OrderController');
 Router::post('deleteOrder', 'OrderController');
+Router::post('upload', 'ProfileController');
 
 Router::run($path);
