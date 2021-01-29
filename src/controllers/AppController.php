@@ -1,5 +1,6 @@
 <?php
 
+require_once __DIR__.'/../repository/UserRepository.php';
 
 class AppController {
   private $request;
@@ -26,6 +27,9 @@ class AppController {
     if (!$this->isPost()) {
       return header("Location: {$this->url}/search");
     }
+
+    $userRepository = new UserRepository();
+    $userRepository->logoutUser($_SESSION['id']);
 
     session_unset();
     session_destroy();

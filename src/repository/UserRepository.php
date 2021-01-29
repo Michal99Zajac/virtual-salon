@@ -199,10 +199,11 @@ class UserRepository extends Repository
     }
 
     $stmt = $conn->prepare(
-      'SELECT id_users_details as udId FROM users WHERE id = ?'
+      'SELECT id_users_details FROM users WHERE id = ?'
     );
     $stmt->execute([$userid]);
-    $userDetailId = $stmt->fetch(PDO::FETCH_ASSOC)['udId'];
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    $userDetailId = $user['id_users_details'];
 
     $stmt = $conn->prepare(
       'DELETE FROM users_details WHERE id = ?'
@@ -210,6 +211,31 @@ class UserRepository extends Repository
     $stmt->execute([$userDetailId]);
 
     return true;
+  }
+
+  public function isLoggedUser($email) {
+    $stmt = $this->database->connect()->prepare(
+      'SELECT * FROM users WHERE email = ?'
+    );
+    $stmt->execute([$email]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    $logged = $user['logged'];
+
+    return $logged;
+  }
+
+  public function logoutUser($id) {
+    $stmt = $this->database->connect()->prepare(
+      'UPDATE users SET logged = false WHERE id = ?'
+    );
+    $stmt->execute([$id]);
+  }
+
+  public function loginUser($id) {
+    $stmt = $this->database->connect()->prepare(
+      'UPDATE users SET logged = true WHERE id = ?'
+    );
+    $stmt->execute([$id]);
   }
 
   private function updateRoleUser(int $userId, User $user) {

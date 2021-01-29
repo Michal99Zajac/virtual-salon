@@ -95,4 +95,8 @@ input[type="radio"] {
 img {
   width: 100%; }
 
+.invalid {
+  box-shadow: 0 0 0.6em -1px #d73a49;
+  color: #d73a49; }
+
 /*# sourceMappingURL=account-page.css.map */

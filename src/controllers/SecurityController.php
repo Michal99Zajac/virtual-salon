@@ -47,6 +47,11 @@ class SecurityController extends AppController {
       exit();
     }
 
+    if ($this->userRepository->isLoggedUser($user->getEmail())) {
+      header("Location: {$this->url}/login?error=userislogged");
+      exit();
+    }
+
     $this->loginUser($user);
     header("Location: {$this->url}/search");
   }
@@ -108,6 +113,7 @@ class SecurityController extends AppController {
     $_SESSION['email'] = $user->getEmail();
     $_SESSION['role'] = $user->getRole();
     $_SESSION['id'] = $this->userRepository->getUserId($user->getEmail());
+    $this->userRepository->loginUser($_SESSION['id']);
   }
 
   private function emptyInputSignup($email, $name, $surname, $pwd, $pwdRepeat, $role) {

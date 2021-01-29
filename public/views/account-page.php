@@ -5,6 +5,7 @@
   <title>account page</title>
   <link rel="stylesheet" type="text/css" href="public/css/standard-body/standard-body.css">
   <link rel="stylesheet" type="text/css" href="public/css/account-page/account-page.css">
+  <script type="text/javascript" src="./public/js/validation.js" defer></script>
 </head>
 <body>
   <div class="container">

@@ -1,6 +1,7 @@
 <?php
 
 require_once 'Routing.php';
+require_once 'src/repository/UserRepository.php';
 
 session_start();
 
