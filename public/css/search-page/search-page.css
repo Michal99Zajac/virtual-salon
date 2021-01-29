@@ -101,4 +101,17 @@
   .profile-button:hover {
     opacity: 0.9; }
 
+@media only screen and (max-device-width: 420px) {
+  .top-area {
+    flex-direction: column-reverse; }
+
+  .logo-text {
+    margin: 0.2em 0; }
+
+  .sign-button {
+    font-size: 1.8em; }
+
+  .search-container {
+    flex-direction: column; } }
+
 /*# sourceMappingURL=search-page.css.map */

@@ -103,3 +103,31 @@
 .nb-profile-img
   height: 100%
   border-radius: 0.3em 0 0 0.3em
+
+.nb-logo-svg
+  display: none
+
+@media only screen and (max-device-width: 420px)
+  .nb-logo
+    display: none
+
+  .nb-logo-svg
+    display: block
+
+    img
+      height: 3em
+      margin: 0 0.5em
+
+  .nb-profile-img
+    display: none
+
+  .nb-button
+    border-radius: 0.3em
+    font-size: 1.6em
+
+  .nb-container
+    justify-content: center
+
+  .nb-tab
+    font-size: 1.25em
+    margin: 0

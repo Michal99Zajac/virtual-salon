@@ -146,4 +146,17 @@ input[type="radio"] {
     .lo-button + a:hover {
       color: #fa8072; }
 
+@media only screen and (max-device-width: 420px) {
+  .container {
+    justify-content: center; }
+
+  .lo-container {
+    width: auto;
+    margin: 1em; }
+
+  .lo-logo {
+    margin-bottom: 1em; }
+    .lo-logo a {
+      font-size: 1.2em; } }
+
 /*# sourceMappingURL=login-page.css.map */

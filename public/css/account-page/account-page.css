@@ -99,4 +99,9 @@ img {
   box-shadow: 0 0 0.6em -1px #d73a49;
   color: #d73a49; }
 
+@media only screen and (max-device-width: 420px) {
+  .panel {
+    width: 90%;
+    margin: 1.2em 2em 0 2em; } }
+
 /*# sourceMappingURL=account-page.css.map */

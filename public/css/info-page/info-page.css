@@ -277,4 +277,28 @@
 .value-price {
   color: #707070; }
 
+@media only screen and (max-device-width: 420px) {
+  .data {
+    overflow-wrap: anywhere; }
+
+  .description {
+    font-size: 1.2em; }
+
+  .name-price, .value-price {
+    font-size: 1em;
+    overflow-wrap: anywhere; }
+
+  .add-info-subheader {
+    font-size: 1.6em; }
+
+  .informations li {
+    font-size: 1.3em;
+    overflow-wrap: anywhere; }
+
+  .name-data, .data {
+    font-size: 1.4em; }
+
+  .day-container {
+    margin: 0 0.1em; } }
+
 /*# sourceMappingURL=info-page.css.map */

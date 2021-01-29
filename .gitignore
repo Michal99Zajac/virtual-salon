@@ -2,7 +2,7 @@
 .vscode
 
 # php storm
-.idea
+.idea/
 
 # sass
 .sass-cache

@@ -2,6 +2,7 @@
   <h1 class="nb-logo">
     <a class="nb-logo-a" href="./search">Virtual Salon</a>
   </h1>
+  <a class="nb-logo-svg" href="./search"><img src="public/assets/svg/salon/beauty-salon-white.svg"></a>
   <div class="nb-right-section">
     <?php if (isset($_SESSION['id'])): ?>
     <?php if ($_SESSION['role'] == 'business'): ?>

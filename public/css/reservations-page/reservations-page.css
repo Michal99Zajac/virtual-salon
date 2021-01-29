@@ -130,4 +130,8 @@
 .re-data-img {
   height: 1.6em; }
 
+@media only screen and (max-device-width: 420px) {
+  .re-data-info, .re-price-name {
+    overflow-wrap: anywhere; } }
+
 /*# sourceMappingURL=reservations-page.css.map */
