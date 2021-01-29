@@ -1,41 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Rubik:wght@300&display=swap");
-.middle-content {
-  height: auto;
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  position: relative;
-  flex-direction: column; }
-
-.sheet-panel {
-  height: 100%;
-  width: 40%;
-  min-width: 720px;
-  padding: 20px;
-  margin: 10px 0;
-  box-sizing: border-box;
-  background: #ffffff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px -1px #707070; }
-
 .sheet-header {
   width: 100%;
   margin: 0;
   font-family: "Rubik";
-  font-size: 1.4em;
+  font-size: 2em;
   color: #fa8072;
   border-bottom: 2px solid #fa8072;
-  margin-bottom: 10px; }
+  margin-bottom: 0.6em; }
 
 .profile-beam {
   width: 100%;
-  height: 60px;
+  height: 3.75em;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding-bottom: 10px;
-  margin-bottom: 10px; }
+  padding-bottom: 0.6em;
+  margin-bottom: 0.6em; }
 
 .profile-info {
   width: 100%;
@@ -43,14 +23,14 @@
   display: flex;
   align-items: flex-start;
   align-content: flex-start;
-  margin-left: 20px;
+  margin-left: 1.25em;
   justify-content: flex-start;
   flex-wrap: wrap; }
 
 .profile-name {
   width: 100%;
   margin: 0;
-  font-size: 1em;
+  font-size: 1.5em;
   font-family: "Rubik";
   color: #fa8072; }
 
@@ -58,7 +38,7 @@
   margin: 0;
   font-family: "Rubik";
   color: #707070;
-  font-size: 0.8em;
+  font-size: 1em;
   width: 100%; }
 
 #sheet-profile-img {
@@ -67,9 +47,9 @@
 .profile-img {
   height: 100%;
   width: auto;
-  border-radius: 5px;
+  border-radius: 0.3em;
   box-shadow: 2px;
-  box-shadow: 0 0 10px -1px #707070; }
+  box-shadow: 0 0 0.6em -1px #707070; }
 
 .sheet-info-ul {
   margin: 0;
@@ -85,38 +65,26 @@
   align-items: center;
   justify-content: flex-start;
   border-bottom: 1px solid #a1a0a0;
-  padding-bottom: 5px;
-  margin-bottom: 10px; }
+  padding-bottom: 0.3em;
+  margin-bottom: 0.6em; }
 
 .sheet-info {
   margin: 0;
   overflow-wrap: anywhere;
   width: 100%;
-  font-size: 0.8em;
+  font-size: 1em;
   font-family: "Rubik";
   color: #a1a0a0; }
 
 .sheet-info-img {
-  height: 25px;
-  margin-right: 10px;
+  height: 1.6em;
+  margin-right: 0.6em;
   box-sizing: border-box; }
-
-#sheet-date-img {
-  content: url(../../assets/svg/calendar/calendar-grey-bright.svg); }
-
-#sheet-phone-img {
-  content: url(../../assets/svg/phone/telephone-grey-bright.svg); }
-
-#sheet-email-img {
-  content: url(../../assets/svg/envelop/email-grey-bright.svg); }
-
-#sheet-payment-img {
-  content: url(../../assets/svg/card/credit-card-grey-bright.svg); }
 
 .sheet-section {
   width: 100%;
   height: auto;
-  margin-bottom: 30px;
+  margin-bottom: 1.9em;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -126,11 +94,11 @@
   width: 100%;
   height: auto;
   margin: 0;
-  margin-bottom: 5px;
-  font-size: 0.9em;
+  margin-bottom: 0.3em;
+  font-size: 1.6em;
   font-family: "Rubik";
   color: #fa8072;
-  padding-bottom: 5px;
+  padding-bottom: 0.3em;
   border-bottom: 1px solid #707070; }
 
 .sheet-type {
@@ -152,17 +120,17 @@
 
 .radio-sheet-label {
   width: 100%;
-  height: 50px;
-  margin: 5px;
+  padding: 0.4em 0;
+  margin: 0.3em;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 0.3em;
   background: #707070;
-  box-shadow: 0 0 5px -1px #000000;
+  box-shadow: 0 0 0.3em -1px #000000;
   color: #ffffff;
-  font-size: 1.1em;
+  font-size: 1.4em;
   font-family: "Rubik"; }
 
 .sheet-treatment-ul {
@@ -179,15 +147,15 @@
   justify-content: flex-start;
   align-items: center;
   flex-direction: row-reverse;
-  margin: 10px 0; }
+  margin: 0.6em 0; }
 
 .treatment-checkbox {
-  width: 20px;
-  height: 20px;
-  min-width: 20px;
+  width: 1.25em;
+  height: 1.25em;
+  min-width: 1.25em;
   border: 2px solid #707070;
-  border-radius: 5px;
-  margin-left: 20px;
+  border-radius: 0.3em;
+  margin-left: 1.25em;
   background: #ffffff; }
   .treatment-checkbox:hover {
     border-color: #fa8072; }
@@ -210,10 +178,10 @@
 .treatment-p {
   width: 100%;
   margin: 0;
-  margin-right: 10px;
+  margin-right: 0.6em;
   border-bottom: 1px solid #a1a0a0;
   font-family: "Rubik";
-  font-size: 0.9em;
+  font-size: 1.2em;
   color: #a1a0a0;
   overflow-wrap: anywhere; }
 
@@ -231,15 +199,14 @@
 
 .sheet-text-input {
   width: 100%;
-  height: 40px;
-  margin: 5px 0;
-  padding: 0;
-  padding-left: 20px;
+  padding: 0.3em 0;
+  margin: 0.3em 0;
+  padding-left: 1.25em;
   border: none;
-  box-shadow: 0 0 10px -1px #707070;
+  box-shadow: 0 0 0.6em -1px #707070;
   font-family: "Rubik";
-  font-size: 0.9em;
-  border-radius: 5px;
+  font-size: 1.3em;
+  border-radius: 0.3em;
   color: #707070; }
   .sheet-text-input:focus {
     outline: none;
@@ -256,20 +223,5 @@
     color: #ffb3aa; }
     .sheet-text-input:hover::placeholder {
       color: #ffb3aa; }
-
-.sheet-post-button {
-  width: 100%;
-  height: 50px;
-  border: none;
-  border-radius: 5px;
-  background: #707070;
-  color: #ffffff;
-  font-size: 1.2em;
-  box-shadow: 0 0 10px -1px #707070;
-  font-family: "Rubik"; }
-  .sheet-post-button:focus {
-    outline: none; }
-  .sheet-post-button:hover {
-    background: #fa8072; }
 
 /*# sourceMappingURL=sheet-page.css.map */

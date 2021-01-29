@@ -1,0 +1,387 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Rubik:wght@300&display=swap");
+.standard-button {
+  margin: 0.4em 0; }
+
+.panel-header, .panel-subheader {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 0.4em;
+  padding-bottom: 0.1em;
+  border-bottom: 0.08em solid #707070;
+  box-sizing: border-box;
+  font-family: "Rubik";
+  color: #fa8072;
+  font-size: 2em; }
+
+.panel-subheader {
+  border-color: #a1a0a0;
+  color: #a1a0a0;
+  font-size: 1.8em;
+  margin-top: 0.4em; }
+
+.first-panel-subheader {
+  margin-top: 0; }
+
+.panel-photo-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+#file-photo {
+  display: none; }
+
+.file-label {
+  font-size: 1.4em;
+  padding: 0.4em;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0.4em 0;
+  box-shadow: 0 0 0.3em -1px #707070;
+  background: #ffb3aa;
+  border-radius: 0.3em;
+  text-align: center;
+  font-family: "Rubik";
+  color: #ffffff; }
+  .file-label:hover {
+    background: #a1a0a0; }
+
+.panel form div {
+  margin-bottom: 0.9em;
+  flex-wrap: wrap;
+  justify-content: left; }
+  .panel form div:last-child {
+    margin-bottom: 0; }
+
+.input-text {
+  width: 100%;
+  font-size: 1.4em;
+  border-radius: 0.3em;
+  padding: 0.2em 0.1em;
+  padding-left: 0.5em;
+  color: #707070;
+  border: none;
+  box-shadow: 0 0 0.3em -1px #000000;
+  margin: 0;
+  font-family: "Rubik";
+  min-height: 1.2em; }
+  .input-text::placeholder {
+    color: #a1a0a0; }
+  .input-text:focus {
+    outline: none;
+    color: #fa8072; }
+    .input-text:focus::placeholder {
+      color: #ffb3aa; }
+    .input-text:focus:hover {
+      color: #fa8072; }
+  .input-text:hover {
+    color: #fa8072; }
+    .input-text:hover::placeholder {
+      color: #ffb3aa; }
+
+p.input-text:hover {
+  color: #707070; }
+
+.input-text-span {
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Rubik";
+  background: #fa8072;
+  border-radius: 0.3em;
+  color: #ffffff;
+  padding: 0.1em 0.6em;
+  margin-bottom: 0.4em; }
+
+.schedule-day-input {
+  margin: 0.2em;
+  font-size: 1.2em;
+  padding: 0.3em 0.4em;
+  border: none;
+  border-radius: 0.3em;
+  background: #707070;
+  color: #ffffff;
+  font-family: "Rubik";
+  box-shadow: 0 0 0.3em -1px #000000; }
+  .schedule-day-input:hover {
+    background: #fa8072; }
+  .schedule-day-input:focus {
+    outline: none; }
+
+.delete-input-button {
+  width: 80%;
+  margin-top: 0.6em;
+  font-size: 1.3em;
+  padding: 0.3em;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 0.3em;
+  color: #ffffff;
+  background: #a1a0a0;
+  overflow-wrap: anywhere;
+  white-space: normal; }
+  .delete-input-button:hover {
+    background: #d73a49; }
+
+.add-input-text {
+  width: 30%;
+  font-size: 1.4em;
+  border-radius: 0.3em;
+  border: none;
+  text-align: center;
+  color: #707070;
+  margin-right: 0.5em;
+  box-shadow: 0 0 0.3em -1px #000000; }
+  .add-input-text::placeholder {
+    color: #a1a0a0; }
+  .add-input-text:focus {
+    outline: none;
+    color: #fa8072; }
+    .add-input-text:focus::placeholder {
+      color: #ffb3aa; }
+    .add-input-text:focus:hover {
+      color: #fa8072; }
+  .add-input-text:hover {
+    color: #fa8072; }
+    .add-input-text:hover::placeholder {
+      color: #ffb3aa; }
+
+.add-button {
+  font-size: 1.4em;
+  border: none;
+  border-radius: 0.3em;
+  background: #707070;
+  color: #ffffff;
+  font-family: "Rubik";
+  box-sizing: border-box;
+  padding: 0.04em 0.5em;
+  box-shadow: 0 0 0.3em -1px #000000; }
+  .add-button:hover {
+    background: #fa8072; }
+    .add-button:hover + .add-input-text {
+      border-color: #fa8072; }
+
+input[name="description"] {
+  width: 100%;
+  border: 0.08em solid #707070;
+  font-size: 1.4em;
+  border-radius: 0.3em;
+  padding: 0.2em;
+  font-family: "Rubik";
+  margin-bottom: 0.5em; }
+  input[name="description"]::placeholder {
+    color: #a1a0a0; }
+  input[name="description"]:focus {
+    outline: none;
+    color: #fa8072;
+    border-color: #fa8072; }
+    input[name="description"]:focus::placeholder {
+      color: #ffb3aa; }
+    input[name="description"]:focus:hover {
+      color: #fa8072; }
+  input[name="description"]:hover {
+    color: #fa8072; }
+    input[name="description"]:hover::placeholder {
+      color: #ffb3aa; }
+
+.max-delete-input {
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0.6em; }
+  .max-delete-input:last-child {
+    margin-bottom: 0; }
+
+.checkbox-label {
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: "Rubik";
+  color: #707070;
+  font-size: 1.1em; }
+
+.checkbox-mock {
+  width: 1.4em;
+  height: 1.4em;
+  background: #ffffff;
+  border-radius: 0.3em;
+  border: 0.1px solid #707070;
+  margin-right: 0.8em; }
+
+input[type="checkbox"] {
+  display: none; }
+  input[type="checkbox"]:checked ~ .checkbox-mock {
+    background: #fa8072;
+    border-color: #fa8072; }
+    input[type="checkbox"]:checked ~ .checkbox-mock:hover {
+      background: #fa8072;
+      border-color: #fa8072; }
+  input[type="checkbox"]:disabled ~ .checkbox-mock {
+    border-color: #a1a0a0;
+    background: #a1a0a0; }
+    input[type="checkbox"]:disabled ~ .checkbox-mock:hover {
+      border-color: #a1a0a0; }
+  input[type="checkbox"]:disabled:checked ~ .checkbox-mock {
+    background: #a1a0a0;
+    border-color: #a1a0a0; }
+    input[type="checkbox"]:disabled:checked ~ .checkbox-mock:hover {
+      background: #a1a0a0;
+      border-color: #a1a0a0; }
+
+.list-span {
+  width: 100%;
+  font-size: 1.2em;
+  font-family: "Rubik";
+  padding: 0.2em 0.6em;
+  margin: 0.1em 0 0.8em 0;
+  box-sizing: border-box;
+  border-radius: 0.3em;
+  background: #707070;
+  color: #ffffff;
+  overflow-wrap: anywhere;
+  box-shadow: 0 0 0.3em -1px #000000; }
+
+.delete-button {
+  font-size: 1.2em;
+  font-family: "Rubik";
+  border: none;
+  border-radius: 0.3em;
+  padding: 0.2em 0.6em;
+  color: #ffffff;
+  background: #a1a0a0;
+  box-shadow: 0 0 0.3em -1px #000000;
+  margin-bottom: 0.2em; }
+  .delete-button:hover {
+    background: #d73a49; }
+    .delete-button:hover ~ .list-span {
+      background: #d73a49; }
+
+.list-price {
+  width: max-content;
+  white-space: nowrap;
+  margin: 0;
+  margin-bottom: 0.2em;
+  margin-left: 0.5em; }
+
+.add-button-product {
+  width: 15%;
+  font-size: 1.2em;
+  margin: 0.2em;
+  font-family: "Rubik";
+  border: none;
+  border-radius: 0.3em;
+  color: #ffffff;
+  background: #a1a0a0;
+  padding: 0.2em 0.6em;
+  box-shadow: 0 0 0.3em -1px #000000; }
+  .add-button-product:focus {
+    outline: none; }
+  .add-button-product:hover {
+    background: #fa8072; }
+    .add-button-product:hover ~ .add-input-specjal {
+      box-shadow: 0 0 0.3em -1px #fa8072; }
+
+.add-input-specjal {
+  padding: 0.2em 0.6em;
+  font-size: 1.2em;
+  margin: 0 0.2em;
+  border: none;
+  border-radius: 0.3em;
+  font-family: "Rubik";
+  color: #707070;
+  box-shadow: 0 0 0.3em -1px #000000; }
+  .add-input-specjal::placeholder {
+    color: #a1a0a0; }
+  .add-input-specjal:focus {
+    color: #fa8072; }
+    .add-input-specjal:focus::placeholder {
+      color: #ffb3aa; }
+    .add-input-specjal:focus:hover {
+      color: #fa8072; }
+  .add-input-specjal:hover {
+    color: #fa8072; }
+    .add-input-specjal:hover::placeholder {
+      color: #ffb3aa; }
+
+.add-product {
+  margin-top: 0.5em;
+  width: 100%; }
+
+.add-price {
+  width: 50%;
+  text-align: center; }
+
+.panel form .schedule-time-container {
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 0.5em 0.6em;
+  margin-top: 0.4em;
+  border-radius: 0.3em;
+  box-shadow: 0 0 0.3em -1px #000000;
+  margin-bottom: 0.4em; }
+  .panel form .schedule-time-container:last-child {
+    margin-bottom: 0; }
+
+.schedule-time-subcontainer {
+  width: auto;
+  align-items: center;
+  height: auto; }
+
+.schedule-time {
+  font-size: 1.2em;
+  margin: 0;
+  font-family: "Rubik";
+  color: #707070; }
+
+.schedule-time-day {
+  margin: 0 0.6em;
+  padding: 0.2em 0.4em;
+  font-family: "Rubik";
+  color: #ffffff;
+  font-size: 1.2em;
+  border-radius: 0.3em;
+  background: #a1a0a0;
+  box-shadow: 0 0 0.3em -1px #000000; }
+
+.schedule-time-button {
+  padding: 0.2em 0.4em;
+  font-family: "Rubik";
+  color: #ffffff;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 0.3em;
+  background: #a1a0a0;
+  box-shadow: 0 0 0.3em -1px #000000; }
+  .schedule-time-button:hover {
+    background: #d73a49; }
+
+textarea {
+  width: 100%;
+  border-radius: 0.3em;
+  resize: none;
+  font-size: 1.2em;
+  height: 20em;
+  margin-bottom: 0.8em;
+  border: none;
+  box-shadow: 0 0 0.3em -1px #000000;
+  padding: 0.4em;
+  font-family: "Rubik";
+  color: #707070; }
+  textarea::placeholder {
+    color: #a1a0a0; }
+  textarea:focus {
+    outline: none;
+    color: #fa8072; }
+    textarea:focus:hover {
+      color: #fa8072; }
+      textarea:focus:hover::placeholder {
+        color: #fa8072; }
+  textarea:hover {
+    color: #fa8072; }
+    textarea:hover::placeholder {
+      color: #fa8072; }
+
+/*# sourceMappingURL=edit-page.css.map */

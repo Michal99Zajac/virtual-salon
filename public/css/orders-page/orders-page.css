@@ -1,67 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Rubik:wght@300&display=swap");
-.middle-content {
-  width: 100%;
-  height: auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column; }
-
-.mp-page-select-area {
-  width: 100%;
-  height: auto;
-  max-height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 0; }
-
-.mp-page-select-ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  width: 100%;
-  height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-
-.mp-page-select-li {
-  padding: 10px;
-  margin: 5px;
-  background: #fa8072;
-  box-sizing: border-box;
-  font-size: 1.2em;
-  border-radius: 5px;
-  color: #ffffff;
-  font-family: "Rubik";
-  min-width: 50px;
-  min-height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 10px -1px #707070; }
-  .mp-page-select-li:hover {
-    background: #707070; }
-
-#page-selected {
-  background: #707070; }
-
-.or-panel {
-  width: 40%;
-  padding: 20px;
-  min-width: 720px;
-  background: #ffffff;
-  box-sizing: border-box;
-  margin-top: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px -1px #707070;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  flex-wrap: wrap; }
-
 .or-panel-right-area, .or-panel-left-area {
   height: auto;
   display: flex;
@@ -72,18 +9,18 @@
 
 .or-panel-right-area {
   width: 40%;
-  padding-left: 10px; }
+  padding-left: 0.6em; }
 
 .or-panel-left-area {
   width: 60%;
-  padding-right: 20px;
+  padding-right: 1.25em;
   border-right: 1px solid #a1a0a0; }
 
 .or-header {
   width: 100%;
   margin: 0;
   text-align: center;
-  font-size: 1.4em;
+  font-size: 2em;
   font-family: "Rubik";
   color: #fa8072; }
 
@@ -92,7 +29,7 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
-  margin: 10px 0; }
+  margin: 0.6em 0; }
 
 .or-price-li {
   width: 100%;
@@ -101,14 +38,14 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #a1a0a0;
-  margin-bottom: 10px; }
+  margin-bottom: 0.6em; }
   .or-price-li:last-child {
     margin-bottom: 0; }
 
 .or-price-name, .or-price-value {
   height: auto;
   margin: 0;
-  font-size: 0.9em;
+  font-size: 1.2em;
   font-family: "Rubik";
   color: #707070;
   overflow-wrap: anywhere; }
@@ -119,27 +56,29 @@
 
 .or-price-value {
   width: 20%;
-  text-align: right; }
+  text-align: right;
+  white-space: nowrap; }
 
 .or-price-sum {
   width: 100%;
   margin: 0;
   font-family: "Rubik";
   color: #fa8072;
-  font-size: 1.1em;
-  margin-bottom: 10px;
+  font-size: 1.6em;
+  margin-bottom: 0.6em;
   text-align: right; }
 
 .or-panel-done {
-  width: 40%;
-  margin-top: 10px;
-  padding: 5px 0;
+  font-size: 1.2em;
+  width: 100%;
+  margin-top: 0.6em;
+  padding: 0.3em 0;
   background: #707070;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.3em;
   font-family: "Rubik";
   color: #ffffff;
-  box-shadow: 0 0 5px -1px #000000; }
+  box-shadow: 0 0 0.3em -1px #000000; }
   .or-panel-done:hover {
     background: #d73a49; }
   .or-panel-done:focus {
@@ -151,60 +90,45 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  margin-top: 20px;
-  padding-bottom: 10px; }
+  margin-top: 1.25em;
+  padding-bottom: 0.6em; }
 
 #or-profile-photo {
   content: url(../../assets/img/person-profile.jpeg); }
 
 .or-profile-img {
   height: auto;
-  width: 50px;
-  margin-right: 10px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px -1px #707070; }
+  width: 3.1em;
+  margin-right: 0.6em;
+  border-radius: 0.3em;
+  box-shadow: 0 0 0.6em -1px #707070; }
 
 .or-profile-h1 {
   margin: 0;
   width: 100%;
   overflow-wrap: anywhere;
   font-family: "Rubik";
-  font-size: 0.9em;
+  font-size: 1.2em;
   color: #707070; }
 
 .or-data-li {
   width: 100%;
   height: auto;
-  padding-bottom: 5px;
+  padding-bottom: 0.3em;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-bottom: 20px;
+  margin-bottom: 1.25em;
   border-bottom: 1px solid #a1a0a0; }
 
 .or-data-info {
   margin: 0;
-  font-size: 0.8em;
+  font-size: 1.2em;
   font-family: "Rubik";
-  margin-left: 10px;
+  margin-left: 0.6em;
   color: #707070; }
 
 .or-data-img {
-  height: 25px; }
-
-.or-date-img {
-  content: url(../../assets/svg/calendar/calendar-grey.svg); }
-
-.or-map-img {
-  content: url(../../assets/svg/placeholder/placeholder-grey.svg); }
-
-.or-person-img {
-  content: url(../../assets/svg/user/user-grey.svg); }
-
-.or-phone-img {
-  content: url(../../assets/svg/phone/telephone-grey.svg); }
-
-.or-email-img {
-  content: url(../../assets/svg/envelop/email-grey.svg); }
+  height: 1.6em; }
 
 /*# sourceMappingURL=orders-page.css.map */

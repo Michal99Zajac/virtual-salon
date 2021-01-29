@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Rubik:wght@300&display=swap");
+.container {
+  flex-direction: column;
+  align-content: center; }
+
+.panel {
+  width: 30%; }
+
+.ac-logo {
+  margin: 0 auto 0.2em auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.2em;
+  color: #fa8072;
+  font-family: "Dancing Script"; }
+
+.ac-a {
+  color: inherit;
+  text-decoration: none;
+  font-size: inherit;
+  font-family: inherit; }
+
+.ac-input-area {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap; }
+
+.ac-input-text {
+  width: 90%;
+  height: auto;
+  margin-bottom: 0.8em;
+  font-size: 1.4em;
+  padding: 0.6em;
+  border: none;
+  border-radius: 0.3em;
+  box-shadow: 0 0 0.6em -1px #707070;
+  font-family: "Rubik";
+  box-sizing: border-box;
+  color: #707070; }
+  .ac-input-text::placeholder {
+    color: #a1a0a0; }
+  .ac-input-text:focus {
+    outline: none;
+    color: #fa8072; }
+    .ac-input-text:focus::placeholder {
+      color: #fa8072; }
+    .ac-input-text:focus:hover {
+      color: #fa8072; }
+  .ac-input-text:hover {
+    color: #ffb3aa; }
+    .ac-input-text:hover::placeholder {
+      color: #fa8072; }
+
+.ac-question {
+  margin: 0;
+  width: 90%;
+  font-size: 0.8em;
+  font-family: "Rubik";
+  margin-bottom: 0.3em; }
+
+.radio-container {
+  width: 45%;
+  height: auto;
+  padding: 0.4em;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center; }
+
+input[type="radio"] {
+  display: none; }
+  input[type="radio"]:checked ~ .radio {
+    background: #fa8072; }
+  input[type="radio"]:checked:hover ~ .radio {
+    background: #fa8072; }
+  input[type="radio"]:hover ~ .radio {
+    background: #a1a0a0; }
+
+.radio {
+  padding: 1em;
+  width: 50%;
+  margin: 0.4em 0.6em 0.6em 1em;
+  border-radius: 0.3em;
+  background: #707070;
+  box-shadow: 0 0 0.6em -1px #000000; }
+
+.radio-label {
+  font-family: "Rubik";
+  font-size: 1.4em;
+  color: #707070; }
+
+img {
+  width: 100%; }
+
+.invalid {
+  box-shadow: 0 0 0.6em -1px #d73a49;
+  color: #d73a49; }
+
+@media only screen and (max-device-width: 420px) {
+  .panel {
+    width: 90%;
+    margin: 1.2em 2em 0 2em; } }
+
+/*# sourceMappingURL=account-page.css.map */

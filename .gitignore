@@ -1,5 +1,17 @@
 # vscode
 .vscode
 
+# php storm
+.idea/
+
 # sass
 .sass-cache
+
+# html assets
+public/views/assets
+
+# config
+config.php
+
+# uploads
+/public/uploads/
