@@ -150,11 +150,11 @@ class EmployeeRepository extends Repository {
     $surname = '_';
 
     if (count($full) == 2) {
-      $name = '%'.$full[0].'%';
-      $surname = '%'.$full[1].'%';
+      $name = '%'.strtolower($full[0]).'%';
+      $surname = '%'.strtolower($full[1]).'%';
     } else {
-      $name = '%'.$full[0].'%';
-      $surname = '%'.$full[0].'%';
+      $name = '%'.strtolower($full[0]).'%';
+      $surname = '%'.strtolower($full[0]).'%';
     }
 
     $conn = $this->database->connect();
@@ -443,11 +443,13 @@ class EmployeeRepository extends Repository {
     $substmt = [];
 
     if (!$city == '') {
-      $substmt[] = "city = '{$city}'";
+      $city = strtolower($city);
+      $substmt[] = "LOWER(city) LIKE '%{$city}%'";
     }
 
     if (!$street == '') {
-      $substmt[] = "address LIKE '%{$street}%'";
+      $street = strtolower($street);
+      $substmt[] = "LOWER(address) LIKE '%{$street}%'";
     }
 
     if (!$professions == []) {

@@ -7,6 +7,7 @@
   <link rel="stylesheet" type="text/css" href="public/css/navbar/navbar.css">
   <link rel="stylesheet" type="text/css" href="public/css/standard-body/standard-body.css">
   <link rel="stylesheet" type="text/css" href="public/css/sheet-page/sheet-page.css">
+  <script type="text/javascript" src="./public/js/script-sheet.js" defer></script>
 </head>
 <body>
   <div class="container">
@@ -77,7 +78,7 @@
               <?php endforeach; ?>
             </ul>
           </div>
-          <div class="sheet-section">
+          <div id="sheet-ordering-person" class="sheet-section">
             <h2 class="sheet-section-header">ordering party's personal data</h2>
             <div class="sheet-personal-data">
               <input class="sheet-text-input" name="ordering_name" placeholder="name" type="text">
